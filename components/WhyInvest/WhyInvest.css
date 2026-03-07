@@ -1,0 +1,89 @@
+/* This is the secret fix: A white block that sits BEHIND the curves */
+.invest-wrapper {
+  background-color: #ffffff; /* Forces the area behind the curves to be white */
+  width: 100%;
+  padding-top: 50px; /* This creates the GAP you want from the section above */
+}
+
+.invest-section {
+  padding: 60px 0;
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  /* Red Border */
+  border-top: 1.5px solid #e31e24;
+  border-left: 1.5px solid #e31e24;
+  border-right: 1.5px solid #e31e24;
+  border-bottom: none;
+
+  /* Rounded top corners */
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+
+  /* Remove margin-top from here, use padding-top on the wrapper instead */
+  margin-top: 0; 
+  
+  position: relative;
+  z-index: 10;
+}
+
+
+.invest-container {
+  max-width: 1200px;
+  width: 90%;
+}
+
+.invest-main-title {
+  color: #111827;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  font-family: 'serif', 'Times New Roman', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Grid Layout */
+.invest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.invest-card {
+  padding: 30px 25px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  text-align: left;
+  background-color: #f8fafc;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.invest-card:hover {
+  background: #fafafa;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+.invest-icon {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #ef4444;
+}
+
+.invest-card-title {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .invest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

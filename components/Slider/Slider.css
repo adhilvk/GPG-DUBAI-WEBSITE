@@ -1,0 +1,78 @@
+/* Container for the entire section */
+.slider-section {
+  padding: 60px 0;
+  background-color: #ffffff; /* Clean white background */
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Header style for Institutional Partners */
+.slider-title {
+  text-align: center;
+  color: #64748b;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 50px;
+}
+
+/* The viewport for the animation */
+.marquee-container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* The moving track */
+.marquee-content {
+  display: flex;
+   width: 100%;
+  align-items: center; /* Centers logos vertically */
+  animation: scroll-left 40s linear infinite;
+}
+
+/* Individual logo wrapper */
+.logo-item {
+  flex-shrink: 0;
+  width: 190px; /* Space between logos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+/* Image normalization fix */
+.brand-image {
+  max-height: 38px; /* Prevents tall logos from being too big */
+  max-width: 140px; /* Prevents long logos from being too small */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  /* Grayscale effect for a premium corporate look */
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.brand-image:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Animation Logic */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Moves exactly half the doubled list */
+  }
+}
+
+/* Pause on hover for accessibility */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
