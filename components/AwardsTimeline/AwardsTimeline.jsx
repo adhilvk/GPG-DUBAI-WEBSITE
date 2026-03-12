@@ -1,113 +1,81 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Check } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
 
-const AwardsTimeline = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
-
+const AwardsGallery = () => {
     const awards = [
         {
             id: 1,
             title: "Binghatti H1 2025",
-            description: "Honoured to be recognized with the Top Broker Award from Binghatti for H1 2025!",
-            image: "/images/rewardpic1.png" // Replace with your image path
+            subtitle: "Top Broker Award",
+            image: "/images/rewardpic1.png"
         },
         {
             id: 2,
             title: "Ultimate Realty Awards",
-            description: "Proudly received The Ultimate Realty Awards from India Today Group and NKN Media, recognizing our commitment to excellence in the world of Dubai luxury real estate.",
-            image: "/images/rewardpic2.png" // Image for Point 2
+            subtitle: "India Today Group",
+            image: "/images/rewardpic2.png"
         },
         {
             id: 3,
             title: "Top Broker 2024",
-            description: "GPG GLOBAL REAL ESTATE PROUDLY WINS THE TOP BROKER AWARD OF 2024 BY BINGHATTI!",
-            image: "/images/rewardpic3.png" // Image for Point 3
+            subtitle: "Binghatti Recognition",
+            image: "/images/rewardpic3.png"
         }
     ];
 
-    // Auto-switch every 2 seconds
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setActiveIndex((prev) => (prev + 1) % awards.length);
-        }, 4000);
-        return () => clearInterval(timer);
-    }, []);
-
     return (
-        <section className="bg-[#fcfcfc] pt-8 pb-20 px-6 min-h-fit flex items-center">
-            <div className="max-w-7xl mx-auto w-full ">
-                {/* Header Section */}
-                <div className="mb-16 text-center lg:text-left">
-                    <p className="text-[#E31E24] font-bold tracking-[0.2em] text-sm uppercase mb-3">
-                        Excellence Recognized
-                    </p>
-                    <h2 style={{ fontFamily: "'serif', 'Times New Roman', serif" }} className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight uppercase">
-                        Global Recognition <br /> & Industry Awards
+        <section className="bg-white py-24 px-6">
+            <div className="max-w-7xl mx-auto">
+                
+                {/* Minimal Header */}
+                <div className="mb-16 text-center">
+                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 uppercase tracking-tight">
+                        Global Recognition
                     </h2>
+                    <div className="h-1 w-20 bg-[#E31E24] mx-auto mt-6" />
                 </div>
-                <div className="flex flex-col lg:flex-row items-center gap-16">
 
-                    {/* LEFT: TEXT STEPS */}
-                    <div className="w-full lg:w-1/2 space-y-12">
-                        {awards.map((award, index) => (
-                            <div
-                                key={award.id}
-                                className={`flex gap-6 cursor-pointer transition-all duration-500 ${activeIndex === index ? 'opacity-100 scale-105' : 'opacity-30'}`}
-                                onClick={() => setActiveIndex(index)}
-                            >
-                                {/* Step Number/Check Circle */}
-                                <div className="flex flex-col items-center">
-                                    <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center transition-colors ${activeIndex >= index ? 'bg-white border-white text-black' : 'border-gray-600 text-slate-600'}`}>
-                                        {activeIndex > index ? <Check size={20} /> : index + 1}
-                                    </div>
-                                    {index !== awards.length - 1 && (
-                                        <div className={`w-0.5 h-20 mt-2 ${activeIndex > index ? 'bg-white' : 'bg-gray-800'}`} />
-                                    )}
-                                </div>
+                {/* Pure Image Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {awards.map((award, index) => (
+                        <motion.div
+                            key={award.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.2, duration: 0.8 }}
+                            viewport={{ once: true }}
+                            className="group relative aspect-[4/5 rounded-2xl overflow-hidden shadow-xl bg-slate-100"
+                        >
+                            {/* Award Image */}
+                            <img
+                                src={award.image}
+                                alt={award.title}
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
 
-                                {/* Content */}
-                                <div className="pt-1">
-                                    <h3 className={`text-xl font-bold mb-2 ${activeIndex === index ? 'text-white' : 'text-slate-600'}`}>
-                                        {award.title}
-                                    </h3>
-                                    <p className="text-slate-600 text-lg leading-relaxed max-w-md">
-                                        {award.description}
-                                    </p>
-                                </div>
+                            {/* Elegant Overlay (Visible on Hover) */}
+                            <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <p className="text-[#E31E24] font-bold text-xs uppercase tracking-[0.2em] mb-2">
+                                    {award.subtitle}
+                                </p>
+                                <h3 className="text-white text-2xl font-bold font-serif">
+                                    {award.title}
+                                </h3>
                             </div>
-                        ))}
-                    </div>
+                        </motion.div>
+                    ))}
+                </div>
 
-                    {/* RIGHT: DYNAMIC IMAGE */}
-                    <div className="w-full lg:w-1/2 relative h-100 md:h-125 rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={activeIndex}
-                                initial={{ opacity: 0, x: 20, scale: 0.95 }}
-                                animate={{ opacity: 1, x: 0, scale: 1 }}
-                                exit={{ opacity: 0, x: -20, scale: 1.05 }}
-                                transition={{ duration: 0.6, ease: "easeInOut" }}
-                                className="absolute inset-0"
-                            >
-                                <img
-                                    src={awards[activeIndex].image}
-                                    alt={awards[activeIndex].title}
-                                    className="w-full h-full object-cover"
-                                />
-                                {/* Gradient Overlay for the "Institutional" look */}
-                                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
-                            </motion.div>
-                        </AnimatePresence>
-
-
-                    </div>
-
+                {/* Institutional Footer Note */}
+                <div className="mt-16 text-center">
+                    <p className="text-slate-400 text-sm tracking-widest uppercase">
+                        Recognized by Dubai's leading developers and international media.
+                    </p>
                 </div>
             </div>
         </section>
     );
 };
 
-export default AwardsTimeline;
+export default AwardsGallery;

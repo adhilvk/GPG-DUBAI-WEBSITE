@@ -6,7 +6,7 @@ const Counter = ({ value }) => {
   const ref = useRef(null);
 
   // allow animation every time it enters viewport
-  const inView = useInView(ref, { once: false, margin: "-100px" });
+  const inView = useInView(ref, { once: false });
 
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
@@ -14,14 +14,14 @@ const Counter = ({ value }) => {
   useEffect(() => {
     if (inView) {
       count.set(0);
-      animate(count, value, { duration: 2, ease: "easeOut" });
+      animate(count, value, { duration: 0.5, ease: "easeOut" });
     }
   }, [inView, value, count]);
 
   return <motion.span ref={ref}>{rounded}</motion.span>;
 };
 
-const StatsBar = () => {
+const  StatsBar = () => {
   const stats = [
     { value: 3000, label: "Happy Customers", suffix: "+" },
     { value: 324, label: "Premium Developers", suffix: "+" },
@@ -30,8 +30,7 @@ const StatsBar = () => {
   ];
 
   return (
-    <section className="bg-white py-16 md:py-24 px-6">
-
+<section className="bg-white py-8 md:py-12 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-14 lg:gap-x-12 text-center">
 

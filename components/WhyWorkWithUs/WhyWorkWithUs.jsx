@@ -58,7 +58,7 @@ const WhyWorkWithUs = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex flex-col items-center group"
               >
-                <div className="mb-4 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-white/20 bg-white/5 backdrop-blur-md group-hover:bg-[#E31E24] group-hover:border-[#E31E24] transition-all duration-500">
+                <div className="mb-4 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-[#E31E24] bg-[#E31E24] hover:scale-110 transition-all duration-300">
                   {feature.icon}
                 </div>
                 

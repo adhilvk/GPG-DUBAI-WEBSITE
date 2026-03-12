@@ -17,12 +17,12 @@ const BeliefMissionVision = () => {
   };
 
   return (
-    <section className="bg-white py-24 px-6">
+    <section className="bg-stone-50 pt-12 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* SECTION HEADER */}
-        <div className="mb-20">
-          <div className="w-12 h-0.5 bg-[#E31E24] mb-6"></div>
-          <h2 className="text-[#002147] text-sm font-bold uppercase tracking-[0.4em]">
+        <div className="mb-16">
+          <div className="w-10 h-px bg-[#E31E24] mb-6"></div>
+          <h2 className="text-[#002147] text-[10px] font-bold uppercase tracking-[0.5em]">
             Corporate Philosophy
           </h2>
         </div>
@@ -33,50 +33,47 @@ const BeliefMissionVision = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-12"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
         >
-          {/* OUR BELIEF */}
-          <motion.div variants={itemVariants} className="flex flex-col">
-            <span className="text-slate-300 text-5xl font-light mb-8">01</span>
-            <h3 className="text-[#002147] text-2xl font-bold uppercase tracking-tight mb-6">
-              Our Belief
-            </h3>
-            <p className="text-slate-600 text-lg leading-relaxed font-light border-l border-slate-100 pl-6">
-              To ensure our clients receive top-tier professional advice and
-              guidance, we prioritize transparency. We advocate for making 
-              investments accessible through cutting-edge technologies.
-            </p>
-          </motion.div>
-
-          {/* OUR MISSION */}
-          <motion.div variants={itemVariants} className="flex flex-col">
-            <span className="text-slate-300 text-5xl font-light mb-8">02</span>
-            <h3 className="text-[#002147] text-2xl font-bold uppercase tracking-tight mb-6">
-              Our Mission
-            </h3>
-            <p className="text-slate-600 text-lg leading-relaxed font-light border-l border-slate-100 pl-6">
-              Our clients are our core priority. We pledge constant 
-              communication, keeping you fully informed throughout the 
-              entire transaction process with absolute integrity.
-            </p>
-          </motion.div>
-
-          {/* OUR VISION */}
-          <motion.div variants={itemVariants} className="flex flex-col">
-            <span className="text-slate-300 text-5xl font-light mb-8">03</span>
-            <h3 className="text-[#002147] text-2xl font-bold uppercase tracking-tight mb-6">
-              Our Vision
-            </h3>
-            <p className="text-slate-600 text-lg leading-relaxed font-light border-l border-slate-100 pl-6">
-              We aspire to be the leading global real estate brokerage, 
-              improving and elevating the lifestyles of our vast clientele 
-              through premium service standards.
-            </p>
-          </motion.div>
+          {/* Item Template */}
+          {[
+            {
+              id: "01",
+              title: "Our Belief",
+              desc: "To ensure our clients receive top-tier professional advice and guidance, we prioritize transparency. We advocate for making investments accessible through cutting-edge technologies."
+            },
+            {
+              id: "02",
+              title: "Our Mission",
+              desc: "Our clients are our core priority. We pledge constant communication, keeping you fully informed throughout the entire transaction process with absolute integrity."
+            },
+            {
+              id: "03",
+              title: "Our Vision",
+              desc: "We aspire to be the leading global real estate brokerage, improving and elevating the lifestyles of our vast clientele through premium service standards."
+            }
+          ].map((item, idx) => (
+            <motion.div 
+              key={idx}
+              variants={itemVariants} 
+              whileHover={{ y: -5 }}
+              className="bg-white border border-white p-8 md:p-10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col group"
+            >
+              <span className="text-slate-200 text-4xl font-light mb-6 group-hover:text-[#E31E24]/20 transition-colors duration-500">
+                {item.id}
+              </span>
+              <h3 className="text-[#002147] text-lg font-bold uppercase tracking-widest mb-4">
+                {item.title}
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed font-light tracking-wide">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* DECORATIVE LINE */}
-        <div className="mt-24 border-b border-slate-100 w-full"></div>
+        <div className="mt-20 border-b border-slate-200/50 w-full"></div>
       </div>
     </section>
   );

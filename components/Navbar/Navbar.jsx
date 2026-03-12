@@ -1,6 +1,7 @@
 "use client";
-
+import { Download } from "lucide-react";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import {
   ChevronRight,
@@ -13,6 +14,9 @@ import {
 } from "lucide-react";
 
 const Navbar = () => {
+
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -26,14 +30,21 @@ const Navbar = () => {
 
   // UPDATED: Scrolled color is now Red (#FF0000), and added underline logic via Tailwind
   const navLinkStyles = `relative text-[13px] transition-all duration-300 uppercase tracking-[0.15em] font-medium 
-    ${scrolled ? "text-[#FF0000]" : "text-white hover:text-gray-300"} 
-    after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-[#FF0000] after:transition-all after:duration-300 hover:after:w-full`;
+${isHome
+      ? scrolled
+        ? "text-[#FF0000]"
+        : "text-white hover:text-gray-300"
+      : "text-[#FF0000]"
+    }
+after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-[#FF0000] after:transition-all after:duration-300 hover:after:w-full`;
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled
-        ? "bg-white shadow-lg py-0 border-b border-slate-100"
-        : "bg-transparent py-2"
+      className={`fixed top-0 w-full z-50 transition-all duration-700 ${isHome
+        ? scrolled
+          ? "bg-white shadow-lg py-0 border-b border-slate-100"
+          : "bg-transparent py-2"
+        : "bg-white shadow-lg py-0 border-b border-slate-100"
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -260,16 +271,21 @@ const Navbar = () => {
                   <div>
                     <div className="flex flex-col gap-1">
                       {[
-                        "Contact Us", "Our Awards",
-                        "Real Estate Guides", "News&Media"
-                      ].map((area) => (
+                        { name: "Contact Us", link: "/contact-us" },
+                        { name: "Our Awards", link: "/awards" },
+                        { name: "Real Estate Guides", link: "/guides" },
+                        { name: "News & Media", link: "/news" }
+                      ].map((item) => (
                         <Link
-                          key={area}
-                          href={`/areas/${area.toLowerCase().replace(/\s+/g, '-')}`}
+                          key={item.name}
+                          href={item.link}
                           className="px-4 py-3 hover:bg-[#002147]/5 rounded-2xl text-[12px] uppercase tracking-wider text-slate-700 hover:text-[#002147] transition-all flex items-center justify-between group/item"
                         >
-                          {area}
-                          <ChevronRight size={14} className="opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-1 transition-all text-[#002147]" />
+                          {item.name}
+                          <ChevronRight
+                            size={14}
+                            className="opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-1 transition-all text-[#002147]"
+                          />
                         </Link>
                       ))}
                     </div>
@@ -280,17 +296,35 @@ const Navbar = () => {
           </div>
 
           {/* LANGUAGE / SCROLL LOGIC */}
-          <div className={`hidden lg:flex items-center space-x-6 border-l pl-6 transition-colors ${scrolled ? "border-slate-200" : "border-white/30"}`}>
-            <button className={`flex items-center text-xs font-bold transition-colors ${scrolled ? "text-slate-900" : "text-white"}`}>
+          <div
+            className={`hidden lg:flex items-center space-x-6 border-l pl-6 transition-colors ${scrolled ? "border-slate-200" : "border-white/30"
+              }`}
+          >
+            <button
+              className={`flex items-center text-xs font-bold transition-colors ${scrolled ? "text-slate-900" : "text-white"
+                }`}
+            >
               <span className="mr-2">🇬🇧</span> EN
             </button>
+
+            {/* Company Brochure Button */}
+            <button className="flex items-center gap-2 bg-[#E31E24] text-white text-xs font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#c81b20] transition-all duration-300">
+              <Download size={14} />
+              Company Profile
+            </button>
           </div>
+
 
           {/* MOBILE TOGGLE */}
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-lg transition-colors ${scrolled ? "text-[#FF0000]" : "text-white"}`}
+              className={`p-2 rounded-lg transition-colors ${isHome
+                ? scrolled
+                  ? "text-[#FF0000]"
+                  : "text-white"
+                : "text-[#FF0000]"
+                }`}
             >
               <span className="font-bold uppercase tracking-widest text-[11px]">
                 {isOpen ? "Close" : "Menu"}
@@ -300,6 +334,55 @@ const Navbar = () => {
 
         </div>
       </div>
+
+      {/* MOBILE MENU GOES HERE */}
+      {isOpen && (
+        <div className="lg:hidden bg-white border-t border-slate-200">
+          <div className="px-6 py-6 space-y-4">
+
+            <Link href="/" className="block text-[#002147] uppercase text-sm ">Home</Link>
+            <Link href="/about" className="block text-[#002147] uppercase text-sm">About Us</Link>
+
+            <p className="text-[#002147] text-sm uppercase tracking-widest pt-4 ">Projects</p>
+            <Link href="/apartments" className="block text-[#FF0000] text-sm">Apartments</Link>
+            <Link href="/townhouses" className="block text-[#FF0000] text-sm">Townhouses</Link>
+            <Link href="/villas" className="block text-[#FF0000] text-sm">Villas</Link>
+            <Link href="/offices" className="block text-[#FF0000] text-sm">Offices</Link>
+            <Link href="/retails" className="block text-[#FF0000] text-sm">Retails</Link>
+
+            <p className="text-[#002147] text-sm uppercase tracking-widest pt-4 ">Communities</p>
+
+            <Link href="/areas/dubai-hills-estate" className="block text-[#FF0000] text-sm">
+              Dubai Hills Estate
+            </Link>
+
+            <Link href="/areas/damac-hills" className="block text-[#FF0000] text-sm">
+              Damac Hills
+            </Link>
+
+            <Link href="/areas/emirates-hills" className="block text-[#FF0000] text-sm">
+              Emirates Hills
+            </Link>
+
+            {/* MORE BUTTON */}
+            <Link
+              href="/areas"
+              className="inline-block mt-3 text-xs font-semibold uppercase tracking-widest text-white bg-[#002147] px-4 py-2 rounded-lg hover:bg-[#001530] transition-all"
+            >
+              Click Here for More
+            </Link>
+
+            <Link href="/" className="block text-[#002147] uppercase text-sm">Our Team</Link>
+
+            <p className="text-[#002147] text-sm uppercase tracking-widest pt-4">More</p>
+            <Link href="/contact" className="block text-[#FF0000] text-sm">Contact Us</Link>
+            <Link href="/awards" className="block text-[#FF0000] text-sm">Our Awards</Link>
+            <Link href="/guides" className="block text-[#FF0000] text-sm">Real Estate Guides</Link>
+            <Link href="/news" className="block text-[#FF0000] text-sm">News & Media</Link>
+
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
