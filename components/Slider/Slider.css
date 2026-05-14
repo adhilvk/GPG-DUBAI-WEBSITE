@@ -1,6 +1,6 @@
 /* Container for the entire section */
 .slider-section {
-  padding: 60px 0;
+  padding: 60px 0 28px;
   background-color: #ffffff; /* Clean white background */
   overflow: hidden;
   width: 100%;

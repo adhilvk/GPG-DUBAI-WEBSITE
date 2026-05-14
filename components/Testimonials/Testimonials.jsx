@@ -57,7 +57,7 @@ export default function Testimonials() {
         {/* Heading */}
         <h2
           style={{ fontFamily: "'serif', 'Times New Roman', serif" }}
-          className="text-4xl font-semibold text-gray-900 mb-16"
+          className="text-4xl font-semibold text-gray-900 mb-16 text-center"
         >
           What Our Clients Say
         </h2>

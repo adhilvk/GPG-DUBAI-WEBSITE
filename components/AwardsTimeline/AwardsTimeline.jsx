@@ -30,8 +30,8 @@ const AwardsGallery = () => {
                 
                 {/* Minimal Header */}
                 <div className="mb-16 text-center">
-                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 uppercase tracking-tight">
-                        Global Recognition
+                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900  tracking-tight">
+                        Our Awards And Winnings
                     </h2>
                     <div className="h-1 w-20 bg-[#E31E24] mx-auto mt-6" />
                 </div>

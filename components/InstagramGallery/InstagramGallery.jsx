@@ -45,7 +45,7 @@ const InstagramGallery = () => {
                 {/* Header with Follow Button */}
                 <div className="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
                     <div>
-                        <h2 style={{ fontFamily: "'serif', 'Times New Roman', serif" }} className="font-semibold text-gray-900 text-3xl md:text-4xl mb-2">
+                        <h2 style={{ fontFamily: "'serif', 'Times New Roman', serif" }} className="font-semibold text-gray-900 text-3xl md:text-4xl mb-2 ">
                             Explore Our Social Media
                         </h2>
                         <p className="text-slate-400">@xgpg.luxury</p>
@@ -64,7 +64,7 @@ const InstagramGallery = () => {
                         <motion.div
                             key={reel.id}
                             whileHover={{ scale: 0.98 }}
-                            className="relative h-120 cursor-pointer overflow-hidden rounded-lg group" onClick={() => setSelectedVideo(reel)}
+                            className="relative h-100 cursor-pointer overflow-hidden rounded-lg group" onClick={() => setSelectedVideo(reel)}
                         >
                             <img src={reel.thumbnail} alt="Reel" className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">

@@ -21,9 +21,7 @@ const WhyInvest = () => {
     <div className="invest-wrapper">
     <section className="invest-section">
       <div className="invest-container">
-        <h2 className="invest-main-title">
-          Why Invest / Buy / Sell with GPG
-        </h2>
+                  <h2 className="text-gray-900 text-4xl font-serif font-semibold mb-2 text-center">Why To Invest With GPG</h2>
 
         <div className="invest-grid">
           {features.map((item, index) => (

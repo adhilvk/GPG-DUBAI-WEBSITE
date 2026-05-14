@@ -3,7 +3,7 @@
 import { Phone, Mail, Globe, MapPin } from "lucide-react";
 import { Facebook, Instagram, Linkedin, MessageCircle } from "lucide-react";
 
-const Footer = () => {
+const Footer = ({ showCeoLink = false }) => {
   const footerLinkStyles = `relative w-max cursor-pointer transition-all duration-300 text-[#FF0000] text-[13px] uppercase tracking-wider
   after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[1.5px] after:bg-[#E31E24] after:transition-all after:duration-300 hover:after:w-full`;
 
@@ -146,22 +146,46 @@ const Footer = () => {
 
       {/* BOTTOM BAR */}
       <div className="border-t border-slate-100 py-8 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-[#E31E24] uppercase tracking-[0.2em] text-center md:text-left">
+        <div className="max-w-7xl mx-auto px-6">
+          <div
+            className={`grid gap-4 text-center text-[10px] md:text-xs text-[#E31E24] uppercase tracking-[0.2em] md:items-center ${
+              showCeoLink ? "md:grid-cols-3 md:gap-y-6" : "md:grid-cols-2"
+            }`}
+          >
+            <p className="md:justify-self-start md:text-left">
+              © {new Date().getFullYear()} GPG Global Real Estate. All rights reserved.
+            </p>
 
-          <p>
-            © {new Date().getFullYear()} GPG Global Real Estate. All rights reserved.
-          </p>
+            {showCeoLink && (
+              <div className="flex flex-col items-center justify-center gap-1 text-slate-600 normal-case tracking-normal md:justify-self-center py-2 md:py-0">
+                <span className="text-sm md:text-base font-bold uppercase tracking-[0.2em] text-slate-500">
+                  CEO ·
+                </span>
+                <a
+                  href="https://multipliercg.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 hover:text-[#E31E24] underline underline-offset-4 decoration-2 transition-colors leading-tight"
+                >
+                  Multiplier CG
+                </a>
+              </div>
+            )}
 
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <span className="hover:text-slate-900 cursor-pointer transition-colors">
-              Privacy Policy
-            </span>
+            <div
+              className={`flex gap-6 justify-center ${
+                showCeoLink ? "md:justify-self-end" : "md:justify-self-end md:col-start-2"
+              }`}
+            >
+              <span className="hover:text-slate-900 cursor-pointer transition-colors">
+                Privacy Policy
+              </span>
 
-            <span className="hover:text-slate-900 cursor-pointer transition-colors">
-              Terms of Service
-            </span>
+              <span className="hover:text-slate-900 cursor-pointer transition-colors">
+                Terms of Service
+              </span>
+            </div>
           </div>
-
         </div>
       </div>
 

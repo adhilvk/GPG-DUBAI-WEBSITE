@@ -67,7 +67,7 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
             {/* PROJECTS DROPDOWN */}
             <div className="relative group py-4">
               <button className={`flex items-center gap-1 ${navLinkStyles}`}>
-                Projects
+                Our Properties
                 <ChevronRight
                   size={14}
                   className="rotate-90 group-hover:-rotate-90 transition-transform duration-300"
@@ -180,12 +180,47 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                 </div>
               </div>
             </div>
-            <Link href="#" className={navLinkStyles}>Our Guide</Link>
+<div className="relative group py-4">
+              <button className={`flex items-center gap-1 ${navLinkStyles}`}>
+                Guides
+                <ChevronRight
+                  size={14}
+                  className="rotate-90 group-hover:-rotate-90 transition-transform duration-300"
+                />
+              </button>
 
+              {/* Main Dropdown Container */}
+              <div className="absolute top-[110%] left-0 w-60 bg-white rounded-3xl border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-1 flex p-6 gap-8">
+                <div className="flex-1 space-y-4">
+                  <div>
+                    <div className="flex flex-col gap-1">
+                      {[
+                        { name: "HOW TO BUY OFF PLAN", link: "/HOWTOBUYOFFPLAN" },
+                        { name: "HOW TO RESELL", link: "/HOWTORESELL" },
+                        { name: "Real Estate Guides", link: "/guides" },
+                        { name: "HOW TO INVEST", link: "/HOWTOINVEST" }
+                      ].map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.link}
+                          className="px-4 py-3 hover:bg-[#002147]/5 rounded-2xl text-[12px] uppercase tracking-wider text-slate-700 hover:text-[#002147] transition-all flex items-center justify-between group/item"
+                        >
+                          {item.name}
+                          <ChevronRight
+                            size={14}
+                            className="opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-1 transition-all text-[#002147]"
+                          />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             {/* AREAS DROPDOWN */}
             <div className="relative group py-4">
               <button className={`flex items-center gap-1 ${navLinkStyles}`}>
-                Communities
+                Our Communities
                 <ChevronRight
                   size={14}
                   className="rotate-90 group-hover:-rotate-90 transition-transform duration-300"
@@ -254,7 +289,7 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
 
               </div>
             </div>
-            <Link href="/our-teams" className={navLinkStyles}>Our Team</Link>
+            <Link href="/our-teams" className={navLinkStyles}>Team</Link>
 
             <div className="relative group py-4">
               <button className={`flex items-center gap-1 ${navLinkStyles}`}>

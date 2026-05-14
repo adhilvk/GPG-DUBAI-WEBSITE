@@ -24,53 +24,45 @@ const WhyWorkWithUs = () => {
   ];
 
   return (
-    <div className="relative">
-      <section 
-        className="relative h-[70vh] md:h-[60vh] w-full bg-fixed bg-center bg-cover flex items-center justify-center overflow-hidden"
-        style={{ 
-          backgroundImage: `url('/images/bgpic.jpg')`, 
-        }}
-      >
-        <div className="absolute inset-0 bg-black/50 z-0" />
-
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 text-center text-white">
-          
-          <motion.h2 
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            style={{ fontFamily: "'serif', 'Times New Roman', serif" }}
-            className="text-3xl md:text-5xl font-bold mb-16 md:mb-20 tracking-tight uppercase"
-          >
+    <section className="bg-white py-16 md:py-20 px-4 md:px-12">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-10 ml-4 text-center"
+        >
+          <h2 className="text-gray-900 text-4xl font-serif font-semibold mb-2">
             Why Work With Us
-          </motion.h2>
+          </h2>
+          <p className="text-gray-400 text-lg">
+            Institutional rigor with a partner-led approach to every mandate.
+          </p>
+        </motion.div>
 
-          {/* grid-cols-2: 2 items side-by-side on mobile
-            md:grid-cols-4: All 4 in a row on desktop
-            gap-y-12: Adds breathing room between the two rows on mobile
-          */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-12 md:gap-y-0 items-center justify-center">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-col items-center group"
-              >
-                <div className="mb-4 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-[#E31E24] bg-[#E31E24] hover:scale-110 transition-all duration-300">
-                  {feature.icon}
-                </div>
-                
-                <h3 className="text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-widest md:tracking-[0.2em] text-white/90 whitespace-nowrap">
-                  {feature.title}
-                </h3>
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-12 md:gap-y-0 items-center justify-center">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex flex-col items-center group"
+            >
+              <div className="mb-4 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-[#E31E24] bg-[#E31E24] text-white hover:scale-110 transition-all duration-300">
+                {feature.icon}
+              </div>
+
+              <h3 className="text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-widest md:tracking-[0.2em] text-gray-800 whitespace-nowrap">
+                {feature.title}
+              </h3>
+            </motion.div>
+          ))}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

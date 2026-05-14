@@ -18,8 +18,9 @@ const CEOMessage = () => {
           >
             <div className="flex items-center gap-4 mb-8">
               <div className="w-10 h-px bg-[#E31E24]"></div>
-              <span className="text-[#E31E24] font-bold tracking-[0.4em] text-[10px] uppercase">CEO Message</span>
-            </div>
+<span className="text-[#E31E24] font-bold tracking-[0.4em] text-[10px]">
+  <span className="uppercase">CEO</span> message
+</span>            </div>
 
             <h2 className="text-3xl md:text-5xl font-light text-slate-900 mb-10 leading-tight tracking-tight">
               Leading with <span className="text-[#E31E24] font-medium">Integrity</span> and <br /> 
