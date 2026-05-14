@@ -22,7 +22,7 @@ const BeliefMissionVision = () => {
         {/* SECTION HEADER */}
         <div className="mb-16">
           <div className="w-10 h-px bg-[#E31E24] mb-6"></div>
-          <h2 className="text-[#002147] text-[10px] font-bold uppercase tracking-[0.5em]">
+          <h2 className="text-[#E31E24] text-[10px] font-bold uppercase tracking-[0.5em]">
             Corporate Philosophy
           </h2>
         </div>
@@ -59,12 +59,14 @@ const BeliefMissionVision = () => {
               whileHover={{ y: -5 }}
               className="bg-white border border-white p-8 md:p-10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col group"
             >
-              <span className="text-slate-200 text-4xl font-light mb-6 group-hover:text-[#E31E24]/20 transition-colors duration-500">
-                {item.id}
-              </span>
-              <h3 className="text-[#002147] text-lg font-bold uppercase tracking-widest mb-4">
-                {item.title}
-              </h3>
+              <div className="flex flex-row items-baseline gap-4 md:gap-6 mb-5">
+                <span className="text-slate-200 text-4xl md:text-5xl font-light leading-none shrink-0 tabular-nums group-hover:text-[#E31E24]/25 transition-colors duration-500">
+                  {item.id}
+                </span>
+                <h3 className="text-[#002147] text-lg font-bold uppercase tracking-widest leading-tight">
+                  {item.title}
+                </h3>
+              </div>
               <p className="text-slate-500 text-sm leading-relaxed font-light tracking-wide">
                 {item.desc}
               </p>
