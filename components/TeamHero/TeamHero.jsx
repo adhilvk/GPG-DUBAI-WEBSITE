@@ -28,8 +28,8 @@ const TeamHero = () => {
   >
     {/* Institutional Tag */}
     <div className="flex items-center gap-3 mb-3">
-      <div className="w-10 h-px bg-[#C5A059]" />
-      <span className="text-[#C5A059] text-[10px] font-bold tracking-[0.25em] uppercase">
+      <div className="w-10 h-px bg-[#E31E24]" />
+      <span className="text-[#E31E24] text-[10px] font-bold tracking-[0.25em] uppercase">
         The Force Behind the Vision
       </span>
     </div>
@@ -38,7 +38,7 @@ const TeamHero = () => {
       style={{ fontFamily: "'serif', 'Times New Roman', serif" }}
       className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4"
     >
-      MEET OUR <span className="text-[#C5A059]">EXPERTS</span>
+      MEET OUR <span className="text-[#E31E24]">EXPERTS</span>
     </h1>
 
     <p className="text-gray-300 text-xs md:text-sm max-w-md leading-relaxed">

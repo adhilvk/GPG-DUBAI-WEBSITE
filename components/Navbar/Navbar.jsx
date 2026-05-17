@@ -289,7 +289,7 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
 
               </div>
             </div>
-            <Link href="/our-teams" className={navLinkStyles}>Team</Link>
+            <Link href="/our-teams" className={navLinkStyles}>Our Team</Link>
 
             <div className="relative group py-4">
               <button className={`flex items-center gap-1 ${navLinkStyles}`}>
@@ -306,10 +306,9 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                   <div>
                     <div className="flex flex-col gap-1">
                       {[
-                        { name: "Contact Us", link: "/contact-us" },
                         { name: "Our Awards", link: "/awards" },
-                        { name: "Real Estate Guides", link: "/guides" },
-                        { name: "News & Media", link: "/news" }
+                        { name: "News & Media", link: "/news" },
+                        { name: "Contact Us", link: "/contact-us" },
                       ].map((item) => (
                         <Link
                           key={item.name}
@@ -407,13 +406,12 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
               Click Here for More
             </Link>
 
-            <Link href="/" className="block text-[#002147] uppercase text-sm">Our Team</Link>
+            <Link href="/our-teams" className="block text-[#002147] uppercase text-sm">Our Team</Link>
 
             <p className="text-[#002147] text-sm uppercase tracking-widest pt-4">More</p>
-            <Link href="/contact" className="block text-[#FF0000] text-sm">Contact Us</Link>
             <Link href="/awards" className="block text-[#FF0000] text-sm">Our Awards</Link>
-            <Link href="/guides" className="block text-[#FF0000] text-sm">Real Estate Guides</Link>
             <Link href="/news" className="block text-[#FF0000] text-sm">News & Media</Link>
+            <Link href="/contact-us" className="block text-[#FF0000] text-sm">Contact Us</Link>
 
           </div>
         </div>

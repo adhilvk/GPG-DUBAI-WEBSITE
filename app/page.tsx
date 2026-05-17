@@ -24,7 +24,7 @@ export default function Home() {
       <Testimonials />
       <InstagramGallery />
       <SubscriptionBanner/>
-      <Footer showCeoLink />
+      <Footer />
     </>
   );
 }

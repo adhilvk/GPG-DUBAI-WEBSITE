@@ -1,9 +1,17 @@
 "use client";
 
-import { Phone, Mail, Globe, MapPin } from "lucide-react";
-import { Facebook, Instagram, Linkedin, MessageCircle } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  Globe,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+  MessageCircle,
+} from "lucide-react";
 
-const Footer = ({ showCeoLink = false }) => {
+const Footer = () => {
   const footerLinkStyles = `relative w-max cursor-pointer transition-all duration-300 text-[#FF0000] text-[13px] uppercase tracking-wider
   after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[1.5px] after:bg-[#E31E24] after:transition-all after:duration-300 hover:after:w-full`;
 
@@ -25,19 +33,31 @@ const Footer = ({ showCeoLink = false }) => {
               />
 
               <div className="flex items-center gap-3">
-                <a href="#" className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-200 text-[#E31E24] hover:bg-[#E31E24] hover:text-white transition-all">
+                <a
+                  href="#"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-200 text-[#E31E24] hover:bg-[#E31E24] hover:text-white transition-all"
+                >
                   <Facebook size={16} />
                 </a>
 
-                <a href="#" className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-200 text-[#E31E24] hover:bg-[#E31E24] hover:text-white transition-all">
+                <a
+                  href="#"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-200 text-[#E31E24] hover:bg-[#E31E24] hover:text-white transition-all"
+                >
                   <Instagram size={16} />
                 </a>
 
-                <a href="#" className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-200 text-[#E31E24] hover:bg-[#E31E24] hover:text-white transition-all">
+                <a
+                  href="#"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-200 text-[#E31E24] hover:bg-[#E31E24] hover:text-white transition-all"
+                >
                   <Linkedin size={16} />
                 </a>
 
-                <a href="#" className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-200 text-[#E31E24] hover:bg-[#E31E24] hover:text-white transition-all">
+                <a
+                  href="#"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-200 text-[#E31E24] hover:bg-[#E31E24] hover:text-white transition-all"
+                >
                   <MessageCircle size={16} />
                 </a>
               </div>
@@ -79,6 +99,7 @@ const Footer = ({ showCeoLink = false }) => {
 
           {/* RIGHT SIDE WRAPPER */}
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-20 gap-y-10 items-start">
+
             {/* GUIDES */}
             <div>
               <h3 className="text-sm font-bold text-slate-900 mb-8 uppercase tracking-widest">
@@ -92,6 +113,7 @@ const Footer = ({ showCeoLink = false }) => {
                 <li className={footerLinkStyles}>Rental Yield Guide</li>
               </ul>
             </div>
+
             {/* QUICK LINKS */}
             <div>
               <h3 className="text-sm font-bold text-slate-900 mb-8 uppercase tracking-widest">
@@ -106,8 +128,6 @@ const Footer = ({ showCeoLink = false }) => {
                 <li className={footerLinkStyles}>Contact</li>
               </ul>
             </div>
-
-
 
             {/* SERVICES */}
             <div>
@@ -140,43 +160,40 @@ const Footer = ({ showCeoLink = false }) => {
             </div>
 
           </div>
-
         </div>
       </div>
 
       {/* BOTTOM BAR */}
       <div className="border-t border-slate-100 py-8 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div
-            className={`grid gap-4 text-center text-[10px] md:text-xs text-[#E31E24] uppercase tracking-[0.2em] md:items-center ${
-              showCeoLink ? "md:grid-cols-3 md:gap-y-6" : "md:grid-cols-2"
-            }`}
-          >
+
+          <div className="grid gap-4 text-center text-[10px] md:text-xs text-[#E31E24] uppercase tracking-[0.2em] md:items-center md:grid-cols-3 md:gap-y-6">
+
             <p className="md:justify-self-start md:text-left">
               © {new Date().getFullYear()} GPG Global Real Estate. All rights reserved.
             </p>
 
-            {showCeoLink && (
-              <div className="flex flex-col items-center justify-center gap-1 text-slate-600 normal-case tracking-normal md:justify-self-center py-2 md:py-0">
-                <span className="text-sm md:text-base font-bold uppercase tracking-[0.2em] text-slate-500">
-                  CEO ·
-                </span>
-                <a
-                  href="https://multipliercg.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 hover:text-[#E31E24] underline underline-offset-4 decoration-2 transition-colors leading-tight"
-                >
-                  Multiplier CG
-                </a>
-              </div>
-            )}
+            {/* CENTER */}
+            <div className="flex flex-col items-center justify-center gap-1 text-slate-600 normal-case tracking-normal md:justify-self-center py-2 md:py-0">
 
-            <div
-              className={`flex gap-6 justify-center ${
-                showCeoLink ? "md:justify-self-end" : "md:justify-self-end md:col-start-2"
-              }`}
-            >
+              <span className="text-sm md:text-base font-bold uppercase tracking-[0.2em] text-slate-500">
+                CEO ·
+              </span>
+
+              <a
+                href="https://multipliercg.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 hover:text-[#E31E24] underline underline-offset-4 decoration-2 transition-colors leading-tight"
+              >
+                Multiplier CG
+              </a>
+
+            </div>
+
+            {/* RIGHT */}
+            <div className="flex gap-6 justify-center md:justify-self-end">
+
               <span className="hover:text-slate-900 cursor-pointer transition-colors">
                 Privacy Policy
               </span>
@@ -184,7 +201,9 @@ const Footer = ({ showCeoLink = false }) => {
               <span className="hover:text-slate-900 cursor-pointer transition-colors">
                 Terms of Service
               </span>
+
             </div>
+
           </div>
         </div>
       </div>

@@ -1,0 +1,142 @@
+/**
+ * Shared data for /townhouses listing and /townhouses/[slug] detail pages.
+ */
+
+const paragraph = (lines) => lines.join("\n\n");
+
+export const TOWNHOUSE_LISTINGS = [
+  {
+    slug: "damac-riverside-townhouse",
+    id: "t1",
+    images: ["/images/Riverside.jpg", "/images/grandpolo.webp", "/images/palmcentral.jpg"],
+    price: 2850000,
+    features: "SINGLE ROW | PARK FACING | Q4 HANDOVER",
+    location: "Damac Riverside, Dubai South",
+    mapQuery: "Damac Riverside, Dubai South, Dubai",
+    beds: 3,
+    baths: 4,
+    sqft: 2100,
+    dldPermit: "71694208900",
+    orn: "28501",
+    agentName: "Sarah Al-Mansoori",
+    agentPhoto: "https://i.pravatar.cc/320?img=47",
+    description: paragraph([
+      "A contemporary three-bedroom townhouse in Damac Riverside with park-facing orientation and a practical family layout across two levels plus private outdoor space.",
+      "The community is designed around green corridors, pools, and retail, with strong access to Expo City and the wider Dubai South growth corridor.",
+      "Ideal for end-users seeking a turnkey townhouse with institutional documentation and predictable handover timelines.",
+    ]),
+  },
+  {
+    slug: "arabian-ranches-3-elie",
+    id: "t2",
+    images: ["/images/grandpolo.webp", "/images/heightsbyemaar.webp", "/images/Riverside.jpg"],
+    price: 4200000,
+    features: "CORNER UNIT | GOLF COMMUNITY | VASTU",
+    location: "Arabian Ranches 3, Elie",
+    mapQuery: "Arabian Ranches 3, Dubai",
+    beds: 4,
+    baths: 5,
+    sqft: 2680,
+    dldPermit: "71694208901",
+    orn: "28502",
+    agentName: "James Okonkwo",
+    agentPhoto: "https://i.pravatar.cc/320?img=12",
+    description: paragraph([
+      "A spacious four-bedroom corner townhouse in Arabian Ranches 3 with enhanced glazing, private garden, and access to one of Dubai’s most established family communities.",
+      "Residents benefit from schools, polo fields, retail, and mature landscaping within a master-planned Emaar environment.",
+      "Strong long-term hold for families prioritising community, schools, and resale liquidity in a proven district.",
+    ]),
+  },
+  {
+    slug: "dubai-hills-park-townhouse",
+    id: "t3",
+    images: ["/images/heightsbyemaar.webp", "/images/palmcentral.jpg", "/images/grandpolo.webp"],
+    price: 5100000,
+    features: "GOLF VIEW | SINGLE ROW | BRANDED",
+    location: "Dubai Hills Park, Dubai Hills Estate",
+    mapQuery: "Dubai Hills Estate, Dubai",
+    beds: 4,
+    baths: 5,
+    sqft: 2950,
+    dldPermit: "71694208902",
+    orn: "28503",
+    agentName: "Elena Vasquez",
+    agentPhoto: "https://i.pravatar.cc/320?img=45",
+    description: paragraph([
+      "A branded four-bedroom townhouse overlooking Dubai Hills golf with single-row privacy and premium interior specifications throughout.",
+      "Dubai Hills Estate integrates mall, hospital, and school assets within minutes, supporting both lifestyle and investment theses.",
+      "Suited to buyers seeking scale, finish quality, and a walkable master community with institutional-grade governance.",
+    ]),
+  },
+  {
+    slug: "tilal-al-ghaf-harmony",
+    id: "t4",
+    images: ["/images/palmcentral.jpg", "/images/Riverside.jpg", "/images/heightsbyemaar.webp"],
+    price: 6200000,
+    features: "LAGOON ACCESS | SMART HOME | CORNER",
+    location: "Tilal Al Ghaf, Harmony",
+    mapQuery: "Tilal Al Ghaf, Dubai",
+    beds: 5,
+    baths: 6,
+    sqft: 3400,
+    dldPermit: "71694208903",
+    orn: "28504",
+    agentName: "Sarah Al-Mansoori",
+    agentPhoto: "https://i.pravatar.cc/320?img=47",
+    description: paragraph([
+      "A five-bedroom corner townhouse in Tilal Al Ghaf with lagoon lifestyle amenities, smart-home readiness, and generous indoor-outdoor entertaining space.",
+      "The district continues to attract families seeking newer stock, crystal lagoons, and boutique retail within a low-density masterplan.",
+      "Compelling for UHNW end-users and investors targeting premium townhouse scarcity in emerging luxury corridors.",
+    ]),
+  },
+  {
+    slug: "villanova-la-rosa",
+    id: "t5",
+    images: ["/images/grandpolo.webp", "/images/palmcentral.jpg", "/images/Riverside.jpg"],
+    price: 3650000,
+    features: "GREEN BELT | SINGLE ROW | VACANT ON TRANSFER",
+    location: "La Rosa 3, Villanova, Dubailand",
+    mapQuery: "Villanova, Dubailand, Dubai",
+    beds: 3,
+    baths: 4,
+    sqft: 1972,
+    dldPermit: "71694208904",
+    orn: "28505",
+    agentName: "James Okonkwo",
+    agentPhoto: "https://i.pravatar.cc/320?img=12",
+    description: paragraph([
+      "A three-bedroom townhouse in La Rosa 3, Villanova, positioned on a green belt with single-row privacy and immediate occupancy potential on transfer.",
+      "Villanova offers Mediterranean-inspired streetscapes, community pools, and family parks within a mature Dubailand setting.",
+      "Attractive for buyers seeking ready stock with strong rental comparables and established community amenities.",
+    ]),
+  },
+  {
+    slug: "mudon-al-ranim",
+    id: "t6",
+    images: ["/images/Riverside.jpg", "/images/heightsbyemaar.webp", "/images/grandpolo.webp"],
+    price: 3100000,
+    features: "PARK VIEW | 3 BED + MAID | HANDOVER 2026",
+    location: "Mudon Al Ranim, Dubailand",
+    mapQuery: "Mudon, Dubailand, Dubai",
+    beds: 3,
+    baths: 4,
+    sqft: 2240,
+    dldPermit: "71694208905",
+    orn: "28506",
+    agentName: "Elena Vasquez",
+    agentPhoto: "https://i.pravatar.cc/320?img=45",
+    description: paragraph([
+      "A three-bedroom plus maid’s townhouse in Mudon Al Ranim with park views and a family-oriented layout across two floors.",
+      "Mudon remains a core Dubailand address for value-conscious families seeking parks, schools, and community retail.",
+      "Well suited to investors and end-users targeting mid-market townhouse exposure with clear payment-plan visibility.",
+    ]),
+  },
+];
+
+export function getTownhouseBySlug(slug) {
+  return TOWNHOUSE_LISTINGS.find((p) => p.slug === slug) ?? null;
+}
+
+export function getRelatedTownhouses(currentSlug, limit = 3) {
+  return TOWNHOUSE_LISTINGS.filter((p) => p.slug !== currentSlug).slice(0, limit);
+}
