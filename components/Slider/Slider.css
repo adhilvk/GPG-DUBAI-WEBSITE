@@ -1,59 +1,73 @@
-/* Container for the entire section */
 .slider-section {
-  padding: 60px 0 28px;
-  background-color: #ffffff; /* Clean white background */
+  position: relative;
+  padding: 36px 0 24px;
+  background-color: #ffffff;
   overflow: hidden;
   width: 100%;
 }
 
-/* Header style for Institutional Partners */
-.slider-title {
-  text-align: center;
-  color: #64748b;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  margin-bottom: 50px;
+.slider-section::before,
+.slider-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
 }
 
-/* The viewport for the animation */
+.slider-section::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.slider-section::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+.slider-title {
+  text-align: center;
+  color: #e31e24;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  margin-bottom: 28px;
+}
+
 .marquee-container {
   display: flex;
   width: 100%;
   overflow: hidden;
 }
 
-/* The moving track */
 .marquee-content {
   display: flex;
-   width: 100%;
-  align-items: center; /* Centers logos vertically */
+  width: 100%;
+  align-items: center;
   animation: scroll-left 40s linear infinite;
 }
 
-/* Individual logo wrapper */
 .logo-item {
   flex-shrink: 0;
-  width: 190px; /* Space between logos */
+  width: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 30px;
 }
 
-/* Image normalization fix */
 .brand-image {
-  max-height: 38px; /* Prevents tall logos from being too big */
-  max-width: 140px; /* Prevents long logos from being too small */
+  max-height: 38px;
+  max-width: 140px;
   width: auto;
   height: auto;
   object-fit: contain;
-  /* Grayscale effect for a premium corporate look */
   filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
+  opacity: 0.55;
+  transition: all 0.35s ease;
 }
 
 .brand-image:hover {
@@ -62,17 +76,15 @@
   transform: scale(1.05);
 }
 
-/* Animation Logic */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Moves exactly half the doubled list */
+    transform: translateX(-50%);
   }
 }
 
-/* Pause on hover for accessibility */
 .marquee-container:hover .marquee-content {
   animation-play-state: paused;
 }

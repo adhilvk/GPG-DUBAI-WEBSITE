@@ -22,7 +22,7 @@ const Slider = () => {
 
   return (
     <section className="slider-section">
-      <h2 className="slider-title">Our Developer Partners</h2>
+      <p className="slider-title">Our Developer Partners</p>
 
       <div className="marquee-container">
         <div className="marquee-content">

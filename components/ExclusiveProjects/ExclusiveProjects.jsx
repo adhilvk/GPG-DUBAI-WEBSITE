@@ -8,6 +8,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
+import SectionHeader from "@/components/SectionHeader/SectionHeader";
 
 const ExclusiveProjectsSlider = () => {
   const projects = [
@@ -30,14 +31,16 @@ const ExclusiveProjectsSlider = () => {
   ];
 
   return (
-    <section className="bg-white pt-8 pb-20 px-4 md:px-12">
+    <section className="bg-white px-4 pb-10 pt-6 md:px-12 md:pb-12">
       <div className="max-w-360 mx-auto relative group">
         
         {/* SECTION HEADER */}
-        <div className="mb-10 ml-4 text-center">
-          <h2 className="text-gray-900 text-4xl font-serif font-semibold mb-2">Exclusive Off Projects</h2>
-          <p className="text-gray-400 text-lg">Dubai's premier institutional-grade opportunities.</p>
-        </div>
+        <SectionHeader
+          eyebrow="Off-Plan Portfolio"
+          title="Exclusive"
+          accent="Projects"
+          subtitle="Dubai's premier institutional-grade opportunities."
+        />
 
         {/* SWIPER CONTAINER */}
         <div className="relative px-2">
@@ -59,19 +62,19 @@ const ExclusiveProjectsSlider = () => {
           >
             {projects.map((project, idx) => (
               <SwiperSlide key={idx}>
-                <div className="relative h-115 rounded-[2.5rem] overflow-hidden group/card cursor-pointer shadow-lg border border-slate-100">
+                <div className="group/card relative h-115 cursor-pointer overflow-hidden rounded-xl border border-red-100/80 shadow-[0_8px_30px_rgba(227,30,36,0.08)] transition-shadow hover:shadow-[0_12px_40px_rgba(227,30,36,0.14)] md:rounded-2xl">
                   <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/card:scale-105" />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-black/10" />
                   
                   <div className="absolute inset-0 p-8 flex flex-col justify-end">
                     <h3 className="text-white text-2xl font-bold mb-4">{project.title}</h3>
                     <div className="space-y-3 mb-8 opacity-90 text-slate-200">
                       <div className="flex items-center gap-3"><Building2 size={18} /><span className="text-sm">{project.type}</span></div>
                       <div className="flex items-center gap-3"><BedDouble size={18} /><span className="text-sm">{project.beds} Beds</span></div>
-                      <div className="text-xl font-bold text-white">AED {project.price}</div>
+                      <div className="text-xl font-bold text-[#E31E24]">AED {project.price}</div>
                       <div className="flex items-center gap-3 opacity-70"><MapPin size={18} /><span className="text-sm truncate">{project.location}</span></div>
                     </div>
-                    <button className="w-full py-4 bg-white text-black font-bold rounded-2xl hover:bg-[#C5A059] hover:text-white transition-all shadow-md">
+                    <button className="w-full rounded-lg bg-white py-4 font-bold text-slate-900 shadow-md transition-all hover:bg-[#E31E24] hover:text-white">
                       Explore Details
                     </button>
                   </div>
@@ -81,33 +84,43 @@ const ExclusiveProjectsSlider = () => {
           </Swiper>
 
           {/* OVERLAY NAVIGATION ARROWS (Placed exactly where your red circles are) */}
-          <button className="custom-prev absolute left-5 top-1/2 -translate-y-1/2 z-50 p-4 bg-white/90 backdrop-blur-sm rounded-full shadow-xl text-black hover:bg-black hover:text-white transition-all border border-slate-100 cursor-pointer">
-            <ChevronLeft size={28} />
+          <button
+            type="button"
+            aria-label="Previous slide"
+            className="custom-prev absolute left-0 top-1/2 z-50 -translate-y-1/2 cursor-pointer p-1 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] transition-transform hover:scale-110 md:left-1"
+          >
+            <ChevronLeft size={36} strokeWidth={2.5} />
           </button>
-          
-          <button className="custom-next absolute right-5 top-1/2 -translate-y-1/2 z-50 p-4 bg-white/90 backdrop-blur-sm rounded-full shadow-xl text-black hover:bg-black hover:text-white transition-all border border-slate-100 cursor-pointer">
-            <ChevronRight size={28} />
+
+          <button
+            type="button"
+            aria-label="Next slide"
+            className="custom-next absolute right-0 top-1/2 z-50 -translate-y-1/2 cursor-pointer p-1 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] transition-transform hover:scale-110 md:right-1"
+          >
+            <ChevronRight size={36} strokeWidth={2.5} />
           </button>
         </div>
 
         {/* EXCLUSIVE LISTING — below main slider content */}
-        <div className="mt-14 mb-2 px-2 md:px-0">
-          <div className="mb-10 ml-4 text-center">
-            <h2 className="text-gray-900 text-4xl font-serif font-semibold mb-2">Exclusive Listing</h2>
-            <p className="text-gray-400 text-lg">Hand-picked properties across prime Dubai communities.</p>
-          </div>
+        <div className="mt-8 px-2 md:mt-10 md:px-0">
+          <SectionHeader
+            eyebrow="Curated Stock"
+            title="Exclusive"
+            accent="Listing"
+            subtitle="Hand-picked properties across prime Dubai communities."
+          />
           <div className="flex gap-4 overflow-x-auto pb-2 md:pb-0 md:overflow-visible snap-x snap-mandatory md:snap-none [-webkit-overflow-scrolling:touch]">
             {exclusiveListings.map((item, idx) => (
               <article
                 key={idx}
-                className="min-w-[240px] sm:min-w-[260px] md:min-w-0 md:flex-1 shrink-0 snap-start rounded-2xl overflow-hidden border border-slate-100 bg-white shadow-sm hover:shadow-md transition-shadow"
+                className="min-w-[240px] shrink-0 snap-start overflow-hidden rounded-2xl border border-red-50 bg-white shadow-sm transition-shadow hover:border-red-100 hover:shadow-[0_8px_24px_rgba(227,30,36,0.1)] sm:min-w-[260px] md:min-w-0 md:flex-1"
               >
                 <div className="relative aspect-[4/3]">
                   <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
                 </div>
                 <div className="p-4 text-left">
-                  <p className="text-gray-900 font-bold text-lg">AED {item.price}</p>
-                  <p className="text-gray-900 font-semibold text-sm mt-1 truncate">{item.title}</p>
+                  <p className="text-lg font-bold text-[#E31E24]">AED {item.price}</p>
+                  <p className="mt-1 truncate text-sm font-semibold text-slate-900">{item.title}</p>
                   <p className="text-gray-500 text-xs mt-0.5 flex items-center gap-1 truncate">
                     <MapPin size={12} className="shrink-0" />
                     {item.location}
@@ -116,10 +129,10 @@ const ExclusiveProjectsSlider = () => {
               </article>
             ))}
           </div>
-          <div className="mt-6 flex justify-center w-full">
+          <div className="mt-4 flex w-full justify-center">
             <Link
               href="/apartments"
-              className="inline-flex items-center justify-center w-full max-w-md py-3 px-8 rounded-2xl border-2 border-gray-900 text-gray-900 font-semibold text-sm uppercase tracking-widest hover:bg-gray-900 hover:text-white transition-colors"
+              className="inline-flex w-full max-w-md items-center justify-center rounded-2xl border-2 border-[#E31E24] px-8 py-3 text-sm font-semibold uppercase tracking-widest text-[#E31E24] transition-colors hover:bg-[#E31E24] hover:text-white"
             >
               Show more
             </Link>

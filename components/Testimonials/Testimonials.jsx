@@ -3,12 +3,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star } from "lucide-react";
+import SectionHeader from "@/components/SectionHeader/SectionHeader";
 
 const reviews = [
   {
     name: "Zeynep Saylan",
     time: "1 week ago",
-    text: "Working with Mahmoud Ramadan from RichKey Properties was a great experience. He’s extremely knowledgeable about the Dubai market and guided us with patience and clarity.",
+    text: "Working with Mahmoud Ramadan from RichKey Properties was a great experience. He's extremely knowledgeable about the Dubai market and guided us with patience and clarity.",
   },
   {
     name: "Rubina Mukhtar",
@@ -49,54 +50,36 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className=" relative w-full bg-white py-12 ">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-px bg-slate-300 z-10"></div>      
+    <section className="relative w-full bg-white py-10 md:py-12">
+      <div className="absolute left-1/2 top-0 z-10 h-px w-full max-w-2xl -translate-x-1/2 bg-red-100" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionHeader eyebrow="Client Stories" title="What Our" accent="Clients Say" />
 
-        {/* Heading */}
-        <h2
-          style={{ fontFamily: "'serif', 'Times New Roman', serif" }}
-          className="text-4xl font-semibold text-gray-900 mb-16 text-center"
-        >
-          What Our Clients Say
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-
-          {/* Company Card */}
-          <div>
-            <div className="flex items-center gap-4 mb-4">
-              <img
-                src="/images/logo.png"
-                className="w-16 h-16 rounded-full object-cover"
-              />
+        <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-3">
+          <div className="rounded-2xl border border-red-50 bg-white p-6 shadow-[0_8px_30px_rgba(227,30,36,0.06)]">
+            <div className="mb-4 flex items-center gap-4">
+              <img src="/images/logo.png" alt="GPG" className="h-16 w-16 rounded-full object-cover ring-2 ring-red-100" />
 
               <div>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  GPG Real Estate
-                </h3>
+                <h3 className="text-xl font-semibold text-slate-900">GPG Real Estate</h3>
 
-                <div className="flex items-center gap-1 text-yellow-500 mt-1">
+                <div className="mt-1 flex items-center gap-1 text-[#E31E24]">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={18} fill="currentColor" />
                   ))}
                 </div>
 
-                <p className="text-gray-500 text-sm mt-1">
-                  4.8 (200 reviews)
-                </p>
+                <p className="mt-1 text-sm text-slate-500">4.8 (200 reviews)</p>
               </div>
             </div>
 
-            <button className="mt-6 border border-yellow-500 text-gray-900 px-6 py-3 hover:bg-yellow-500 hover:text-white transition">
+            <button className="mt-6 border-2 border-[#E31E24] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-[#E31E24] transition hover:bg-[#E31E24] hover:text-white">
               Write a Review
             </button>
           </div>
 
-          {/* Sliding Reviews */}
-          <div className="md:col-span-2 relative overflow-hidden">
-
+          <div className="relative overflow-hidden md:col-span-2">
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
@@ -104,49 +87,34 @@ export default function Testimonials() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -80 }}
                 transition={{ duration: 0.6 }}
-                className="grid md:grid-cols-2 gap-10 items-stretch"
+                className="grid items-stretch gap-8 md:grid-cols-2 md:gap-10"
               >
-
-                {[reviews[index], reviews[(index + 1) % reviews.length]].map(
-                  (review, i) => (
-                    <div
-                      key={i}
-                      className="flex flex-col justify-between min-h-55"
-                    >
-
-                      <div>
-                        <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold text-gray-900">
-                            {review.name}
-                          </h4>
-
-                          <img src="/images/icon.svg" className="w-6" />
-                        </div>
-
-                        <div className="flex text-yellow-500 mb-2">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} size={16} fill="currentColor" />
-                          ))}
-                        </div>
-
-                        <p className="text-sm text-gray-500 mb-3">
-                          {review.time}
-                        </p>
-
-                        <p className="text-gray-700 leading-relaxed">
-                          {review.text}
-                        </p>
+                {[reviews[index], reviews[(index + 1) % reviews.length]].map((review, i) => (
+                  <div
+                    key={i}
+                    className="flex min-h-55 flex-col justify-between rounded-2xl border border-red-50 bg-white p-6 shadow-sm"
+                  >
+                    <div>
+                      <div className="mb-2 flex items-center justify-between">
+                        <h4 className="font-semibold text-slate-900">{review.name}</h4>
+                        <img src="/images/icon.svg" alt="" className="w-6" />
                       </div>
 
-                    </div>
-                  )
-                )}
+                      <div className="mb-2 flex text-[#E31E24]">
+                        {[...Array(5)].map((_, j) => (
+                          <Star key={j} size={16} fill="currentColor" />
+                        ))}
+                      </div>
 
+                      <p className="mb-3 text-sm text-slate-500">{review.time}</p>
+
+                      <p className="leading-relaxed text-slate-700">{review.text}</p>
+                    </div>
+                  </div>
+                ))}
               </motion.div>
             </AnimatePresence>
-
           </div>
-
         </div>
       </div>
     </section>
