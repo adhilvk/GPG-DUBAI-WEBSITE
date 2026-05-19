@@ -132,7 +132,7 @@ const ExclusiveProjectsSlider = () => {
           <div className="mt-4 flex w-full justify-center">
             <Link
               href="/apartments"
-              className="inline-flex w-full max-w-md items-center justify-center rounded-2xl border-2 border-[#E31E24] px-8 py-3 text-sm font-semibold uppercase tracking-widest text-[#E31E24] transition-colors hover:bg-[#E31E24] hover:text-white"
+              className="inline-flex items-center justify-center rounded-lg bg-[#E31E24] px-10 py-3 text-sm font-bold tracking-wide text-white shadow-sm transition-colors hover:bg-[#c81b20]"
             >
               Show more
             </Link>

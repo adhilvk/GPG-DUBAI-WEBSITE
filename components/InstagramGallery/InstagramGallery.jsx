@@ -57,7 +57,7 @@ const InstagramGallery = () => {
           />
           <button
             onClick={handleFollow}
-            className="shrink-0 bg-[#E31E24] px-8 py-2.5 text-sm font-bold uppercase tracking-wider text-white transition hover:bg-[#c81b20]"
+            className="shrink-0 rounded-lg bg-[#E31E24] px-10 py-3 text-sm font-bold tracking-wide text-white shadow-sm transition-colors hover:bg-[#c81b20]"
           >
             Follow
           </button>
