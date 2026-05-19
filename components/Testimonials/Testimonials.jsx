@@ -50,8 +50,8 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="relative w-full bg-white py-10 md:py-12">
-      <div className="absolute left-1/2 top-0 z-10 h-px w-full max-w-2xl -translate-x-1/2 bg-red-100" />
+    <section className="relative w-full bg-[#f5f6f8] py-10 md:py-12">
+      <div className="absolute left-1/2 top-0 z-10 h-px w-full max-w-2xl -translate-x-1/2 bg-slate-200/80" />
 
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader eyebrow="Client Stories" title="What Our" accent="Clients Say" />
@@ -62,7 +62,7 @@ export default function Testimonials() {
               <img src="/images/logo.png" alt="GPG" className="h-16 w-16 rounded-full object-cover ring-2 ring-red-100" />
 
               <div>
-                <h3 className="text-xl font-semibold text-slate-900">GPG Real Estate</h3>
+                <h3 className="text-xl font-semibold text-slate-900">GPG</h3>
 
                 <div className="mt-1 flex items-center gap-1 text-[#E31E24]">
                   {[...Array(5)].map((_, i) => (
@@ -74,7 +74,7 @@ export default function Testimonials() {
               </div>
             </div>
 
-            <button className="mt-6 border-2 border-[#E31E24] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-[#E31E24] transition hover:bg-[#E31E24] hover:text-white">
+            <button className="mt-6 rounded-lg border-2 border-[#E31E24] px-6 py-3 text-sm font-bold tracking-wide text-[#E31E24] transition hover:bg-[#E31E24] hover:text-white">
               Write a Review
             </button>
           </div>
