@@ -161,22 +161,22 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                   </div>
 
                   {/* LUXURY PROPERTIES */}
-                  <div className="flex items-center justify-between px-4 py-3 hover:bg-slate-50 rounded-2xl cursor-pointer transition-all text-slate-700 hover:text-[#002147] ">
+                  <Link href="/luxury-properties" className="flex items-center justify-between px-4 py-3 hover:bg-slate-50 rounded-2xl cursor-pointer transition-all text-slate-700 hover:text-[#002147] ">
                     <div className="flex items-center gap-4">
                       <Home size={20} />
                       <span className="text-[13px] uppercase tracking-widest">Luxury Properties</span>
                     </div>
                     <ChevronRight size={16} className="text-slate-300" />
-                  </div>
+                  </Link>
 
                   {/* READY PROPERTIES */}
-                  <div className="flex items-center justify-between px-4 py-3 hover:bg-slate-50 rounded-2xl cursor-pointer transition-all text-slate-700 hover:text-[#002147] ">
+                  <Link href="/ready-properties" className="flex items-center justify-between px-4 py-3 hover:bg-slate-50 rounded-2xl cursor-pointer transition-all text-slate-700 hover:text-[#002147] ">
                     <div className="flex items-center gap-4">
                       <Home size={20} />
                       <span className="text-[13px] uppercase tracking-widest">Ready Properties</span>
                     </div>
                     <ChevronRight size={16} className="text-slate-300" />
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -383,6 +383,8 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
             <Link href="/villas" className="block text-[#FF0000] text-sm">Villas</Link>
             <Link href="/offices" className="block text-[#FF0000] text-sm">Offices</Link>
             <Link href="/retails" className="block text-[#FF0000] text-sm">Retails</Link>
+            <Link href="/luxury-properties" className="block text-[#FF0000] text-sm">Luxury Properties</Link>
+            <Link href="/ready-properties" className="block text-[#FF0000] text-sm">Ready Properties</Link>
 
             <p className="text-[#002147] text-sm uppercase tracking-widest pt-4 ">Communities</p>
 

@@ -1,0 +1,142 @@
+/**
+ * Shared data for /offices listing and /offices/[slug] detail pages.
+ */
+
+const paragraph = (lines) => lines.join("\n\n");
+
+export const OFFICE_LISTINGS = [
+  {
+    slug: "business-bay-canal-view-office",
+    id: "o1",
+    images: ["/images/palmcentral.jpg", "/images/heightsbyemaar.webp", "/images/grandpolo.webp"],
+    price: 2450000,
+    features: "CANAL VIEW | FITTED | VACANT",
+    location: "Business Bay, Canal Front Tower",
+    mapQuery: "Business Bay, Dubai",
+    beds: 1,
+    baths: 2,
+    sqft: 1240,
+    dldPermit: "71694209100",
+    orn: "28601",
+    agentName: "Sarah Al-Mansoori",
+    agentPhoto: "https://i.pravatar.cc/320?img=47",
+    description: paragraph([
+      "A fitted office in Business Bay with direct canal outlook and efficient rectangular floor plate that supports open-plan and private cabin layouts.",
+      "The tower is positioned for easy access to Downtown, Sheikh Zayed Road, and metro links, making it suitable for owner-occupiers and long-term leased investment.",
+      "A practical acquisition for firms seeking a central Dubai corporate address with immediate occupancy.",
+    ]),
+  },
+  {
+    slug: "downtown-grade-a-office",
+    id: "o2",
+    images: ["/images/Riverside.jpg", "/images/palmcentral.jpg", "/images/heightsbyemaar.webp"],
+    price: 3850000,
+    features: "GRADE A | PARTITIONED | BURJ DISTRICT",
+    location: "Downtown Dubai, Boulevard Plaza",
+    mapQuery: "Downtown Dubai, Dubai",
+    beds: 2,
+    baths: 2,
+    sqft: 1780,
+    dldPermit: "71694209101",
+    orn: "28602",
+    agentName: "James Okonkwo",
+    agentPhoto: "https://i.pravatar.cc/320?img=12",
+    description: paragraph([
+      "A premium Grade A office in Downtown with high-end partitions, reception zone, and boardroom configuration ready for immediate operations.",
+      "Boulevard Plaza remains one of the most recognized corporate addresses in central Dubai with strong leasing demand from professional services and regional HQ tenants.",
+      "Well suited for owner-user positioning or stable yield strategies in a trophy location.",
+    ]),
+  },
+  {
+    slug: "difc-index-office-suite",
+    id: "o3",
+    images: ["/images/grandpolo.webp", "/images/heightsbyemaar.webp", "/images/Riverside.jpg"],
+    price: 7200000,
+    features: "DIFC ADDRESS | HIGH FLOOR | SHELL & CORE",
+    location: "DIFC, Index Tower",
+    mapQuery: "DIFC, Dubai",
+    beds: 3,
+    baths: 3,
+    sqft: 2520,
+    dldPermit: "71694209102",
+    orn: "28603",
+    agentName: "Elena Vasquez",
+    agentPhoto: "https://i.pravatar.cc/320?img=45",
+    description: paragraph([
+      "A high-floor shell-and-core office in DIFC with panoramic skyline exposure and flexible planning potential for institutional tenant specifications.",
+      "Index Tower offices benefit from premium business ecosystem access and proximity to legal, banking, and asset-management clusters.",
+      "Compelling for long-hold buyers prioritising scarcity and prime freehold commercial exposure.",
+    ]),
+  },
+  {
+    slug: "jlt-cluster-c-fitted-office",
+    id: "o4",
+    images: ["/images/heightsbyemaar.webp", "/images/grandpolo.webp", "/images/palmcentral.jpg"],
+    price: 1980000,
+    features: "FULLY FITTED | LAKE VIEW | CLOSE TO METRO",
+    location: "JLT, Cluster C",
+    mapQuery: "Jumeirah Lake Towers, Dubai",
+    beds: 1,
+    baths: 2,
+    sqft: 1165,
+    dldPermit: "71694209103",
+    orn: "28604",
+    agentName: "Sarah Al-Mansoori",
+    agentPhoto: "https://i.pravatar.cc/320?img=47",
+    description: paragraph([
+      "A move-in-ready fitted office in JLT Cluster C with lake views and direct access to F&B and transport links.",
+      "JLT remains a high-liquidity commercial market favored by SMEs and regional operators due to accessibility and price efficiency.",
+      "Strong option for buyers targeting recurring rental demand and manageable service charges.",
+    ]),
+  },
+  {
+    slug: "barsha-heights-serviced-office",
+    id: "o5",
+    images: ["/images/palmcentral.jpg", "/images/Riverside.jpg", "/images/grandpolo.webp"],
+    price: 1620000,
+    features: "SERVICED FLOOR | TURNKEY | HIGH ROI",
+    location: "Barsha Heights, HDS Tower",
+    mapQuery: "Barsha Heights, Dubai",
+    beds: 1,
+    baths: 1,
+    sqft: 980,
+    dldPermit: "71694209104",
+    orn: "28605",
+    agentName: "James Okonkwo",
+    agentPhoto: "https://i.pravatar.cc/320?img=12",
+    description: paragraph([
+      "A compact turnkey office in Barsha Heights with serviced-floor setup and efficient usable area for smaller teams.",
+      "The district offers strong corporate occupancy from technology, media, and consultancy tenants seeking central highway connectivity.",
+      "Attractive for value-oriented investors entering Dubai's commercial segment with lower ticket size.",
+    ]),
+  },
+  {
+    slug: "dubai-south-logistics-office",
+    id: "o6",
+    images: ["/images/Riverside.jpg", "/images/heightsbyemaar.webp", "/images/palmcentral.jpg"],
+    price: 2750000,
+    features: "FREEZONE PROXIMITY | NEW BUILDING | FLEXIBLE LAYOUT",
+    location: "Dubai South Business Park",
+    mapQuery: "Dubai South, Dubai",
+    beds: 2,
+    baths: 2,
+    sqft: 1690,
+    dldPermit: "71694209105",
+    orn: "28606",
+    agentName: "Elena Vasquez",
+    agentPhoto: "https://i.pravatar.cc/320?img=45",
+    description: paragraph([
+      "A modern office unit in Dubai South Business Park designed for logistics, aviation, and trade-linked occupiers.",
+      "The location benefits from ongoing infrastructure expansion around Al Maktoum International Airport and Expo City corridors.",
+      "Suitable for growth-stage companies and investors seeking medium-term upside in an emerging business district.",
+    ]),
+  },
+];
+
+export function getOfficeBySlug(slug) {
+  return OFFICE_LISTINGS.find((p) => p.slug === slug) ?? null;
+}
+
+export function getRelatedOffices(currentSlug, limit = 3) {
+  return OFFICE_LISTINGS.filter((p) => p.slug !== currentSlug).slice(0, limit);
+}

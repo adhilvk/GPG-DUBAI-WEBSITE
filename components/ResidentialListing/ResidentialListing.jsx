@@ -204,6 +204,8 @@ export default function ResidentialListing({ config }) {
     return list;
   }, [config.listings, sortBy]);
 
+  const breadcrumbGroup = config.breadcrumbGroup ?? "Residential";
+
   return (
     <main className="bg-white text-slate-900 pb-16">
       <section
@@ -242,7 +244,7 @@ export default function ResidentialListing({ config }) {
         >
           <span className="text-slate-600">Our Properties</span>
           <ChevronRight size={14} className="text-slate-300 shrink-0" />
-          <span className="text-slate-600">Residential</span>
+          <span className="text-slate-600">{breadcrumbGroup}</span>
           <ChevronRight size={14} className="text-slate-300 shrink-0" />
           <span className="font-semibold text-slate-900">{config.breadcrumbCurrent}</span>
         </nav>
