@@ -11,7 +11,7 @@ const TeamHero = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src="/images/ourteam.jpeg" 
-          alt="GPG Global Real Estate Team"
+          alt="GPG Real Estate Team"
           className="w-full h-full object-cover object-bottom opacity-80"
         />
         {/* Cinematic Gradient Overlay */}

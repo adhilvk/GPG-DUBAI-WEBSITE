@@ -87,7 +87,7 @@ const TrustedBrokerage = () => {
             <p>
               Our reputation as one of the most trusted brokerages in the UAE
               is built on transparency, performance, and long-term
-              relationships. Over the past 17 years, GPG Global has facilitated
+              relationships. Over the past 17 years, GPG has facilitated
               billions in premium property transactions while maintaining
               absolute loyalty to our investors and clients.
             </p>

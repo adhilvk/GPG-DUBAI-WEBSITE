@@ -244,7 +244,7 @@ export default function ResidentialDetail({ property, detailConfig }) {
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Listing agent</p>
                 <p className="text-lg font-semibold text-slate-900">{property.agentName}</p>
-                <p className="text-sm text-slate-600">GPG Global Real Estate</p>
+                <p className="text-sm text-slate-600">GPG Real Estate</p>
               </div>
             </div>
           </div>

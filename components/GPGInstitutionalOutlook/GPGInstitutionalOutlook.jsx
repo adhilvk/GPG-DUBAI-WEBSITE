@@ -29,7 +29,7 @@ const GPGInstitutionalOutlook = () => {
           <div className="flex-1 space-y-8 z-10">
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-light text-slate-900 leading-tight tracking-tight">
-                GPG Global <br />
+                GPG <br />
                 <span className="font-semibold text-[#E31E24]">Corporate Brochure</span>
               </h2>
               <div className="w-10 h-px bg-slate-300" />

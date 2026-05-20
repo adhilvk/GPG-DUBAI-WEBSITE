@@ -9,7 +9,7 @@ const ContactUsHero = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src="/images/contactus.jpg" 
-          alt="Contact GPG Global Real Estate" 
+          alt="Contact GPG Real Estate" 
           className="w-full h-full object-cover"
         />
         {/* Dark Gradient Overlay for Text Readability */}

@@ -22,7 +22,7 @@ const BuyRentCTA = () => {
             </h2>
             
             <p className="text-lg text-slate-600 mb-10 max-w-md leading-relaxed">
-              Step into luxury living with GPG Global. Our expert team is ready to help you find your perfect address in Dubai's most iconic locations.
+              Step into luxury living with GPG. Our expert team is ready to help you find your perfect address in Dubai&apos;s most iconic locations.
             </p>
 
             <motion.button 

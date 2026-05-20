@@ -170,7 +170,7 @@ const Footer = () => {
           <div className="grid gap-4 text-center text-[10px] md:text-xs text-[#E31E24] uppercase tracking-[0.2em] md:items-center md:grid-cols-3 md:gap-y-6">
 
             <p className="md:justify-self-start md:text-left">
-              © {new Date().getFullYear()} GPG Global Real Estate. All rights reserved.
+              © {new Date().getFullYear()} GPG Real Estate. All rights reserved.
             </p>
 
             {/* CENTER */}

@@ -37,7 +37,7 @@ const ContactFormSection = () => {
               allowFullScreen="" 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              title="GPG Global Real Estate Location"
+              title="GPG Real Estate Location"
             ></iframe>
           </motion.div>
 

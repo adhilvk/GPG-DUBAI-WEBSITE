@@ -18,7 +18,7 @@ const About = () => {
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-px bg-[#E31E24]"></div>
               <span className="text-[#E31E24] font-bold tracking-[0.2em] text-sm uppercase">
-                GPG GLOBAL 
+                GPG
               </span>
             </div>
 

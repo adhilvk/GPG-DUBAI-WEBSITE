@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
         </h1>
 
         <p className="text-white/70 mb-2 text-center">
-          <strong>GPG Global Real Estate</strong>
+          <strong>GPG Real Estate</strong>
         </p>
         <p className="text-white/70 mb-8 text-center">
           Effective Date: February 13, 2026
@@ -40,7 +40,7 @@ export default function PrivacyPolicy() {
         </h2>
 
         <p className="text-white/80 leading-relaxed mb-6">
-          GPG Global Real Estate (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy.
+          GPG Real Estate (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy.
           This Privacy Policy explains how we collect, use, disclose, and safeguard your information
           when you visit our website or interact with our services. We are a real estate brokerage
           company based in Business Bay, Dubai, United Arab Emirates.
@@ -211,7 +211,7 @@ export default function PrivacyPolicy() {
         </p>
 
         <p className="text-white/80 mb-6">
-          GPG Global Real Estate<br />
+          GPG Real Estate<br />
           Business Bay, Dubai, United Arab Emirates
         </p>
 
