@@ -3,38 +3,41 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Instagram, Play } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 
 const InstagramGallery = () => {
+  const { t } = useLanguage();
   const [selectedVideo, setSelectedVideo] = useState(null);
 
+  const captions = t("instagram.captions");
   const reels = [
     {
       id: 1,
       thumbnail: "/reels/thumb1.jpg",
       videoUrl:
         "https://res.cloudinary.com/dsldkspov/video/upload/v1772864903/video1_u6mv9a.mp4",
-      caption: "Exploring Dubai's most prime locations.",
+      caption: captions[0],
     },
     {
       id: 2,
       thumbnail: "/reels/thumb2.jpg",
       videoUrl:
         "https://res.cloudinary.com/dsldkspov/video/upload/v1772864992/video2_btc1dg.mp4",
-      caption: "Today's opportunities in the marketplace.",
+      caption: captions[1],
     },
     {
       id: 3,
       thumbnail: "/reels/thumb3.jpg",
       videoUrl:
         "https://res.cloudinary.com/dsldkspov/video/upload/v1772865013/video3_tru9f9.mp4",
-      caption: "Fast tracking our way to number one.",
+      caption: captions[2],
     },
     {
       id: 4,
       thumbnail: "/reels/thumb4.jpg",
       videoUrl:
         "https://res.cloudinary.com/dsldkspov/video/upload/v1772865031/video4_jkda8j.mp4",
-      caption: "Join a top-tier team at GPG.",
+      caption: captions[3],
     },
   ];
 
@@ -49,17 +52,16 @@ const InstagramGallery = () => {
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 flex flex-col items-start justify-between gap-4 border-b border-red-50 pb-5 sm:flex-row sm:items-end">
           <SectionHeader
-            eyebrow="Social"
-            title="Explore Our"
-            accent="Social Media"
-            subtitle="@xgpg.luxury"
-            className="!mb-0 text-left [&_h2]:text-left [&_p]:mx-0"
+            eyebrow={t("instagram.eyebrow")}
+            title={t("instagram.title")}
+            accent={t("instagram.accent")}
+            className="!mb-0 text-left [&_h2]:text-left"
           />
           <button
             onClick={handleFollow}
             className="shrink-0 rounded-lg bg-[#E31E24] px-10 py-3 text-sm font-bold tracking-wide text-white shadow-sm transition-colors hover:bg-[#c81b20]"
           >
-            Follow
+            {t("instagram.follow")}
           </button>
         </div>
 
@@ -133,7 +135,7 @@ const InstagramGallery = () => {
                   className="mt-6 flex w-full items-center justify-center space-x-2 rounded-lg bg-[#E31E24] py-4 font-bold text-white transition-colors hover:bg-[#c81b20]"
                 >
                   <Instagram size={20} />
-                  <span>View on Instagram</span>
+                  <span>{t("instagram.viewOnInstagram")}</span>
                 </button>
               </div>
             </motion.div>

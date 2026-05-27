@@ -38,17 +38,17 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
 
 const recentArticles = [
   {
-    title: "How to Resell Property in Dubai",
+    title: "Guide to Reselling Off-Plan Property in Dubai",
     href: "/HOWTORESELL",
-    image: "/images/palmcentral.jpg",
+    image: "/images/grandpolo.webp",
   },
   {
     title: "How to Invest in Dubai Real Estate",
     href: "/HOWTOINVEST",
-    image: "/images/grandpolo.webp",
+    image: "/images/prop2.jpg",
   },
   {
-    title: "Real Estate Guides Hub",
+    title: "Off Plan Properties in Dubai: A Beginner's Guide",
     href: "/guides",
     image: "/images/heightsbyemaar.webp",
   },

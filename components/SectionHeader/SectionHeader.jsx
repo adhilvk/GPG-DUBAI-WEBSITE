@@ -6,10 +6,7 @@ export default function SectionHeader({ eyebrow, title, accent, subtitle, classN
           {eyebrow}
         </p>
       )}
-      <h2
-        style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
-        className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl"
-      >
+      <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
         {title}
         {accent && (
           <>

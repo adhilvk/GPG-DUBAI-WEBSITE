@@ -2,23 +2,23 @@
 import { motion } from "framer-motion";
 import { Compass, BarChart3, GraduationCap, Award } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 
 const WhyWorkWithUs = () => {
+  const { t } = useLanguage();
   const features = [
-    { icon: <Compass strokeWidth={1.5} className="h-6 w-6" />, title: "Creatively Led" },
-    { icon: <BarChart3 strokeWidth={1.5} className="h-6 w-6" />, title: "Results Driven" },
-    { icon: <GraduationCap strokeWidth={1.5} className="h-6 w-6" />, title: "Market Experts" },
-    { icon: <Award strokeWidth={1.5} className="h-6 w-6" />, title: "Trusted Reputation" },
+    { icon: <Compass strokeWidth={1.5} className="h-6 w-6" />, title: t("whyWork.creativelyLed") },
+    { icon: <BarChart3 strokeWidth={1.5} className="h-6 w-6" />, title: t("whyWork.resultsDriven") },
+    { icon: <GraduationCap strokeWidth={1.5} className="h-6 w-6" />, title: t("whyWork.marketExperts") },
+    { icon: <Award strokeWidth={1.5} className="h-6 w-6" />, title: t("whyWork.trustedReputation") },
   ];
 
   return (
     <section className="bg-white px-4 py-10 md:px-12 md:py-14">
       <div className="mx-auto max-w-6xl">
         <SectionHeader
-          eyebrow="Our Difference"
-          title="Why Work"
-          accent="With Us"
-          subtitle="Institutional rigor with a partner-led approach to every mandate."
+          title={t("whyWork.title")}
+          accent={t("whyWork.accent")}
         />
 
         <div className="grid grid-cols-2 items-center justify-center gap-x-4 gap-y-12 md:grid-cols-4 md:gap-y-0">

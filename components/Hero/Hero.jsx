@@ -1,7 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
+import StatsBar from "@/components/StatsBar/StatsBar";
 
 const Hero = () => {
+  const { t } = useLanguage();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -59,43 +62,31 @@ const Hero = () => {
           >
             <div className="h-px w-10 bg-[#E31E24]" aria-hidden />
             <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#E31E24]">
-              GPG 
+              {t("hero.tagline")}
             </span>
             <div className="h-px w-10 bg-[#E31E24]" aria-hidden />
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
             className="text-3xl font-bold leading-tight tracking-tight text-white drop-shadow-lg sm:text-4xl md:text-5xl lg:text-7xl"
           >
-            Creating Wealth for{" "}
-            <span className="text-[#E31E24]">Generations</span>
+            {t("hero.title")}{" "}
+            <span className="text-[#E31E24]">{t("hero.titleAccent")}</span>
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/90 sm:text-base md:text-lg"
           >
-            Guiding investors and homeowners toward exceptional opportunities in Dubai&apos;s
-            evolving property landscape.
+            {t("hero.subtitle")}
           </motion.p>
+
+          <motion.div variants={itemVariants}>
+            <StatsBar variant="hero" />
+          </motion.div>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 1 }}
-        className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 md:block"
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-[9px] font-semibold uppercase tracking-[0.4em] text-white/50">
-            Scroll
-          </span>
-          <div className="h-12 w-px bg-linear-to-b from-[#E31E24] to-transparent" />
-        </div>
-      </motion.div>
     </section>
   );
 };

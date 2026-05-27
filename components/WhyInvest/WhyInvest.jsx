@@ -13,17 +13,19 @@ import {
   Globe,
 } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 
 const WhyInvest = () => {
+  const { t } = useLanguage();
   const features = [
-    { title: "Experience", icon: <Briefcase size={24} />, desc: "Over 50 years of combined excellence in global markets." },
-    { title: "Data Driven", icon: <BarChart3 size={24} />, desc: "Advice meticulously based on real-time market data and analytics." },
-    { title: "High Returns", icon: <TrendingUp size={24} />, desc: "Targeting consistent double-digit returns for our global investors." },
-    { title: "Inventory", icon: <Key size={24} />, desc: "Exclusive access to off-plan and ready developer inventory." },
-    { title: "Premium Edge", icon: <Home size={24} />, desc: "Sourcing premium properties tailored for elite buyers." },
-    { title: "Distress Deals", icon: <Tag size={24} />, desc: "Accessing out-of-market opportunities and high-value distress deals." },
-    { title: "Marketing", icon: <Megaphone size={24} />, desc: "Utilizing substantial budgets to ensure maximum property exposure." },
-    { title: "Global Network", icon: <Globe size={24} />, desc: "Leveraging our network of international business partners." },
+    { title: t("whyInvest.experience"), icon: <Briefcase size={24} />, desc: t("whyInvest.experienceDesc") },
+    { title: t("whyInvest.dataDriven"), icon: <BarChart3 size={24} />, desc: t("whyInvest.dataDrivenDesc") },
+    { title: t("whyInvest.highReturns"), icon: <TrendingUp size={24} />, desc: t("whyInvest.highReturnsDesc") },
+    { title: t("whyInvest.inventory"), icon: <Key size={24} />, desc: t("whyInvest.inventoryDesc") },
+    { title: t("whyInvest.premiumEdge"), icon: <Home size={24} />, desc: t("whyInvest.premiumEdgeDesc") },
+    { title: t("whyInvest.distressDeals"), icon: <Tag size={24} />, desc: t("whyInvest.distressDealsDesc") },
+    { title: t("whyInvest.marketing"), icon: <Megaphone size={24} />, desc: t("whyInvest.marketingDesc") },
+    { title: t("whyInvest.globalNetwork"), icon: <Globe size={24} />, desc: t("whyInvest.globalNetworkDesc") },
   ];
 
   return (
@@ -31,10 +33,9 @@ const WhyInvest = () => {
       <section className="invest-section">
         <div className="invest-container">
           <SectionHeader
-            eyebrow="Why GPG"
-            title="Why Invest"
-            accent="With Us"
-            subtitle="Institutional insight, global reach, and a partner-led approach to every mandate."
+            eyebrow={t("whyInvest.eyebrow")}
+            title={t("whyInvest.title")}
+            accent={t("whyInvest.accent")}
             className="!mb-6"
           />
 

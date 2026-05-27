@@ -4,41 +4,11 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
-
-const reviews = [
-  {
-    name: "Zeynep Saylan",
-    time: "1 week ago",
-    text: "Working with Mahmoud Ramadan from RichKey Properties was a great experience. He's extremely knowledgeable about the Dubai market and guided us with patience and clarity.",
-  },
-  {
-    name: "Rubina Mukhtar",
-    time: "4 weeks ago",
-    text: "Working with Abbas was a wonderful experience. He has deep knowledge of real estate and gave excellent advice from start to finish.",
-  },
-  {
-    name: "Amaan Ajmal",
-    time: "3 weeks ago",
-    text: "Had the pleasure of working with Abbas Bin Shahid while purchasing a property. His professionalism made the process extremely smooth.",
-  },
-  {
-    name: "Fatima Khan",
-    time: "2 months ago",
-    text: "Excellent service and guidance throughout the buying process. The team made everything very simple and transparent.",
-  },
-  {
-    name: "David Morgan",
-    time: "1 month ago",
-    text: "Professional real estate service with deep market understanding. Highly recommended for anyone investing in Dubai.",
-  },
-  {
-    name: "Omar Al Hassan",
-    time: "5 weeks ago",
-    text: "Fantastic experience dealing with the team. They helped us find the perfect property within our budget.",
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Testimonials() {
+  const { t } = useLanguage();
+  const reviews = t("testimonials.reviewsData");
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -54,7 +24,7 @@ export default function Testimonials() {
       <div className="absolute left-1/2 top-0 z-10 h-px w-full max-w-2xl -translate-x-1/2 bg-slate-200/80" />
 
       <div className="mx-auto max-w-7xl px-6">
-        <SectionHeader eyebrow="Client Stories" title="What Our" accent="Clients Say" />
+        <SectionHeader eyebrow={t("testimonials.eyebrow")} title={t("testimonials.title")} accent={t("testimonials.accent")} />
 
         <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-3">
           <div className="rounded-2xl border border-red-50 bg-white p-6 shadow-[0_8px_30px_rgba(227,30,36,0.06)]">
@@ -70,12 +40,12 @@ export default function Testimonials() {
                   ))}
                 </div>
 
-                <p className="mt-1 text-sm text-slate-500">4.8 (200 reviews)</p>
+                <p className="mt-1 text-sm text-slate-500">{t("testimonials.reviews")}</p>
               </div>
             </div>
 
             <button className="mt-6 rounded-lg border-2 border-[#E31E24] px-6 py-3 text-sm font-bold tracking-wide text-[#E31E24] transition hover:bg-[#E31E24] hover:text-white">
-              Write a Review
+              {t("testimonials.writeReview")}
             </button>
           </div>
 

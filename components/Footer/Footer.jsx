@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   Phone,
   Mail,
@@ -10,8 +11,10 @@ import {
   Linkedin,
   MessageCircle,
 } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
   const footerLinkStyles = `relative w-max cursor-pointer transition-all duration-300 text-[#FF0000] text-[13px] uppercase tracking-wider
   after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[1.5px] after:bg-[#E31E24] after:transition-all after:duration-300 hover:after:w-full`;
 
@@ -66,7 +69,7 @@ const Footer = () => {
             {/* CONTACT */}
             <div className="space-y-6">
               <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest">
-                Contact
+                {t("footer.contact")}
               </h3>
 
               <ul className="space-y-4 text-[#FF0000] text-[11px] uppercase tracking-widest">
@@ -103,59 +106,65 @@ const Footer = () => {
             {/* GUIDES */}
             <div>
               <h3 className="text-sm font-bold text-slate-900 mb-8 uppercase tracking-widest">
-                Guides
+                {t("footer.guides")}
               </h3>
 
               <ul className="space-y-4 text-[11px]">
-                <li className={footerLinkStyles}>Investment Guide</li>
-                <li className={footerLinkStyles}>Off-Plan Property Guide</li>
-                <li className={footerLinkStyles}>Property Legal Process</li>
-                <li className={footerLinkStyles}>Rental Yield Guide</li>
+                <li className={footerLinkStyles}>{t("footer.investmentGuide")}</li>
+                <li className={footerLinkStyles}>{t("footer.offPlanGuide")}</li>
+                <li className={footerLinkStyles}>{t("footer.legalProcess")}</li>
+                <li className={footerLinkStyles}>{t("footer.rentalYieldGuide")}</li>
               </ul>
             </div>
 
             {/* QUICK LINKS */}
             <div>
               <h3 className="text-sm font-bold text-slate-900 mb-8 uppercase tracking-widest">
-                Quick Links
+                {t("footer.quickLinks")}
               </h3>
 
               <ul className="space-y-4 text-[11px]">
-                <li className={footerLinkStyles}>Home</li>
-                <li className={footerLinkStyles}>About Us</li>
-                <li className={footerLinkStyles}>Properties</li>
-                <li className={footerLinkStyles}>Investments</li>
-                <li className={footerLinkStyles}>Contact</li>
+                <li>
+                  <Link href="/" className={footerLinkStyles}>{t("footer.home")}</Link>
+                </li>
+                <li>
+                  <Link href="/about" className={footerLinkStyles}>{t("footer.aboutUs")}</Link>
+                </li>
+                <li className={footerLinkStyles}>{t("footer.properties")}</li>
+                <li className={footerLinkStyles}>{t("footer.investments")}</li>
+                <li>
+                  <Link href="/contact-us" className={footerLinkStyles}>{t("footer.contactLink")}</Link>
+                </li>
               </ul>
             </div>
 
             {/* SERVICES */}
             <div>
               <h3 className="text-sm font-bold text-slate-900 mb-8 uppercase tracking-widest">
-                Services
+                {t("footer.services")}
               </h3>
 
               <ul className="space-y-4 text-[11px]">
-                <li className={footerLinkStyles}>Property Buying</li>
-                <li className={footerLinkStyles}>Property Selling</li>
-                <li className={footerLinkStyles}>Investment Advisory</li>
-                <li className={footerLinkStyles}>Property Management</li>
+                <li className={footerLinkStyles}>{t("footer.propertyBuying")}</li>
+                <li className={footerLinkStyles}>{t("footer.propertySelling")}</li>
+                <li className={footerLinkStyles}>{t("footer.investmentAdvisory")}</li>
+                <li className={footerLinkStyles}>{t("footer.propertyManagement")}</li>
               </ul>
             </div>
 
             {/* PROPERTY TYPES */}
             <div>
               <h3 className="text-sm font-bold text-slate-900 mb-8 uppercase tracking-widest">
-                Property Types
+                {t("footer.propertyTypes")}
               </h3>
 
               <ul className="space-y-4 text-[11px]">
-                <li className={footerLinkStyles}>Apartments in Dubai</li>
-                <li className={footerLinkStyles}>Penthouses in Dubai</li>
-                <li className={footerLinkStyles}>Townhouses in Dubai</li>
-                <li className={footerLinkStyles}>Villas in Dubai</li>
-                <li className={footerLinkStyles}>Land Plots in Dubai</li>
-                <li className={footerLinkStyles}>Buildings in Dubai</li>
+                <li className={footerLinkStyles}>{t("footer.apartmentsDubai")}</li>
+                <li className={footerLinkStyles}>{t("footer.penthousesDubai")}</li>
+                <li className={footerLinkStyles}>{t("footer.townhousesDubai")}</li>
+                <li className={footerLinkStyles}>{t("footer.villasDubai")}</li>
+                <li className={footerLinkStyles}>{t("footer.landPlotsDubai")}</li>
+                <li className={footerLinkStyles}>{t("footer.buildingsDubai")}</li>
               </ul>
             </div>
 
@@ -170,7 +179,7 @@ const Footer = () => {
           <div className="grid gap-4 text-center text-[10px] md:text-xs text-[#E31E24] uppercase tracking-[0.2em] md:items-center md:grid-cols-3 md:gap-y-6">
 
             <p className="md:justify-self-start md:text-left">
-              © {new Date().getFullYear()} GPG Real Estate. All rights reserved.
+              © {new Date().getFullYear()} {t("footer.copyright")}
             </p>
 
             {/* CENTER */}
@@ -195,11 +204,11 @@ const Footer = () => {
             <div className="flex gap-6 justify-center md:justify-self-end">
 
               <span className="hover:text-slate-900 cursor-pointer transition-colors">
-                Privacy Policy
+                {t("footer.privacyPolicy")}
               </span>
 
               <span className="hover:text-slate-900 cursor-pointer transition-colors">
-                Terms of Service
+                {t("footer.termsOfService")}
               </span>
 
             </div>

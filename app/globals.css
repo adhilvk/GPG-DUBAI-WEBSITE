@@ -24,3 +24,37 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+[dir="rtl"] {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+[dir="rtl"] .after\:left-0::after {
+  left: auto;
+  right: 0;
+}
+
+.home-page {
+  --home-font: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  font-family: var(--home-font);
+}
+
+[dir="rtl"] .home-page {
+  --home-font: "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+.home-page h1,
+.home-page h2,
+.home-page h3,
+.home-page h4,
+.home-page h5,
+.home-page h6,
+.home-page p,
+.home-page span,
+.home-page button,
+.home-page a,
+.home-page label,
+.home-page input {
+  font-family: inherit;
+}

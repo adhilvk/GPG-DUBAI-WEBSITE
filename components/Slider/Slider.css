@@ -1,85 +1,168 @@
 .slider-section {
+  --slider-bg: #f3f4f6;
+
   position: relative;
-  padding: 36px 0 24px;
-  background-color: #ffffff;
-  overflow: hidden;
+  padding: 28px 0 40px;
+  background-color: var(--slider-bg);
+  overflow-x: hidden;
+  overflow-y: visible;
   width: 100%;
 }
 
-.slider-section::before,
-.slider-section::after {
+.slider-inner {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+.slider-header {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  min-width: clamp(5.5rem, 11vw, 8.5rem);
+}
+
+[dir="rtl"] .slider-header {
+  text-align: right;
+}
+
+.home-page .slider-section .slider-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2em;
+  margin: 0;
+  font-family: inherit;
+  font-size: clamp(1.125rem, 1.65vw, 1.375rem);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: #4a4a4a;
+}
+
+[dir="rtl"] .slider-heading {
+  align-items: flex-end;
+}
+
+.slider-heading__line {
+  display: block;
+}
+
+.marquee-container {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: visible;
+  padding-block: 4px;
+}
+
+.marquee-container::before,
+.marquee-container::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 80px;
+  width: 48px;
   z-index: 2;
   pointer-events: none;
 }
 
-.slider-section::before {
+.marquee-container::before {
   left: 0;
-  background: linear-gradient(to right, #ffffff, transparent);
+  background: linear-gradient(to right, var(--slider-bg), transparent);
 }
 
-.slider-section::after {
+.marquee-container::after {
   right: 0;
-  background: linear-gradient(to left, #ffffff, transparent);
+  background: linear-gradient(to left, var(--slider-bg), transparent);
 }
 
-.slider-title {
-  text-align: center;
-  color: #e31e24;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.35em;
-  margin-bottom: 28px;
-}
+@media (max-width: 640px) {
+  .slider-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 
-.marquee-container {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
+  .slider-header {
+    min-width: 0;
+  }
+
+  .marquee-container {
+    width: 100%;
+  }
 }
 
 .marquee-content {
   display: flex;
-  width: 100%;
+  width: max-content;
   align-items: center;
   animation: scroll-left 40s linear infinite;
 }
 
-.logo-item {
-  flex-shrink: 0;
-  width: 190px;
+.logo-brand {
+  --logo-height: clamp(32px, 4vw, 42px);
+  --logo-width: clamp(130px, 14vw, 165px);
+  --logo-gap: clamp(16px, 2.5vw, 28px);
+  --logo-frame-padding: 6px;
+
+  flex: 0 0 calc(var(--logo-width) + var(--logo-gap));
+  width: calc(var(--logo-width) + var(--logo-gap));
+  padding-inline: calc(var(--logo-gap) / 2);
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 0 30px;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
-.brand-image {
-  max-height: 38px;
-  max-width: 140px;
+.logo-brand__frame {
+  width: var(--logo-width);
+  min-height: calc(var(--logo-height) + (var(--logo-frame-padding) * 2));
+  padding-block: var(--logo-frame-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.logo-brand__image-wrap {
+  width: 100%;
+  height: var(--logo-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.logo-brand__image {
+  display: block;
+  height: var(--logo-height);
   width: auto;
-  height: auto;
+  max-width: 100%;
   object-fit: contain;
+  object-position: center;
+  transform-origin: center center;
   filter: grayscale(100%);
   opacity: 0.55;
-  transition: all 0.35s ease;
+  transition: filter 0.35s ease, opacity 0.35s ease;
 }
 
-.brand-image:hover {
+.logo-brand:hover .logo-brand__image {
   filter: grayscale(0%);
   opacity: 1;
-  transform: scale(1.05);
 }
 
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
