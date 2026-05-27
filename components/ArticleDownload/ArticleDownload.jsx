@@ -31,6 +31,9 @@ export default function ArticleDownload() {
               </>
             ) : null}
           </h2>
+          <p className="article-download__note">
+            Waiting for the content to be mentioned.
+          </p>
           <a
             href={ARTICLE_PDF}
             download
