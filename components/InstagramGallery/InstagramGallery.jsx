@@ -1,9 +1,28 @@
 "use client";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Instagram, Play } from "lucide-react";
+import { X, Instagram, Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import { useLanguage } from "@/context/LanguageContext";
+
+import "swiper/css";
+import "swiper/css/navigation";
+
+const ReelCard = ({ reel, onSelect }) => (
+  <motion.div
+    whileHover={{ y: -4 }}
+    className="group relative h-[340px] w-full cursor-pointer overflow-hidden rounded-xl border border-red-50 shadow-sm transition-shadow hover:shadow-[0_12px_32px_rgba(227,30,36,0.12)] sm:h-[380px] md:h-[420px]"
+    onClick={() => onSelect(reel)}
+  >
+    <img src={reel.thumbnail} alt="Reel" className="h-full w-full object-cover" />
+    <div className="absolute inset-0 flex items-center justify-center bg-[#E31E24]/0 opacity-0 transition-all group-hover:bg-[#E31E24]/30 group-hover:opacity-100">
+      <Play className="h-10 w-10 fill-white text-white md:h-12 md:w-12" />
+    </div>
+  </motion.div>
+);
 
 const InstagramGallery = () => {
   const { t } = useLanguage();
@@ -55,9 +74,11 @@ const InstagramGallery = () => {
             eyebrow={t("instagram.eyebrow")}
             title={t("instagram.title")}
             accent={t("instagram.accent")}
+            linesAlign="left"
             className="!mb-0 text-left [&_h2]:text-left"
           />
           <button
+            type="button"
             onClick={handleFollow}
             className="shrink-0 rounded-lg bg-[#E31E24] px-10 py-3 text-sm font-bold tracking-wide text-white shadow-sm transition-colors hover:bg-[#c81b20]"
           >
@@ -65,19 +86,45 @@ const InstagramGallery = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        {/* Mobile: 2 wider reels + plain arrows */}
+        <div className="relative -mx-3 px-8 md:hidden">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={12}
+            slidesPerView="auto"
+            navigation={{
+              prevEl: ".reels-prev",
+              nextEl: ".reels-next",
+            }}
+          >
+            {reels.map((reel) => (
+              <SwiperSlide key={reel.id} className="!w-[46vw] max-w-none shrink-0">
+                <ReelCard reel={reel} onSelect={setSelectedVideo} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <button
+            type="button"
+            aria-label="Previous reel"
+            className="reels-prev absolute left-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer text-[#E31E24] transition-transform hover:scale-110"
+          >
+            <ChevronLeft size={28} strokeWidth={2.5} />
+          </button>
+
+          <button
+            type="button"
+            aria-label="Next reel"
+            className="reels-next absolute right-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer text-[#E31E24] transition-transform hover:scale-110"
+          >
+            <ChevronRight size={28} strokeWidth={2.5} />
+          </button>
+        </div>
+
+        {/* Desktop: 4-column grid */}
+        <div className="hidden gap-4 md:grid md:grid-cols-4">
           {reels.map((reel) => (
-            <motion.div
-              key={reel.id}
-              whileHover={{ y: -4 }}
-              className="group relative h-100 cursor-pointer overflow-hidden rounded-xl border border-red-50 shadow-sm transition-shadow hover:shadow-[0_12px_32px_rgba(227,30,36,0.12)]"
-              onClick={() => setSelectedVideo(reel)}
-            >
-              <img src={reel.thumbnail} alt="Reel" className="h-full w-full object-cover" />
-              <div className="absolute inset-0 flex items-center justify-center bg-[#E31E24]/0 opacity-0 transition-all group-hover:bg-[#E31E24]/30 group-hover:opacity-100">
-                <Play className="h-12 w-12 fill-white text-white" />
-              </div>
-            </motion.div>
+            <ReelCard key={reel.id} reel={reel} onSelect={setSelectedVideo} />
           ))}
         </div>
       </div>
@@ -91,6 +138,7 @@ const InstagramGallery = () => {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 md:p-10"
           >
             <button
+              type="button"
               onClick={() => setSelectedVideo(null)}
               className="absolute right-6 top-6 text-white hover:text-red-200"
             >
@@ -131,6 +179,7 @@ const InstagramGallery = () => {
                 </div>
 
                 <button
+                  type="button"
                   onClick={handleFollow}
                   className="mt-6 flex w-full items-center justify-center space-x-2 rounded-lg bg-[#E31E24] py-4 font-bold text-white transition-colors hover:bg-[#c81b20]"
                 >

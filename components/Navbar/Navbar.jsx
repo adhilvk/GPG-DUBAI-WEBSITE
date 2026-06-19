@@ -6,8 +6,6 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import {
   ChevronRight,
-  Building2,
-  Home,
   Briefcase,
   Landmark,
   Hotel,
@@ -64,6 +62,14 @@ const Navbar = () => {
     { key: "ourAwards", link: "/awards" },
     { key: "newsMedia", link: "/news" },
     { key: "contactUs", link: "/contact-us" },
+  ];
+
+  const propertyLinks = [
+    { key: "villas", href: "/villas", icon: Landmark },
+    { key: "townhouses", href: "/townhouses", icon: Warehouse },
+    { key: "apartments", href: "/apartments", icon: Hotel },
+    { key: "offices", href: "/offices", icon: Briefcase },
+    { key: "retails", href: "/retails", icon: Briefcase },
   ];
 
   // UPDATED: Scrolled color is now Red (#FF0000), and added underline logic via Tailwind
@@ -139,81 +145,27 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
 
                 {/* RIGHT SIDE: Navigation Links */}
                 <div className="flex-1 space-y-1">
-                  <p className="px-4 py-2 text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-1">
-                    {t("nav.propertyTypes")}
-                  </p>
-
-                  {/* RESIDENTIAL */}
-                  <div className="relative group/res">
-                    <div className="flex items-center justify-between px-4 py-3 hover:bg-slate-50 rounded-2xl cursor-pointer transition-all text-slate-700 group-hover/res:text-[#002147] group-hover/res:bg-[#002147]/5">
-                      <div className="flex items-center gap-4">
-                        <Home size={20} className="transition-colors" />
-                        <span className="text-[13px] uppercase tracking-widest">
-                          {t("nav.residential")}
-                        </span>
-                      </div>
-                      <ChevronRight size={16} className="text-slate-300 group-hover/res:translate-x-1 transition-transform" />
-                    </div>
-
-                    {/* SUBMENU */}
-                    <div className="absolute top-0 left-full ml-4 w-56 bg-white rounded-3xl border border-slate-100 shadow-2xl py-2 opacity-0 invisible group-hover/res:opacity-100 group-hover/res:visible transition-all duration-300 translate-x-4 group-hover/res:translate-x-0">
-                      <Link href="/apartments" className="px-4 py-3 hover:bg-slate-50 flex items-center gap-3 text-slate-700 hover:text-[#002147] transition-colors">
-                        <Hotel size={18} className="text-[#002147]" />
-                        <span className="uppercase text-[12px] tracking-wider">{t("nav.apartments")}</span>
+                  {propertyLinks.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.key}
+                        href={item.href}
+                        className="flex items-center justify-between px-4 py-3 hover:bg-slate-50 rounded-2xl cursor-pointer transition-all text-slate-700 hover:text-[#002147] group/item"
+                      >
+                        <div className="flex items-center gap-4">
+                          <Icon size={20} className="text-[#002147]" />
+                          <span className="text-[13px] uppercase tracking-widest">
+                            {t(`nav.${item.key}`)}
+                          </span>
+                        </div>
+                        <ChevronRight
+                          size={16}
+                          className="text-slate-300 opacity-0 transition-all group-hover/item:translate-x-1 group-hover/item:opacity-100"
+                        />
                       </Link>
-                      <Link href="/townhouses" className="px-4 py-3 hover:bg-slate-50 flex items-center gap-3 text-slate-700 hover:text-[#002147] transition-colors">
-                        <Warehouse size={18} className="text-[#002147]" />
-                        <span className="uppercase text-[12px] tracking-wider">{t("nav.townhouses")}</span>
-                      </Link>
-                      <Link href="/villas" className="px-4 py-3 hover:bg-slate-50 flex items-center gap-3 text-slate-700 hover:text-[#002147] transition-colors">
-                        <Landmark size={18} className="text-[#002147]" />
-                        <span className="uppercase text-[12px] tracking-wider">{t("nav.villas")}</span>
-                      </Link>
-                    </div>
-                  </div>
-
-                  {/* COMMERCIAL */}
-                  <div className="relative group/com">
-                    <div className="flex items-center justify-between px-4 py-3 hover:bg-slate-50 rounded-2xl cursor-pointer transition-all text-slate-700 group-hover/com:text-[#002147] group-hover/com:bg-[#002147]/5">
-                      <div className="flex items-center gap-4">
-                        <Building2 size={20} />
-                        <span className="text-[13px] uppercase tracking-widest">
-                          {t("nav.commercial")}
-                        </span>
-                      </div>
-                      <ChevronRight size={16} className="text-slate-300 group-hover/com:translate-x-1 transition-transform" />
-                    </div>
-
-                    {/* SUBMENU */}
-                    <div className="absolute top-0 left-full ml-4 w-72 bg-white rounded-3xl border border-slate-100 shadow-2xl py-3 opacity-0 invisible group-hover/com:opacity-100 group-hover/com:visible transition-all duration-300 translate-x-4 group-hover/com:translate-x-0">
-                      <Link href="/offices" className="px-6 py-4 hover:bg-slate-50 flex items-center gap-4 text-slate-700 hover:text-[#002147] transition-colors group/link">
-                        <Briefcase size={18} className="text-[#002147]" />
-                        <span className="uppercase text-[12px] tracking-wider">{t("nav.offices")}</span>
-                      </Link>
-                      <Link href="/retails" className="px-6 py-4 hover:bg-slate-50 flex items-center gap-4 text-slate-700 hover:text-[#002147] transition-colors group/link">
-                        <Briefcase size={18} className="text-[#002147]" />
-                        <span className="uppercase text-[12px] tracking-wider">{t("nav.retails")}</span>
-                      </Link>
-                    </div>
-                  </div>
-
-                  {/* LUXURY PROPERTIES */}
-                  <Link href="/luxury-properties" className="flex items-center justify-between px-4 py-3 hover:bg-slate-50 rounded-2xl cursor-pointer transition-all text-slate-700 hover:text-[#002147] ">
-                    <div className="flex items-center gap-4">
-                      <Home size={20} />
-                      <span className="text-[13px] uppercase tracking-widest">{t("nav.luxuryProperties")}</span>
-                    </div>
-                    <ChevronRight size={16} className="text-slate-300" />
-                  </Link>
-
-                  {/* READY PROPERTIES */}
-                  <Link href="/ready-properties" className="flex items-center justify-between px-4 py-3 hover:bg-slate-50 rounded-2xl cursor-pointer transition-all text-slate-700 hover:text-[#002147] ">
-                    <div className="flex items-center gap-4">
-                      <Home size={20} />
-                      <span className="text-[13px] uppercase tracking-widest">{t("nav.readyProperties")}</span>
-                    </div>
-                    <ChevronRight size={16} className="text-slate-300" />
-                  </Link>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -412,7 +364,7 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                 className="flex items-center gap-2 bg-[#E31E24] text-white text-xs font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#c81b20] transition-all duration-300"
               >
                 <Download size={14} />
-                {t("nav.companyProfile")}
+                {t("nav.downloads")}
                 <ChevronDown size={14} className={`transition-transform ${downloadOpen ? "rotate-180" : ""}`} />
               </button>
               {downloadOpen && (
@@ -475,14 +427,12 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
 
             <Link href="/" className="block text-[#002147] uppercase text-sm ">{t("nav.home")}</Link>
 
-            <p className="text-[#002147] text-sm uppercase tracking-widest pt-4 ">{t("nav.projects")}</p>
-            <Link href="/apartments" className="block text-[#FF0000] text-sm">{t("nav.apartments")}</Link>
-            <Link href="/townhouses" className="block text-[#FF0000] text-sm">{t("nav.townhouses")}</Link>
-            <Link href="/villas" className="block text-[#FF0000] text-sm">{t("nav.villas")}</Link>
-            <Link href="/offices" className="block text-[#FF0000] text-sm">{t("nav.offices")}</Link>
-            <Link href="/retails" className="block text-[#FF0000] text-sm">{t("nav.retails")}</Link>
-            <Link href="/luxury-properties" className="block text-[#FF0000] text-sm">{t("nav.luxuryProperties")}</Link>
-            <Link href="/ready-properties" className="block text-[#FF0000] text-sm">{t("nav.readyProperties")}</Link>
+            <p className="text-[#002147] text-sm uppercase tracking-widest pt-4 ">{t("nav.ourProperties")}</p>
+            {propertyLinks.map((item) => (
+              <Link key={item.key} href={item.href} className="block text-[#FF0000] text-sm">
+                {t(`nav.${item.key}`)}
+              </Link>
+            ))}
 
             <p className="text-[#002147] text-sm uppercase tracking-widest pt-4 ">{t("nav.ourCommunities")}</p>
 

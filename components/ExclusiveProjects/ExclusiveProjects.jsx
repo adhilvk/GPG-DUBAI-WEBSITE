@@ -1,128 +1,287 @@
 "use client";
-import React from "react";
-import { MapPin, ChevronLeft, ChevronRight } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
+import "./ExclusiveProjects.css";
 
-import "swiper/css";
-import "swiper/css/navigation";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import ArticleDownload from "@/components/ArticleDownload/ArticleDownload";
 import { useLanguage } from "@/context/LanguageContext";
 
-const ProjectCard = ({ project, t, showExplore = true }) => (
-  <article className="group/card h-full overflow-hidden rounded-2xl border border-red-50 bg-white shadow-sm transition-shadow hover:border-red-100 hover:shadow-[0_8px_24px_rgba(227,30,36,0.1)]">
-    <div className="relative aspect-[4/3] overflow-hidden">
-      <img
-        src={project.image}
-        alt={project.title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover/card:scale-105"
-      />
+const PropertyCardBody = ({ project }) => (
+  <div className="exclusive-card-body">
+    <p className="exclusive-card-body__price">AED {project.price}</p>
+    <p className="exclusive-card-body__title">{project.title}</p>
+    <p className="exclusive-card-body__location">
+      <MapPin size={12} className="shrink-0" />
+      {project.location}
+    </p>
+  </div>
+);
+
+const ExclusivePropertyCard = ({ project }) => (
+  <article className="group/card relative h-full overflow-visible rounded-2xl border border-red-50 bg-white shadow-sm transition-shadow hover:border-red-100 hover:shadow-[0_8px_24px_rgba(227,30,36,0.1)]">
+    <div className="relative aspect-[4/3] overflow-visible rounded-t-2xl">
+      <div className="absolute inset-0 overflow-hidden rounded-t-2xl">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="h-full w-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+        />
+      </div>
+      {project.plan ? <span className="trending-ribbon">{project.plan}</span> : null}
     </div>
-    <div className="p-4 text-left">
-      <p className="text-lg font-bold text-[#E31E24]">AED {project.price}</p>
-      <p className="mt-1 truncate text-sm font-semibold text-slate-900">{project.title}</p>
-      {project.type && project.beds && (
-        <p className="mt-1 text-xs text-slate-500">
-          {project.type} · {project.beds} {t("exclusiveProjects.beds")}
-        </p>
-      )}
-      <p className="mt-1 flex items-center gap-1 truncate text-xs text-gray-500">
-        <MapPin size={12} className="shrink-0" />
-        {project.location}
-      </p>
-      {showExplore && (
-        <button
-          type="button"
-          className="mt-4 w-full rounded-lg border border-red-100 py-2.5 text-xs font-bold uppercase tracking-wide text-[#E31E24] transition-colors hover:bg-[#E31E24] hover:text-white"
-        >
-          {t("exclusiveProjects.exploreDetails")}
-        </button>
-      )}
-    </div>
+    <PropertyCardBody project={project} />
   </article>
 );
 
+const TrendingProjectCard = ExclusivePropertyCard;
+const LuxuryListingCard = ExclusivePropertyCard;
+
+const CARD_GAP = 20;
+const AUTO_SCROLL_SPEED = 0.55;
+const ARROW_SCROLL_DURATION = 450;
+const ARROW_PAUSE_MS = 2000;
+
+function MarqueeSlider({ items, renderItem, getItemKey, resetKey, prevLabel, nextLabel, cardClassName = "" }) {
+  const trackRef = useRef(null);
+  const offsetRef = useRef(0);
+  const isPausedRef = useRef(false);
+  const isAnimatingRef = useRef(false);
+  const rafRef = useRef(null);
+  const resumeTimeoutRef = useRef(null);
+
+  const loopingItems = useMemo(() => [...items, ...items], [items]);
+
+  const getHalfWidth = useCallback(() => {
+    const track = trackRef.current;
+    return track ? track.scrollWidth / 2 : 0;
+  }, []);
+
+  const getScrollStep = useCallback(() => {
+    const card = trackRef.current?.querySelector(".exclusive-card-slot");
+    return card ? card.offsetWidth + CARD_GAP : 290;
+  }, []);
+
+  const normalizeOffset = useCallback(() => {
+    const half = getHalfWidth();
+    if (half <= 0) return;
+
+    while (offsetRef.current <= -half) {
+      offsetRef.current += half;
+    }
+
+    while (offsetRef.current > 0) {
+      offsetRef.current -= half;
+    }
+  }, [getHalfWidth]);
+
+  const applyTransform = useCallback(() => {
+    const track = trackRef.current;
+    if (track) {
+      track.style.transform = `translate3d(${offsetRef.current}px, 0, 0)`;
+    }
+  }, []);
+
+  const pauseAutoScroll = useCallback((duration = ARROW_PAUSE_MS) => {
+    isPausedRef.current = true;
+
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+    }
+
+    resumeTimeoutRef.current = setTimeout(() => {
+      isPausedRef.current = false;
+      resumeTimeoutRef.current = null;
+    }, duration);
+  }, []);
+
+  const scroll = useCallback(
+    (direction) => {
+      if (isAnimatingRef.current) return;
+
+      const step = getScrollStep();
+      const start = offsetRef.current;
+      const target = start - direction * step;
+
+      isAnimatingRef.current = true;
+      pauseAutoScroll();
+
+      const startTime = performance.now();
+
+      const animate = (now) => {
+        const progress = Math.min((now - startTime) / ARROW_SCROLL_DURATION, 1);
+        const eased = 1 - (1 - progress) ** 3;
+
+        offsetRef.current = start + (target - start) * eased;
+        normalizeOffset();
+        applyTransform();
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          isAnimatingRef.current = false;
+        }
+      };
+
+      requestAnimationFrame(animate);
+    },
+    [applyTransform, getScrollStep, normalizeOffset, pauseAutoScroll]
+  );
+
+  useEffect(() => {
+    offsetRef.current = 0;
+    applyTransform();
+
+    const tick = () => {
+      if (!isPausedRef.current && !isAnimatingRef.current) {
+        offsetRef.current -= AUTO_SCROLL_SPEED;
+        normalizeOffset();
+        applyTransform();
+      }
+
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    };
+  }, [resetKey, applyTransform, normalizeOffset]);
+
+  return (
+    <div
+      className="trending-slider"
+      onMouseEnter={() => {
+        isPausedRef.current = true;
+      }}
+      onMouseLeave={() => {
+        if (!isAnimatingRef.current && !resumeTimeoutRef.current) {
+          isPausedRef.current = false;
+        }
+      }}
+    >
+      <button
+        type="button"
+        className="trending-slider__arrow"
+        onClick={() => scroll(-1)}
+        aria-label={prevLabel}
+      >
+        <ChevronLeft size={28} strokeWidth={2} />
+      </button>
+
+      <div className="trending-slider__viewport" key={resetKey}>
+        <div className="trending-marquee__track" ref={trackRef}>
+          {loopingItems.map((item, idx) => (
+            <div
+              key={`${getItemKey(item)}-${idx}`}
+              className={`exclusive-card-slot ${cardClassName}`.trim()}
+            >
+              {renderItem(item)}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <button
+        type="button"
+        className="trending-slider__arrow"
+        onClick={() => scroll(1)}
+        aria-label={nextLabel}
+      >
+        <ChevronRight size={28} strokeWidth={2} />
+      </button>
+    </div>
+  );
+}
+
 const ExclusiveProjectsSlider = () => {
   const { t } = useLanguage();
-  const projects = [
-    { title: "Emaar South", type: "Villa", beds: "3, 4", price: "2.1M", location: "Emaar South", image: "/images/heightsbyemaar.webp" },
-    { title: "The Oasis", type: "Mansion", beds: "5, 6", price: "12M", location: "The Oasis by Emaar", image: "/images/palmcentral.jpg" },
-    { title: "Sobha Hartland", type: "Apartment", beds: "1, 2, 3", price: "1.8M", location: "MBR City", image: "/images/grandpolo.webp" },
-    { title: "Dubai Hills", type: "Villa", beds: "4, 5", price: "4.5M", location: "Dubai Hills Estate", image: "/images/Riverside.jpg" },
-    { title: "The Heights", type: "Villa", beds: "3, 4, 5", price: "TBA", location: "The Heights", image: "/images/heightsbyemaar.webp" },
-    { title: "Palm Jebel Ali", type: "Apartment", beds: "1-5", price: "2.5M", location: "Palm Jebel Ali", image: "/images/palmcentral.jpg" },
-    { title: "Grand Polo", type: "Villa", beds: "3, 4, 5", price: "5.7M", location: "Grand Polo Club", image: "/images/grandpolo.webp" },
-    { title: "Damac Riverside", type: "Townhouse", beds: "1-5", price: "1.5M", location: "Damac Riverside", image: "/images/Riverside.jpg" },
+  const [activeTab, setActiveTab] = useState("villas");
+
+  const tabs = [
+    { key: "villas", label: "Villas" },
+    { key: "townhouses", label: "Townhouses" },
+    { key: "apartments", label: "Apartments" },
   ];
 
-  const exclusiveListings = [
-    { title: "Hills Park", location: "Dubai Hills Estate", price: "1.6M", image: "/images/heightsbyemaar.webp" },
-    { title: "Marina Views", location: "Dubai Marina", price: "3.95M", image: "/images/palmcentral.jpg" },
-    { title: "South Bay", location: "Dubai South", price: "16M", image: "/images/grandpolo.webp" },
-    { title: "Sobha Hartland II", location: "MBR City, Dubai", price: "1.85M", image: "/images/Riverside.jpg" },
+  const trendingProjects = [
+    { title: "Palm Cluster Villas", location: "Palm Jebel Ali", price: "7.9M", image: "/images/heightsbyemaar.webp", plan: "65 / 35 Payment Plan", category: "villas" },
+    { title: "Canal Edge Villas", location: "Dubai Water Canal", price: "6.1M", image: "/images/palmcentral.jpg", plan: "55 / 45 Payment Plan", category: "villas" },
+    { title: "Grand Polo Villas", location: "Grand Polo Club", price: "5.7M", image: "/images/grandpolo.webp", plan: "60 / 40 Payment Plan", category: "villas" },
+    { title: "Sobha Reserve Villas", location: "Dubailand", price: "8.4M", image: "/images/Riverside.jpg", plan: "70 / 30 Payment Plan", category: "villas" },
+    { title: "Emaar South Townhouses", location: "Dubai South", price: "3.4M", image: "/images/grandpolo.webp", plan: "70 / 30 Payment Plan", category: "townhouses" },
+    { title: "Riverside Townhouses", location: "Damac Riverside", price: "2.9M", image: "/images/Riverside.jpg", plan: "60 / 40 Payment Plan", category: "townhouses" },
+    { title: "The Valley Townhouses", location: "The Valley", price: "2.7M", image: "/images/heightsbyemaar.webp", plan: "65 / 35 Payment Plan", category: "townhouses" },
+    { title: "Nad Al Sheba Gardens", location: "Nad Al Sheba", price: "4.1M", image: "/images/palmcentral.jpg", plan: "60 / 40 Payment Plan", category: "townhouses" },
+    { title: "Burj Binghatti", location: "Binghatti", price: "8M", image: "/images/palmcentral.jpg", plan: "60 / 40 Payment Plan", category: "apartments" },
+    { title: "Mercedes-Benz Places", location: "Binghatti City", price: "8.8M", image: "/images/Riverside.jpg", plan: "70 / 30 Payment Plan", category: "apartments" },
+    { title: "Sobha Hartland II", location: "MBR City", price: "1.85M", image: "/images/grandpolo.webp", plan: "55 / 45 Payment Plan", category: "apartments" },
+    { title: "Marina Views", location: "Dubai Marina", price: "3.95M", image: "/images/heightsbyemaar.webp", plan: "50 / 50 Payment Plan", category: "apartments" },
   ];
+
+  const luxuryListings = [
+    { title: "Hills Park", location: "Dubai Hills Estate", price: "1.6M", image: "/images/heightsbyemaar.webp", plan: "60 / 40 Payment Plan" },
+    { title: "Marina Views", location: "Dubai Marina", price: "3.95M", image: "/images/palmcentral.jpg", plan: "50 / 50 Payment Plan" },
+    { title: "South Bay", location: "Dubai South", price: "16M", image: "/images/grandpolo.webp", plan: "70 / 30 Payment Plan" },
+    { title: "Sobha Hartland II", location: "MBR City, Dubai", price: "1.85M", image: "/images/Riverside.jpg", plan: "55 / 45 Payment Plan" },
+  ];
+
+  const filteredProjects = useMemo(
+    () => trendingProjects.filter((project) => project.category === activeTab),
+    [activeTab]
+  );
 
   return (
     <section className="bg-white px-4 pb-16 pt-12 md:px-12 md:pb-20 md:pt-16">
-      <div className="max-w-360 mx-auto relative group">
-        <SectionHeader
-          title={t("exclusiveProjects.title")}
-          accent={t("exclusiveProjects.accent")}
-        />
+      <div className="max-w-360 mx-auto">
+        <div className="px-2 md:px-0">
+          <SectionHeader title="Most Trending Projects" accent="in UAE" />
 
-        <div className="relative px-2">
-          <Swiper
-            modules={[Autoplay, Navigation]}
-            spaceBetween={20}
-            slidesPerView={1}
-            loop={true}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
-            navigation={{
-              prevEl: ".custom-prev",
-              nextEl: ".custom-next",
-            }}
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-              1280: { slidesPerView: 4 },
-            }}
-          >
-            {projects.map((project, idx) => (
-              <SwiperSlide key={idx} className="h-auto">
-                <ProjectCard project={project} t={t} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="mb-8 flex justify-center">
+            <div className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-slate-50 p-1">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.key}
+                  type="button"
+                  onClick={() => setActiveTab(tab.key)}
+                  className={`rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-wide transition-colors ${
+                    activeTab === tab.key
+                      ? "bg-[#E31E24] text-white"
+                      : "text-slate-700 hover:bg-slate-200"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </div>
 
-          <button
-            type="button"
-            aria-label="Previous slide"
-            className="custom-prev absolute left-0 top-[calc(50%-4rem)] z-50 -translate-y-1/2 cursor-pointer rounded-full bg-white/95 p-1 text-[#E31E24] shadow-md transition-transform hover:scale-110 md:left-1"
-          >
-            <ChevronLeft size={32} strokeWidth={2.5} />
-          </button>
-
-          <button
-            type="button"
-            aria-label="Next slide"
-            className="custom-next absolute right-0 top-[calc(50%-4rem)] z-50 -translate-y-1/2 cursor-pointer rounded-full bg-white/95 p-1 text-[#E31E24] shadow-md transition-transform hover:scale-110 md:right-1"
-          >
-            <ChevronRight size={32} strokeWidth={2.5} />
-          </button>
-        </div>
-
-        <div className="mt-14 border-t border-slate-100 px-2 pt-12 md:mt-16 md:px-0 md:pt-14">
-          <SectionHeader
-            title={t("exclusiveProjects.listingTitle")}
-            accent={t("exclusiveProjects.listingAccent")}
+          <MarqueeSlider
+            items={filteredProjects}
+            renderItem={(item) => <ExclusivePropertyCard project={item} />}
+            getItemKey={(item) => `${activeTab}-${item.title}`}
+            resetKey={activeTab}
+            prevLabel="Previous projects"
+            nextLabel="Next projects"
+            cardClassName="trending-marquee__card"
           />
-          <div className="flex gap-4 overflow-x-auto pb-2 md:pb-0 md:overflow-visible snap-x snap-mandatory md:snap-none [-webkit-overflow-scrolling:touch]">
-            {exclusiveListings.map((item, idx) => (
-              <div key={idx} className="min-w-[240px] shrink-0 snap-start sm:min-w-[260px] md:min-w-0 md:flex-1">
-                <ProjectCard project={item} t={t} showExplore={false} />
-              </div>
-            ))}
+
+          <div className="mt-14 border-t border-slate-100 pt-12 md:mt-16 md:pt-14">
+            <SectionHeader
+              title={t("exclusiveProjects.listingTitle")}
+              accent={t("exclusiveProjects.listingAccent")}
+            />
+            <MarqueeSlider
+              items={luxuryListings}
+              renderItem={(item) => <ExclusivePropertyCard project={item} />}
+              getItemKey={(item) => item.title}
+              resetKey="luxury"
+              prevLabel="Previous luxury listings"
+              nextLabel="Next luxury listings"
+              cardClassName="trending-marquee__card"
+            />
           </div>
 
           <ArticleDownload />

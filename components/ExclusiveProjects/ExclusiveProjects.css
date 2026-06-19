@@ -1,0 +1,152 @@
+.trending-slider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-inline: clamp(0.5rem, 2vw, 1.25rem);
+}
+
+.trending-slider__arrow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border: none;
+  background: transparent;
+  color: #475569;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.trending-slider__arrow:hover {
+  color: #e31e24;
+}
+
+.trending-slider__viewport {
+  flex: 1;
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+  padding: 0.5rem 0.25rem 0;
+}
+
+.trending-marquee__track {
+  display: flex;
+  width: max-content;
+  gap: 1.25rem;
+  padding-inline: 0.25rem;
+  will-change: transform;
+}
+
+/* Shared card width — matches luxury listings 4-up row */
+.exclusive-card-slot {
+  width: min(70vw, 240px);
+  flex: 0 0 auto;
+}
+
+@media (min-width: 640px) {
+  .exclusive-card-slot {
+    width: 260px;
+  }
+}
+
+@media (min-width: 768px) {
+  .exclusive-card-slot {
+    width: calc((min(100vw - 6rem, 90rem) - 3 * 1rem) / 4);
+  }
+}
+
+.trending-marquee__card {
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.exclusive-card-body {
+  padding: 1rem;
+  text-align: left;
+}
+
+.exclusive-card-body__price {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: #e31e24;
+}
+
+.exclusive-card-body__title {
+  margin-top: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.exclusive-card-body__location {
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #6b7280;
+}
+
+/* Folded corner ribbon — emerges from card edge, drapes over top */
+.trending-ribbon {
+  position: absolute;
+  top: 0.875rem;
+  left: 0;
+  z-index: 20;
+  display: inline-block;
+  max-width: calc(100% - 0.5rem);
+  padding: 0.42rem 1rem 0.42rem 0.75rem;
+  background: #e31e24;
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(227, 30, 36, 0.35);
+  transform: translateX(-0.375rem);
+}
+
+/* Bottom-left fold — ribbon wraps behind the card */
+.trending-ribbon::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.375rem 0 0 0.375rem;
+  border-color: #a8161c transparent transparent #a8161c;
+}
+
+/* Top-left fold — ribbon tucks behind the card top edge */
+.trending-ribbon::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 0.375rem 0.375rem;
+  border-color: transparent transparent #c41920 #c41920;
+}
+
+@media (min-width: 768px) {
+  .trending-slider {
+    gap: 0.75rem;
+    padding-inline: 1rem;
+  }
+}

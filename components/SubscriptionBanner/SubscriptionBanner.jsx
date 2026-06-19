@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+
 import { useLanguage } from "@/context/LanguageContext";
+import { HeadingRedLines } from "@/components/SectionHeader/SectionHeader";
 
 const SubscriptionBanner = () => {
   const { t } = useLanguage();
@@ -14,6 +15,7 @@ const SubscriptionBanner = () => {
           <h2 className="text-3xl font-semibold tracking-tight text-black md:text-4xl">
             {t("subscription.title")} <span className="text-[#E31E24]">{t("subscription.accent")}</span>
           </h2>
+          <HeadingRedLines align="left" />
         </div>
 
         <div className="w-full flex-1 lg:max-w-2xl">

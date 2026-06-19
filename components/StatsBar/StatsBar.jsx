@@ -27,10 +27,10 @@ const StatsBar = ({ variant = "default" }) => {
   const { t } = useLanguage();
   const isHero = variant === "hero";
   const stats = [
-    { value: 3000, label: t("stats.happyCustomers"), suffix: "+" },
-    { value: 324, label: t("stats.premiumDevelopers"), suffix: "+" },
-    { value: 200, label: t("stats.propertyExperts"), suffix: "+" },
-    { value: 30, label: t("stats.languages"), suffix: "+" },
+    { value: 600, label: t("stats.happyCustomers"), suffix: "+" },
+    { value: 100, label: t("stats.premiumDevelopers"), suffix: "+" },
+    { value: 300, label: t("stats.returnOnInvestments"), suffix: "%" },
+    { value: 20, label: t("stats.industryExperience"), suffix: "+" },
   ];
 
   if (isHero) {

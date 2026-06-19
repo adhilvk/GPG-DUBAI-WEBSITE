@@ -1,4 +1,22 @@
-export default function SectionHeader({ eyebrow, title, accent, subtitle, className = "" }) {
+export function HeadingRedLines({ align = "center", className = "" }) {
+  const alignClass = align === "left" ? "mr-auto" : "mx-auto";
+
+  return (
+    <div
+      className={`mt-4 h-px w-16 bg-[#E31E24] md:w-20 ${alignClass} ${className}`}
+      aria-hidden
+    />
+  );
+}
+
+export default function SectionHeader({
+  eyebrow,
+  title,
+  accent,
+  subtitle,
+  className = "",
+  linesAlign = "center",
+}) {
   return (
     <div className={`mb-6 md:mb-8 text-center ${className}`}>
       {eyebrow && (
@@ -15,6 +33,7 @@ export default function SectionHeader({ eyebrow, title, accent, subtitle, classN
           </>
         )}
       </h2>
+      <HeadingRedLines align={linesAlign} />
       {subtitle && (
         <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-500 md:text-base">{subtitle}</p>
       )}
