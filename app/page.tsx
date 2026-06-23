@@ -4,7 +4,6 @@ import ExclusiveProjects from "@/components/ExclusiveProjects/ExclusiveProjects"
 import Slider from "@/components/Slider/Slider";
 import WhyInvest from "@/components/WhyInvest/WhyInvest";
 import Testimonials from "@/components/Testimonials/Testimonials";
-import WhyWorkWithUs from "@/components/WhyWorkWithUs/WhyWorkWithUs";
 import InstagramGallery from "@/components/InstagramGallery/InstagramGallery";
 import SubscriptionBanner from "@/components/SubscriptionBanner/SubscriptionBanner";
 import Footer from "@/components/Footer/Footer";
@@ -19,7 +18,6 @@ export default function Home() {
         <Slider />
         <WhyInvest />
         <ExclusiveProjects />
-        <WhyWorkWithUs />
         <Testimonials />
         <InstagramGallery />
         <SubscriptionBanner />

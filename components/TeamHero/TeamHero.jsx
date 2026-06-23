@@ -5,48 +5,39 @@ import { ChevronDown } from 'lucide-react';
 
 const TeamHero = () => {
   return (
-    <section className="relative w-full h-[60vh] md:h-[80vh] bg-black overflow-hidden flex flex-col justify-end">
+    <section className="relative flex h-[60vh] w-full flex-col items-center justify-end overflow-hidden bg-black pb-14 md:h-[80vh] md:pb-16">
       
       {/* 1. BACKGROUND IMAGE: Ultra-wide team shot */}
       <div className="absolute inset-0 z-0">
         <img 
           src="/images/ourteam.jpeg" 
           alt="GPG Real Estate Team"
-          className="w-full h-full object-cover object-bottom opacity-80"
+          className="h-full w-full object-cover object-bottom opacity-80"
         />
         {/* Cinematic Gradient Overlay */}
-        <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-black/20" />
       </div>
 
       {/* 2. CONTENT OVERLAY */}
-      <div className="absolute bottom-10 left-10 z-10 max-w-xl px-6">
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1, ease: "easeOut" }}
-    className="text-left"
-  >
-    {/* Institutional Tag */}
-    <div className="flex items-center gap-3 mb-3">
-      <div className="w-10 h-px bg-[#E31E24]" />
-      <span className="text-[#E31E24] text-[10px] font-bold tracking-[0.25em] uppercase">
-        The Force Behind the Vision
-      </span>
-    </div>
+      <div className="relative z-10 px-4 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <div className="mb-5 flex items-center justify-center gap-3">
+            <div className="h-px w-10 bg-[#E31E24]" aria-hidden />
+            <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#E31E24]">
+              The Force Behind the Vision
+            </span>
+            <div className="h-px w-10 bg-[#E31E24]" aria-hidden />
+          </div>
 
-    <h1
-      style={{ fontFamily: "'serif', 'Times New Roman', serif" }}
-      className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4"
-    >
-      MEET OUR <span className="text-[#E31E24]">EXPERTS</span>
-    </h1>
-
-    <p className="text-gray-300 text-xs md:text-sm max-w-md leading-relaxed">
-      A collective of highly qualified advisors consistently analyzing market changes to
-      provide top-tier professional guidance UAE's luxury landscape.
-    </p>
-  </motion.div>
-</div>
+          <h1 className="text-3xl font-bold leading-tight tracking-tight text-white drop-shadow-lg sm:text-4xl md:text-5xl lg:text-7xl">
+            Meet Our <span className="text-[#E31E24]">Experts</span>
+          </h1>
+        </motion.div>
+      </div>
 
       {/* 3. SCROLL INDICATOR */}
       <motion.div 

@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import ResidentialListing from "@/components/ResidentialListing/ResidentialListing";
-import { luxuryListingConfig } from "@/lib/residentialListingConfig";
+import LuxuryListingsGrid from "@/components/LuxuryListingsGrid/LuxuryListingsGrid";
 
 export const metadata: Metadata = {
-  title: "Luxury Properties | Ultra Prime Homes | GPG",
-  description:
-    "Browse luxury properties in Dubai, including mansions and ultra-prime villas in prestigious communities.",
+  title: "Luxury Listings | GPG",
+  description: "Browse luxury property listings across prime Dubai communities.",
 };
 
 export default function LuxuryPropertiesPage() {
   return (
     <>
       <Navbar />
-      <ResidentialListing config={luxuryListingConfig} />
+      <Suspense fallback={<div className="min-h-screen bg-white pt-28" />}>
+        <LuxuryListingsGrid />
+      </Suspense>
       <Footer />
     </>
   );

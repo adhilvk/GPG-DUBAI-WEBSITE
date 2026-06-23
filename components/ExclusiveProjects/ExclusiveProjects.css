@@ -61,6 +61,39 @@
   overflow: visible;
 }
 
+.exclusive-card-slot.luxury-marquee__card {
+  width: min(88vw, 300px);
+}
+
+@media (min-width: 640px) {
+  .exclusive-card-slot.luxury-marquee__card {
+    width: 320px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .exclusive-card-slot.luxury-marquee__card {
+    width: 340px;
+  }
+}
+
+/* Awards — two cards span the same width as four luxury listing cards */
+.exclusive-card-slot.awards-marquee__card {
+  width: min(88vw, 620px);
+}
+
+@media (min-width: 640px) {
+  .exclusive-card-slot.awards-marquee__card {
+    width: calc(320px * 2 + 1.25rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .exclusive-card-slot.awards-marquee__card {
+    width: calc(340px * 2 + 1.25rem);
+  }
+}
+
 .exclusive-card-body {
   padding: 1rem;
   text-align: left;

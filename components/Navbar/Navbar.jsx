@@ -52,10 +52,9 @@ const Navbar = () => {
   }, []);
 
   const guideLinks = [
-    { key: "howToBuyOffPlan", link: "/HOWTOBUYOFFPLAN" },
-    { key: "howToResell", link: "/HOWTORESELL" },
-    { key: "realEstateGuides", link: "/guides" },
-    { key: "howToInvest", link: "/HOWTOINVEST" },
+    { key: "offPlan", link: "/HOWTOBUYOFFPLAN" },
+    { key: "resale", link: "/HOWTORESELL" },
+    { key: "rental", link: "/guides" },
   ];
 
   const moreLinks = [

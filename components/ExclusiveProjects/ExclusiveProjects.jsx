@@ -1,11 +1,15 @@
 "use client";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import "./ExclusiveProjects.css";
 
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import ArticleDownload from "@/components/ArticleDownload/ArticleDownload";
 import { useLanguage } from "@/context/LanguageContext";
+import { LUXURY_LISTING_PROJECTS } from "@/data/luxuryListingProjects";
+import LuxuryProjectCard from "@/components/LuxuryProjectCard/LuxuryProjectCard";
+import OurAwards from "@/components/OurAwards/OurAwards";
 
 const PropertyCardBody = ({ project }) => (
   <div className="exclusive-card-body">
@@ -35,7 +39,22 @@ const ExclusivePropertyCard = ({ project }) => (
 );
 
 const TrendingProjectCard = ExclusivePropertyCard;
-const LuxuryListingCard = ExclusivePropertyCard;
+
+const trendingCategoryLinks = {
+  villas: "/villas",
+  townhouses: "/townhouses",
+  apartments: "/apartments",
+};
+
+const ViewAllButton = ({ href, label }) => (
+  <Link
+    href={href}
+    className="inline-flex items-center gap-1.5 rounded-lg border border-[#E31E24] px-6 py-2.5 text-[11px] font-bold uppercase tracking-wide text-[#E31E24] transition-colors hover:bg-[#E31E24] hover:text-white sm:px-8 sm:text-xs"
+  >
+    {label}
+    <ChevronRight size={14} />
+  </Link>
+);
 
 const CARD_GAP = 20;
 const AUTO_SCROLL_SPEED = 0.55;
@@ -221,12 +240,7 @@ const ExclusiveProjectsSlider = () => {
     { title: "Marina Views", location: "Dubai Marina", price: "3.95M", image: "/images/heightsbyemaar.webp", plan: "50 / 50 Payment Plan", category: "apartments" },
   ];
 
-  const luxuryListings = [
-    { title: "Hills Park", location: "Dubai Hills Estate", price: "1.6M", image: "/images/heightsbyemaar.webp", plan: "60 / 40 Payment Plan" },
-    { title: "Marina Views", location: "Dubai Marina", price: "3.95M", image: "/images/palmcentral.jpg", plan: "50 / 50 Payment Plan" },
-    { title: "South Bay", location: "Dubai South", price: "16M", image: "/images/grandpolo.webp", plan: "70 / 30 Payment Plan" },
-    { title: "Sobha Hartland II", location: "MBR City, Dubai", price: "1.85M", image: "/images/Riverside.jpg", plan: "55 / 45 Payment Plan" },
-  ];
+  const luxuryListings = LUXURY_LISTING_PROJECTS;
 
   const filteredProjects = useMemo(
     () => trendingProjects.filter((project) => project.category === activeTab),
@@ -237,51 +251,65 @@ const ExclusiveProjectsSlider = () => {
     <section className="bg-white px-4 pb-16 pt-12 md:px-12 md:pb-20 md:pt-16">
       <div className="max-w-360 mx-auto">
         <div className="px-2 md:px-0">
-          <SectionHeader title="Most Trending Projects" accent="in UAE" />
+          <OurAwards />
 
-          <div className="mb-8 flex justify-center">
-            <div className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-slate-50 p-1">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.key}
-                  type="button"
-                  onClick={() => setActiveTab(tab.key)}
-                  className={`rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-wide transition-colors ${
-                    activeTab === tab.key
-                      ? "bg-[#E31E24] text-white"
-                      : "text-slate-700 hover:bg-slate-200"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
+          <SectionHeader
+            title={t("exclusiveProjects.listingTitle")}
+            accent={t("exclusiveProjects.listingAccent")}
+          />
+          <MarqueeSlider
+            items={luxuryListings}
+            renderItem={(item) => <LuxuryProjectCard project={item} compact />}
+            getItemKey={(item) => item.id}
+            resetKey="luxury"
+            prevLabel="Previous luxury listings"
+            nextLabel="Next luxury listings"
+            cardClassName="luxury-marquee__card"
+          />
+          <div className="mt-8 flex justify-center">
+            <ViewAllButton
+              href="/luxury-properties"
+              label={t("exclusiveProjects.viewAllProjects")}
+            />
           </div>
 
-          <MarqueeSlider
-            items={filteredProjects}
-            renderItem={(item) => <ExclusivePropertyCard project={item} />}
-            getItemKey={(item) => `${activeTab}-${item.title}`}
-            resetKey={activeTab}
-            prevLabel="Previous projects"
-            nextLabel="Next projects"
-            cardClassName="trending-marquee__card"
-          />
-
           <div className="mt-14 border-t border-slate-100 pt-12 md:mt-16 md:pt-14">
-            <SectionHeader
-              title={t("exclusiveProjects.listingTitle")}
-              accent={t("exclusiveProjects.listingAccent")}
-            />
+            <SectionHeader title="Most Trending Projects" accent="in UAE" />
+
+            <div className="mb-8 flex justify-center">
+              <div className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-slate-50 p-1">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab.key}
+                    type="button"
+                    onClick={() => setActiveTab(tab.key)}
+                    className={`rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-wide transition-colors ${
+                      activeTab === tab.key
+                        ? "bg-[#E31E24] text-white"
+                        : "text-slate-700 hover:bg-slate-200"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <MarqueeSlider
-              items={luxuryListings}
+              items={filteredProjects}
               renderItem={(item) => <ExclusivePropertyCard project={item} />}
-              getItemKey={(item) => item.title}
-              resetKey="luxury"
-              prevLabel="Previous luxury listings"
-              nextLabel="Next luxury listings"
+              getItemKey={(item) => `${activeTab}-${item.title}`}
+              resetKey={activeTab}
+              prevLabel="Previous projects"
+              nextLabel="Next projects"
               cardClassName="trending-marquee__card"
             />
+            <div className="mt-8 flex justify-center">
+              <ViewAllButton
+                href={trendingCategoryLinks[activeTab]}
+                label={t("exclusiveProjects.viewAllProjects")}
+              />
+            </div>
           </div>
 
           <ArticleDownload />

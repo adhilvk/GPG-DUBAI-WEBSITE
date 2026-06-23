@@ -30,7 +30,7 @@ const StatsBar = ({ variant = "default" }) => {
     { value: 600, label: t("stats.happyCustomers"), suffix: "+" },
     { value: 100, label: t("stats.premiumDevelopers"), suffix: "+" },
     { value: 300, label: t("stats.returnOnInvestments"), suffix: "%" },
-    { value: 20, label: t("stats.industryExperience"), suffix: "+" },
+    { value: 20, label: t("stats.industryExperience"), suffix: "+", unit: t("stats.yrs") },
   ];
 
   if (isHero) {
@@ -50,10 +50,17 @@ const StatsBar = ({ variant = "default" }) => {
               className="flex min-w-0 flex-1 flex-col items-center justify-center px-2 py-1 text-center sm:px-3 md:px-5"
             >
               <p
-                className={`mb-1 flex shrink-0 items-center justify-center gap-0.5 whitespace-nowrap text-xl tracking-tight sm:text-2xl md:text-3xl ${numberColor}`}
+                className={`mb-1 flex shrink-0 items-baseline justify-center gap-0.5 whitespace-nowrap text-xl tracking-tight sm:text-2xl md:text-3xl ${numberColor}`}
               >
                 <Counter value={item.value} className={numberColor} />
                 <span className={numberColor}>{item.suffix}</span>
+                {item.unit ? (
+                  <span
+                    className={`ml-0.5 text-[8px] font-semibold uppercase leading-snug tracking-[0.14em] sm:text-[9px] md:text-[10px] ${labelColor}`}
+                  >
+                    {item.unit}
+                  </span>
+                ) : null}
               </p>
               <p
                 className={`w-full text-[8px] font-semibold uppercase leading-snug tracking-[0.14em] sm:text-[9px] md:text-[10px] ${labelColor}`}
@@ -85,10 +92,15 @@ const StatsBar = ({ variant = "default" }) => {
               )}
 
               <p
-                className="mb-1.5 flex items-center gap-1 text-4xl tracking-tight text-[#E31E24] md:text-5xl"
+                className="mb-1.5 flex items-baseline justify-center gap-1 text-4xl tracking-tight text-[#E31E24] md:text-5xl"
               >
                 <Counter value={item.value} className="text-[#E31E24]" />
                 <span className="text-[#E31E24]">{item.suffix}</span>
+                {item.unit ? (
+                  <span className="ml-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-600 md:text-xs">
+                    {item.unit}
+                  </span>
+                ) : null}
               </p>
 
               <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-600 md:text-xs">

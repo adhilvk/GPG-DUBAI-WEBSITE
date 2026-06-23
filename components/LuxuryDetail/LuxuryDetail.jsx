@@ -1,8 +1,7 @@
-"use client";
-
-import ResidentialDetail from "@/components/ResidentialDetail/ResidentialDetail";
-import { luxuryDetailConfig } from "@/lib/residentialListingConfig";
-
-export default function LuxuryDetail({ property }) {
-  return <ResidentialDetail property={property} detailConfig={luxuryDetailConfig} />;
-}
+"use client";
+
+import LuxuryProjectDetail from "@/components/LuxuryProjectDetail/LuxuryProjectDetail";
+
+export default function LuxuryDetail({ project }) {
+  return <LuxuryProjectDetail project={project} />;
+}
