@@ -30,7 +30,7 @@ function ContactIconButton({ href, label, children }) {
   );
 }
 
-export default function LuxuryProjectCard({ project, compact = false }) {
+export default function LuxuryProjectCard({ project, compact = false, href }) {
   const priceLabel = project.priceDisplay ?? `From AED ${project.price}`;
   const inquiryText = `Hi, I'm interested in ${project.title} at ${project.location} (${priceLabel}).`;
   const waHref = `https://wa.me/971542068414?text=${encodeURIComponent(inquiryText)}`;
@@ -39,6 +39,7 @@ export default function LuxuryProjectCard({ project, compact = false }) {
     `Inquiry: ${project.title}`
   )}&body=${encodeURIComponent(inquiryText)}`;
   const hasSpecs = project.beds != null && project.baths != null && project.sqft != null;
+  const detailHref = href === undefined ? `/luxury-properties/${project.id}` : href;
 
   const contactIcons = (
     <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
@@ -54,15 +55,15 @@ export default function LuxuryProjectCard({ project, compact = false }) {
     </div>
   );
 
-  const detailHref = `/luxury-properties/${project.id}`;
-
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md">
-      <Link
-        href={detailHref}
-        className="absolute inset-0 z-0 rounded-xl"
-        aria-label={`View details for ${project.title}`}
-      />
+      {detailHref ? (
+        <Link
+          href={detailHref}
+          className="absolute inset-0 z-0 rounded-xl"
+          aria-label={`View details for ${project.title}`}
+        />
+      ) : null}
 
       <div className="relative aspect-[4/3] bg-slate-100">
         <Image

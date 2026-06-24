@@ -113,7 +113,9 @@ const Footer = () => {
                 <li className={footerLinkStyles}>{t("footer.investmentGuide")}</li>
                 <li className={footerLinkStyles}>{t("footer.offPlanGuide")}</li>
                 <li className={footerLinkStyles}>{t("footer.legalProcess")}</li>
-                <li className={footerLinkStyles}>{t("footer.rentalYieldGuide")}</li>
+                <li>
+                  <Link href="/HOWTORENTAL" className={footerLinkStyles}>{t("footer.rentalYieldGuide")}</Link>
+                </li>
               </ul>
             </div>
 

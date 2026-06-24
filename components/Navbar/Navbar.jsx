@@ -54,7 +54,7 @@ const Navbar = () => {
   const guideLinks = [
     { key: "offPlan", link: "/HOWTOBUYOFFPLAN" },
     { key: "resale", link: "/HOWTORESELL" },
-    { key: "rental", link: "/guides" },
+    { key: "rental", link: "/HOWTORENTAL" },
   ];
 
   const moreLinks = [

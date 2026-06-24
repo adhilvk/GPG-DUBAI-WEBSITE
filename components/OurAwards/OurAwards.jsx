@@ -9,7 +9,8 @@ import { AWARD_ITEMS } from "@/data/awards";
 import "../ExclusiveProjects/ExclusiveProjects.css";
 import "./OurAwards.css";
 
-const AUTO_SCROLL_SPEED = 0.45;
+const AUTO_SCROLL_PAUSE_MS = 1000;
+const AUTO_SCROLL_STEP_DURATION = 600;
 const CARD_GAP = 20;
 
 function AwardCard({ award }) {
@@ -36,7 +37,7 @@ export default function OurAwards() {
   const trackRef = useRef(null);
   const offsetRef = useRef(0);
   const isPausedRef = useRef(false);
-  const rafRef = useRef(null);
+  const isAnimatingRef = useRef(false);
 
   const loopingItems = useMemo(() => [...AWARD_ITEMS, ...AWARD_ITEMS], []);
 
@@ -72,11 +73,17 @@ export default function OurAwards() {
 
   const scroll = useCallback(
     (direction) => {
+      if (isAnimatingRef.current) return;
+
+      isAnimatingRef.current = true;
+      isPausedRef.current = true;
+
       offsetRef.current -= direction * getScrollStep();
       normalizeOffset();
       applyTransform();
-      isPausedRef.current = true;
+
       setTimeout(() => {
+        isAnimatingRef.current = false;
         isPausedRef.current = false;
       }, 2000);
     },
@@ -87,20 +94,63 @@ export default function OurAwards() {
     offsetRef.current = 0;
     applyTransform();
 
-    const tick = () => {
-      if (!isPausedRef.current) {
-        offsetRef.current -= AUTO_SCROLL_SPEED;
-        normalizeOffset();
-        applyTransform();
-      }
-      rafRef.current = requestAnimationFrame(tick);
+    let cancelled = false;
+    let timeoutId = null;
+    let rafId = null;
+
+    const scheduleNextStep = (delay) => {
+      timeoutId = setTimeout(runAutoStep, delay);
     };
 
-    rafRef.current = requestAnimationFrame(tick);
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    const runAutoStep = () => {
+      if (cancelled) return;
+
+      if (isPausedRef.current || isAnimatingRef.current) {
+        scheduleNextStep(100);
+        return;
+      }
+
+      const step = getScrollStep();
+      const start = offsetRef.current;
+      const target = start - step;
+      const startTime = performance.now();
+      isAnimatingRef.current = true;
+
+      const animate = (now) => {
+        if (cancelled) return;
+
+        if (isPausedRef.current) {
+          isAnimatingRef.current = false;
+          scheduleNextStep(100);
+          return;
+        }
+
+        const progress = Math.min((now - startTime) / AUTO_SCROLL_STEP_DURATION, 1);
+        const eased = 1 - (1 - progress) ** 3;
+
+        offsetRef.current = start + (target - start) * eased;
+        normalizeOffset();
+        applyTransform();
+
+        if (progress < 1) {
+          rafId = requestAnimationFrame(animate);
+        } else {
+          isAnimatingRef.current = false;
+          scheduleNextStep(AUTO_SCROLL_PAUSE_MS);
+        }
+      };
+
+      rafId = requestAnimationFrame(animate);
     };
-  }, [applyTransform, normalizeOffset]);
+
+    scheduleNextStep(AUTO_SCROLL_PAUSE_MS);
+
+    return () => {
+      cancelled = true;
+      if (rafId) cancelAnimationFrame(rafId);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [applyTransform, getScrollStep, normalizeOffset]);
 
   return (
     <div className="mb-12 md:mb-14">

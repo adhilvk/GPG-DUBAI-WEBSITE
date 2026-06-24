@@ -3,35 +3,89 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import {
+  ChevronDown,
+  Clock,
+  ArrowRight,
+  Phone,
+  Mail,
+  Building2,
+  ShieldCheck,
+  FileText,
+} from "lucide-react";
 
-const ACCENT = "#C8102E";
-const ACCENT_SOFT = "#C8102E15";
+const ACCENT = "#E31E24";
+const ACCENT_SOFT = "rgba(227, 30, 36, 0.08)";
+
+const tocItems = [
+  { id: "eligibility", label: "Pre-sale eligibility" },
+  { id: "assignment", label: "The assignment sale" },
+  { id: "fees", label: "Resale costs & fees" },
+  { id: "strategy", label: "Strategic advice" },
+  { id: "faq", label: "FAQs" },
+];
+
+const quickLinks = [
+  { label: "How to buy off-plan", href: "/HOWTOBUYOFFPLAN" },
+  { label: "Trending projects", href: "/trending-projects" },
+  { label: "All guides", href: "/guides" },
+  { label: "Contact us", href: "/contact-us" },
+];
+
+function SectionHeading({ id, children, accent }) {
+  return (
+    <div className="mt-14 scroll-mt-32 md:mt-16">
+      <h2
+        id={id}
+        className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl"
+      >
+        {children}
+        {accent && (
+          <>
+            {" "}
+            <span className="text-[#E31E24]">{accent}</span>
+          </>
+        )}
+      </h2>
+      <div className="mt-4 h-px w-16 bg-[#E31E24]" aria-hidden />
+    </div>
+  );
+}
 
 function FAQItem({ question, answer, isOpen, onToggle }) {
   return (
-    <div
-      className="border border-neutral-200/80 bg-neutral-50/50 rounded-xl overflow-hidden transition-shadow"
-      style={{ boxShadow: isOpen ? `0 0 0 1px ${ACCENT_SOFT}` : undefined }}
-    >
+    <div className="border-b border-neutral-200/70 last:border-b-0">
       <button
         type="button"
         onClick={onToggle}
-        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left hover:bg-white/80 transition-colors"
+        className="flex w-full items-center justify-between gap-6 py-6 text-left transition-colors hover:text-neutral-600"
         aria-expanded={isOpen}
       >
-        <span className="text-[15px] font-medium tracking-wide text-neutral-900 pr-4">{question}</span>
-        <ChevronDown
-          size={20}
-          className={`shrink-0 text-neutral-400 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-          style={{ color: isOpen ? ACCENT : undefined }}
-        />
+        <span className="text-base font-semibold leading-snug tracking-tight text-slate-900 sm:text-lg">
+          {question}
+        </span>
+        <span
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300"
+          style={{
+            borderColor: isOpen ? ACCENT : "rgba(0,0,0,0.1)",
+            backgroundColor: isOpen ? ACCENT_SOFT : "transparent",
+          }}
+        >
+          <ChevronDown
+            size={16}
+            className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+            style={{ color: isOpen ? ACCENT : "#a3a3a3" }}
+          />
+        </span>
       </button>
-      {isOpen && (
-        <div className="px-5 pb-5 pt-0 text-[15px] leading-relaxed text-neutral-600 border-t border-neutral-100 bg-white">
-          <p className="pt-4">{answer}</p>
+      <div
+        className="grid transition-[grid-template-rows] duration-300 ease-out [overflow-anchor:none]"
+        style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
+          <p className="max-w-2xl pb-6 text-[15px] leading-[1.8] text-slate-600">{answer}</p>
         </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -41,16 +95,19 @@ const recentArticles = [
     title: "How to Buy Off-Plan Property in Dubai",
     href: "/HOWTOBUYOFFPLAN",
     image: "/images/palmcentral.jpg",
+    category: "Guide",
   },
   {
     title: "How to Invest in Dubai Real Estate",
     href: "/HOWTOINVEST",
     image: "/images/prop2.jpg",
+    category: "Guide",
   },
   {
     title: "Off Plan Properties in Dubai: A Beginner's Guide",
     href: "/guides",
     image: "/images/heightsbyemaar.webp",
+    category: "Guide",
   },
 ];
 
@@ -156,225 +213,441 @@ const latestUpdates = [
   },
 ];
 
+const eligibilityItems = [
+  {
+    title: "SPA review",
+    body: "Verify assignment clauses, penalties, and marketing restrictions in your sale contract.",
+  },
+  {
+    title: "Payment status",
+    body: "Align escrow receipts with developer statements; arrears will delay or block NOC issuance.",
+  },
+  {
+    title: "Mortgage registration",
+    body: "If a liability is registered, coordinate with your bank on release or buyer assumption before transfer.",
+  },
+];
+
+function GuideSidebar() {
+  return (
+    <div className="space-y-10">
+      <div className="border-t border-neutral-200 pt-10 lg:border-t-0 lg:pt-0">
+        <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.35em] text-[#E31E24]">
+          From our blog
+        </p>
+        <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
+          Recent <span className="text-[#E31E24]">articles</span>
+        </h2>
+        <div className="mt-4 h-px w-16 bg-[#E31E24]" aria-hidden />
+
+        <ul className="mt-8 space-y-7">
+          {recentArticles.map((a) => (
+            <li key={a.href}>
+              <Link
+                href={a.href}
+                className="group flex gap-5 outline-none transition-opacity hover:opacity-90"
+              >
+                <div className="relative h-[5.5rem] w-[5.5rem] shrink-0 overflow-hidden bg-neutral-200">
+                  <Image
+                    src={a.image}
+                    alt=""
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    sizes="88px"
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    style={{ boxShadow: `inset 0 0 0 2px ${ACCENT}66` }}
+                  />
+                </div>
+                <div className="min-w-0 flex-1 pt-1">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#E31E24]">
+                    {a.category}
+                  </span>
+                  <p className="mt-2 line-clamp-3 text-[15px] font-semibold leading-snug tracking-tight text-slate-900 transition-colors group-hover:text-slate-700">
+                    {a.title}
+                  </p>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="relative overflow-hidden border border-neutral-200/80 bg-white px-8 py-10 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.08)]">
+        <div
+          className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full opacity-30"
+          style={{ background: `radial-gradient(circle, ${ACCENT_SOFT}, transparent 70%)` }}
+          aria-hidden
+        />
+        <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#E31E24]">
+          GPG Advisory
+        </p>
+        <p className="mt-4 text-xl font-semibold leading-snug tracking-tight text-slate-900">
+          Planning an off-plan exit? We structure assignments with{" "}
+          <span className="text-[#E31E24]">transparency on fees and timing.</span>
+        </p>
+        <Link
+          href="/contact-us"
+          className="mt-8 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.3em] text-[#E31E24] transition-all hover:gap-3"
+        >
+          Speak with an adviser
+          <ArrowRight size={14} />
+        </Link>
+      </div>
+
+      <div className="border border-neutral-200/80 bg-white px-6 py-7">
+        <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#E31E24]">
+          Get in touch
+        </p>
+        <h3 className="mt-3 text-lg font-semibold tracking-tight text-slate-900">
+          Talk to a <span className="text-[#E31E24]">licensed adviser</span>
+        </h3>
+        <div className="mt-4 h-px w-12 bg-[#E31E24]" aria-hidden />
+        <ul className="mt-5 space-y-4">
+          <li>
+            <a
+              href="tel:+971542068414"
+              className="flex items-center gap-3 text-sm font-medium text-slate-700 transition-colors hover:text-[#E31E24]"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-neutral-200 text-[#E31E24]">
+                <Phone size={15} />
+              </span>
+              +971 54 206 8414
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:enquiries@globalpropertygroup.co"
+              className="flex items-center gap-3 text-sm font-medium text-slate-700 transition-colors hover:text-[#E31E24]"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-neutral-200 text-[#E31E24]">
+                <Mail size={15} />
+              </span>
+              <span className="break-all">enquiries@globalpropertygroup.co</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div className="overflow-hidden border border-neutral-200/80 bg-white">
+        <Link href="/luxury-properties" className="group block">
+          <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-200">
+            <Image
+              src="/images/grandpolo.webp"
+              alt=""
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="320px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/80">
+                Explore
+              </p>
+              <p className="mt-1 text-lg font-semibold tracking-tight text-white">
+                Luxury <span className="text-[#E31E24]">properties</span>
+              </p>
+            </div>
+          </div>
+        </Link>
+        <div className="px-6 py-5">
+          <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#E31E24]">
+            Quick links
+          </p>
+          <ul className="mt-4 space-y-3">
+            {quickLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="group flex items-center justify-between text-sm font-semibold tracking-tight text-slate-800 transition-colors hover:text-[#E31E24]"
+                >
+                  {link.label}
+                  <ArrowRight
+                    size={14}
+                    className="text-neutral-400 transition-all group-hover:translate-x-0.5 group-hover:text-[#E31E24]"
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-3">
+        {[
+          { icon: ShieldCheck, label: "RERA regulated" },
+          { icon: Building2, label: "Premium developers" },
+          { icon: FileText, label: "Escrow protected" },
+          { icon: Phone, label: "Dedicated support" },
+        ].map((item) => (
+          <div
+            key={item.label}
+            className="flex flex-col items-center gap-2 border border-neutral-200/70 bg-white px-3 py-4 text-center"
+          >
+            <item.icon size={20} className="text-[#E31E24]" />
+            <span className="text-[11px] font-bold uppercase tracking-wide text-slate-700">
+              {item.label}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function HowToResellGuide() {
   const [openFaq, setOpenFaq] = useState(0);
 
   return (
-    <main className="bg-white text-neutral-900">
-      <div className="h-[3px] w-full" style={{ backgroundColor: ACCENT }} aria-hidden />
+    <main className="home-page bg-[#FAFAF8] text-neutral-900">
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#E31E24] to-transparent" aria-hidden />
 
-      <div className="mx-auto max-w-6xl px-6 pt-28 pb-20 md:pb-28">
-        <nav className="mb-12 text-[11px] font-semibold uppercase tracking-[0.28em] text-neutral-400">
-          <Link href="/" className="hover:text-neutral-600 transition-colors">
+      <div className="mx-auto max-w-7xl px-6 pt-28 pb-24 md:pb-32">
+        <nav className="mb-14 text-[10px] font-semibold uppercase tracking-[0.32em] text-neutral-400">
+          <Link href="/" className="transition-colors hover:text-neutral-700">
             Home
           </Link>
-          <span className="mx-2 text-neutral-300">/</span>
-          <Link href="/guides" className="hover:text-neutral-600 transition-colors">
+          <span className="mx-2.5 text-neutral-300">·</span>
+          <Link href="/guides" className="transition-colors hover:text-neutral-700">
             Guides
           </Link>
-          <span className="mx-2 text-neutral-300">/</span>
-          <span style={{ color: ACCENT }}>How to Resell</span>
+          <span className="mx-2.5 text-neutral-300">·</span>
+          <span className="text-[#E31E24]">How to Resell</span>
         </nav>
 
-        <div className="grid gap-16 lg:grid-cols-12 lg:gap-14">
-          <article className="lg:col-span-8">
-            <header className="mb-10">
-              <p
-                className="mb-4 text-[11px] font-bold uppercase tracking-[0.35em]"
-                style={{ color: ACCENT }}
-              >
-                Investor guide
-              </p>
-              <h1 className="font-serif text-[2.15rem] font-normal leading-[1.15] tracking-tight text-neutral-950 sm:text-5xl sm:leading-[1.1]">
-                Guide to Reselling Off-Plan Property in Dubai
-              </h1>
-              <time
-                dateTime="2024-06-12"
-                className="mt-6 block text-sm font-medium tracking-wide text-neutral-500"
-              >
-                June 12, 2024
-              </time>
-            </header>
+        <div className="grid gap-16 lg:grid-cols-12 lg:items-start lg:gap-16">
+          <div className="lg:col-span-8">
+            <article>
+              <header className="mb-12">
+                <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.35em] text-[#E31E24]">
+                  Investor guide
+                </p>
+                <h1 className="text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+                  Guide to Reselling Off-Plan Property in{" "}
+                  <span className="text-[#E31E24]">Dubai</span>
+                </h1>
+                <div className="mt-4 h-px w-16 bg-[#E31E24]" aria-hidden />
 
-            <div className="relative mb-12 aspect-[21/9] min-h-[200px] w-full overflow-hidden rounded-2xl bg-neutral-100 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.12)]">
-              <Image
-                src="/images/grandpolo.webp"
-                alt="Modern luxury villa in Dubai"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 66vw"
-                priority
-              />
-              <div
-                className="pointer-events-none absolute inset-0 opacity-20"
-                style={{
-                  background: `linear-gradient(135deg, ${ACCENT} 0%, transparent 55%)`,
-                }}
-              />
-            </div>
-
-            <div className="max-w-none font-serif text-[17px] leading-[1.75] text-neutral-700">
-              <p className="text-lg leading-relaxed text-neutral-800">
-                <span className="font-serif font-normal" style={{ color: ACCENT }}>
-                  Reselling{" "}
-                </span>
-                off-plan inventory before handover is a core liquidity strategy in Dubai. Whether you are
-                crystallising gains or reallocating capital, the assignment pathway demands disciplined
-                eligibility checks, developer compliance, and transparent cost modelling.
-              </p>
-              <p className="mb-6">
-                This guide outlines pre-sale requirements, the assignment workflow, typical fees, and
-                strategic considerations so you can exit with clarity and institutional-grade execution.
-              </p>
-
-              <h2 className="mt-14 mb-4 text-2xl text-neutral-950 scroll-mt-28">
-                <span className="border-l-[3px] pl-5" style={{ borderColor: ACCENT }}>
-                  Section I — Pre-sale eligibility
-                </span>
-              </h2>
-              <p className="mb-4">
-                Before marketing your unit, confirm that your position satisfies developer and contractual
-                thresholds. Most master developers require a minimum percentage of the purchase price to be
-                paid—commonly in the region of 40%—together with cleared instalments and an account in good
-                standing.
-              </p>
-              <ul className="list-none space-y-4 pl-0 mb-6">
-                <li className="flex gap-4">
-                  <span
-                    className="mt-2 h-2 w-2 shrink-0 rounded-full ring-4 ring-white"
-                    style={{ backgroundColor: ACCENT }}
-                  />
-                  <span>
-                    <strong className="font-semibold text-neutral-900">SPA review</strong> — Verify
-                    assignment clauses, penalties, and marketing restrictions in your sale contract.
+                <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-slate-500">
+                  <time dateTime="2024-06-12" className="font-medium tracking-wide">
+                    June 12, 2024
+                  </time>
+                  <span className="hidden h-3 w-px bg-neutral-300 sm:block" aria-hidden />
+                  <span className="flex items-center gap-1.5">
+                    <Clock size={14} className="text-neutral-400" />
+                    7 min read
                   </span>
-                </li>
-                <li className="flex gap-4">
-                  <span
-                    className="mt-2 h-2 w-2 shrink-0 rounded-full ring-4 ring-white"
-                    style={{ backgroundColor: ACCENT }}
-                  />
-                  <span>
-                    <strong className="font-semibold text-neutral-900">Payment status</strong> — Align
-                    escrow receipts with developer statements; arrears will delay or block NOC issuance.
-                  </span>
-                </li>
-                <li className="flex gap-4">
-                  <span
-                    className="mt-2 h-2 w-2 shrink-0 rounded-full ring-4 ring-white"
-                    style={{ backgroundColor: ACCENT }}
-                  />
-                  <span>
-                    <strong className="font-semibold text-neutral-900">Mortgage registration</strong> — If
-                    a liability is registered, coordinate with your bank on release or buyer assumption before
-                    transfer.
-                  </span>
-                </li>
-              </ul>
+                </div>
+              </header>
 
-              <h2 className="mt-14 mb-6 text-2xl text-neutral-950 scroll-mt-28">
-                <span className="border-l-[3px] pl-5" style={{ borderColor: ACCENT }}>
-                  Section II — The assignment sale
-                </span>
-              </h2>
-              <p className="mb-8">
-                An assignment transfers your rights under the original SPA to a new purchaser. The sequence
-                below is the institutional standard used across Dubai&apos;s regulated developments.
-              </p>
-              <ol className="list-none space-y-8 pl-0">
-                {assignmentSteps.map((step, i) => (
-                  <li key={step.title} className="flex gap-6">
-                    <span
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 bg-white font-serif text-lg text-neutral-900 shadow-sm"
-                      style={{ borderColor: ACCENT }}
-                    >
-                      {i + 1}
-                    </span>
-                    <div>
-                      <h3 className="mb-2 text-xl text-neutral-950">{step.title}</h3>
-                      <p className="m-0 text-neutral-700">{step.body}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-
-              <h2 className="mt-14 mb-6 text-2xl text-neutral-950 scroll-mt-28">
-                <span className="border-l-[3px] pl-5" style={{ borderColor: ACCENT }}>
-                  Section III — Resale costs and fees
-                </span>
-              </h2>
-              <p className="mb-6">
-                Net proceeds depend on more than headline sale price. Use this summary as a planning baseline;
-                confirm live tariffs with your broker and trustee office before signing.
-              </p>
-              <div className="overflow-x-auto rounded-xl border border-neutral-200/90 shadow-sm">
-                <table className="w-full min-w-[520px] border-collapse text-left text-[15px]">
-                  <thead>
-                    <tr className="bg-neutral-50">
-                      <th
-                        className="px-5 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-900 border-b border-neutral-200"
-                        style={{ borderBottomColor: `${ACCENT}33` }}
-                      >
-                        Fee type
-                      </th>
-                      <th className="px-5 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-900 border-b border-neutral-200">
-                        Description
-                      </th>
-                      <th className="px-5 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-900 border-b border-neutral-200">
-                        Responsibility
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {feeRows.map((row, i) => (
-                      <tr
-                        key={row.type}
-                        className={i % 2 === 0 ? "bg-white" : "bg-neutral-50/40"}
-                      >
-                        <td className="px-5 py-4 font-semibold text-neutral-900 border-b border-neutral-100">
-                          {row.type}
-                        </td>
-                        <td className="px-5 py-4 text-neutral-600 border-b border-neutral-100">
-                          {row.description}
-                        </td>
-                        <td
-                          className="px-5 py-4 font-medium border-b border-neutral-100"
-                          style={{ color: ACCENT }}
-                        >
-                          {row.responsibility}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className="relative mb-14 p-3 sm:p-4">
+                <div
+                  className="absolute inset-0 rounded-sm"
+                  style={{ border: `1px solid ${ACCENT}22` }}
+                  aria-hidden
+                />
+                <div className="relative aspect-[2.2/1] min-h-[220px] w-full overflow-hidden bg-neutral-200 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.18)]">
+                  <Image
+                    src="/images/grandpolo.webp"
+                    alt="Modern luxury villa in Dubai"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    priority
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(to top, rgba(12,12,12,0.45) 0%, transparent 45%, rgba(12,12,12,0.08) 100%)",
+                    }}
+                  />
+                </div>
               </div>
 
-              <h2 className="mt-14 mb-6 text-2xl text-neutral-950 scroll-mt-28">
-                <span className="border-l-[3px] pl-5" style={{ borderColor: ACCENT }}>
-                  Section IV — Strategic advice
-                </span>
-              </h2>
-              <ul className="space-y-5">
-                {strategicTips.map((tip) => (
-                  <li key={tip.bold} className="flex items-start gap-3">
-                    <span style={{ color: ACCENT }} className="mt-2 font-serif text-lg leading-none">
-                      ◆
-                    </span>
-                    <span>
-                      <strong className="font-semibold text-neutral-900">{tip.bold}</strong>
-                      {" — "}
-                      {tip.text}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              <nav
+                aria-label="Table of contents"
+                className="mb-14 rounded-sm border border-neutral-200/80 bg-white/70 px-6 py-5 backdrop-blur-sm"
+              >
+                <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.35em] text-[#E31E24]">
+                  In this guide
+                </p>
+                <p className="text-lg font-semibold tracking-tight text-slate-900">Jump to a section</p>
+                <div className="mt-3 h-px w-12 bg-[#E31E24]" aria-hidden />
+                <ol className="mt-5 grid gap-2 sm:grid-cols-2">
+                  {tocItems.map((item, i) => (
+                    <li key={item.id}>
+                      <a
+                        href={`#${item.id}`}
+                        className="group flex items-center gap-3 text-[14px] text-slate-700 transition-colors hover:text-slate-950"
+                      >
+                        <span className="flex h-5 w-5 shrink-0 items-center justify-center text-[10px] font-bold text-[#E31E24]">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <span className="border-b border-transparent transition-colors group-hover:border-neutral-300">
+                          {item.label}
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
 
-            <section className="mt-16 border-t border-neutral-100 pt-16">
-              <h2 className="font-serif text-3xl tracking-tight text-neutral-950 mb-8">
-                Frequently asked questions
+              <div className="max-w-none text-[17px] leading-[1.85] text-slate-700">
+                <p className="mb-7 text-[18px] leading-[1.9] text-slate-800">
+                  <span className="float-left mr-3 mt-1 text-5xl font-bold leading-[0.75] text-[#E31E24]" aria-hidden>
+                    R
+                  </span>
+                  eselling off-plan inventory before handover is a core liquidity strategy in Dubai. Whether
+                  you are crystallising gains or reallocating capital, the assignment pathway demands
+                  disciplined eligibility checks, developer compliance, and transparent cost modelling.
+                </p>
+                <p className="mb-7">
+                  This guide outlines pre-sale requirements, the assignment workflow, typical fees, and
+                  strategic considerations so you can exit with clarity and institutional-grade execution.
+                </p>
+
+                <div className="mb-6">
+                  <SectionHeading id="eligibility" accent="eligibility">
+                    Pre-sale
+                  </SectionHeading>
+                </div>
+                <p className="mb-4">
+                  Before marketing your unit, confirm that your position satisfies developer and contractual
+                  thresholds. Most master developers require a minimum percentage of the purchase price to be
+                  paid—commonly in the region of 40%—together with cleared instalments and an account in good
+                  standing.
+                </p>
+                <ul className="mt-2 space-y-5">
+                  {eligibilityItems.map((item) => (
+                    <li
+                      key={item.title}
+                      className="flex gap-5 rounded-sm border border-neutral-200/60 bg-white/60 px-5 py-4 transition-shadow hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.08)]"
+                    >
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rotate-45 bg-[#E31E24]" aria-hidden />
+                      <span>
+                        <strong className="font-semibold text-slate-900">{item.title}</strong>
+                        <span className="text-slate-600"> — {item.body}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mb-6">
+                  <SectionHeading id="assignment" accent="sale">
+                    The assignment
+                  </SectionHeading>
+                </div>
+                <p className="mb-8">
+                  An assignment transfers your rights under the original SPA to a new purchaser. The sequence
+                  below is the institutional standard used across Dubai&apos;s regulated developments.
+                </p>
+                <ol className="relative mt-2 space-y-0 pl-0">
+                  <div
+                    className="absolute bottom-6 left-[22px] top-6 hidden w-px sm:block"
+                    style={{ background: `linear-gradient(to bottom, ${ACCENT}44, ${ACCENT}11)` }}
+                    aria-hidden
+                  />
+                  {assignmentSteps.map((step, i) => (
+                    <li key={step.title} className="relative flex gap-6 pb-10 last:pb-0">
+                      <span
+                        className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center bg-[#FAFAF8] text-lg font-bold text-slate-900"
+                        style={{ boxShadow: `inset 0 0 0 1.5px ${ACCENT}` }}
+                      >
+                        {i + 1}
+                      </span>
+                      <div className="pt-1.5">
+                        <h3 className="mb-2 text-lg font-semibold tracking-tight text-slate-900 md:text-xl">
+                          {step.title}
+                        </h3>
+                        <p className="m-0 text-[16px] leading-relaxed text-slate-600">{step.body}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+
+                <div className="mb-6">
+                  <SectionHeading id="fees" accent="fees">
+                    Resale costs and
+                  </SectionHeading>
+                </div>
+                <p className="mb-6">
+                  Net proceeds depend on more than headline sale price. Use this summary as a planning baseline;
+                  confirm live tariffs with your broker and trustee office before signing.
+                </p>
+                <div className="overflow-x-auto rounded-sm border border-neutral-200/90 bg-white shadow-sm">
+                  <table className="w-full min-w-[520px] border-collapse text-left text-[15px]">
+                    <thead>
+                      <tr className="bg-neutral-50">
+                        <th className="border-b border-neutral-200 px-5 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-900">
+                          Fee type
+                        </th>
+                        <th className="border-b border-neutral-200 px-5 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-900">
+                          Description
+                        </th>
+                        <th className="border-b border-neutral-200 px-5 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-900">
+                          Responsibility
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {feeRows.map((row, i) => (
+                        <tr
+                          key={row.type}
+                          className={i % 2 === 0 ? "bg-white" : "bg-neutral-50/40"}
+                        >
+                          <td className="border-b border-neutral-100 px-5 py-4 font-semibold text-slate-900">
+                            {row.type}
+                          </td>
+                          <td className="border-b border-neutral-100 px-5 py-4 text-slate-600">
+                            {row.description}
+                          </td>
+                          <td className="border-b border-neutral-100 px-5 py-4 font-medium text-[#E31E24]">
+                            {row.responsibility}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="mb-6">
+                  <SectionHeading id="strategy" accent="advice">
+                    Strategic
+                  </SectionHeading>
+                </div>
+                <ul className="space-y-4">
+                  {strategicTips.map((tip) => (
+                    <li
+                      key={tip.bold}
+                      className="flex items-start gap-4 border-l-2 border-[#E31E24] pl-5"
+                    >
+                      <span className="text-[15px] leading-relaxed text-slate-700">
+                        <strong className="font-semibold text-slate-900">{tip.bold}</strong>
+                        {" — "}
+                        {tip.text}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+
+            <section id="faq" className="mt-20 scroll-mt-32 [overflow-anchor:none]">
+              <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.35em] text-[#E31E24]">
+                Your questions answered
+              </p>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                Frequently asked <span className="text-[#E31E24]">questions</span>
               </h2>
-              <div className="flex flex-col gap-3">
+              <div className="mt-4 flex items-center justify-between gap-6 border-b border-neutral-200 pb-6">
+                <div className="h-px w-16 bg-[#E31E24]" aria-hidden />
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-400">
+                  {faqs.length} topics
+                </span>
+              </div>
+              <div>
                 {faqs.map((item, i) => (
                   <FAQItem
                     key={item.q}
@@ -386,100 +659,29 @@ export default function HowToResellGuide() {
                 ))}
               </div>
             </section>
+          </div>
 
-            <section className="mt-16 rounded-2xl border border-neutral-100 bg-neutral-50/80 px-8 py-12 text-center">
-              <h2 className="font-serif text-2xl text-neutral-950">Still have questions?</h2>
-              <p className="mt-3 text-neutral-600 max-w-md mx-auto text-base">
-                Our advisers can review your SPA, model net exit proceeds, and coordinate NOC and trustee
-                appointments.
-              </p>
-              <Link
-                href="/contact-us"
-                className="mt-8 inline-flex items-center justify-center px-10 py-3.5 text-[11px] font-bold uppercase tracking-[0.3em] text-white transition-opacity hover:opacity-90"
-                style={{ backgroundColor: ACCENT }}
-              >
-                Contact us
-              </Link>
-            </section>
-          </article>
-
-          <aside className="lg:col-span-4">
-            <div className="sticky top-28 space-y-10">
-              <div>
-                <h2
-                  className="mb-8 border-b pb-4 font-serif text-2xl font-normal tracking-tight text-neutral-950"
-                  style={{ borderBottomColor: `${ACCENT}33` }}
-                >
-                  Recent articles
-                </h2>
-                <ul className="space-y-8">
-                  {recentArticles.map((a) => (
-                    <li key={a.href}>
-                      <Link
-                        href={a.href}
-                        className="group flex gap-4 rounded-xl outline-none ring-offset-2 ring-offset-white transition-colors hover:bg-neutral-50 p-2 -m-2 focus-visible:ring-2 focus-visible:ring-[#C8102E]"
-                      >
-                        <div className="relative h-24 w-[5.75rem] shrink-0 overflow-hidden rounded-lg bg-neutral-100 shadow-inner">
-                          <Image
-                            src={a.image}
-                            alt=""
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="120px"
-                          />
-                        </div>
-                        <div className="min-w-0 flex-1 pt-0.5">
-                          <span
-                            className="text-[13px] font-semibold uppercase tracking-wider"
-                            style={{ color: ACCENT }}
-                          >
-                            Guide
-                          </span>
-                          <p
-                            className="mt-1 line-clamp-3 font-serif text-base leading-snug text-neutral-900 group-hover:underline decoration-2 underline-offset-4"
-                            style={{ textDecorationColor: ACCENT }}
-                          >
-                            {a.title}
-                          </p>
-                        </div>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div
-                className="rounded-2xl border px-8 py-10 font-serif shadow-[0_20px_50px_-24px_rgba(200,16,46,0.35)] bg-gradient-to-br from-neutral-50 to-white"
-                style={{ borderColor: `${ACCENT}44` }}
-              >
-                <p className="text-[11px] font-bold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>
-                  GPG
-                </p>
-                <p className="mt-4 text-xl leading-snug text-neutral-900">
-                  Planning an off-plan exit? We structure assignments with transparency on fees and timing.
-                </p>
-                <Link
-                  href="/contact-us"
-                  className="mt-8 inline-flex items-center justify-center rounded-none border-b-2 border-transparent pb-1 text-[11px] font-bold uppercase tracking-[0.35em] text-neutral-950 transition-colors hover:border-current"
-                  style={{ borderBottomColor: ACCENT, color: ACCENT }}
-                >
-                  Speak with an adviser →
-                </Link>
-              </div>
-            </div>
-          </aside>
+          <div className="lg:col-span-4 lg:self-start">
+            <aside className="sticky top-28">
+              <GuideSidebar />
+            </aside>
+          </div>
         </div>
 
-        {/* Latest updates — full width below article grid */}
-        <section className="mt-20 border-t border-neutral-100 pt-16">
-          <h2 className="font-serif text-3xl tracking-tight text-neutral-950 mb-10 text-center md:text-left">
-            Latest news &amp; updates
+        <section className="mt-24 border-t border-neutral-200 pt-16">
+          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.35em] text-[#E31E24]">
+            Keep reading
+          </p>
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+            Latest news &amp; <span className="text-[#E31E24]">updates</span>
           </h2>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="mt-4 h-px w-16 bg-[#E31E24]" aria-hidden />
+
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
             {latestUpdates.map((card) => (
               <article
                 key={card.href}
-                className="group overflow-hidden rounded-2xl border border-neutral-100 bg-neutral-50/50 shadow-sm transition-shadow hover:shadow-md"
+                className="group overflow-hidden border border-neutral-200/80 bg-white transition-shadow hover:shadow-[0_20px_50px_-24px_rgba(0,0,0,0.12)]"
               >
                 <Link href={card.href} className="block">
                   <div className="relative aspect-[16/10] bg-neutral-200">
@@ -487,25 +689,20 @@ export default function HowToResellGuide() {
                       src={card.image}
                       alt=""
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
                   <div className="p-6">
-                    <span
-                      className="text-[10px] font-bold uppercase tracking-[0.25em]"
-                      style={{ color: ACCENT }}
-                    >
+                    <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#E31E24]">
                       {card.tag}
                     </span>
-                    <h3 className="mt-2 font-serif text-lg leading-snug text-neutral-900 group-hover:underline decoration-2 underline-offset-4">
+                    <h3 className="mt-2 text-lg font-semibold leading-snug tracking-tight text-slate-900 transition-colors group-hover:text-slate-700">
                       {card.title}
                     </h3>
-                    <span
-                      className="mt-4 inline-block text-[11px] font-bold uppercase tracking-[0.2em]"
-                      style={{ color: ACCENT }}
-                    >
-                      Read more →
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#E31E24]">
+                      Read more
+                      <ArrowRight size={12} />
                     </span>
                   </div>
                 </Link>

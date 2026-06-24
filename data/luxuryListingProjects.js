@@ -30,6 +30,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "opal-gardens-townhouse",
     propertyType: "Townhouse",
+    developer: "Meydan Group",
     title: "Exclusive 4BR | Elegant Community | Prime Location",
     location: "Opal Gardens, District 11, Mohammed Bin Rashid City, Dubai",
     price: "5,800,000",
@@ -43,6 +44,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "wellington-grand-villas",
     propertyType: "Villa",
+    developer: "Wellington Developments",
     title: "Wellington Grand Villas | District 11",
     location: "District 11, Mohammed Bin Rashid City, Dubai",
     price: "25.3M",
@@ -57,6 +59,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "karl-lagerfeld-villas",
     propertyType: "Villa, Lagoon Community",
+    developer: "TARAF DEVELOPMENT L.L.C",
     title: "Karl Lagerfeld Villas",
     location: "District 11, Mohammed Bin Rashid City (MBR City), Dubai",
     price: "25,583,700",
@@ -70,6 +73,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "eden-hills-dubai-hills",
     propertyType: "Villa",
+    developer: "H&H Development",
     title: "Eden Hills at Dubai Hills | 5 & 6 BR",
     location: "Dubai Hills Estate, Dubai",
     price: "18M",
@@ -83,6 +87,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "district-one-west-villa",
     propertyType: "Villa",
+    developer: "Nakheel",
     title: "District One West | 4 & 5 BR",
     location: "Mohammed Bin Rashid City (MBR City), Dubai",
     price: "10M",
@@ -96,6 +101,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "district-one-west-mansion",
     propertyType: "Mansion",
+    developer: "Nakheel",
     title: "District One West | 6 & 7 BR",
     location: "Mohammed Bin Rashid City (MBR City), Dubai",
     price: "10M",
@@ -109,6 +115,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "district-one-west-phase-2",
     propertyType: "Villa",
+    developer: "Nakheel",
     title: "District One West Phase 2 | 4, 5 & 6 BR",
     location: "Mohammed Bin Rashid City (MBR City), Dubai",
     price: "Call Us",
@@ -122,6 +129,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "california-residences",
     propertyType: "Apartment",
+    developer: "Infracorp",
     title: "California Residences | 1 to 3 BR",
     location: "Dubailand, Dubai",
     price: "990K",
@@ -135,6 +143,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "karl-lagerfeld-haute-living",
     propertyType: "Villa",
+    developer: "TARAF DEVELOPMENT L.L.C",
     title: "Branded Haute Living | Symphony of Fashion & Form",
     location: "Karl Lagerfeld Villas, District 11, Mohammed Bin Rashid City (MBR City), Dubai",
     price: "27,859,650",
@@ -148,6 +157,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "karl-lagerfeld-villas-d11",
     propertyType: "Villa",
+    developer: "TARAF DEVELOPMENT L.L.C",
     title: "Karl Lagerfeld Villas",
     location: "District 11, Mohammed Bin Rashid City (MBR City), Dubai",
     price: "28,429,800",
@@ -161,6 +171,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "karl-lagerfeld-achromatic-grandeur",
     propertyType: "Villa",
+    developer: "TARAF DEVELOPMENT L.L.C",
     title: "Achromatic Grandeur | The Signature Lagerfeld Muse",
     location: "District 11, Mohammed Bin Rashid City (MBR City), Dubai",
     price: "25,105,500",
@@ -174,6 +185,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "karl-lagerfeld-branded-mansion",
     propertyType: "Villa",
+    developer: "TARAF DEVELOPMENT L.L.C",
     title: "Branded Mansion | Ultimate Luxury Retreat",
     location: "District 11, Mohammed Bin Rashid City (MBR City), Dubai",
     price: "41,186,200",
@@ -187,6 +199,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "karl-lagerfeld-five-bed",
     propertyType: "Villa",
+    developer: "TARAF DEVELOPMENT L.L.C",
     title: "Only Five Bed Available | Branded | G+2",
     location: "District 11, Mohammed Bin Rashid City (MBR City), Dubai",
     price: "21,500,000",
@@ -200,6 +213,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "karl-lagerfeld-special-mansions",
     propertyType: "Villa",
+    developer: "TARAF DEVELOPMENT L.L.C",
     title: "Special Mansions for Special Owners with P. Plan",
     location: "District 11, Mohammed Bin Rashid City (MBR City), Dubai",
     price: "28,404,600",
@@ -213,6 +227,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "karl-lagerfeld-luxury-branded",
     propertyType: "Villa",
+    developer: "TARAF DEVELOPMENT L.L.C",
     title: "Luxury Branded Villa | 10% Dp | 80% On Handover",
     location: "District 11, Mohammed Bin Rashid City (MBR City), Dubai",
     price: "24,513,000",
@@ -226,6 +241,7 @@ export const LUXURY_LISTING_PROJECTS = [
   {
     id: "karl-lagerfeld-luxury-mansion",
     propertyType: "Villa",
+    developer: "TARAF DEVELOPMENT L.L.C",
     title: "Branded Luxury Mansion | Basement | Lagoon View",
     location: "District 11, Mohammed Bin Rashid City (MBR City), Dubai",
     price: "43,185,450",

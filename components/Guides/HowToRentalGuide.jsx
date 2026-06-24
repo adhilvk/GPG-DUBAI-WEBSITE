@@ -18,17 +18,17 @@ const ACCENT = "#E31E24";
 const ACCENT_SOFT = "rgba(227, 30, 36, 0.08)";
 
 const tocItems = [
-  { id: "what", label: "What is off-plan?" },
-  { id: "why", label: "Why buy off-plan" },
-  { id: "steps", label: "Steps to purchase" },
-  { id: "areas", label: "Best areas" },
-  { id: "tips", label: "Top tips" },
+  { id: "yield", label: "Understanding yield" },
+  { id: "net-income", label: "Gross vs net income" },
+  { id: "areas", label: "Best rental corridors" },
+  { id: "steps", label: "Maximising returns" },
+  { id: "management", label: "Property management" },
   { id: "faq", label: "FAQs" },
 ];
 
 const quickLinks = [
-  { label: "Trending projects", href: "/trending-projects" },
-  { label: "New developments", href: "/projects" },
+  { label: "Ready properties", href: "/ready-properties" },
+  { label: "How to invest", href: "/HOWTOINVEST" },
   { label: "All guides", href: "/guides" },
   { label: "Contact us", href: "/contact-us" },
 ];
@@ -93,6 +93,12 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
 
 const recentArticles = [
   {
+    title: "How to Buy Off-Plan Property in Dubai",
+    href: "/HOWTOBUYOFFPLAN",
+    image: "/images/palmcentral.jpg",
+    category: "Guide",
+  },
+  {
     title: "Guide to Reselling Off-Plan Property in Dubai",
     href: "/HOWTORESELL",
     image: "/images/grandpolo.webp",
@@ -104,53 +110,102 @@ const recentArticles = [
     image: "/images/prop2.jpg",
     category: "Guide",
   },
+];
+
+const yieldDrivers = [
   {
-    title: "Off Plan Properties in Dubai: A Beginner's Guide",
-    href: "/guides",
-    image: "/images/heightsbyemaar.webp",
-    category: "Guide",
+    title: "Gross rental yield",
+    body: "Annual rent divided by purchase price — the headline figure used in marketing, but not your true return.",
+  },
+  {
+    title: "Net operating income",
+    body: "Rent less service charges, maintenance, vacancy allowance, and management fees — the basis for serious underwriting.",
+  },
+  {
+    title: "Capital growth",
+    body: "Many rental investors also target appreciation in high-liquidity corridors where tenant demand supports resale depth.",
+  },
+];
+
+const rentalSteps = [
+  {
+    title: "Define your income mandate",
+    body: "Set target net yield, hold period, and furnishing strategy before shortlisting communities or unit types.",
+  },
+  {
+    title: "Select the right product",
+    body: "Studios and one-beds often drive volume yields; larger units may suit family tenants with longer lease profiles.",
+  },
+  {
+    title: "Underwrite all-in costs",
+    body: "Include DLD fees, fit-out, Ejari, agency commission, service charges, and a vacancy buffer in your model.",
+  },
+  {
+    title: "Prepare for handover",
+    body: "Snagging, DEWA connection, furnishing, and professional photography materially affect time-to-let and achievable rent.",
+  },
+  {
+    title: "Market and lease professionally",
+    body: "Licensed management, compliant tenancy contracts, and realistic pricing reduce void periods and tenant churn.",
+  },
+];
+
+const managementTips = [
+  {
+    bold: "Use RERA-registered agents",
+    text: "Property management should be handled by licensed operators who issue compliant tenancy documentation.",
+  },
+  {
+    bold: "Budget for service charges",
+    text: "Community fees can materially compress net yield — verify current and projected charges before acquisition.",
+  },
+  {
+    bold: "Plan furnishing carefully",
+    text: "Furnished units can command premium rents but add capex and depreciation; model payback periods explicitly.",
+  },
+  {
+    bold: "Review rents annually",
+    text: "Market rents move with supply and seasonality; institutional landlords benchmark against live comparables each cycle.",
   },
 ];
 
 const faqs = [
   {
-    q: "Is buying off-plan in Dubai safe for foreign investors?",
-    a: "Dubai offers a regulated framework through RERA and the Dubai Land Department. When you work with reputable developers on registered projects and use institutional escrow protections, foreign investors benefit from transparency comparable to mature markets. Always verify permits, escrow compliance, and consult a licensed broker.",
+    q: "What is a good rental yield in Dubai?",
+    a: "Yields vary by product and corridor — apartments in high-liquidity districts often benchmark differently from villas or off-plan pre-handover assets. Model net yield after service charges, vacancy, and management rather than gross marketing figures.",
   },
   {
-    q: "What payment plans are typical for off-plan purchases?",
-    a: "Schedules vary by developer and project phase. Common structures include instalments aligned to construction milestones, with a proportion due on handover. Your agent should provide a timeline that maps payments to escrow rules and contractual obligations.",
+    q: "Is ready or off-plan better for rental income?",
+    a: "Ready stock delivers immediate lettability and tangible inspection. Off-plan can offer payment-plan efficiency but defers income until handover. Many investors blend both based on cash-flow timing and portfolio goals.",
   },
   {
-    q: "Can I sell my off-plan unit before completion?",
-    a: "Reassignment policies depend on developer terms, SPA conditions, DLD eligibility, and any mortgage registration. Institutional buyers often pursue strategic exits via reassignment subject to approvals and fees. Legal review before any transfer is critical.",
+    q: "What costs reduce net rental yield?",
+    a: "Service charges, maintenance, furnishing, agency fees, vacancy periods, and Ejari or utility setup all reduce headline yield. Underwrite on a net basis from day one.",
+  },
+  {
+    q: "Can foreigners earn rental income in Dubai?",
+    a: "Foreign nationals can own freehold property in designated zones and lease units to tenants subject to standard RERA and DLD processes. Engage licensed representation for registration and tenancy compliance.",
   },
 ];
 
-const steps = [
+const latestUpdates = [
   {
-    title: "Research the market",
-    body: "Map macro themes — supply pipelines, corridor connectivity, developer track records — before narrowing to communities that match liquidity and occupancy objectives.",
+    title: "How to Invest in Dubai Real Estate",
+    href: "/HOWTOINVEST",
+    image: "/images/prop2.jpg",
+    tag: "Guides",
   },
   {
-    title: "Choose the right developer",
-    body: "Institutional diligence means reviewing delivery history, financial stability, escrow compliance, and after-sales governance — not campaign imagery alone.",
+    title: "How to Buy Off-Plan Property in Dubai",
+    href: "/HOWTOBUYOFFPLAN",
+    image: "/images/heightsbyemaar.webp",
+    tag: "Guides",
   },
   {
-    title: "Inspect the project fundamentals",
-    body: "Unit mix, completion timeline, payment schedule, service-charge benchmarks, and handover assumptions should align with your investment memo or residency plan.",
-  },
-  {
-    title: "Formalise SPA and escrow",
-    body: "Execute with licensed representation; deposits and instalments move through approved escrow channels aligned to RERA-registered disclosures.",
-  },
-  {
-    title: "Mortgage readiness (if applicable)",
-    body: "Off-plan mortgages have distinct contours—stage of construction, borrower profile, and bank policy. Coordinate early so financing does not bottleneck booking.",
-  },
-  {
-    title: "Track construction & handover",
-    body: "Monitor milestone reporting, snag lists, utilities, DLD registrations, and any service-charge confirmations before acceptance.",
+    title: "Browse Ready Properties",
+    href: "/ready-properties",
+    image: "/images/palmcentral.jpg",
+    tag: "Properties",
   },
 ];
 
@@ -201,17 +256,12 @@ function GuideSidebar() {
       </div>
 
       <div className="relative overflow-hidden border border-neutral-200/80 bg-white px-8 py-10 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.08)]">
-        <div
-          className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full opacity-30"
-          style={{ background: `radial-gradient(circle, ${ACCENT_SOFT}, transparent 70%)` }}
-          aria-hidden
-        />
         <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#E31E24]">
           GPG Advisory
         </p>
         <p className="mt-4 text-xl font-semibold leading-snug tracking-tight text-slate-900">
-          Ready to evaluate off-plan allocations with{" "}
-          <span className="text-[#E31E24]">fiduciary discipline?</span>
+          Building a rental portfolio? We model net yield across{" "}
+          <span className="text-[#E31E24]">Dubai&apos;s key corridors.</span>
         </p>
         <Link
           href="/contact-us"
@@ -222,7 +272,6 @@ function GuideSidebar() {
         </Link>
       </div>
 
-      {/* Quick contact */}
       <div className="border border-neutral-200/80 bg-white px-6 py-7">
         <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#E31E24]">
           Get in touch
@@ -257,12 +306,11 @@ function GuideSidebar() {
         </ul>
       </div>
 
-      {/* Featured + quick links */}
       <div className="overflow-hidden border border-neutral-200/80 bg-white">
-        <Link href="/trending-projects" className="group block">
+        <Link href="/ready-properties" className="group block">
           <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-200">
             <Image
-              src="/images/heightsbyemaar.webp"
+              src="/images/Riverside.jpg"
               alt=""
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -274,7 +322,7 @@ function GuideSidebar() {
                 Explore
               </p>
               <p className="mt-1 text-lg font-semibold tracking-tight text-white">
-                Trending <span className="text-[#E31E24]">developments</span>
+                Ready <span className="text-[#E31E24]">properties</span>
               </p>
             </div>
           </div>
@@ -302,12 +350,11 @@ function GuideSidebar() {
         </div>
       </div>
 
-      {/* Trust highlights */}
       <div className="grid grid-cols-2 gap-3">
         {[
           { icon: ShieldCheck, label: "RERA regulated" },
           { icon: Building2, label: "Premium developers" },
-          { icon: FileText, label: "Escrow protected" },
+          { icon: FileText, label: "Ejari compliant" },
           { icon: Phone, label: "Dedicated support" },
         ].map((item) => (
           <div
@@ -325,7 +372,7 @@ function GuideSidebar() {
   );
 }
 
-export default function HowToBuyOffPlanGuide() {
+export default function HowToRentalGuide() {
   const [openFaq, setOpenFaq] = useState(0);
 
   return (
@@ -342,11 +389,10 @@ export default function HowToBuyOffPlanGuide() {
             Guides
           </Link>
           <span className="mx-2.5 text-neutral-300">·</span>
-          <span className="text-[#E31E24]">How to Buy Off-Plan</span>
+          <span className="text-[#E31E24]">Rental Yield</span>
         </nav>
 
         <div className="grid gap-16 lg:grid-cols-12 lg:items-start lg:gap-16">
-          {/* Main content */}
           <div className="lg:col-span-8">
             <article>
               <header className="mb-12">
@@ -354,19 +400,19 @@ export default function HowToBuyOffPlanGuide() {
                   Investor guide
                 </p>
                 <h1 className="text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-                  How to Buy Off-Plan Property in{" "}
-                  <span className="text-[#E31E24]">Dubai</span>
+                  Dubai Rental Yield Guide for{" "}
+                  <span className="text-[#E31E24]">Property Investors</span>
                 </h1>
                 <div className="mt-4 h-px w-16 bg-[#E31E24]" aria-hidden />
 
                 <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-slate-500">
-                  <time dateTime="2024-05-01" className="font-medium tracking-wide">
-                    May 1, 2024
+                  <time dateTime="2024-08-15" className="font-medium tracking-wide">
+                    August 15, 2024
                   </time>
                   <span className="hidden h-3 w-px bg-neutral-300 sm:block" aria-hidden />
                   <span className="flex items-center gap-1.5">
                     <Clock size={14} className="text-neutral-400" />
-                    8 min read
+                    6 min read
                   </span>
                 </div>
               </header>
@@ -379,8 +425,8 @@ export default function HowToBuyOffPlanGuide() {
                 />
                 <div className="relative aspect-[2.2/1] min-h-[220px] w-full overflow-hidden bg-neutral-200 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.18)]">
                   <Image
-                    src="/images/palmcentral.jpg"
-                    alt="Dubai skyline at dusk"
+                    src="/images/Riverside.jpg"
+                    alt="Dubai residential community"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 66vw"
@@ -427,55 +473,31 @@ export default function HowToBuyOffPlanGuide() {
               <div className="max-w-none text-[17px] leading-[1.85] text-slate-700">
                 <p className="mb-7 text-[18px] leading-[1.9] text-slate-800">
                   <span className="float-left mr-3 mt-1 text-5xl font-bold leading-[0.75] text-[#E31E24]" aria-hidden>
-                    D
+                    R
                   </span>
-                  ubai remains one of the world&apos;s most dynamic off-plan markets. Whether you are an
-                  end-user planning your next home or an investor building institutional-grade exposure,
-                  understanding the lifecycle of an off-plan purchase protects capital and simplifies
-                  decisions.
+                  ental income remains one of the most tangible return drivers for Dubai property investors.
+                  Whether you are acquiring ready stock for immediate lettability or positioning for
+                  post-handover income, disciplined yield underwriting separates sustainable portfolios
+                  from marketing-driven decisions.
                 </p>
                 <p className="mb-7">
-                  This guide explains what off-plan means in the UAE context, why buyers allocate to
-                  pre-completion inventory, and the practical sequence from shortlisting developers to
-                  registering your interest with Dubai Land Department-compliant documentation.
+                  This guide explains how to evaluate gross and net rental yields, identify corridors
+                  with strong tenant demand, and manage properties for consistent occupancy and compliant
+                  tenancy operations.
                 </p>
 
                 <div className="mb-6">
-                  <SectionHeading id="what">What is off-plan property?</SectionHeading>
-                </div>
-                <p>
-                  Off-plan property is purchased from a developer before construction is finished — often
-                  directly from blueprint and payment-plan marketing. Contracts are anchored in a{" "}
-                  <Link
-                    href="https://dubailand.gov.ae"
-                    className="font-semibold text-[#E31E24] underline decoration-1 underline-offset-4 transition-colors hover:decoration-2"
-                  >
-                    SPA registered with oversight from DLD-aligned processes
-                  </Link>
-                  , with buyer funds typically routed through escrow to align disbursements with verified
-                  construction progress.
-                </p>
-
-                <div className="mb-6">
-                  <SectionHeading id="why" accent="Dubai?">
-                    Why buy off-plan in
+                  <SectionHeading id="yield" accent="yield">
+                    Understanding rental
                   </SectionHeading>
                 </div>
+                <p className="mb-4">
+                  Rental yield is the relationship between annual rent and capital deployed. In Dubai,
+                  headline gross yields are widely quoted — but institutional investors underwrite on a
+                  net basis after operating costs, vacancy, and fit-out economics.
+                </p>
                 <ul className="mt-2 space-y-5">
-                  {[
-                    {
-                      title: "Structured payment plans",
-                      body: "Milestone-based instalments can improve cash-flow efficiency versus paying the majority upfront for ready stock.",
-                    },
-                    {
-                      title: "Early positioning",
-                      body: "Entering at launch or early tranches can offer preferential pricing in master developments with long-term delivery narratives.",
-                    },
-                    {
-                      title: "New product quality",
-                      body: "Contemporary building systems, warranties, and community amenities aligned to current lifestyle expectations.",
-                    },
-                  ].map((item) => (
+                  {yieldDrivers.map((item) => (
                     <li
                       key={item.title}
                       className="flex gap-5 rounded-sm border border-neutral-200/60 bg-white/60 px-5 py-4 transition-shadow hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.08)]"
@@ -490,8 +512,92 @@ export default function HowToBuyOffPlanGuide() {
                 </ul>
 
                 <div className="mb-6">
-                  <SectionHeading id="steps" accent="property">
-                    Steps to buy off-plan
+                  <SectionHeading id="net-income" accent="net income">
+                    Gross vs
+                  </SectionHeading>
+                </div>
+                <p className="mb-6">
+                  A property marketed at 7% gross may deliver materially less on a net basis once service
+                  charges, maintenance, and void periods are applied. Build your model with conservative
+                  assumptions before committing capital.
+                </p>
+                <div className="overflow-x-auto rounded-sm border border-neutral-200/90 bg-white shadow-sm">
+                  <table className="w-full min-w-[480px] border-collapse text-left text-[15px]">
+                    <thead>
+                      <tr className="bg-neutral-50">
+                        <th className="border-b border-neutral-200 px-5 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-900">
+                          Cost item
+                        </th>
+                        <th className="border-b border-neutral-200 px-5 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-900">
+                          Impact on yield
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { item: "Service charges", impact: "Recurring annual deduction from gross rent" },
+                        { item: "Agency / management fees", impact: "Typically 5% of rent or fixed monthly fee" },
+                        { item: "Vacancy allowance", impact: "Budget 2–4 weeks per year in most corridors" },
+                        { item: "Furnishing & maintenance", impact: "Upfront capex plus ongoing refresh cycles" },
+                        { item: "Ejari & utilities", impact: "Registration and DEWA setup at lease commencement" },
+                      ].map((row, i) => (
+                        <tr
+                          key={row.item}
+                          className={i % 2 === 0 ? "bg-white" : "bg-neutral-50/40"}
+                        >
+                          <td className="border-b border-neutral-100 px-5 py-4 font-semibold text-slate-900">
+                            {row.item}
+                          </td>
+                          <td className="border-b border-neutral-100 px-5 py-4 text-slate-600">
+                            {row.impact}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="mb-6">
+                  <SectionHeading id="areas" accent="corridors">
+                    Best rental
+                  </SectionHeading>
+                </div>
+                <p className="mb-6">
+                  Corridor selection should match tenant profile and unit type. The areas below are
+                  illustrative benchmarks — validate against live comparables before acquisition.
+                </p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {[
+                    {
+                      area: "Dubai Marina & JBR",
+                      detail: "Strong expat tenant pool, high liquidity, premium rents on waterfront stock.",
+                    },
+                    {
+                      area: "Business Bay & Downtown",
+                      detail: "Corporate professionals, furnished demand, proximity to business districts.",
+                    },
+                    {
+                      area: "JVC & Dubailand",
+                      detail: "Value apartments with volume-driven yields and broad tenant affordability.",
+                    },
+                    {
+                      area: "Dubai Hills & Arabian Ranches",
+                      detail: "Family villas with longer lease profiles and end-user depth.",
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.area}
+                      className="border border-neutral-200/70 bg-white/50 px-5 py-4 transition-colors hover:border-neutral-300"
+                    >
+                      <p className="text-base font-semibold tracking-tight text-slate-900">{item.area}</p>
+                      <p className="mt-1.5 text-[14px] leading-relaxed text-slate-600">{item.detail}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mb-6">
+                  <SectionHeading id="steps" accent="returns">
+                    Maximising rental
                   </SectionHeading>
                 </div>
                 <ol className="relative mt-2 space-y-0 pl-0">
@@ -500,7 +606,7 @@ export default function HowToBuyOffPlanGuide() {
                     style={{ background: `linear-gradient(to bottom, ${ACCENT}44, ${ACCENT}11)` }}
                     aria-hidden
                   />
-                  {steps.map((step, i) => (
+                  {rentalSteps.map((step, i) => (
                     <li key={step.title} className="relative flex gap-6 pb-10 last:pb-0">
                       <span
                         className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center bg-[#FAFAF8] text-lg font-bold text-slate-900"
@@ -519,42 +625,21 @@ export default function HowToBuyOffPlanGuide() {
                 </ol>
 
                 <div className="mb-6">
-                  <SectionHeading id="areas" accent="consider">
-                    Best areas to
+                  <SectionHeading id="management" accent="management">
+                    Property
                   </SectionHeading>
                 </div>
-                <p>
-                  Institutional buyers often diversify across corridors — from established masterplans with
-                  schools and hospitals to emerging districts with differentiated supply stories. Speak with
-                  our team about alignment to your mandate; no single postcode fits every portfolio.
-                </p>
-                <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                  {[
-                    { area: "Dubai Hills Estate", detail: "Integrated retail, wellness, golf, schools." },
-                    { area: "MBR City & Sobha Hartland", detail: "Central connectivity plus green corridors." },
-                    { area: "Dubai Marina & Coastal", detail: "Premium lifestyle and maritime adjacency." },
-                  ].map((item) => (
-                    <div
-                      key={item.area}
-                      className="border border-neutral-200/70 bg-white/50 px-5 py-4 transition-colors hover:border-neutral-300"
-                    >
-                      <p className="text-base font-semibold tracking-tight text-slate-900">{item.area}</p>
-                      <p className="mt-1.5 text-[14px] leading-relaxed text-slate-600">{item.detail}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mb-6">
-                  <SectionHeading id="tips">Top tips</SectionHeading>
-                </div>
                 <ul className="space-y-4">
-                  {[
-                    "Budget all-in: DLD allocation, trustee and registration costs, brokerage where applicable.",
-                    "Favour phased payments that mirror escrow release mechanics you can independently verify.",
-                    "Use a regulated broker whose incentives align with long-term fiduciary standards.",
-                  ].map((tip) => (
-                    <li key={tip} className="flex items-start gap-4 border-l-2 border-[#E31E24] pl-5">
-                      <span className="text-[15px] leading-relaxed text-slate-700">{tip}</span>
+                  {managementTips.map((tip) => (
+                    <li
+                      key={tip.bold}
+                      className="flex items-start gap-4 border-l-2 border-[#E31E24] pl-5"
+                    >
+                      <span className="text-[15px] leading-relaxed text-slate-700">
+                        <strong className="font-semibold text-slate-900">{tip.bold}</strong>
+                        {" — "}
+                        {tip.text}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -588,13 +673,55 @@ export default function HowToBuyOffPlanGuide() {
             </section>
           </div>
 
-          {/* Sidebar — separate column */}
           <div className="lg:col-span-4 lg:self-start">
             <aside className="sticky top-28">
               <GuideSidebar />
             </aside>
           </div>
         </div>
+
+        <section className="mt-24 border-t border-neutral-200 pt-16">
+          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.35em] text-[#E31E24]">
+            Keep reading
+          </p>
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+            Latest news &amp; <span className="text-[#E31E24]">updates</span>
+          </h2>
+          <div className="mt-4 h-px w-16 bg-[#E31E24]" aria-hidden />
+
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
+            {latestUpdates.map((card) => (
+              <article
+                key={card.href}
+                className="group overflow-hidden border border-neutral-200/80 bg-white transition-shadow hover:shadow-[0_20px_50px_-24px_rgba(0,0,0,0.12)]"
+              >
+                <Link href={card.href} className="block">
+                  <div className="relative aspect-[16/10] bg-neutral-200">
+                    <Image
+                      src={card.image}
+                      alt=""
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#E31E24]">
+                      {card.tag}
+                    </span>
+                    <h3 className="mt-2 text-lg font-semibold leading-snug tracking-tight text-slate-900 transition-colors group-hover:text-slate-700">
+                      {card.title}
+                    </h3>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#E31E24]">
+                      Read more
+                      <ArrowRight size={12} />
+                    </span>
+                  </div>
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
       </div>
     </main>
   );
