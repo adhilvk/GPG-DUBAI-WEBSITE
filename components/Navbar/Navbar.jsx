@@ -58,10 +58,13 @@ const Navbar = () => {
   ];
 
   const moreLinks = [
+    { key: "ourTeam", link: "/our-teams" },
     { key: "ourAwards", link: "/awards" },
     { key: "newsMedia", link: "/news" },
     { key: "contactUs", link: "/contact-us" },
   ];
+
+  const aboutLinks = [{ key: "aboutUs", link: "/about" }];
 
   const propertyLinks = [
     { key: "villas", href: "/villas", icon: Landmark },
@@ -200,6 +203,38 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                 </div>
               </div>
             </div>
+
+            {/* ABOUT US — same pattern as Guides */}
+            <div className="relative group py-4">
+              <button className={`flex items-center gap-1 ${navLinkStyles}`}>
+                {t("nav.aboutUs")}
+                <ChevronRight
+                  size={14}
+                  className="rotate-90 group-hover:-rotate-90 transition-transform duration-300"
+                />
+              </button>
+
+              <div className="absolute top-[110%] left-0 w-60 bg-white rounded-3xl border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-1 flex p-6 gap-8">
+                <div className="flex-1 space-y-4">
+                  <div className="flex flex-col gap-1">
+                    {aboutLinks.map((item) => (
+                      <Link
+                        key={item.key}
+                        href={item.link}
+                        className="px-4 py-3 hover:bg-[#002147]/5 rounded-2xl text-[12px] uppercase tracking-wider text-slate-700 hover:text-[#002147] transition-all flex items-center justify-between group/item"
+                      >
+                        {t(`nav.${item.key}`)}
+                        <ChevronRight
+                          size={14}
+                          className="opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-1 transition-all text-[#002147]"
+                        />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* AREAS DROPDOWN */}
             <div className="relative group py-4">
               <button className={`flex items-center gap-1 ${navLinkStyles}`}>
@@ -272,7 +307,6 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
 
               </div>
             </div>
-            <Link href="/our-teams" className={navLinkStyles}>{t("nav.ourTeam")}</Link>
 
             <div className="relative group py-4">
               <button className={`flex items-center gap-1 ${navLinkStyles}`}>
@@ -455,12 +489,26 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
               {t("nav.clickForMore")}
             </Link>
 
-            <Link href="/our-teams" className="block text-[#002147] uppercase text-sm">{t("nav.ourTeam")}</Link>
+            <p className="text-[#002147] text-sm uppercase tracking-widest pt-4">{t("nav.guides")}</p>
+            {guideLinks.map((item) => (
+              <Link key={item.key} href={item.link} className="block text-[#FF0000] text-sm">
+                {t(`nav.${item.key}`)}
+              </Link>
+            ))}
+
+            <p className="text-[#002147] text-sm uppercase tracking-widest pt-4">{t("nav.aboutUs")}</p>
+            {aboutLinks.map((item) => (
+              <Link key={item.key} href={item.link} className="block text-[#FF0000] text-sm">
+                {t(`nav.${item.key}`)}
+              </Link>
+            ))}
 
             <p className="text-[#002147] text-sm uppercase tracking-widest pt-4">{t("nav.more")}</p>
-            <Link href="/awards" className="block text-[#FF0000] text-sm">{t("nav.ourAwards")}</Link>
-            <Link href="/news" className="block text-[#FF0000] text-sm">{t("nav.newsMedia")}</Link>
-            <Link href="/contact-us" className="block text-[#FF0000] text-sm">{t("nav.contactUs")}</Link>
+            {moreLinks.map((item) => (
+              <Link key={item.key} href={item.link} className="block text-[#FF0000] text-sm">
+                {t(`nav.${item.key}`)}
+              </Link>
+            ))}
 
             <div className="flex gap-3 pt-4 border-t border-slate-100 mt-4">
               <button
