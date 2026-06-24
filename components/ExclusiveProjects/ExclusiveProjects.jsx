@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect, useMemo, useRef } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "./ExclusiveProjects.css";
@@ -31,12 +31,34 @@ const ARROW_PAUSE_MS = 2000;
 
 function MarqueeSlider({ items, renderItem, getItemKey, resetKey, prevLabel, nextLabel, cardClassName = "" }) {
   const trackRef = useRef(null);
+  const viewportRef = useRef(null);
   const offsetRef = useRef(0);
   const isPausedRef = useRef(false);
   const isAnimatingRef = useRef(false);
   const resumeTimeoutRef = useRef(null);
+  const [cardWidth, setCardWidth] = useState(null);
 
   const loopingItems = useMemo(() => [...items, ...items], [items]);
+
+  const updateCardWidth = useCallback(() => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+    setCardWidth(viewport.clientWidth);
+  }, []);
+
+  useEffect(() => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+
+    updateCardWidth();
+
+    const observer = new ResizeObserver(() => {
+      updateCardWidth();
+    });
+    observer.observe(viewport);
+
+    return () => observer.disconnect();
+  }, [updateCardWidth, resetKey]);
 
   const getHalfWidth = useCallback(() => {
     const track = trackRef.current;
@@ -44,8 +66,12 @@ function MarqueeSlider({ items, renderItem, getItemKey, resetKey, prevLabel, nex
   }, []);
 
   const getScrollStep = useCallback(() => {
-    const card = trackRef.current?.querySelector(".exclusive-card-slot");
-    return card ? card.offsetWidth + CARD_GAP : 290;
+    const track = trackRef.current;
+    const card = track?.querySelector(".exclusive-card-slot");
+    if (!card || !track) return 290;
+
+    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || CARD_GAP;
+    return card.offsetWidth + gap;
   }, []);
 
   const normalizeOffset = useCallback(() => {
@@ -67,6 +93,11 @@ function MarqueeSlider({ items, renderItem, getItemKey, resetKey, prevLabel, nex
       track.style.transform = `translate3d(${offsetRef.current}px, 0, 0)`;
     }
   }, []);
+
+  useEffect(() => {
+    offsetRef.current = 0;
+    applyTransform();
+  }, [cardWidth, applyTransform, resetKey]);
 
   const pauseAutoScroll = useCallback((duration = ARROW_PAUSE_MS) => {
     isPausedRef.current = true;
@@ -175,11 +206,11 @@ function MarqueeSlider({ items, renderItem, getItemKey, resetKey, prevLabel, nex
       if (timeoutId) clearTimeout(timeoutId);
       if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
     };
-  }, [resetKey, applyTransform, getScrollStep, normalizeOffset]);
+  }, [resetKey, applyTransform, getScrollStep, normalizeOffset, cardWidth]);
 
   return (
     <div
-      className="trending-slider"
+      className="trending-slider trending-slider--marquee"
       onMouseEnter={() => {
         isPausedRef.current = true;
       }}
@@ -198,7 +229,12 @@ function MarqueeSlider({ items, renderItem, getItemKey, resetKey, prevLabel, nex
         <ChevronLeft size={28} strokeWidth={2} />
       </button>
 
-      <div className="trending-slider__viewport" key={resetKey}>
+      <div
+        className="trending-slider__viewport"
+        ref={viewportRef}
+        key={resetKey}
+        style={cardWidth ? { "--marquee-card-width": `${cardWidth}px` } : undefined}
+      >
         <div className="trending-marquee__track" ref={trackRef}>
           {loopingItems.map((item, idx) => (
             <div
@@ -232,7 +268,7 @@ const ExclusiveProjectsSlider = () => {
   return (
     <section className="bg-white px-4 pb-16 pt-12 md:px-12 md:pb-20 md:pt-16">
       <div className="max-w-360 mx-auto">
-        <div className="px-2 md:px-0">
+        <div className="px-0 sm:px-2 md:px-0">
           <OurAwards />
 
           <SectionHeader

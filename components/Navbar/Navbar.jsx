@@ -20,6 +20,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [downloadOpen, setDownloadOpen] = useState(false);
+  const [mobileSectionsOpen, setMobileSectionsOpen] = useState({});
   const langRef = useRef(null);
   const downloadRef = useRef(null);
 
@@ -51,6 +52,29 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    if (!isOpen) {
+      document.body.style.overflow = "";
+      return;
+    }
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  const toggleMobileSection = (section) => {
+    setMobileSectionsOpen((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
+
+  const closeMobileMenu = () => {
+    setIsOpen(false);
+    setMobileSectionsOpen({});
+  };
+
   const guideLinks = [
     { key: "offPlan", link: "/HOWTOBUYOFFPLAN" },
     { key: "resale", link: "/HOWTORESELL" },
@@ -73,6 +97,22 @@ const Navbar = () => {
     { key: "offices", href: "/offices", icon: Briefcase },
     { key: "retails", href: "/retails", icon: Briefcase },
   ];
+
+  const communityAreas = [
+    "Jumeirah Islands",
+    "District One",
+    "Al Barari",
+    "DAMAC Hills",
+    "Arabian Ranches",
+    "The Meadows",
+    "Jumeirah Golf Estates",
+    "Dubai Hills Estate",
+    "Emirates Hills",
+    "The Springs",
+  ];
+
+  const toAreaHref = (area) =>
+    `/areas/${area.toLowerCase().replace(/\s+/g, "-")}`;
 
   // UPDATED: Scrolled color is now Red (#FF0000), and added underline logic via Tailwind
   const navLinkStyles = `relative text-[13px] transition-all duration-300 uppercase tracking-[0.15em] font-medium 
@@ -285,16 +325,10 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
 
                     {/* Two-Column Grid for Side-by-Side Names */}
                     <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                      {[
-                        "Jumeirah Islands", "District One",
-                        "Al Barari", "DAMAC Hills",
-                        "Arabian Ranches", "The Meadows",
-                        "Jumeirah Golf Estates", "Dubai Hills Estate",
-                        "Emirates Hills", "The Springs"
-                      ].map((area) => (
+                      {communityAreas.map((area) => (
                         <Link
                           key={area}
-                          href={`/areas/${area.toLowerCase().replace(/\s+/g, '-')}`}
+                          href={toAreaHref(area)}
                           className="px-4 py-3 hover:bg-[#002147]/5 rounded-2xl text-[12px] uppercase tracking-wider text-slate-700 hover:text-[#002147] transition-all flex items-center justify-between group/item"
                         >
                           {area}
@@ -436,7 +470,7 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
           {/* MOBILE TOGGLE */}
           <div className="lg:hidden flex items-center">
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => (isOpen ? closeMobileMenu() : setIsOpen(true))}
               className={`p-2 rounded-lg transition-colors ${isHome
                 ? scrolled
                   ? "text-[#FF0000]"
@@ -453,64 +487,208 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
         </div>
       </div>
 
-      {/* MOBILE MENU GOES HERE */}
+      {/* MOBILE MENU */}
       {isOpen && (
-        <div className="lg:hidden bg-white border-t border-slate-200">
-          <div className="px-6 py-6 space-y-4">
+        <div className="lg:hidden fixed inset-x-0 top-20 bottom-0 z-40 bg-white border-t border-slate-200 overflow-y-auto overscroll-contain">
+          <div className="px-6 py-4 pb-8">
 
-            <Link href="/" className="block text-[#002147] uppercase text-sm ">{t("nav.home")}</Link>
-
-            <p className="text-[#002147] text-sm uppercase tracking-widest pt-4 ">{t("nav.ourProperties")}</p>
-            {propertyLinks.map((item) => (
-              <Link key={item.key} href={item.href} className="block text-[#FF0000] text-sm">
-                {t(`nav.${item.key}`)}
-              </Link>
-            ))}
-
-            <p className="text-[#002147] text-sm uppercase tracking-widest pt-4 ">{t("nav.ourCommunities")}</p>
-
-            <Link href="/areas/dubai-hills-estate" className="block text-[#FF0000] text-sm">
-              Dubai Hills Estate
-            </Link>
-
-            <Link href="/areas/damac-hills" className="block text-[#FF0000] text-sm">
-              Damac Hills
-            </Link>
-
-            <Link href="/areas/emirates-hills" className="block text-[#FF0000] text-sm">
-              Emirates Hills
-            </Link>
-
-            {/* MORE BUTTON */}
             <Link
-              href="/areas"
-              className="inline-block mt-3 text-xs font-semibold uppercase tracking-widest text-white bg-[#002147] px-4 py-2 rounded-lg hover:bg-[#001530] transition-all"
+              href="/"
+              onClick={closeMobileMenu}
+              className="block text-[#002147] uppercase text-sm font-semibold tracking-widest py-3 border-b border-slate-100"
             >
-              {t("nav.clickForMore")}
+              {t("nav.home")}
             </Link>
 
-            <p className="text-[#002147] text-sm uppercase tracking-widest pt-4">{t("nav.guides")}</p>
-            {guideLinks.map((item) => (
-              <Link key={item.key} href={item.link} className="block text-[#FF0000] text-sm">
-                {t(`nav.${item.key}`)}
-              </Link>
-            ))}
+            {/* Our Properties */}
+            <div className="border-b border-slate-100">
+              <button
+                type="button"
+                onClick={() => toggleMobileSection("properties")}
+                className="flex w-full items-center justify-between py-3 text-[#002147] text-sm uppercase tracking-widest font-semibold"
+              >
+                {t("nav.ourProperties")}
+                <ChevronDown
+                  size={16}
+                  className={`shrink-0 transition-transform duration-200 ${mobileSectionsOpen.properties ? "rotate-180" : ""}`}
+                />
+              </button>
+              {mobileSectionsOpen.properties && (
+                <div className="pb-3 space-y-1">
+                  {propertyLinks.map((item) => (
+                    <Link
+                      key={item.key}
+                      href={item.href}
+                      onClick={closeMobileMenu}
+                      className="block text-[#FF0000] text-sm pl-4 py-1.5"
+                    >
+                      {t(`nav.${item.key}`)}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
-            <p className="text-[#002147] text-sm uppercase tracking-widest pt-4">{t("nav.aboutUs")}</p>
-            {aboutLinks.map((item) => (
-              <Link key={item.key} href={item.link} className="block text-[#FF0000] text-sm">
-                {t(`nav.${item.key}`)}
-              </Link>
-            ))}
+            {/* Guides */}
+            <div className="border-b border-slate-100">
+              <button
+                type="button"
+                onClick={() => toggleMobileSection("guides")}
+                className="flex w-full items-center justify-between py-3 text-[#002147] text-sm uppercase tracking-widest font-semibold"
+              >
+                {t("nav.guides")}
+                <ChevronDown
+                  size={16}
+                  className={`shrink-0 transition-transform duration-200 ${mobileSectionsOpen.guides ? "rotate-180" : ""}`}
+                />
+              </button>
+              {mobileSectionsOpen.guides && (
+                <div className="pb-3 space-y-1">
+                  {guideLinks.map((item) => (
+                    <Link
+                      key={item.key}
+                      href={item.link}
+                      onClick={closeMobileMenu}
+                      className="block text-[#FF0000] text-sm pl-4 py-1.5"
+                    >
+                      {t(`nav.${item.key}`)}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
-            <p className="text-[#002147] text-sm uppercase tracking-widest pt-4">{t("nav.more")}</p>
-            {moreLinks.map((item) => (
-              <Link key={item.key} href={item.link} className="block text-[#FF0000] text-sm">
-                {t(`nav.${item.key}`)}
-              </Link>
-            ))}
+            {/* About Us */}
+            <div className="border-b border-slate-100">
+              <button
+                type="button"
+                onClick={() => toggleMobileSection("about")}
+                className="flex w-full items-center justify-between py-3 text-[#002147] text-sm uppercase tracking-widest font-semibold"
+              >
+                {t("nav.aboutUs")}
+                <ChevronDown
+                  size={16}
+                  className={`shrink-0 transition-transform duration-200 ${mobileSectionsOpen.about ? "rotate-180" : ""}`}
+                />
+              </button>
+              {mobileSectionsOpen.about && (
+                <div className="pb-3 space-y-1">
+                  {aboutLinks.map((item) => (
+                    <Link
+                      key={item.key}
+                      href={item.link}
+                      onClick={closeMobileMenu}
+                      className="block text-[#FF0000] text-sm pl-4 py-1.5"
+                    >
+                      {t(`nav.${item.key}`)}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
-            <div className="flex gap-3 pt-4 border-t border-slate-100 mt-4">
+            {/* Our Communities */}
+            <div className="border-b border-slate-100">
+              <button
+                type="button"
+                onClick={() => toggleMobileSection("communities")}
+                className="flex w-full items-center justify-between py-3 text-[#002147] text-sm uppercase tracking-widest font-semibold"
+              >
+                {t("nav.ourCommunities")}
+                <ChevronDown
+                  size={16}
+                  className={`shrink-0 transition-transform duration-200 ${mobileSectionsOpen.communities ? "rotate-180" : ""}`}
+                />
+              </button>
+              {mobileSectionsOpen.communities && (
+                <div className="pb-3 space-y-1">
+                  <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] pl-4 pb-1">
+                    {t("nav.topCommunities")}
+                  </p>
+                  {communityAreas.map((area) => (
+                    <Link
+                      key={area}
+                      href={toAreaHref(area)}
+                      onClick={closeMobileMenu}
+                      className="block text-[#FF0000] text-sm pl-4 py-1.5"
+                    >
+                      {area}
+                    </Link>
+                  ))}
+                  <Link
+                    href="/areas"
+                    onClick={closeMobileMenu}
+                    className="inline-block mt-2 ml-4 text-xs font-semibold uppercase tracking-widest text-white bg-[#002147] px-4 py-2 rounded-lg hover:bg-[#001530] transition-all"
+                  >
+                    {t("nav.viewMap")}
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* More */}
+            <div className="border-b border-slate-100">
+              <button
+                type="button"
+                onClick={() => toggleMobileSection("more")}
+                className="flex w-full items-center justify-between py-3 text-[#002147] text-sm uppercase tracking-widest font-semibold"
+              >
+                {t("nav.more")}
+                <ChevronDown
+                  size={16}
+                  className={`shrink-0 transition-transform duration-200 ${mobileSectionsOpen.more ? "rotate-180" : ""}`}
+                />
+              </button>
+              {mobileSectionsOpen.more && (
+                <div className="pb-3 space-y-1">
+                  {moreLinks.map((item) => (
+                    <Link
+                      key={item.key}
+                      href={item.link}
+                      onClick={closeMobileMenu}
+                      className="block text-[#FF0000] text-sm pl-4 py-1.5"
+                    >
+                      {t(`nav.${item.key}`)}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Downloads */}
+            <div className="border-b border-slate-100">
+              <button
+                type="button"
+                onClick={() => toggleMobileSection("downloads")}
+                className="flex w-full items-center justify-between py-3 text-[#002147] text-sm uppercase tracking-widest font-semibold"
+              >
+                {t("nav.downloads")}
+                <ChevronDown
+                  size={16}
+                  className={`shrink-0 transition-transform duration-200 ${mobileSectionsOpen.downloads ? "rotate-180" : ""}`}
+                />
+              </button>
+              {mobileSectionsOpen.downloads && (
+                <div className="pb-3 space-y-1">
+                  {downloadItems.map((item) => (
+                    <a
+                      key={item.labelKey}
+                      href={item.href}
+                      download
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={closeMobileMenu}
+                      className="flex items-center gap-2 pl-4 py-1.5 text-sm text-[#FF0000]"
+                    >
+                      <Download size={14} className="text-[#E31E24]" />
+                      {t(item.labelKey)}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="flex gap-3 pt-4">
               <button
                 type="button"
                 onClick={() => setLocale("en")}
@@ -525,23 +703,6 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
               >
                 AR
               </button>
-            </div>
-
-            <div className="space-y-1 pt-4 border-t border-slate-100">
-              {downloadItems.map((item) => (
-                <a
-                  key={item.labelKey}
-                  href={item.href}
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-2 py-2 text-[12px] uppercase tracking-wider text-slate-700"
-                >
-                  <Download size={14} className="text-[#E31E24]" />
-                  {t(item.labelKey)}
-                </a>
-              ))}
             </div>
 
           </div>

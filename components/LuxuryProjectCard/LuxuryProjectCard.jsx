@@ -113,8 +113,20 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
         </p>
 
         {hasSpecs ? (
-          <div className="pointer-events-auto mt-auto flex items-center justify-between gap-2 border-t border-slate-100 pt-3">
-            <div className="flex min-w-0 flex-nowrap items-center gap-x-2 text-xs text-slate-600">
+          <div
+            className={`pointer-events-auto mt-auto border-t border-slate-100 pt-3 ${
+              compact
+                ? "flex flex-col gap-2.5"
+                : "flex items-center justify-between gap-2"
+            }`}
+          >
+            <div
+              className={`flex text-xs text-slate-600 ${
+                compact
+                  ? "flex-wrap items-center gap-x-2 gap-y-1"
+                  : "min-w-0 flex-nowrap items-center gap-x-2"
+              }`}
+            >
               <span className="inline-flex shrink-0 items-center gap-1">
                 <BedDouble size={14} className="text-slate-400" />
                 {project.beds}
@@ -125,12 +137,12 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
                 {project.baths}
               </span>
               <span className="h-4 w-px shrink-0 bg-slate-200" aria-hidden />
-              <span className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap">
+              <span className="inline-flex shrink-0 items-center gap-1">
                 <Maximize2 size={14} className="text-slate-400" />
                 {project.sqft.toLocaleString()} {project.sqftLabel ?? "sqft"}
               </span>
             </div>
-            {contactIcons}
+            <div className={compact ? "flex justify-end" : undefined}>{contactIcons}</div>
           </div>
         ) : (
           <>

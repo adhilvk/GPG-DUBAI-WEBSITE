@@ -14,6 +14,25 @@
   object-fit: cover;
 }
 
+@media (max-width: 639px) {
+  .award-card__image {
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    background: #0f172a;
+  }
+}
+
+@media (max-width: 639px) {
+  .trending-slider--awards .exclusive-card-slot.awards-marquee__card {
+    width: var(--award-card-width, calc(100vw - 9.5rem));
+  }
+
+  .award-card__image {
+    object-fit: contain;
+    background: #0f172a;
+  }
+}
+
 .award-card__caption {
   position: absolute;
   inset: auto 0 0 0;

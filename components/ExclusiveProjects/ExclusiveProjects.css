@@ -65,6 +65,26 @@
   width: min(88vw, 300px);
 }
 
+@media (max-width: 639px) {
+  .trending-slider--marquee {
+    gap: 0.25rem;
+    padding-inline: 0;
+  }
+
+  .trending-slider--marquee .trending-slider__viewport {
+    padding-inline: 0;
+  }
+
+  .trending-slider--marquee .trending-marquee__track {
+    padding-inline: 0;
+  }
+
+  .trending-slider--marquee .exclusive-card-slot.luxury-marquee__card {
+    width: var(--marquee-card-width, calc(100vw - 9.5rem));
+    max-width: none;
+  }
+}
+
 @media (min-width: 640px) {
   .exclusive-card-slot.luxury-marquee__card {
     width: 320px;
@@ -80,6 +100,13 @@
 /* Awards — two cards span the same width as four luxury listing cards */
 .exclusive-card-slot.awards-marquee__card {
   width: min(88vw, 620px);
+}
+
+@media (max-width: 639px) {
+  .trending-slider--awards .exclusive-card-slot.awards-marquee__card {
+    width: var(--awards-card-width, calc(100vw - 9.5rem));
+    max-width: none;
+  }
 }
 
 @media (min-width: 640px) {

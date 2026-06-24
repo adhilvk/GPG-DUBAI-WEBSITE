@@ -1,25 +1,31 @@
 "use client";
-import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion, animate, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
-const Counter = ({ value, className = "" }) => {
+const Counter = ({ value, className = "", animateOnMount = false }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const [displayValue, setDisplayValue] = useState(0);
+  const shouldAnimate = animateOnMount || inView;
 
   useEffect(() => {
-    if (inView) {
-      count.set(0);
-      animate(count, value, { duration: 0.55, ease: [0.22, 1, 0.36, 1] });
-    }
-  }, [inView, value, count]);
+    if (!shouldAnimate) return;
+
+    setDisplayValue(0);
+    const controls = animate(0, value, {
+      duration: 0.55,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (latest) => setDisplayValue(Math.round(latest)),
+    });
+
+    return () => controls.stop();
+  }, [shouldAnimate, value]);
 
   return (
-    <motion.span ref={ref} className={className}>
-      {rounded}
-    </motion.span>
+    <span ref={ref} className={className}>
+      {displayValue}
+    </span>
   );
 };
 
@@ -52,7 +58,7 @@ const StatsBar = ({ variant = "default" }) => {
               <p
                 className={`mb-1 flex shrink-0 items-baseline justify-center gap-0.5 whitespace-nowrap text-xl tracking-tight sm:text-2xl md:text-3xl ${numberColor}`}
               >
-                <Counter value={item.value} className={numberColor} />
+                <Counter value={item.value} className={numberColor} animateOnMount />
                 <span className={numberColor}>{item.suffix}</span>
                 {item.unit ? (
                   <span
