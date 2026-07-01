@@ -9,6 +9,8 @@ export const APARTMENT_LISTINGS = [
   {
     slug: "hills-park-dubai-hills-estate",
     id: "1",
+    propertyType: "Apartment",
+    developer: "Emaar",
     images: [
       "/images/heightsbyemaar.webp",
       "/images/palmcentral.jpg",
@@ -34,6 +36,8 @@ export const APARTMENT_LISTINGS = [
   {
     slug: "marina-views-dubai-marina",
     id: "2",
+    propertyType: "Apartment",
+    developer: "Damac",
     images: [
       "/images/palmcentral.jpg",
       "/images/Riverside.jpg",
@@ -59,6 +63,8 @@ export const APARTMENT_LISTINGS = [
   {
     slug: "south-bay-dubai-south",
     id: "3",
+    propertyType: "Apartment",
+    developer: "Dubai South",
     images: [
       "/images/grandpolo.webp",
       "/images/heightsbyemaar.webp",
@@ -84,6 +90,8 @@ export const APARTMENT_LISTINGS = [
   {
     slug: "emaar-south-dubai-south",
     id: "4",
+    propertyType: "Apartment",
+    developer: "Emaar",
     images: [
       "/images/Riverside.jpg",
       "/images/grandpolo.webp",
@@ -109,6 +117,8 @@ export const APARTMENT_LISTINGS = [
   {
     slug: "sobha-hartland-mbr-city",
     id: "5",
+    propertyType: "Apartment",
+    developer: "Sobha Realty",
     images: [
       "/images/heightsbyemaar.webp",
       "/images/Riverside.jpg",
@@ -134,6 +144,8 @@ export const APARTMENT_LISTINGS = [
   {
     slug: "dubai-hills-estate-apartment",
     id: "6",
+    propertyType: "Apartment",
+    developer: "Emaar",
     images: [
       "/images/palmcentral.jpg",
       "/images/heightsbyemaar.webp",

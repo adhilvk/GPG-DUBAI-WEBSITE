@@ -8,6 +8,8 @@ export const RETAIL_LISTINGS = [
   {
     slug: "downtown-boulevard-retail-unit",
     id: "r1",
+    propertyType: "High Street Retail",
+    developer: "Emaar",
     images: ["/images/palmcentral.jpg", "/images/Riverside.jpg", "/images/heightsbyemaar.webp"],
     price: 4950000,
     features: "HIGH FOOTFALL | SHELL & CORE | PRIME FRONTAGE",
@@ -29,6 +31,8 @@ export const RETAIL_LISTINGS = [
   {
     slug: "business-bay-promenade-retail",
     id: "r2",
+    propertyType: "F&B Unit",
+    developer: "Damac",
     images: ["/images/heightsbyemaar.webp", "/images/grandpolo.webp", "/images/palmcentral.jpg"],
     price: 3450000,
     features: "WATERFRONT | FITTED | READY TO OPERATE",
@@ -50,6 +54,8 @@ export const RETAIL_LISTINGS = [
   {
     slug: "jvc-community-retail-shop",
     id: "r3",
+    propertyType: "Community Retail",
+    developer: "Nakheel",
     images: ["/images/grandpolo.webp", "/images/palmcentral.jpg", "/images/Riverside.jpg"],
     price: 2100000,
     features: "COMMUNITY CENTER | TENANTED | STABLE YIELD",
@@ -71,6 +77,8 @@ export const RETAIL_LISTINGS = [
   {
     slug: "dubai-marina-ground-floor-retail",
     id: "r4",
+    propertyType: "High Street Retail",
+    developer: "Damac",
     images: ["/images/Riverside.jpg", "/images/heightsbyemaar.webp", "/images/grandpolo.webp"],
     price: 6250000,
     features: "MARINA WALK | CORNER UNIT | LICENSE READY",
@@ -92,6 +100,8 @@ export const RETAIL_LISTINGS = [
   {
     slug: "mirdif-avenue-neighborhood-retail",
     id: "r5",
+    propertyType: "Community Retail",
+    developer: "Majid Al Futtaim",
     images: ["/images/palmcentral.jpg", "/images/grandpolo.webp", "/images/heightsbyemaar.webp"],
     price: 1780000,
     features: "NEIGHBORHOOD RETAIL | FITTED | VALUE ENTRY",
@@ -113,6 +123,8 @@ export const RETAIL_LISTINGS = [
   {
     slug: "expo-city-boulevard-retail",
     id: "r6",
+    propertyType: "High Street Retail",
+    developer: "Expo City Dubai",
     images: ["/images/heightsbyemaar.webp", "/images/palmcentral.jpg", "/images/Riverside.jpg"],
     price: 2890000,
     features: "NEW DISTRICT | BOULEVARD FACING | GROWTH CORRIDOR",

@@ -18,12 +18,36 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import LuxuryProjectCard from "@/components/LuxuryProjectCard/LuxuryProjectCard";
 
 const TEAL = "#0d5c5c";
 const TEAL_HOVER = "#0a4a4a";
 
 function formatAed(n) {
   return `AED ${n.toLocaleString("en-AE")}`;
+}
+
+function slugToTitle(slug) {
+  return slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function mapToLuxuryProject(property) {
+  return {
+    id: property.id,
+    propertyType: property.propertyType ?? "Villa",
+    developer: property.developer,
+    title: property.title ?? slugToTitle(property.slug),
+    location: property.location,
+    price: property.price,
+    priceDisplay: `${property.price.toLocaleString("en-US")} AED`,
+    image: property.images[0],
+    beds: property.beds,
+    baths: property.baths,
+    sqft: property.sqft,
+  };
 }
 
 function WhatsAppGlyph({ className }) {
@@ -360,9 +384,17 @@ export default function ResidentialListing({ config }) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-          {sortedListings.map((property) => (
-            <PropertyCard key={property.id} property={property} basePath={config.basePath} />
-          ))}
+          {sortedListings.map((property) =>
+            config.cardVariant === "luxury" ? (
+              <LuxuryProjectCard
+                key={property.id}
+                project={mapToLuxuryProject(property)}
+                href={`${config.basePath}/${property.slug}`}
+              />
+            ) : (
+              <PropertyCard key={property.id} property={property} basePath={config.basePath} />
+            )
+          )}
         </div>
       </div>
 

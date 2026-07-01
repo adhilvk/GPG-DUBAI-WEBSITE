@@ -8,6 +8,8 @@ export const TOWNHOUSE_LISTINGS = [
   {
     slug: "damac-riverside-townhouse",
     id: "t1",
+    propertyType: "Townhouse",
+    developer: "DAMAC",
     images: ["/images/Riverside.jpg", "/images/grandpolo.webp", "/images/palmcentral.jpg"],
     price: 2850000,
     features: "SINGLE ROW | PARK FACING | Q4 HANDOVER",
@@ -29,6 +31,8 @@ export const TOWNHOUSE_LISTINGS = [
   {
     slug: "arabian-ranches-3-elie",
     id: "t2",
+    propertyType: "Townhouse",
+    developer: "Emaar",
     images: ["/images/grandpolo.webp", "/images/heightsbyemaar.webp", "/images/Riverside.jpg"],
     price: 4200000,
     features: "CORNER UNIT | GOLF COMMUNITY | VASTU",
@@ -50,6 +54,8 @@ export const TOWNHOUSE_LISTINGS = [
   {
     slug: "dubai-hills-park-townhouse",
     id: "t3",
+    propertyType: "Townhouse",
+    developer: "Emaar",
     images: ["/images/heightsbyemaar.webp", "/images/palmcentral.jpg", "/images/grandpolo.webp"],
     price: 5100000,
     features: "GOLF VIEW | SINGLE ROW | BRANDED",
@@ -71,6 +77,8 @@ export const TOWNHOUSE_LISTINGS = [
   {
     slug: "tilal-al-ghaf-harmony",
     id: "t4",
+    propertyType: "Townhouse",
+    developer: "Majid Al Futtaim",
     images: ["/images/palmcentral.jpg", "/images/Riverside.jpg", "/images/heightsbyemaar.webp"],
     price: 6200000,
     features: "LAGOON ACCESS | SMART HOME | CORNER",
@@ -92,6 +100,8 @@ export const TOWNHOUSE_LISTINGS = [
   {
     slug: "villanova-la-rosa",
     id: "t5",
+    propertyType: "Townhouse",
+    developer: "Dubai Properties",
     images: ["/images/grandpolo.webp", "/images/palmcentral.jpg", "/images/Riverside.jpg"],
     price: 3650000,
     features: "GREEN BELT | SINGLE ROW | VACANT ON TRANSFER",
@@ -113,6 +123,8 @@ export const TOWNHOUSE_LISTINGS = [
   {
     slug: "mudon-al-ranim",
     id: "t6",
+    propertyType: "Townhouse",
+    developer: "Dubai Properties",
     images: ["/images/Riverside.jpg", "/images/heightsbyemaar.webp", "/images/grandpolo.webp"],
     price: 3100000,
     features: "PARK VIEW | 3 BED + MAID | HANDOVER 2026",

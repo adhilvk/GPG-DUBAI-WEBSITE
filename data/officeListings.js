@@ -8,6 +8,8 @@ export const OFFICE_LISTINGS = [
   {
     slug: "business-bay-canal-view-office",
     id: "o1",
+    propertyType: "Fitted Office",
+    developer: "Damac",
     images: ["/images/palmcentral.jpg", "/images/heightsbyemaar.webp", "/images/grandpolo.webp"],
     price: 2450000,
     features: "CANAL VIEW | FITTED | VACANT",
@@ -29,6 +31,8 @@ export const OFFICE_LISTINGS = [
   {
     slug: "downtown-grade-a-office",
     id: "o2",
+    propertyType: "Grade A Office",
+    developer: "Emaar",
     images: ["/images/Riverside.jpg", "/images/palmcentral.jpg", "/images/heightsbyemaar.webp"],
     price: 3850000,
     features: "GRADE A | PARTITIONED | BURJ DISTRICT",
@@ -50,6 +54,8 @@ export const OFFICE_LISTINGS = [
   {
     slug: "difc-index-office-suite",
     id: "o3",
+    propertyType: "Office",
+    developer: "Index Holding",
     images: ["/images/grandpolo.webp", "/images/heightsbyemaar.webp", "/images/Riverside.jpg"],
     price: 7200000,
     features: "DIFC ADDRESS | HIGH FLOOR | SHELL & CORE",
@@ -71,6 +77,8 @@ export const OFFICE_LISTINGS = [
   {
     slug: "jlt-cluster-c-fitted-office",
     id: "o4",
+    propertyType: "Fitted Office",
+    developer: "DMCC",
     images: ["/images/heightsbyemaar.webp", "/images/grandpolo.webp", "/images/palmcentral.jpg"],
     price: 1980000,
     features: "FULLY FITTED | LAKE VIEW | CLOSE TO METRO",
@@ -92,6 +100,8 @@ export const OFFICE_LISTINGS = [
   {
     slug: "barsha-heights-serviced-office",
     id: "o5",
+    propertyType: "Office",
+    developer: "TECOM Group",
     images: ["/images/palmcentral.jpg", "/images/Riverside.jpg", "/images/grandpolo.webp"],
     price: 1620000,
     features: "SERVICED FLOOR | TURNKEY | HIGH ROI",
@@ -113,6 +123,8 @@ export const OFFICE_LISTINGS = [
   {
     slug: "dubai-south-logistics-office",
     id: "o6",
+    propertyType: "Office",
+    developer: "Dubai South",
     images: ["/images/Riverside.jpg", "/images/heightsbyemaar.webp", "/images/palmcentral.jpg"],
     price: 2750000,
     features: "FREEZONE PROXIMITY | NEW BUILDING | FLEXIBLE LAYOUT",

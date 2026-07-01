@@ -8,6 +8,7 @@ export const VILLA_LISTINGS = [
   {
     slug: "emirates-hills-park-villa",
     id: "v1",
+    developer: "Emaar",
     images: ["/images/palmcentral.jpg", "/images/grandpolo.webp", "/images/heightsbyemaar.webp"],
     price: 28500000,
     features: "GOLF VIEW | PRIVATE POOL | BESPOKE FINISHES",
@@ -29,6 +30,7 @@ export const VILLA_LISTINGS = [
   {
     slug: "palm-jumeirah-signature-villa",
     id: "v2",
+    developer: "Nakheel",
     images: ["/images/prop2.jpg", "/images/palmcentral.jpg", "/images/grandpolo.webp"],
     price: 42000000,
     features: "BEACH ACCESS | FROND G | UPGRADED",
@@ -50,6 +52,7 @@ export const VILLA_LISTINGS = [
   {
     slug: "dubai-hills-mansion",
     id: "v3",
+    developer: "Emaar",
     images: ["/images/heightsbyemaar.webp", "/images/prop5.webp", "/images/palmcentral.jpg"],
     price: 15700000,
     features: "GOLF COURSE | SMART HOME | CORNER PLOT",
@@ -71,6 +74,7 @@ export const VILLA_LISTINGS = [
   {
     slug: "arabian-ranches-3-villa",
     id: "v4",
+    developer: "Emaar",
     images: ["/images/grandpolo.webp", "/images/Riverside.jpg", "/images/prop4.jpeg"],
     price: 8900000,
     features: "POOL | MAID'S ROOM | VACANT ON TRANSFER",
@@ -92,6 +96,7 @@ export const VILLA_LISTINGS = [
   {
     slug: "sobha-hartland-forest-villa",
     id: "v5",
+    developer: "Sobha Realty",
     images: ["/images/prop2.jpg", "/images/heightsbyemaar.webp", "/images/grandpolo.webp"],
     price: 25700000,
     features: "CUSTOM BUILT | PREMIUM FINISHES | 4 BR",
@@ -113,6 +118,7 @@ export const VILLA_LISTINGS = [
   {
     slug: "damac-hills-trump-villa",
     id: "v6",
+    developer: "DAMAC",
     images: ["/images/Riverside.jpg", "/images/palmcentral.jpg", "/images/prop3.jpg"],
     price: 11200000,
     features: "GOLF VIEW | PRIVATE GARDEN | HANDOVER 2026",
