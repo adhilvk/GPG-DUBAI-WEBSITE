@@ -34,7 +34,7 @@ const StatsBar = ({ variant = "default" }) => {
   const isHero = variant === "hero";
   const stats = [
     { value: 600, label: t("stats.happyCustomers"), suffix: "+" },
-    { value: 100, label: t("stats.premiumDevelopers"), suffix: "+" },
+    { value: 100, label: t("stats.premiumDevelopers"), suffix: "%" },
     { value: 300, label: t("stats.returnOnInvestments"), suffix: "%" },
     { value: 20, label: t("stats.industryExperience"), suffix: "+", unit: t("stats.yrs") },
   ];

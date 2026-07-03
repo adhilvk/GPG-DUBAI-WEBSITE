@@ -27,7 +27,7 @@
   min-width: 0;
   overflow-x: hidden;
   overflow-y: visible;
-  padding: 0.5rem 0.25rem 0;
+  padding: 0.5rem 0.25rem 0.75rem;
 }
 
 .trending-marquee__track {
@@ -67,7 +67,8 @@
 
 @media (max-width: 639px) {
   .trending-slider--marquee {
-    gap: 0.25rem;
+    position: relative;
+    gap: 0;
     padding-inline: 0;
   }
 
@@ -79,8 +80,27 @@
     padding-inline: 0;
   }
 
+  /* Overlay arrows so each card spans the full viewport width (one card at a time) */
+  .trending-slider--marquee .trending-slider__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 30;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 9999px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
+  }
+
+  .trending-slider--marquee .trending-slider__arrow:first-of-type {
+    left: 0.25rem;
+  }
+
+  .trending-slider--marquee .trending-slider__arrow:last-of-type {
+    right: 0.25rem;
+  }
+
   .trending-slider--marquee .exclusive-card-slot.luxury-marquee__card {
-    width: var(--marquee-card-width, calc(100vw - 9.5rem));
+    width: var(--marquee-card-width, 100vw);
     max-width: none;
   }
 }
@@ -97,28 +117,43 @@
   }
 }
 
-/* Awards — two cards span the same width as four luxury listing cards */
+/* Awards — one full card per viewport (width set via --awards-card-width in JS) */
+.trending-slider--awards {
+  position: relative;
+  gap: 0;
+  padding-inline: 0;
+}
+
+.trending-slider--awards .trending-slider__viewport {
+  padding-inline: 0;
+}
+
+.trending-slider--awards .trending-marquee__track {
+  padding-inline: 0;
+}
+
+.trending-slider--awards .trending-slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
+}
+
+.trending-slider--awards .trending-slider__arrow:first-of-type {
+  left: 0.25rem;
+}
+
+.trending-slider--awards .trending-slider__arrow:last-of-type {
+  right: 0.25rem;
+}
+
 .exclusive-card-slot.awards-marquee__card {
-  width: min(88vw, 620px);
-}
-
-@media (max-width: 639px) {
-  .trending-slider--awards .exclusive-card-slot.awards-marquee__card {
-    width: var(--awards-card-width, calc(100vw - 9.5rem));
-    max-width: none;
-  }
-}
-
-@media (min-width: 640px) {
-  .exclusive-card-slot.awards-marquee__card {
-    width: calc(320px * 2 + 1.25rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  .exclusive-card-slot.awards-marquee__card {
-    width: calc(340px * 2 + 1.25rem);
-  }
+  width: var(--awards-card-width, 100%);
+  max-width: none;
+  flex: 0 0 var(--awards-card-width, 100%);
 }
 
 .exclusive-card-body {

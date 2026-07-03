@@ -117,8 +117,19 @@ function MarqueeSlider({ items, renderItem, getItemKey, resetKey, prevLabel, nex
       if (isAnimatingRef.current) return;
 
       const step = getScrollStep();
-      const start = offsetRef.current;
-      const target = start - direction * step;
+      let start = offsetRef.current;
+      let target = start - direction * step;
+
+      // Jump back one loop before animating left so we never slide through positive offsets
+      if (direction < 0 && target > 0) {
+        const half = getHalfWidth();
+        if (half > 0) {
+          start -= half;
+          target = start - direction * step;
+          offsetRef.current = start;
+          applyTransform();
+        }
+      }
 
       isAnimatingRef.current = true;
       pauseAutoScroll();
@@ -130,19 +141,20 @@ function MarqueeSlider({ items, renderItem, getItemKey, resetKey, prevLabel, nex
         const eased = 1 - (1 - progress) ** 3;
 
         offsetRef.current = start + (target - start) * eased;
-        normalizeOffset();
         applyTransform();
 
         if (progress < 1) {
           requestAnimationFrame(animate);
         } else {
+          normalizeOffset();
+          applyTransform();
           isAnimatingRef.current = false;
         }
       };
 
       requestAnimationFrame(animate);
     },
-    [applyTransform, getScrollStep, normalizeOffset, pauseAutoScroll]
+    [applyTransform, getHalfWidth, getScrollStep, normalizeOffset, pauseAutoScroll]
   );
 
   useEffect(() => {
@@ -184,12 +196,13 @@ function MarqueeSlider({ items, renderItem, getItemKey, resetKey, prevLabel, nex
         const eased = 1 - (1 - progress) ** 3;
 
         offsetRef.current = start + (target - start) * eased;
-        normalizeOffset();
         applyTransform();
 
         if (progress < 1) {
           rafId = requestAnimationFrame(animate);
         } else {
+          normalizeOffset();
+          applyTransform();
           isAnimatingRef.current = false;
           scheduleNextStep(AUTO_SCROLL_PAUSE_MS);
         }
@@ -269,8 +282,6 @@ const ExclusiveProjectsSlider = () => {
     <section className="bg-white px-4 pb-16 pt-12 md:px-12 md:pb-20 md:pt-16">
       <div className="max-w-360 mx-auto">
         <div className="px-0 sm:px-2 md:px-0">
-          <OurAwards />
-
           <SectionHeader
             title={t("exclusiveProjects.listingTitle")}
             accent={t("exclusiveProjects.listingAccent")}
@@ -314,6 +325,10 @@ const ExclusiveProjectsSlider = () => {
           </div>
 
           <ArticleDownload />
+
+          <div className="mt-14 md:mt-20">
+            <OurAwards />
+          </div>
         </div>
       </div>
     </section>

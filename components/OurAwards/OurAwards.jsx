@@ -49,7 +49,17 @@ export default function OurAwards() {
   const updateCardWidth = useCallback(() => {
     const viewport = viewportRef.current;
     if (!viewport) return;
-    setCardWidth(viewport.clientWidth);
+
+    // Desktop: show two cards at a time
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      const peek = Math.min(viewport.clientWidth * 0.06, 48);
+      setCardWidth(Math.round((viewport.clientWidth - peek - CARD_GAP) / 2));
+      return;
+    }
+
+    // Phone: one full card with a peek of the next card
+    const peek = Math.min(viewport.clientWidth * 0.12, 64);
+    setCardWidth(Math.round(viewport.clientWidth - peek));
   }, []);
 
   useEffect(() => {
@@ -123,8 +133,19 @@ export default function OurAwards() {
       if (isAnimatingRef.current) return;
 
       const step = getScrollStep();
-      const start = offsetRef.current;
-      const target = start - direction * step;
+      let start = offsetRef.current;
+      let target = start - direction * step;
+
+      // Jump back one loop before animating left so we never slide through positive offsets
+      if (direction < 0 && target > 0) {
+        const half = getHalfWidth();
+        if (half > 0) {
+          start -= half;
+          target = start - direction * step;
+          offsetRef.current = start;
+          applyTransform();
+        }
+      }
 
       isAnimatingRef.current = true;
       pauseAutoScroll();
@@ -136,19 +157,20 @@ export default function OurAwards() {
         const eased = 1 - (1 - progress) ** 3;
 
         offsetRef.current = start + (target - start) * eased;
-        normalizeOffset();
         applyTransform();
 
         if (progress < 1) {
           requestAnimationFrame(animate);
         } else {
+          normalizeOffset();
+          applyTransform();
           isAnimatingRef.current = false;
         }
       };
 
       requestAnimationFrame(animate);
     },
-    [applyTransform, getScrollStep, normalizeOffset, pauseAutoScroll]
+    [applyTransform, getHalfWidth, getScrollStep, normalizeOffset, pauseAutoScroll]
   );
 
   useEffect(() => {
@@ -190,12 +212,13 @@ export default function OurAwards() {
         const eased = 1 - (1 - progress) ** 3;
 
         offsetRef.current = start + (target - start) * eased;
-        normalizeOffset();
         applyTransform();
 
         if (progress < 1) {
           rafId = requestAnimationFrame(animate);
         } else {
+          normalizeOffset();
+          applyTransform();
           isAnimatingRef.current = false;
           scheduleNextStep(AUTO_SCROLL_PAUSE_MS);
         }
