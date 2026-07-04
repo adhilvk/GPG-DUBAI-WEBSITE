@@ -1,7 +1,8 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, TrendingUp } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import SectionHeader from "@/components/SectionHeader/SectionHeader";
 
 const InvestorCaseStudies = () => {
   const cases = [
@@ -38,24 +39,13 @@ const InvestorCaseStudies = () => {
     <section className="bg-[#fcfcfc] py-20 px-6">
       <div className="max-w-7xl mx-auto">
         
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 bg-[#E31E24]/5 border border-[#E31E24]/10 px-4 py-1.5 rounded-full mb-6"
-          >
-            <TrendingUp size={16} className="text-[#E31E24]" />
-            <span className="text-[#E31E24] text-xs font-bold tracking-widest uppercase">Investor Success</span>
-          </motion.div>
-          
-          <h2 style={{ fontFamily: "'serif', 'Times New Roman', serif" }} className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
-            CASE STUDIES FOR <span className="text-[#E31E24]">INVESTORS</span>
-          </h2>
-          <p className="text-slate-500 text-lg font-medium">
-            GPG has generated high returns for its investors from 30% to 350% p.a.
-          </p>
-        </div>
+        <SectionHeader
+          eyebrow="Investor Success"
+          title="Case Studies for"
+          accent="Investors"
+          subtitle="GPG has generated high returns for its investors from 30% to 350% p.a."
+          className="!mb-16"
+        />
 
         {/* Case Study Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -111,7 +101,7 @@ const InvestorCaseStudies = () => {
 
         {/* Bottom Callout */}
         <div className="mt-16 text-center">
-          <button className="bg-slate-900 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#E31E24] transition-colors shadow-lg shadow-slate-200">
+          <button className="bg-[#E31E24] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#c81b20] transition-colors shadow-lg shadow-red-100">
             View Full Investment Portfolio
           </button>
         </div>

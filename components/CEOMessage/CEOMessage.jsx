@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
+import SectionHeader from "@/components/SectionHeader/SectionHeader";
 
 const CEOMessage = () => {
   return (
@@ -16,31 +17,28 @@ const CEOMessage = () => {
             viewport={{ once: true }}
             className="w-full lg:w-7/12"
           >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-10 h-px bg-[#E31E24]"></div>
-<span className="text-[#E31E24] font-bold tracking-[0.4em] text-[10px]">
-  <span className="uppercase">CEO</span> message
-</span>            </div>
-
-            <h2 className="text-3xl md:text-5xl font-light text-slate-900 mb-10 leading-tight tracking-tight">
-              Leading with <span className="text-[#E31E24] font-medium">Integrity</span> and <br /> 
-              Financial <span className="text-[#E31E24] font-medium">Excellence</span>.
-            </h2>
+            <SectionHeader
+              eyebrow="CEO message"
+              title="Leading with Integrity and"
+              accent="Financial Excellence."
+              linesAlign="left"
+              className="!text-left !mb-10"
+            />
 
             <div className="space-y-8 text-slate-600 leading-relaxed">
               <div className="relative">
                 <Quote className="absolute -top-6 -left-2 text-slate-200 w-12 h-12 -z-10 rotate-180 opacity-50" />
                 <p className="text-xl md:text-2xl font-light text-slate-800 leading-snug">
-                  "At GPG, we believe real estate is more than a transaction; it is a <span className="text-[#E31E24] italic">pathway to building generational wealth</span>."
+                  "At GPG, we believe real estate is more than a transaction, it is a <span className="text-[#E31E24] italic">pathway to building generational wealth</span>."
                 </p>
               </div>
 
-              <div className="space-y-5 text-sm md:text-base font-light tracking-wide">
+              <div className="space-y-5 text-sm md:text-base font-light tracking-wide text-justify">
                 <p>
                   Our vision has always been to create long-term value for our clients while contributing to the dynamic growth of Dubai’s real estate market. We are committed to identifying exceptional opportunities and delivering them with transparency, expertise, and integrity.
                 </p>
                 <p>
-                  As we continue to expand our global reach, our focus remains on building lasting relationships with investors and homeowners alike. With innovation and an unwavering dedication to excellence, we strive to set new benchmarks in market leadership.
+                  As we continue to expand our global reach, our focus remains on building lasting relationships with investors and homeowners alike. With innovation and an unwavering dedication to excellence, in UAE real estate market after we strive to set new benchmarks in market leadership.
                 </p>
               </div>
             </div>

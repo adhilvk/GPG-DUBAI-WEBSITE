@@ -82,13 +82,14 @@ const Navbar = () => {
   ];
 
   const moreLinks = [
-    { key: "ourTeam", link: "/our-teams" },
-    { key: "ourAwards", link: "/awards" },
     { key: "newsMedia", link: "/news" },
     { key: "contactUs", link: "/contact-us" },
   ];
 
-  const aboutLinks = [{ key: "aboutUs", link: "/about" }];
+  const aboutLinks = [
+    { key: "aboutUs", link: "/about" },
+    { key: "ourTeam", link: "/our-teams" },
+  ];
 
   const propertyLinks = [
     { key: "villas", href: "/villas", icon: Landmark },

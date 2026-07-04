@@ -13,6 +13,13 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
+const guideLinks = [
+  { key: "resale", href: "/HOWTORESELL" },
+  { key: "rental", href: "/HOWTORENTAL" },
+  { key: "offplanInvestment", href: "/HOWTOBUYOFFPLAN" },
+  { key: "commercialInvestment", href: "/HOWTOINVEST" },
+];
+
 const Footer = () => {
   const { t } = useLanguage();
   const footerLinkStyles = `relative w-max cursor-pointer transition-all duration-300 text-[#FF0000] text-[13px] uppercase tracking-wider
@@ -32,12 +39,13 @@ const Footer = () => {
             </h3>
 
             <ul className="space-y-4 text-[11px]">
-              <li className={footerLinkStyles}>{t("footer.investmentGuide")}</li>
-              <li className={footerLinkStyles}>{t("footer.offPlanGuide")}</li>
-              <li className={footerLinkStyles}>{t("footer.legalProcess")}</li>
-              <li>
-                <Link href="/HOWTORENTAL" className={footerLinkStyles}>{t("footer.rentalYieldGuide")}</Link>
-              </li>
+              {guideLinks.map((item) => (
+                <li key={item.key}>
+                  <Link href={item.href} className={footerLinkStyles}>
+                    {t(`footer.${item.key}`)}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

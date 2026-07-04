@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
+import SectionHeader from "@/components/SectionHeader/SectionHeader";
 
 const AwardsGallery = () => {
     const awards = [
@@ -28,13 +29,11 @@ const AwardsGallery = () => {
         <section className="bg-white py-24 px-6">
             <div className="max-w-7xl mx-auto">
                 
-                {/* Minimal Header */}
-                <div className="mb-16 text-center">
-                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900  tracking-tight">
-                        Our Awards And Winnings
-                    </h2>
-                    <div className="h-1 w-20 bg-[#E31E24] mx-auto mt-6" />
-                </div>
+                <SectionHeader
+                  title="Our Awards And"
+                  accent="Winnings"
+                  className="!mb-16"
+                />
 
                 {/* Pure Image Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -69,7 +68,7 @@ const AwardsGallery = () => {
 
                 {/* Institutional Footer Note */}
                 <div className="mt-16 text-center">
-                    <p className="text-slate-400 text-sm tracking-widest uppercase">
+                    <p className="mx-auto max-w-2xl text-sm text-slate-500 md:text-base">
                         Recognized by Dubai's leading developers and international media.
                     </p>
                 </div>

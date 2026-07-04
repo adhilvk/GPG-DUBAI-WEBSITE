@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { motion, useInView } from "framer-motion";
+import SectionHeader from "@/components/SectionHeader/SectionHeader";
 
 const Records = () => {
   const sectionRef = useRef(null);
@@ -29,25 +30,12 @@ const Records = () => {
     <section ref={sectionRef} className="bg-[#fcfcfc] pt-12 pb-24 px-5">
       <div className="max-w-7xl mx-auto">
 
-        {/* Header */}
-        <div className="mb-20 text-center lg:text-left border-b border-gray-100 pb-12">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            className="text-[#E31E24] text-center font-bold tracking-[0.2em] text-sm uppercase mb-4"
-          >
-            Performance Overview
-          </motion.p>
-
-          <h2
-            style={{ fontFamily: "'serif', 'Times New Roman', serif" }}
-            className="text-4xl text-center md:text-5xl font-bold text-slate-900 leading-tight"
-          >
-            A Magical Milestone: <br />
-            Sales Cross <span className="text-[#E31E24]">AED 2.1 Billion</span>
-          </h2>
-        </div>
+        <SectionHeader
+          eyebrow="Performance Overview"
+          title="A Magical Milestone: Sales Cross"
+          accent="AED 2.1 Billion"
+          className="!mb-20 border-b border-gray-100 pb-12"
+        />
 
         <div className="flex flex-col lg:flex-row items-start gap-16">
 
