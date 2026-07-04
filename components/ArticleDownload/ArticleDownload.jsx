@@ -4,13 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import "./ArticleDownload.css";
 import { useLanguage } from "@/context/LanguageContext";
-
-const ARTICLE_OPTIONS = [
-  { id: "a", label: "Download A", file: "/images/wealthmultiplication.pdf" },
-  { id: "b", label: "Download B", file: "/images/wealthmultiplication.pdf" },
-  { id: "c", label: "Download C", file: "/images/wealthmultiplication.pdf" },
-  { id: "d", label: "Download D", file: "/images/wealthmultiplication.pdf" },
-];
+import { ARTICLE_DOWNLOAD_OPTIONS } from "@/data/articleDownloads";
 
 const COVER_IMAGE = "/images/chiragpic.jpeg";
 
@@ -85,7 +79,7 @@ export default function ArticleDownload() {
 
             {isOpen ? (
               <ul className="article-download__menu" role="menu">
-                {ARTICLE_OPTIONS.map((article) => (
+                {ARTICLE_DOWNLOAD_OPTIONS.map((article) => (
                   <li key={article.id} role="none">
                     <button
                       type="button"

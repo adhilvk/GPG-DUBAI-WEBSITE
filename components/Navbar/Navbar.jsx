@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { ARTICLE_DOWNLOAD_OPTIONS } from "@/data/articleDownloads";
 import {
   ChevronRight,
   Briefcase,
@@ -20,13 +21,13 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [downloadOpen, setDownloadOpen] = useState(false);
+  const [articlesOpen, setArticlesOpen] = useState(false);
   const [mobileSectionsOpen, setMobileSectionsOpen] = useState({});
   const langRef = useRef(null);
   const downloadRef = useRef(null);
 
   const downloadItems = [
     { labelKey: "nav.companyProfile", href: "/images/company-profile.pdf" },
-    { labelKey: "nav.articles", href: "/images/wealthmultiplication.pdf" },
   ];
 
   const useDarkChrome = !isHome || scrolled;
@@ -46,6 +47,7 @@ const Navbar = () => {
       }
       if (downloadRef.current && !downloadRef.current.contains(e.target)) {
         setDownloadOpen(false);
+        setArticlesOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -448,7 +450,10 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                         download
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => setDownloadOpen(false)}
+                        onClick={() => {
+                          setDownloadOpen(false);
+                          setArticlesOpen(false);
+                        }}
                         className="group/item flex w-full items-center justify-between gap-2 rounded-2xl px-4 py-3 text-[12px] uppercase tracking-wider text-slate-700 transition-all hover:bg-[#002147]/5 hover:text-[#002147]"
                       >
                         <span className="flex items-center gap-2">
@@ -462,6 +467,52 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                       </a>
                     </li>
                   ))}
+
+                  <li role="none">
+                    <button
+                      type="button"
+                      role="menuitem"
+                      onClick={() => setArticlesOpen((open) => !open)}
+                      aria-expanded={articlesOpen}
+                      className="group/item flex w-full items-center justify-between gap-2 rounded-2xl px-4 py-3 text-[12px] uppercase tracking-wider text-slate-700 transition-all hover:bg-[#002147]/5 hover:text-[#002147]"
+                    >
+                      <span className="flex items-center gap-2">
+                        <Download size={14} className="shrink-0 text-[#E31E24]" />
+                        {t("nav.articles")}
+                      </span>
+                      <ChevronDown
+                        size={14}
+                        className={`text-[#002147] transition-transform ${articlesOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+
+                    {articlesOpen && (
+                      <ul className="mt-1 flex flex-col gap-1 border-l border-slate-100 pl-3 ml-4">
+                        {ARTICLE_DOWNLOAD_OPTIONS.map((article) => (
+                          <li key={article.id} role="none">
+                            <a
+                              role="menuitem"
+                              href={article.file}
+                              download
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={() => {
+                                setDownloadOpen(false);
+                                setArticlesOpen(false);
+                              }}
+                              className="group/item flex w-full items-center justify-between gap-2 rounded-2xl px-3 py-2.5 text-[11px] uppercase tracking-wider text-slate-600 transition-all hover:bg-[#002147]/5 hover:text-[#002147]"
+                            >
+                              <span>{article.label}</span>
+                              <ChevronRight
+                                size={12}
+                                className="text-[#002147] opacity-0 transition-all group-hover/item:translate-x-1 group-hover/item:opacity-100"
+                              />
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
                 </ul>
               )}
             </div>
@@ -685,6 +736,39 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                       {t(item.labelKey)}
                     </a>
                   ))}
+
+                  <button
+                    type="button"
+                    onClick={() => toggleMobileSection("downloadArticles")}
+                    className="flex w-full items-center justify-between pl-4 pr-2 py-1.5 text-sm text-[#FF0000]"
+                  >
+                    <span className="flex items-center gap-2">
+                      <Download size={14} className="text-[#E31E24]" />
+                      {t("nav.articles")}
+                    </span>
+                    <ChevronDown
+                      size={14}
+                      className={`shrink-0 transition-transform duration-200 ${mobileSectionsOpen.downloadArticles ? "rotate-180" : ""}`}
+                    />
+                  </button>
+
+                  {mobileSectionsOpen.downloadArticles && (
+                    <div className="space-y-1 pb-1">
+                      {ARTICLE_DOWNLOAD_OPTIONS.map((article) => (
+                        <a
+                          key={article.id}
+                          href={article.file}
+                          download
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={closeMobileMenu}
+                          className="block pl-8 py-1.5 text-sm text-[#FF0000]"
+                        >
+                          {article.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
             </div>
