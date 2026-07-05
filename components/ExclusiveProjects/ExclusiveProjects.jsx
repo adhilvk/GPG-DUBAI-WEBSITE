@@ -1,17 +1,21 @@
 "use client";
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo } from "react";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import "./ExclusiveProjects.css";
 
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import ArticleDownload from "@/components/ArticleDownload/ArticleDownload";
+import ProjectCarousel from "@/components/ProjectCarousel/ProjectCarousel";
+import ViewAllProjectsCard from "@/components/ViewAllProjectsCard/ViewAllProjectsCard";
 import { useLanguage } from "@/context/LanguageContext";
 import { LUXURY_LISTING_PROJECTS } from "@/data/luxuryListingProjects";
 import { TRENDING_PROJECTS } from "@/data/trendingProjects";
 import LuxuryProjectCard from "@/components/LuxuryProjectCard/LuxuryProjectCard";
 import TrendingProjectCard from "@/components/TrendingProjectCard/TrendingProjectCard";
 import OurAwards from "@/components/OurAwards/OurAwards";
+
+const CAROUSEL_PROJECT_LIMIT = 5;
 
 const ViewAllButton = ({ href, label }) => (
   <Link
@@ -23,260 +27,23 @@ const ViewAllButton = ({ href, label }) => (
   </Link>
 );
 
-const CARD_GAP = 20;
-const AUTO_SCROLL_PAUSE_MS = 1000;
-const AUTO_SCROLL_STEP_DURATION = 600;
-const ARROW_SCROLL_DURATION = 450;
-const ARROW_PAUSE_MS = 2000;
-
-function MarqueeSlider({ items, renderItem, getItemKey, resetKey, prevLabel, nextLabel, cardClassName = "" }) {
-  const trackRef = useRef(null);
-  const viewportRef = useRef(null);
-  const offsetRef = useRef(0);
-  const isPausedRef = useRef(false);
-  const isAnimatingRef = useRef(false);
-  const resumeTimeoutRef = useRef(null);
-  const [cardWidth, setCardWidth] = useState(null);
-
-  const loopingItems = useMemo(() => [...items, ...items], [items]);
-
-  const updateCardWidth = useCallback(() => {
-    const viewport = viewportRef.current;
-    if (!viewport) return;
-    setCardWidth(viewport.clientWidth);
-  }, []);
-
-  useEffect(() => {
-    const viewport = viewportRef.current;
-    if (!viewport) return;
-
-    updateCardWidth();
-
-    const observer = new ResizeObserver(() => {
-      updateCardWidth();
-    });
-    observer.observe(viewport);
-
-    return () => observer.disconnect();
-  }, [updateCardWidth, resetKey]);
-
-  const getHalfWidth = useCallback(() => {
-    const track = trackRef.current;
-    return track ? track.scrollWidth / 2 : 0;
-  }, []);
-
-  const getScrollStep = useCallback(() => {
-    const track = trackRef.current;
-    const card = track?.querySelector(".exclusive-card-slot");
-    if (!card || !track) return 290;
-
-    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || CARD_GAP;
-    return card.offsetWidth + gap;
-  }, []);
-
-  const normalizeOffset = useCallback(() => {
-    const half = getHalfWidth();
-    if (half <= 0) return;
-
-    while (offsetRef.current <= -half) {
-      offsetRef.current += half;
-    }
-
-    while (offsetRef.current > 0) {
-      offsetRef.current -= half;
-    }
-  }, [getHalfWidth]);
-
-  const applyTransform = useCallback(() => {
-    const track = trackRef.current;
-    if (track) {
-      track.style.transform = `translate3d(${offsetRef.current}px, 0, 0)`;
-    }
-  }, []);
-
-  useEffect(() => {
-    offsetRef.current = 0;
-    applyTransform();
-  }, [cardWidth, applyTransform, resetKey]);
-
-  const pauseAutoScroll = useCallback((duration = ARROW_PAUSE_MS) => {
-    isPausedRef.current = true;
-
-    if (resumeTimeoutRef.current) {
-      clearTimeout(resumeTimeoutRef.current);
-    }
-
-    resumeTimeoutRef.current = setTimeout(() => {
-      isPausedRef.current = false;
-      resumeTimeoutRef.current = null;
-    }, duration);
-  }, []);
-
-  const scroll = useCallback(
-    (direction) => {
-      if (isAnimatingRef.current) return;
-
-      const step = getScrollStep();
-      let start = offsetRef.current;
-      let target = start - direction * step;
-
-      // Jump back one loop before animating left so we never slide through positive offsets
-      if (direction < 0 && target > 0) {
-        const half = getHalfWidth();
-        if (half > 0) {
-          start -= half;
-          target = start - direction * step;
-          offsetRef.current = start;
-          applyTransform();
-        }
-      }
-
-      isAnimatingRef.current = true;
-      pauseAutoScroll();
-
-      const startTime = performance.now();
-
-      const animate = (now) => {
-        const progress = Math.min((now - startTime) / ARROW_SCROLL_DURATION, 1);
-        const eased = 1 - (1 - progress) ** 3;
-
-        offsetRef.current = start + (target - start) * eased;
-        applyTransform();
-
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          normalizeOffset();
-          applyTransform();
-          isAnimatingRef.current = false;
-        }
-      };
-
-      requestAnimationFrame(animate);
-    },
-    [applyTransform, getHalfWidth, getScrollStep, normalizeOffset, pauseAutoScroll]
-  );
-
-  useEffect(() => {
-    offsetRef.current = 0;
-    applyTransform();
-
-    let cancelled = false;
-    let timeoutId = null;
-    let rafId = null;
-
-    const scheduleNextStep = (delay) => {
-      timeoutId = setTimeout(runAutoStep, delay);
-    };
-
-    const runAutoStep = () => {
-      if (cancelled) return;
-
-      if (isPausedRef.current || isAnimatingRef.current) {
-        scheduleNextStep(100);
-        return;
-      }
-
-      const step = getScrollStep();
-      const start = offsetRef.current;
-      const target = start - step;
-      const startTime = performance.now();
-      isAnimatingRef.current = true;
-
-      const animate = (now) => {
-        if (cancelled) return;
-
-        if (isPausedRef.current) {
-          isAnimatingRef.current = false;
-          scheduleNextStep(100);
-          return;
-        }
-
-        const progress = Math.min((now - startTime) / AUTO_SCROLL_STEP_DURATION, 1);
-        const eased = 1 - (1 - progress) ** 3;
-
-        offsetRef.current = start + (target - start) * eased;
-        applyTransform();
-
-        if (progress < 1) {
-          rafId = requestAnimationFrame(animate);
-        } else {
-          normalizeOffset();
-          applyTransform();
-          isAnimatingRef.current = false;
-          scheduleNextStep(AUTO_SCROLL_PAUSE_MS);
-        }
-      };
-
-      rafId = requestAnimationFrame(animate);
-    };
-
-    scheduleNextStep(AUTO_SCROLL_PAUSE_MS);
-
-    return () => {
-      cancelled = true;
-      if (rafId) cancelAnimationFrame(rafId);
-      if (timeoutId) clearTimeout(timeoutId);
-      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
-    };
-  }, [resetKey, applyTransform, getScrollStep, normalizeOffset, cardWidth]);
-
-  return (
-    <div
-      className="trending-slider trending-slider--marquee"
-      onMouseEnter={() => {
-        isPausedRef.current = true;
-      }}
-      onMouseLeave={() => {
-        if (!isAnimatingRef.current && !resumeTimeoutRef.current) {
-          isPausedRef.current = false;
-        }
-      }}
-    >
-      <button
-        type="button"
-        className="trending-slider__arrow"
-        onClick={() => scroll(-1)}
-        aria-label={prevLabel}
-      >
-        <ChevronLeft size={28} strokeWidth={2} />
-      </button>
-
-      <div
-        className="trending-slider__viewport"
-        ref={viewportRef}
-        key={resetKey}
-        style={cardWidth ? { "--marquee-card-width": `${cardWidth}px` } : undefined}
-      >
-        <div className="trending-marquee__track" ref={trackRef}>
-          {loopingItems.map((item, idx) => (
-            <div
-              key={`${getItemKey(item)}-${idx}`}
-              className={`exclusive-card-slot ${cardClassName}`.trim()}
-            >
-              {renderItem(item)}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <button
-        type="button"
-        className="trending-slider__arrow"
-        onClick={() => scroll(1)}
-        aria-label={nextLabel}
-      >
-        <ChevronRight size={28} strokeWidth={2} />
-      </button>
-    </div>
-  );
-}
-
 const ExclusiveProjectsSlider = () => {
   const { t } = useLanguage();
 
-  const trendingProjects = TRENDING_PROJECTS;
-  const luxuryListings = LUXURY_LISTING_PROJECTS;
+  const trendingProjects = useMemo(() => TRENDING_PROJECTS.slice(0, CAROUSEL_PROJECT_LIMIT), []);
+  const luxuryListings = useMemo(() => LUXURY_LISTING_PROJECTS.slice(0, CAROUSEL_PROJECT_LIMIT), []);
+
+  const luxuryViewAllCard = {
+    title: t("exclusiveProjects.exploreLuxuryTitle"),
+    subtitle: t("exclusiveProjects.exploreLuxurySubtitle"),
+    buttonLabel: t("exclusiveProjects.viewAllProjects"),
+  };
+
+  const trendingViewAllCard = {
+    title: t("exclusiveProjects.exploreTrendingTitle"),
+    subtitle: t("exclusiveProjects.exploreTrendingSubtitle"),
+    buttonLabel: t("exclusiveProjects.viewAllProjects"),
+  };
 
   return (
     <section className="bg-white px-4 pb-16 pt-12 md:px-12 md:pb-20 md:pt-16">
@@ -286,7 +53,7 @@ const ExclusiveProjectsSlider = () => {
             title={t("exclusiveProjects.listingTitle")}
             accent={t("exclusiveProjects.listingAccent")}
           />
-          <MarqueeSlider
+          <ProjectCarousel
             items={luxuryListings}
             renderItem={(item) => <LuxuryProjectCard project={item} compact />}
             getItemKey={(item) => item.id}
@@ -294,6 +61,9 @@ const ExclusiveProjectsSlider = () => {
             prevLabel="Previous luxury listings"
             nextLabel="Next luxury listings"
             cardClassName="luxury-marquee__card"
+            trailingCard={
+              <ViewAllProjectsCard href="/luxury-properties" {...luxuryViewAllCard} />
+            }
           />
           <div className="mt-8 flex justify-center">
             <ViewAllButton
@@ -307,7 +77,7 @@ const ExclusiveProjectsSlider = () => {
               title={t("trendingProjectsPage.title")}
               accent={t("trendingProjectsPage.accent")}
             />
-            <MarqueeSlider
+            <ProjectCarousel
               items={trendingProjects}
               renderItem={(item) => <TrendingProjectCard project={item} compact />}
               getItemKey={(item) => item.id}
@@ -315,6 +85,9 @@ const ExclusiveProjectsSlider = () => {
               prevLabel="Previous projects"
               nextLabel="Next projects"
               cardClassName="luxury-marquee__card"
+              trailingCard={
+                <ViewAllProjectsCard href="/trending-projects" {...trendingViewAllCard} />
+              }
             />
             <div className="mt-8 flex justify-center">
               <ViewAllButton

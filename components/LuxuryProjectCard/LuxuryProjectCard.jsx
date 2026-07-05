@@ -16,14 +16,16 @@ function WhatsAppGlyph({ className }) {
   );
 }
 
-function ContactIconButton({ href, label, children }) {
+function ContactIconButton({ href, label, children, compact = false }) {
   return (
     <a
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
       aria-label={label}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#E31E24] text-white transition-colors hover:bg-[#c81b20]"
+      className={`inline-flex items-center justify-center rounded-full bg-[#E31E24] text-white transition-colors hover:bg-[#c81b20] ${
+        compact ? "h-8 w-8" : "h-9 w-9"
+      }`}
     >
       {children}
     </a>
@@ -43,13 +45,13 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
 
   const contactIcons = (
     <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-      <ContactIconButton href={phoneHref} label={`Call about ${project.title}`}>
+      <ContactIconButton href={phoneHref} label={`Call about ${project.title}`} compact={compact}>
         <Phone size={compact ? 14 : 16} />
       </ContactIconButton>
-      <ContactIconButton href={emailHref} label={`Email about ${project.title}`}>
+      <ContactIconButton href={emailHref} label={`Email about ${project.title}`} compact={compact}>
         <Mail size={compact ? 14 : 16} />
       </ContactIconButton>
-      <ContactIconButton href={waHref} label={`WhatsApp about ${project.title}`}>
+      <ContactIconButton href={waHref} label={`WhatsApp about ${project.title}`} compact={compact}>
         <WhatsAppGlyph className={compact ? "h-3.5 w-3.5" : "h-4 w-4"} />
       </ContactIconButton>
     </div>
@@ -65,7 +67,7 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
         />
       ) : null}
 
-      <div className="relative aspect-[4/3] bg-slate-100">
+      <div className={`relative bg-slate-100 ${compact ? "aspect-[16/10]" : "aspect-[4/3]"}`}>
         <Image
           src={project.image}
           alt={project.title}
@@ -75,7 +77,11 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
         />
       </div>
 
-      <div className={`relative z-10 flex flex-1 flex-col gap-2 p-4 pointer-events-none ${hasSpecs ? "" : "pb-16"}`}>
+      <div
+        className={`relative z-10 flex flex-1 flex-col pointer-events-none ${
+          compact ? "gap-1.5 p-3" : "gap-2 p-4"
+        } ${hasSpecs ? "" : compact ? "pb-12" : "pb-16"}`}
+      >
         {project.propertyType ? (
           <p className="text-xs text-slate-500">{project.propertyType}</p>
         ) : null}
@@ -89,7 +95,7 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
 
         {hasSpecs ? (
           <p
-            className={`font-bold text-[#E31E24] ${compact ? "text-lg" : "text-xl md:text-2xl"}`}
+            className={`font-bold text-[#E31E24] ${compact ? "text-base" : "text-xl md:text-2xl"}`}
           >
             {priceLabel}
           </p>
@@ -114,10 +120,8 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
 
         {hasSpecs ? (
           <div
-            className={`pointer-events-auto mt-auto border-t border-slate-100 pt-3 ${
-              compact
-                ? "flex flex-col gap-2.5"
-                : "flex items-center justify-between gap-2"
+            className={`pointer-events-auto mt-auto border-t border-slate-100 ${
+              compact ? "flex flex-col gap-2 pt-2" : "flex items-center justify-between gap-2 pt-3"
             }`}
           >
             <div
