@@ -22,6 +22,9 @@ function AwardCard({ award }) {
         <p className="award-card__eyebrow">{award.eyebrow}</p>
         <h3 className="award-card__title">{award.title}</h3>
       </div>
+      <div className="award-card__glass-info">
+        <p className="award-card__glass-text">{award.description}</p>
+      </div>
     </article>
   );
 }

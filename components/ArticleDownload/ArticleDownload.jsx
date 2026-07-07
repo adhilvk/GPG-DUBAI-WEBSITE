@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Download } from "lucide-react";
 import "./ArticleDownload.css";
 import { useLanguage } from "@/context/LanguageContext";
 import { ARTICLE_DOWNLOAD_OPTIONS } from "@/data/articleDownloads";
@@ -87,6 +87,7 @@ export default function ArticleDownload() {
                       className="article-download__menu-item"
                       onClick={() => handleDownload(article.file)}
                     >
+                      <Download size={16} className="article-download__menu-item-icon" />
                       {article.label}
                     </button>
                   </li>

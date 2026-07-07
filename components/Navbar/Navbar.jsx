@@ -502,7 +502,10 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                               }}
                               className="group/item flex w-full items-center justify-between gap-2 rounded-2xl px-3 py-2.5 text-[11px] uppercase tracking-wider text-slate-600 transition-all hover:bg-[#002147]/5 hover:text-[#002147]"
                             >
-                              <span>{article.label}</span>
+                              <span className="flex items-center gap-2">
+                                <Download size={12} className="shrink-0 text-[#E31E24]" />
+                                {article.label}
+                              </span>
                               <ChevronRight
                                 size={12}
                                 className="text-[#002147] opacity-0 transition-all group-hover/item:translate-x-1 group-hover/item:opacity-100"
@@ -762,8 +765,9 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={closeMobileMenu}
-                          className="block pl-8 py-1.5 text-sm text-[#FF0000]"
+                          className="flex items-center gap-2 pl-8 py-1.5 text-sm text-[#FF0000]"
                         >
+                          <Download size={13} className="shrink-0 text-[#E31E24]" />
                           {article.label}
                         </a>
                       ))}

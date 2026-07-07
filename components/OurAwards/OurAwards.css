@@ -7,6 +7,24 @@
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.12);
 }
 
+.award-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 23, 42, 0.35) 0%,
+    rgba(15, 23, 42, 0.15) 45%,
+    rgba(15, 23, 42, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.55s ease;
+}
+
+.award-card:hover::after {
+  opacity: 1;
+}
+
 .award-card__image {
   display: block;
   width: 100%;
@@ -53,6 +71,41 @@
   color: #ffffff;
 }
 
+.award-card__glass-info {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: 50%;
+  z-index: 2;
+  padding: 0.7rem 0.85rem;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(15, 23, 42, 0.62);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(140%);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+  pointer-events: none;
+}
+
+.award-card:hover .award-card__glass-info {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.award-card__glass-text {
+  margin: 0;
+  font-size: 0.76rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #ffffff;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 @media (min-width: 768px) {
   .award-card__eyebrow {
     font-size: 0.6875rem;
@@ -60,5 +113,9 @@
 
   .award-card__title {
     font-size: 1.125rem;
+  }
+
+  .award-card__glass-text {
+    font-size: 0.8rem;
   }
 }
