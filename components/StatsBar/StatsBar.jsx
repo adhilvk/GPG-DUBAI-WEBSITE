@@ -44,7 +44,7 @@ const StatsBar = ({ variant = "default" }) => {
     const labelColor = "text-white";
 
     return (
-      <div className="mx-auto mt-8 w-full max-w-4xl sm:mt-10 md:mt-12">
+      <div className="mx-auto mt-6 w-full max-w-4xl sm:mt-8 md:mt-10">
         <div className="flex flex-nowrap items-stretch justify-center divide-x divide-white/30">
           {stats.map((item, index) => (
             <motion.div
@@ -53,10 +53,10 @@ const StatsBar = ({ variant = "default" }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.05 }}
-              className="flex min-w-0 flex-1 flex-col items-center justify-center px-2 py-1 text-center sm:px-3 md:px-5"
+              className="flex min-w-0 flex-1 flex-col items-center justify-start px-2 pb-1 pt-0 text-center sm:px-3 md:px-5"
             >
-              <p
-                className={`mb-1 flex shrink-0 items-baseline justify-center gap-0.5 whitespace-nowrap text-xl tracking-tight sm:text-2xl md:text-3xl ${numberColor}`}
+              <div
+                className={`flex h-7 shrink-0 items-center justify-center gap-0.5 whitespace-nowrap text-xl tracking-tight sm:h-8 sm:text-2xl md:h-9 md:text-3xl ${numberColor}`}
               >
                 <Counter value={item.value} className={numberColor} animateOnMount />
                 <span className={numberColor}>{item.suffix}</span>
@@ -67,12 +67,12 @@ const StatsBar = ({ variant = "default" }) => {
                     {item.unit}
                   </span>
                 ) : null}
-              </p>
-              <p
-                className={`w-full text-[8px] font-semibold uppercase leading-snug tracking-[0.14em] sm:text-[9px] md:text-[10px] ${labelColor}`}
+              </div>
+              <div
+                className={`mt-3 w-full text-[8px] font-semibold uppercase leading-snug tracking-[0.14em] sm:mt-4 sm:text-[9px] md:text-[10px] ${labelColor}`}
               >
                 {item.label}
-              </p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -91,15 +91,13 @@ const StatsBar = ({ variant = "default" }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.35, delay: index * 0.05 }}
-              className="relative flex flex-col items-center"
+              className="relative flex flex-col items-center justify-start"
             >
               {index < stats.length - 1 && (
                 <div className="absolute -right-5 top-1/2 hidden h-12 w-px -translate-y-1/2 bg-red-100 lg:block" />
               )}
 
-              <p
-                className="mb-1.5 flex items-baseline justify-center gap-1 text-4xl tracking-tight text-[#E31E24] md:text-5xl"
-              >
+              <div className="flex h-10 items-center justify-center gap-1 text-4xl tracking-tight text-[#E31E24] md:h-12 md:text-5xl">
                 <Counter value={item.value} className="text-[#E31E24]" />
                 <span className="text-[#E31E24]">{item.suffix}</span>
                 {item.unit ? (
@@ -107,11 +105,11 @@ const StatsBar = ({ variant = "default" }) => {
                     {item.unit}
                   </span>
                 ) : null}
-              </p>
+              </div>
 
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-600 md:text-xs">
+              <div className="mt-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-600 md:mt-5 md:text-xs">
                 {item.label}
-              </p>
+              </div>
             </motion.div>
           ))}
         </div>

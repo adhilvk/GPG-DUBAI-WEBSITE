@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import StatsBar from "@/components/StatsBar/StatsBar";
+import HomeContactPopup from "@/components/HomeContactPopup/HomeContactPopup";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -84,6 +85,13 @@ const Hero = () => {
 
           <motion.div variants={itemVariants}>
             <StatsBar variant="hero" />
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="mx-auto flex w-full max-w-4xl justify-end max-sm:mt-3 sm:mt-0 sm:h-0 sm:overflow-visible"
+          >
+            <HomeContactPopup />
           </motion.div>
         </motion.div>
       </div>
