@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { X } from "lucide-react";
+import { Mail, X } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import "./HomeContactPopup.css";
 
 const POPUP_DELAY_MS = 3000;
 const WA_NUMBER = "971542068414";
+const EMAIL = "it.gpg22@gmail.com";
 
 function WhatsAppGlyph({ className }) {
   return (
@@ -22,7 +23,6 @@ function WhatsAppGlyph({ className }) {
 export default function HomeContactPopup() {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
-  const [phone, setPhone] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -32,60 +32,49 @@ export default function HomeContactPopup() {
     return () => clearTimeout(timer);
   }, []);
 
-  const closePopup = () => {
-    setIsVisible(false);
-  };
-
-  const handleWhatsAppSubmit = (event) => {
-    event.preventDefault();
-    if (!phone.trim()) return;
-
-    const text = encodeURIComponent(`Please contact me at: ${phone.trim()}`);
-    window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, "_blank", "noopener,noreferrer");
-    closePopup();
-  };
-
   if (!isVisible) return null;
 
   return (
-    <div className="home-contact-popup" role="complementary" aria-labelledby="home-contact-popup-title">
+    <div className="home-contact-popup" role="complementary" aria-label="Contact">
       <div className="home-contact-popup__card">
         <button
           type="button"
           className="home-contact-popup__close"
-          onClick={closePopup}
+          onClick={() => setIsVisible(false)}
           aria-label={t("homeContactPopup.close")}
         >
-          <X size={18} />
+          <X size={14} />
         </button>
 
-        <div className="home-contact-popup__header">
-          <WhatsAppGlyph className="home-contact-popup__header-icon" />
-          <span id="home-contact-popup-title" className="home-contact-popup__header-label">
-            {t("homeContactPopup.whatsappTab")}
-          </span>
+        <div className="home-contact-popup__actions">
+          <a
+            href={`https://wa.me/${WA_NUMBER}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="home-contact-popup__icon-btn home-contact-popup__icon-btn--whatsapp"
+            aria-label="WhatsApp +971 542068414"
+            title="+971 542068414"
+          >
+            <WhatsAppGlyph className="home-contact-popup__icon" />
+          </a>
+
+          <a
+            href={`mailto:${EMAIL}`}
+            onClick={(event) => {
+              event.preventDefault();
+              window.open(
+                `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}`,
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }}
+            className="home-contact-popup__icon-btn home-contact-popup__icon-btn--mail"
+            aria-label={`Email ${EMAIL}`}
+            title={EMAIL}
+          >
+            <Mail className="home-contact-popup__icon" strokeWidth={2} />
+          </a>
         </div>
-
-        <p className="home-contact-popup__subtitle">{t("homeContactPopup.whatsappSubtitle")}</p>
-
-        <form className="home-contact-popup__form" onSubmit={handleWhatsAppSubmit}>
-          <label className="home-contact-popup__label" htmlFor="home-contact-phone">
-            <WhatsAppGlyph className="h-3.5 w-3.5" />
-            {t("homeContactPopup.whatsappLabel")}
-          </label>
-          <input
-            id="home-contact-phone"
-            type="tel"
-            value={phone}
-            onChange={(event) => setPhone(event.target.value)}
-            placeholder={t("homeContactPopup.whatsappPlaceholder")}
-            className="home-contact-popup__input"
-            required
-          />
-          <button type="submit" className="home-contact-popup__submit">
-            {t("homeContactPopup.whatsappButton")}
-          </button>
-        </form>
       </div>
     </div>
   );
