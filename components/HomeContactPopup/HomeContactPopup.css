@@ -1,8 +1,12 @@
 .home-contact-popup {
-  position: relative;
-  z-index: 20;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 1000;
   width: auto;
-  padding: 0;
+  margin: 0;
+  padding: 0.5rem;
+  transform: translateY(-50%);
   pointer-events: none;
 }
 
@@ -93,22 +97,20 @@
   background: #c81b20;
 }
 
+.home-contact-popup__icon-btn--instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.home-contact-popup__icon-btn--instagram:hover {
+  filter: brightness(1.08);
+}
+
 .home-contact-popup__icon {
   width: 1.15rem;
   height: 1.15rem;
 }
 
 @media (min-width: 640px) {
-  .home-contact-popup {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    z-index: 1000;
-    margin: 0;
-    padding: 0.5rem;
-    transform: translateY(-50%);
-  }
-
   .home-contact-popup__card {
     padding: 0.65rem 0.55rem 0.55rem;
     border-right: none;

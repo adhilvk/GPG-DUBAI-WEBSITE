@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Mail, X } from "lucide-react";
+import { Instagram, Mail, X } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import "./HomeContactPopup.css";
 
 const POPUP_DELAY_MS = 3000;
 const WA_NUMBER = "971542068414";
 const EMAIL = "it.gpg22@gmail.com";
+const INSTAGRAM_URL = "https://www.instagram.com/xgpg.luxury/";
 
 function WhatsAppGlyph({ className }) {
   return (
@@ -73,6 +74,17 @@ export default function HomeContactPopup() {
             title={EMAIL}
           >
             <Mail className="home-contact-popup__icon" strokeWidth={2} />
+          </a>
+
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="home-contact-popup__icon-btn home-contact-popup__icon-btn--instagram"
+            aria-label="Instagram @xgpg.luxury"
+            title="@xgpg.luxury"
+          >
+            <Instagram className="home-contact-popup__icon" strokeWidth={2} />
           </a>
         </div>
       </div>

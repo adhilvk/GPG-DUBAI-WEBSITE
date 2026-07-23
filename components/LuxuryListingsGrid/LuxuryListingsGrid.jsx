@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
+import PremiumFilterSelect from "@/components/PremiumFilterSelect/PremiumFilterSelect";
 import LuxuryProjectCard from "@/components/LuxuryProjectCard/LuxuryProjectCard";
 import { useLanguage } from "@/context/LanguageContext";
 import { LUXURY_LISTING_PROJECTS } from "@/data/luxuryListingProjects";
@@ -81,27 +82,6 @@ function matchesBudget(project, budget) {
   }
 }
 
-function FilterSelect({ label, value, onChange, options, t, prefix }) {
-  return (
-    <div className="min-w-0 flex-1">
-      <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-500">
-        {label}
-      </label>
-      <select
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-800 outline-none transition-colors focus:border-[#E31E24] focus:ring-1 focus:ring-[#E31E24]"
-      >
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {t(`${prefix}.${option.labelKey}`)}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-}
-
 export default function LuxuryListingsGrid() {
   const { t } = useLanguage();
   const searchParams = useSearchParams();
@@ -157,7 +137,7 @@ export default function LuxuryListingsGrid() {
             <p className="text-sm font-semibold">{t("luxuryListingsPage.searchTitle")}</p>
           </div>
           <div className="flex flex-col gap-4 md:flex-row md:items-end">
-            <FilterSelect
+            <PremiumFilterSelect
               label={t("luxuryListingsPage.propertyType")}
               value={propertyType}
               onChange={setPropertyType}
@@ -165,7 +145,7 @@ export default function LuxuryListingsGrid() {
               t={t}
               prefix="luxuryListingsPage.filters"
             />
-            <FilterSelect
+            <PremiumFilterSelect
               label={t("luxuryListingsPage.location")}
               value={location}
               onChange={setLocation}
@@ -173,7 +153,7 @@ export default function LuxuryListingsGrid() {
               t={t}
               prefix="luxuryListingsPage.filters"
             />
-            <FilterSelect
+            <PremiumFilterSelect
               label={t("luxuryListingsPage.budget")}
               value={budget}
               onChange={setBudget}

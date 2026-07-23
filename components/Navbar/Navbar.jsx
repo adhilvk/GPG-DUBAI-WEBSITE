@@ -355,25 +355,26 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
               </button>
 
               {/* Main Dropdown Container */}
-              <div className="absolute top-[110%] left-0 w-60 bg-white rounded-3xl border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-1 flex p-6 gap-8">
-                <div className="flex-1 space-y-4">
-                  <div>
-                    <div className="flex flex-col gap-1">
-                      {moreLinks.map((item) => (
-                        <Link
-                          key={item.key}
-                          href={item.link}
-                          className="px-4 py-3 hover:bg-[#002147]/5 rounded-2xl text-[12px] uppercase tracking-wider text-slate-700 hover:text-[#002147] transition-all flex items-center justify-between group/item"
-                        >
-                          {t(`nav.${item.key}`)}
-                          <ChevronRight
-                            size={14}
-                            className="opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-1 transition-all text-[#002147]"
-                          />
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
+              <div className="absolute top-[110%] left-0 w-72 overflow-hidden rounded-2xl border border-slate-200/80 bg-white opacity-0 invisible shadow-[0_24px_60px_rgba(15,23,42,0.16)] ring-1 ring-black/5 transition-all duration-300 translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-1">
+                <div className="border-b border-slate-100 bg-linear-to-r from-[#E31E24]/5 to-transparent px-5 py-3">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#E31E24]">
+                    {t("nav.more")}
+                  </p>
+                </div>
+                <div className="flex flex-col gap-1 p-2">
+                  {moreLinks.map((item) => (
+                    <Link
+                      key={item.key}
+                      href={item.link}
+                      className="group/item flex items-center justify-between rounded-xl px-4 py-3.5 text-[12px] font-semibold uppercase tracking-wider text-slate-700 transition-all hover:bg-[#E31E24]/8 hover:text-[#E31E24]"
+                    >
+                      {t(`nav.${item.key}`)}
+                      <ChevronRight
+                        size={14}
+                        className="text-[#E31E24] opacity-0 transition-all group-hover/item:translate-x-1 group-hover/item:opacity-100"
+                      />
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
@@ -440,11 +441,18 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
               {downloadOpen && (
                 <ul
                   role="menu"
-                  className={`absolute top-full mt-2 w-60 rounded-3xl border border-slate-100 bg-white p-4 shadow-[0_20px_50px_rgba(0,0,0,0.15)] z-[60] flex flex-col gap-1 ${isRTL ? "left-0" : "right-0"}`}
+                  className={`absolute top-full mt-3 w-72 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_24px_60px_rgba(15,23,42,0.16)] ring-1 ring-black/5 z-[60] ${isRTL ? "left-0" : "right-0"}`}
                 >
-                  {downloadItems.map((item) => (
-                    <li key={item.labelKey} role="none">
+                  <li className="border-b border-slate-100 bg-linear-to-r from-[#E31E24]/5 to-transparent px-4 py-3">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#E31E24]">
+                      {t("nav.downloads")}
+                    </p>
+                  </li>
+
+                  <li className="flex flex-col gap-1 p-2">
+                    {downloadItems.map((item) => (
                       <a
+                        key={item.labelKey}
                         role="menuitem"
                         href={item.href}
                         download
@@ -454,40 +462,46 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                           setDownloadOpen(false);
                           setArticlesOpen(false);
                         }}
-                        className="group/item flex w-full items-center justify-between gap-2 rounded-2xl px-4 py-3 text-[12px] uppercase tracking-wider text-slate-700 transition-all hover:bg-[#002147]/5 hover:text-[#002147]"
+                        className="group/item flex w-full items-center justify-between gap-2 rounded-xl px-4 py-3.5 text-[12px] font-semibold uppercase tracking-wider text-slate-700 transition-all hover:bg-[#E31E24]/8 hover:text-[#E31E24]"
                       >
-                        <span className="flex items-center gap-2">
-                          <Download size={14} className="shrink-0 text-[#E31E24]" />
+                        <span className="flex items-center gap-2.5">
+                          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#E31E24]/10 text-[#E31E24] transition-colors group-hover/item:bg-[#E31E24]/15">
+                            <Download size={14} className="shrink-0" />
+                          </span>
                           {t(item.labelKey)}
                         </span>
                         <ChevronRight
                           size={14}
-                          className="text-[#002147] opacity-0 transition-all group-hover/item:translate-x-1 group-hover/item:opacity-100"
+                          className="text-[#E31E24] opacity-0 transition-all group-hover/item:translate-x-1 group-hover/item:opacity-100"
                         />
                       </a>
-                    </li>
-                  ))}
+                    ))}
 
-                  <li role="none">
                     <button
                       type="button"
                       role="menuitem"
                       onClick={() => setArticlesOpen((open) => !open)}
                       aria-expanded={articlesOpen}
-                      className="group/item flex w-full items-center justify-between gap-2 rounded-2xl px-4 py-3 text-[12px] uppercase tracking-wider text-slate-700 transition-all hover:bg-[#002147]/5 hover:text-[#002147]"
+                      className={`group/item flex w-full items-center justify-between gap-2 rounded-xl px-4 py-3.5 text-[12px] font-semibold uppercase tracking-wider transition-all ${
+                        articlesOpen
+                          ? "bg-[#E31E24]/8 text-[#E31E24]"
+                          : "text-slate-700 hover:bg-[#E31E24]/8 hover:text-[#E31E24]"
+                      }`}
                     >
-                      <span className="flex items-center gap-2">
-                        <Download size={14} className="shrink-0 text-[#E31E24]" />
+                      <span className="flex items-center gap-2.5">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#E31E24]/10 text-[#E31E24] transition-colors group-hover/item:bg-[#E31E24]/15">
+                          <Download size={14} className="shrink-0" />
+                        </span>
                         {t("nav.articles")}
                       </span>
                       <ChevronDown
                         size={14}
-                        className={`text-[#002147] transition-transform ${articlesOpen ? "rotate-180" : ""}`}
+                        className={`text-[#E31E24] transition-transform ${articlesOpen ? "rotate-180" : ""}`}
                       />
                     </button>
 
                     {articlesOpen && (
-                      <ul className="mt-1 flex flex-col gap-1 border-l border-slate-100 pl-3 ml-4">
+                      <ul className="ml-3 flex flex-col gap-1 border-l-2 border-[#E31E24]/25 py-1 pl-3">
                         {ARTICLE_DOWNLOAD_OPTIONS.map((article) => (
                           <li key={article.id} role="none">
                             <a
@@ -500,7 +514,7 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                                 setDownloadOpen(false);
                                 setArticlesOpen(false);
                               }}
-                              className="group/item flex w-full items-center justify-between gap-2 rounded-2xl px-3 py-2.5 text-[11px] uppercase tracking-wider text-slate-600 transition-all hover:bg-[#002147]/5 hover:text-[#002147]"
+                              className="group/item flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-[11px] font-semibold uppercase tracking-wider text-slate-600 transition-all hover:bg-[#E31E24]/8 hover:text-[#E31E24]"
                             >
                               <span className="flex items-center gap-2">
                                 <Download size={12} className="shrink-0 text-[#E31E24]" />
@@ -508,7 +522,7 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                               </span>
                               <ChevronRight
                                 size={12}
-                                className="text-[#002147] opacity-0 transition-all group-hover/item:translate-x-1 group-hover/item:opacity-100"
+                                className="text-[#E31E24] opacity-0 transition-all group-hover/item:translate-x-1 group-hover/item:opacity-100"
                               />
                             </a>
                           </li>

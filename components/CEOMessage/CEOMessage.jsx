@@ -25,7 +25,7 @@ const CEOMessage = () => {
               className="!text-left !mb-10"
             />
 
-            <div className="space-y-8 text-slate-600 leading-relaxed">
+            <div className="space-y-6 text-slate-600">
               <div className="relative">
                 <Quote className="absolute -top-6 -left-2 text-slate-200 w-12 h-12 -z-10 rotate-180 opacity-50" />
                 <p className="text-xl md:text-2xl font-light text-slate-800 leading-snug">
@@ -33,9 +33,15 @@ const CEOMessage = () => {
                 </p>
               </div>
 
-              <div className="space-y-5 text-sm md:text-base font-light tracking-wide text-justify">
+              <div className="space-y-5 text-sm md:text-base font-light tracking-wide leading-relaxed text-justify">
                 <p>
-                  Our vision has always been to create long-term value for our clients while contributing to the dynamic growth of Dubai’s real estate market. We are committed to identifying exceptional opportunities and delivering them with transparency, expertise, and integrity.
+                  We don&apos;t believe in selling every project that comes to market. We carefully select opportunities where the fundamentals support strong capital appreciation, sustainable demand, and long-term wealth creation.
+                </p>
+                <p>
+                  For us, success isn&apos;t measured by the number of units sold. It&apos;s measured by the returns our clients achieve. In a market full of noise, responsible advice becomes your greatest investment.
+                </p>
+                <p>
+                  Because great brokers sell properties. Exceptional advisors build portfolios that outperform.
                 </p>
                 <p>
                   As we continue to expand our global reach, our focus remains on building lasting relationships with investors and homeowners alike. With innovation and an unwavering dedication to excellence, in UAE real estate market after we strive to set new benchmarks in market leadership.

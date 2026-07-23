@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
+import PremiumFilterSelect from "@/components/PremiumFilterSelect/PremiumFilterSelect";
 import TrendingProjectCard from "@/components/TrendingProjectCard/TrendingProjectCard";
 import { useLanguage } from "@/context/LanguageContext";
 import { TRENDING_PROJECTS } from "@/data/trendingProjects";
@@ -20,6 +21,7 @@ const LOCATIONS = [
   { value: "", labelKey: "allLocations" },
   { value: "dubai", labelKey: "dubai" },
   { value: "abudhabi", labelKey: "abudhabi" },
+  { value: "rasalkhaimah", labelKey: "rasalkhaimah" },
 ];
 
 const BUDGETS = [
@@ -45,6 +47,7 @@ function parsePriceAed(project) {
 function getEmirate(project) {
   const location = project.location?.toLowerCase() ?? "";
   if (location.includes("abu dhabi")) return "abudhabi";
+  if (location.includes("ras al") || location.includes("rak")) return "rasalkhaimah";
   return "dubai";
 }
 
@@ -68,27 +71,6 @@ function matchesBudget(project, budget) {
     default:
       return true;
   }
-}
-
-function FilterSelect({ label, value, onChange, options, t, prefix }) {
-  return (
-    <div className="min-w-0 flex-1">
-      <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-500">
-        {label}
-      </label>
-      <select
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-800 outline-none transition-colors focus:border-[#E31E24] focus:ring-1 focus:ring-[#E31E24]"
-      >
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {t(`${prefix}.${option.labelKey}`)}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
 }
 
 export default function TrendingProjectsGrid() {
@@ -155,7 +137,7 @@ export default function TrendingProjectsGrid() {
             <p className="text-sm font-semibold">{t("trendingProjectsPage.searchTitle")}</p>
           </div>
           <div className="flex flex-col gap-4 md:flex-row md:items-end">
-            <FilterSelect
+            <PremiumFilterSelect
               label={t("trendingProjectsPage.propertyType")}
               value={propertyType}
               onChange={setPropertyType}
@@ -163,7 +145,7 @@ export default function TrendingProjectsGrid() {
               t={t}
               prefix="trendingProjectsPage.filters"
             />
-            <FilterSelect
+            <PremiumFilterSelect
               label={t("trendingProjectsPage.location")}
               value={location}
               onChange={setLocation}
@@ -171,7 +153,7 @@ export default function TrendingProjectsGrid() {
               t={t}
               prefix="trendingProjectsPage.filters"
             />
-            <FilterSelect
+            <PremiumFilterSelect
               label={t("trendingProjectsPage.budget")}
               value={budget}
               onChange={setBudget}
