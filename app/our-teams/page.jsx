@@ -8,9 +8,11 @@ export default function TeamPage() {
   return (
     <>
       <Navbar />
-      <TeamHero />
-      <WhyWorkWithUs />
-      <TeamMembers />
+      <div className="home-page">
+        <TeamHero />
+        <WhyWorkWithUs />
+        <TeamMembers />
+      </div>
       <Footer />
     </>
   );

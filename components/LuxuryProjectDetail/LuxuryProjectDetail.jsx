@@ -2,18 +2,28 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useState, useCallback, useEffect } from "react";
 import {
   MapPin,
   BedDouble,
   Bath,
   Maximize2,
   Phone,
+  Mail,
   Check,
   Share2,
   Heart,
   Map,
   Eye,
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Images,
+  Calendar,
+  Armchair,
+  Banknote,
+  Building2,
+  Info,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import LuxuryProjectCard from "@/components/LuxuryProjectCard/LuxuryProjectCard";
@@ -23,13 +33,17 @@ import {
   getProjectAmenities,
   getProjectDescription,
   getProjectGallery,
+  getProjectImages,
   getRelatedLuxuryProjects,
+  getMortgageDefaults,
+  getProjectRegulatory,
+  getRegulatoryQrSrc,
+  getListingAgent,
   parsePriceAed,
 } from "@/lib/luxuryProjectDetail";
 
 const NAVY = "#002147";
 const RED = "#E31E24";
-const PHONE = "+971542068414";
 const WA_NUMBER = "971542068414";
 
 function WhatsAppGlyph({ className }) {
@@ -64,89 +78,215 @@ function SectionHeading({ children }) {
   );
 }
 
-function InquiryForm({ project, t }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState(
-    `Hi, I'm interested in ${project.title} at ${project.location}.`
+function RegulatoryRow({ label, value, showInfo = false }) {
+  return (
+    <div className="grid grid-cols-[132px_minmax(0,1fr)] items-start gap-x-6 text-sm sm:grid-cols-[148px_minmax(0,1fr)]">
+      <span className="text-slate-500">{label}</span>
+      <span className="inline-flex items-start gap-1.5 text-slate-900">
+        <span className="leading-snug">{value}</span>
+        {showInfo ? (
+          <Info size={14} className="mt-0.5 shrink-0 rounded-full text-slate-400" aria-hidden />
+        ) : null}
+      </span>
+    </div>
   );
+}
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      "",
-      message,
-    ].join("\n");
-    window.location.href = `mailto:enquiries@globalpropertygroup.co?subject=${encodeURIComponent(
-      `Inquiry: ${project.title}`
-    )}&body=${encodeURIComponent(body)}`;
-  };
+function RegulatoryInformation({ regulatory, t }) {
+  if (!regulatory?.dldPermit) return null;
+
+  const qrSrc = getRegulatoryQrSrc(regulatory.dldPermit);
+  const rows = [
+    regulatory.reference && { label: t("luxuryDetail.reference"), value: regulatory.reference },
+    regulatory.listed && { label: t("luxuryDetail.listed"), value: regulatory.listed },
+    regulatory.brokerLicense && {
+      label: t("luxuryDetail.brokerLicense"),
+      value: regulatory.brokerLicense,
+      showInfo: true,
+    },
+    regulatory.agencyName && { label: t("luxuryDetail.agencyName"), value: regulatory.agencyName },
+    regulatory.zoneName && { label: t("luxuryDetail.zoneName"), value: regulatory.zoneName },
+    regulatory.agentLicense && {
+      label: t("luxuryDetail.agentLicense"),
+      value: regulatory.agentLicense,
+      showInfo: true,
+    },
+  ].filter(Boolean);
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3">
-      <input
-        type="text"
-        required
-        placeholder={t("luxuryDetail.name")}
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-[#E31E24] focus:ring-1 focus:ring-[#E31E24]"
-      />
-      <input
-        type="email"
-        required
-        placeholder={t("luxuryDetail.email")}
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-[#E31E24] focus:ring-1 focus:ring-[#E31E24]"
-      />
-      <input
-        type="tel"
-        required
-        placeholder={t("luxuryDetail.phone")}
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-        className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-[#E31E24] focus:ring-1 focus:ring-[#E31E24]"
-      />
-      <textarea
-        rows={4}
-        placeholder={t("luxuryDetail.message")}
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        className="w-full resize-none rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-[#E31E24] focus:ring-1 focus:ring-[#E31E24]"
-      />
-      <button
-        type="submit"
-        className="w-full rounded-lg py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:opacity-90"
-        style={{ backgroundColor: NAVY }}
-      >
-        {t("luxuryDetail.requestInfo")}
-      </button>
-    </form>
+    <div className="mt-10 rounded-2xl border border-slate-200/70 bg-[#f8f8f8] p-6 md:p-8">
+      <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+        <div className="min-w-0 flex-1">
+          <h3 className="text-base font-bold text-slate-900">{t("luxuryDetail.regulatoryTitle")}</h3>
+          <div className="mt-5 space-y-4">
+            {rows.map((row) => (
+              <RegulatoryRow key={row.label} {...row} />
+            ))}
+          </div>
+        </div>
+
+        <div className="flex shrink-0 flex-col items-center lg:min-w-[168px] lg:items-end lg:pl-10">
+          <div className="rounded-sm border border-slate-200 bg-white p-1.5">
+            {/* eslint-disable-next-line @next/next/no-img-element -- external QR API */}
+            <img
+              src={qrSrc}
+              alt="DLD permit QR code"
+              width={132}
+              height={132}
+              className="h-[132px] w-[132px]"
+            />
+          </div>
+          <p className="mt-4 inline-flex items-center gap-1.5 text-sm text-slate-700">
+            {t("luxuryDetail.dldPermitNumber")}
+            <Info size={14} className="text-slate-400" aria-hidden />
+          </p>
+          <span className="mt-2 rounded-full bg-[#ececec] px-5 py-2 text-sm font-medium text-slate-800">
+            {regulatory.dldPermit}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function GalleryLightbox({ images, title, open, initialIndex, onClose, t }) {
+  const [index, setIndex] = useState(initialIndex);
+
+  useEffect(() => {
+    if (open) setIndex(initialIndex);
+  }, [open, initialIndex]);
+
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const onKey = (event) => {
+      if (event.key === "Escape") onClose();
+      if (event.key === "ArrowLeft") {
+        setIndex((current) => (current - 1 + images.length) % images.length);
+      }
+      if (event.key === "ArrowRight") {
+        setIndex((current) => (current + 1) % images.length);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open, images.length, onClose]);
+
+  if (!open || images.length === 0) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex flex-col bg-black/95"
+      role="dialog"
+      aria-modal="true"
+      aria-label={t("luxuryDetail.viewAllPhotos")}
+    >
+      <div className="flex items-center justify-between px-4 py-4 md:px-6">
+        <p className="text-sm font-medium text-white/90">
+          {t("luxuryDetail.photoOf")} {index + 1} {t("luxuryDetail.of")} {images.length}
+        </p>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label={t("luxuryDetail.closeGallery")}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+        >
+          <X size={20} />
+        </button>
+      </div>
+
+      <div className="relative flex flex-1 items-center justify-center px-4 pb-4 md:px-16">
+        {images.length > 1 && (
+          <button
+            type="button"
+            onClick={() => setIndex((current) => (current - 1 + images.length) % images.length)}
+            aria-label="Previous photo"
+            className="absolute left-2 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 md:left-6"
+          >
+            <ChevronLeft size={24} />
+          </button>
+        )}
+
+        <div className="relative h-full w-full max-h-[min(70vh,720px)] max-w-6xl">
+          <Image
+            src={images[index]}
+            alt={`${title} — ${index + 1}`}
+            fill
+            className="object-contain"
+            sizes="100vw"
+            priority
+          />
+        </div>
+
+        {images.length > 1 && (
+          <button
+            type="button"
+            onClick={() => setIndex((current) => (current + 1) % images.length)}
+            aria-label="Next photo"
+            className="absolute right-2 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 md:right-6"
+          >
+            <ChevronRight size={24} />
+          </button>
+        )}
+      </div>
+
+      {images.length > 1 && (
+        <div className="border-t border-white/10 px-4 py-4 md:px-6">
+          <div className="mx-auto flex max-w-6xl gap-2 overflow-x-auto pb-1">
+            {images.map((image, imageIndex) => (
+              <button
+                key={image}
+                type="button"
+                onClick={() => setIndex(imageIndex)}
+                aria-label={`${t("luxuryDetail.photoOf")} ${imageIndex + 1}`}
+                aria-current={imageIndex === index ? "true" : undefined}
+                className={`relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border-2 transition-colors ${
+                  imageIndex === index ? "border-[#E31E24]" : "border-transparent opacity-70 hover:opacity-100"
+                }`}
+              >
+                <Image src={image} alt="" fill className="object-cover" sizes="96px" />
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
 export default function LuxuryProjectDetail({ project }) {
   const { t } = useLanguage();
   const [readMore, setReadMore] = useState(false);
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [galleryIndex, setGalleryIndex] = useState(0);
 
   const priceAed = parsePriceAed(project) ?? 5_000_000;
   const priceLabel = formatAedPrice(project);
+  const mortgageDefaults = useMemo(() => getMortgageDefaults(project), [project]);
+  const allImages = useMemo(() => getProjectImages(project), [project]);
   const gallery = useMemo(() => getProjectGallery(project), [project]);
   const description = getProjectDescription(project);
   const amenities = getProjectAmenities(project);
+  const regulatory = getProjectRegulatory(project);
+  const agent = useMemo(() => getListingAgent(project), [project]);
   const related = useMemo(() => getRelatedLuxuryProjects(project.id, 3), [project.id]);
 
   const [purchasePrice, setPurchasePrice] = useState(priceAed);
-  const [downPct, setDownPct] = useState(20);
-  const [years, setYears] = useState(25);
-  const [interestPct, setInterestPct] = useState(4.5);
+  const [downPct, setDownPct] = useState(mortgageDefaults.downPct);
+  const [years, setYears] = useState(mortgageDefaults.years);
+  const [interestPct, setInterestPct] = useState(mortgageDefaults.interestPct);
 
-  const { monthly } = useMortgage(purchasePrice, downPct, years, interestPct);
+  const { monthly, principal: loanAmount } = useMortgage(purchasePrice, downPct, years, interestPct);
+  const monthlyPaymentLabel =
+    project.monthlyPayment != null
+      ? project.monthlyPayment.toLocaleString("en-AE")
+      : Math.round(monthly).toLocaleString("en-AE");
 
   const descriptionPreviewLen = 380;
   const needsReadMore = description.length > descriptionPreviewLen;
@@ -158,19 +298,72 @@ export default function LuxuryProjectDetail({ project }) {
   const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(project.location)}&output=embed`;
   const waText = `Hi, I'm interested in ${project.title} at ${project.location} (${priceLabel}).`;
   const waHref = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`;
+  const mailSubject = encodeURIComponent(`Inquiry: ${project.title}`);
+  const mailBody = encodeURIComponent(waText);
+  const mailHref = `mailto:${agent.email}?subject=${mailSubject}&body=${mailBody}`;
 
   const purchaseSliderMax = useMemo(
     () => Math.max(5_000_000, Math.ceil(priceAed / 500_000) * 500_000 * 2),
     [priceAed]
   );
-  const sliderPurchaseValue = Math.min(Math.max(purchasePrice, 500_000), purchaseSliderMax);
+  const sliderPurchaseValue = Math.min(Math.max(purchasePrice, 300_000), purchaseSliderMax);
 
   const resetMortgage = useCallback(() => {
     setPurchasePrice(priceAed);
-  }, [priceAed]);
+    setDownPct(mortgageDefaults.downPct);
+    setYears(mortgageDefaults.years);
+    setInterestPct(mortgageDefaults.interestPct);
+  }, [priceAed, mortgageDefaults]);
+
+  const propertyDetails = [
+    project.beds != null && {
+      label: t("luxuryDetail.bedrooms"),
+      value: `${project.beds} ${t("luxuryDetail.bedsUnit")}`,
+      icon: BedDouble,
+    },
+    project.baths != null && {
+      label: t("luxuryDetail.bathrooms"),
+      value: `${project.baths} ${t("luxuryDetail.bathsUnit")}`,
+      icon: Bath,
+    },
+    project.propertyType && {
+      label: t("luxuryDetail.propertyType"),
+      value: project.propertyType,
+      icon: Building2,
+    },
+    project.availableFrom && {
+      label: t("luxuryDetail.availableFrom"),
+      value: project.availableFrom,
+      icon: Calendar,
+    },
+    project.furnishing && {
+      label: t("luxuryDetail.furnishing"),
+      value: project.furnishing,
+      icon: Armchair,
+    },
+    project.pricePerSqft != null && {
+      label: t("luxuryDetail.pricePerArea"),
+      value: `AED ${project.pricePerSqft.toLocaleString("en-AE")}/ft²`,
+      icon: Banknote,
+    },
+    project.sqft != null && {
+      label: t("luxuryDetail.area"),
+      value: `${project.sqft.toLocaleString()} ft²`,
+      icon: Maximize2,
+    },
+  ].filter(Boolean);
+
+  const openGallery = useCallback((index = 0) => {
+    setGalleryIndex(index);
+    setGalleryOpen(true);
+  }, []);
+
+  const extraPhotoCount = Math.max(0, allImages.length - 3);
 
   const keyInfo = [
-    { label: t("luxuryDetail.propertyType"), value: project.propertyType ?? "—" },
+    ...(propertyDetails.length === 0
+      ? [{ label: t("luxuryDetail.propertyType"), value: project.propertyType ?? "—" }]
+      : []),
     ...(project.developer
       ? [{
           label: t("luxuryDetail.developer"),
@@ -184,7 +377,9 @@ export default function LuxuryProjectDetail({ project }) {
       : []),
     { label: t("luxuryDetail.purpose"), value: t("luxuryDetail.forSale") },
     { label: t("luxuryDetail.completion"), value: project.status ?? "Off-plan" },
-    { label: t("luxuryDetail.furnishing"), value: project.furnishing ?? t("luxuryDetail.unfurnished") },
+    ...(propertyDetails.length === 0
+      ? [{ label: t("luxuryDetail.furnishing"), value: project.furnishing ?? t("luxuryDetail.unfurnished") }]
+      : []),
     { label: t("luxuryDetail.propertyId"), value: project.id.toUpperCase().replace(/-/g, " ") },
   ];
 
@@ -218,53 +413,133 @@ export default function LuxuryProjectDetail({ project }) {
           </div>
 
           <div className="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:grid-rows-2 lg:h-[min(68vh,580px)]">
-            <div className="relative min-h-[260px] overflow-hidden rounded-xl lg:col-span-2 lg:row-span-2">
+            <button
+              type="button"
+              onClick={() => openGallery(0)}
+              className="group relative min-h-[260px] overflow-hidden rounded-xl lg:col-span-2 lg:row-span-2"
+            >
               <Image
                 src={gallery[0]}
                 alt={project.title}
                 fill
                 priority
-                className="object-cover"
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 sizes="(max-width:1024px) 100vw, 66vw"
               />
               <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow">
-                  <Eye size={13} />
-                  {t("luxuryDetail.viewGallery")}
-                </span>
+                {allImages.length > 1 && (
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow">
+                    <Images size={13} />
+                    {t("luxuryDetail.viewAllPhotos")} ({allImages.length})
+                  </span>
+                )}
                 <a
                   href="#location"
+                  onClick={(event) => event.stopPropagation()}
                   className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow"
                 >
                   <Map size={13} />
                   {t("luxuryDetail.location")}
                 </a>
               </div>
-            </div>
-            <div className="relative min-h-[180px] overflow-hidden rounded-xl">
-              <Image src={gallery[1]} alt="" fill className="object-cover" sizes="33vw" />
-            </div>
-            <div className="relative min-h-[180px] overflow-hidden rounded-xl">
-              <Image src={gallery[2]} alt="" fill className="object-cover" sizes="33vw" />
-            </div>
+            </button>
+            <button
+              type="button"
+              onClick={() => openGallery(1)}
+              className="group relative min-h-[180px] overflow-hidden rounded-xl"
+            >
+              <Image
+                src={gallery[1]}
+                alt=""
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                sizes="33vw"
+              />
+            </button>
+            <button
+              type="button"
+              onClick={() => openGallery(extraPhotoCount > 0 ? 0 : 2)}
+              className="group relative min-h-[180px] overflow-hidden rounded-xl"
+            >
+              <Image
+                src={gallery[2]}
+                alt=""
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                sizes="33vw"
+              />
+              {extraPhotoCount > 0 && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/45 transition-colors group-hover:bg-black/55">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-900 shadow-lg">
+                    <Eye size={16} />
+                    +{extraPhotoCount} {t("luxuryDetail.viewAllPhotos").toLowerCase()}
+                  </span>
+                </div>
+              )}
+            </button>
           </div>
         </div>
       </section>
 
+      <GalleryLightbox
+        images={allImages}
+        title={project.title}
+        open={galleryOpen}
+        initialIndex={galleryIndex}
+        onClose={() => setGalleryOpen(false)}
+        t={t}
+      />
+
       {/* Content + Sidebar */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_340px] xl:grid-cols-[1fr_380px]">
+        <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_440px]">
           {/* Main column */}
           <div>
-            <p className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">{priceLabel}</p>
+            <p className="text-3xl font-bold tracking-tight text-[#E31E24] md:text-4xl">{priceLabel}</p>
+            {monthlyPaymentLabel && (
+              <p className="mt-2 inline-flex rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-700">
+                {t("luxuryDetail.ownFrom")} AED {monthlyPaymentLabel}
+                {t("luxuryDetail.perMonth")}
+              </p>
+            )}
             <h1 className="mt-3 text-xl font-semibold leading-snug text-slate-800 md:text-2xl">
               {project.title}
             </h1>
-            <p className="mt-2 flex items-start gap-1.5 text-sm text-slate-500">
-              <MapPin size={16} className="mt-0.5 shrink-0 text-slate-400" />
-              {project.location}
-            </p>
+            {project.subtitle ? (
+              <p className="mt-1 text-sm text-slate-600 md:text-base">{project.subtitle}</p>
+            ) : null}
+            <div className="mt-2 flex flex-wrap items-center gap-3">
+              <p className="flex items-start gap-1.5 text-sm text-slate-500">
+                <MapPin size={16} className="mt-0.5 shrink-0 text-slate-400" />
+                {project.location}
+              </p>
+              <a
+                href="#location"
+                className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 transition-colors hover:border-[#E31E24] hover:text-[#E31E24]"
+              >
+                <Map size={13} />
+                {t("luxuryDetail.viewOnMap")}
+              </a>
+            </div>
 
+            {propertyDetails.length > 0 && (
+              <div className="mt-8">
+                <SectionHeading>{t("luxuryDetail.propertyDetails")}</SectionHeading>
+                <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {propertyDetails.map(({ label, value, icon: Icon }) => (
+                    <div key={label} className="flex items-start gap-3 border-b border-slate-100 pb-3">
+                      <Icon size={18} className="mt-0.5 shrink-0 text-slate-400" />
+                      <div>
+                        <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</dt>
+                        <dd className="mt-1 text-sm font-medium text-slate-900">{value}</dd>
+                      </div>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            )}
+
+            {!propertyDetails.length && (
             <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-700">
               {project.beds != null && (
                 <span className="inline-flex items-center gap-2">
@@ -285,6 +560,7 @@ export default function LuxuryProjectDetail({ project }) {
                 </span>
               )}
             </div>
+            )}
 
             {/* Key Information */}
             <div className="mt-10">
@@ -337,7 +613,7 @@ export default function LuxuryProjectDetail({ project }) {
               <div className="mt-8 grid gap-8 lg:grid-cols-2">
                 <div className="space-y-6">
                   <label className="block">
-                    <span className="text-sm font-medium text-slate-800">{t("luxuryDetail.totalPrice")}</span>
+                    <span className="text-sm font-medium text-slate-800">{t("luxuryDetail.purchasePrice")}</span>
                     <input
                       type="number"
                       min={0}
@@ -348,7 +624,7 @@ export default function LuxuryProjectDetail({ project }) {
                     />
                     <input
                       type="range"
-                      min={500000}
+                      min={300000}
                       max={purchaseSliderMax}
                       step={50000}
                       value={sliderPurchaseValue}
@@ -360,6 +636,9 @@ export default function LuxuryProjectDetail({ project }) {
                     <span className="text-sm font-medium text-slate-800">
                       {t("luxuryDetail.downPayment")} ({downPct}%)
                     </span>
+                    <p className="mt-1 text-sm font-semibold text-slate-900">
+                      AED {Math.round(purchasePrice * (downPct / 100)).toLocaleString("en-AE")}
+                    </p>
                     <input
                       type="range"
                       min={5}
@@ -370,11 +649,27 @@ export default function LuxuryProjectDetail({ project }) {
                     />
                   </label>
                   <label className="block">
+                    <span className="text-sm font-medium text-slate-800">
+                      {t("luxuryDetail.loanAmount")} ({100 - downPct}%)
+                    </span>
+                    <p className="mt-1 text-sm font-semibold text-slate-900">
+                      AED {Math.round(loanAmount).toLocaleString("en-AE")}
+                    </p>
+                  </label>
+                  <label className="block">
                     <span className="text-sm font-medium text-slate-800">{t("luxuryDetail.loanPeriod")}</span>
                     <input
+                      type="number"
+                      min={1}
+                      max={25}
+                      value={years}
+                      onChange={(e) => setYears(Number(e.target.value) || 1)}
+                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm"
+                    />
+                    <input
                       type="range"
-                      min={5}
-                      max={30}
+                      min={1}
+                      max={25}
                       value={years}
                       onChange={(e) => setYears(Number(e.target.value))}
                       className="mt-2 w-full accent-[#E31E24]"
@@ -385,16 +680,27 @@ export default function LuxuryProjectDetail({ project }) {
                   </label>
                   <label className="block">
                     <span className="text-sm font-medium text-slate-800">{t("luxuryDetail.interestRate")}</span>
+                    <div className="relative mt-2">
+                      <input
+                        type="number"
+                        min={1}
+                        max={10}
+                        step={0.01}
+                        value={interestPct}
+                        onChange={(e) => setInterestPct(Number(e.target.value) || 1)}
+                        className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 pr-8 text-sm"
+                      />
+                      <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm text-slate-500">%</span>
+                    </div>
                     <input
                       type="range"
-                      min={2}
-                      max={8}
-                      step={0.1}
+                      min={1}
+                      max={10}
+                      step={0.05}
                       value={interestPct}
                       onChange={(e) => setInterestPct(Number(e.target.value))}
                       className="mt-2 w-full accent-[#E31E24]"
                     />
-                    <span className="mt-1 block text-xs text-slate-500">{interestPct.toFixed(1)}%</span>
                   </label>
                   <button
                     type="button"
@@ -439,14 +745,30 @@ export default function LuxuryProjectDetail({ project }) {
                 />
               </div>
             </div>
+
+            <RegulatoryInformation regulatory={regulatory} t={t} />
           </div>
 
           {/* Sticky sidebar */}
           <aside className="lg:sticky lg:top-28 lg:self-start">
             <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-              <div className="grid grid-cols-2 gap-3">
+              <div className="text-center">
+                <div className="relative mx-auto h-[154px] w-[120px] overflow-hidden rounded-md border border-slate-200 bg-slate-50 shadow-sm">
+                  <Image
+                    src={agent.image}
+                    alt={agent.name}
+                    fill
+                    className="object-cover object-top"
+                    sizes="120px"
+                  />
+                </div>
+                <p className="mt-3 text-sm font-semibold text-slate-900">{agent.name}</p>
+                <p className="mt-0.5 text-xs text-slate-500">{agent.title}</p>
+              </div>
+
+              <div className="mt-5 grid grid-cols-2 gap-3 border-t border-slate-100 pt-5">
                 <a
-                  href={`tel:${PHONE}`}
+                  href={`tel:${agent.phone}`}
                   className="inline-flex items-center justify-center gap-2 rounded-lg py-3 text-sm font-bold text-white transition-colors hover:opacity-90"
                   style={{ backgroundColor: RED }}
                 >
@@ -454,34 +776,18 @@ export default function LuxuryProjectDetail({ project }) {
                   {t("luxuryDetail.call")}
                 </a>
                 <a
-                  href={waHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#25D366] py-3 text-sm font-bold text-white transition-colors hover:opacity-90"
+                  href={mailHref}
+                  className="inline-flex items-center justify-center gap-2 rounded-lg py-3 text-sm font-bold text-white transition-colors hover:opacity-90"
+                  style={{ backgroundColor: NAVY }}
                 >
-                  <WhatsAppGlyph className="h-4 w-4" />
-                  WhatsApp
+                  <Mail size={16} />
+                  {t("luxuryDetail.mail")}
                 </a>
               </div>
 
-              <div className="mt-5 flex items-center gap-3 border-t border-slate-100 pt-5">
-                <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
-                  <Image
-                    src="https://i.pravatar.cc/320?img=12"
-                    alt="James Okonkwo"
-                    fill
-                    className="object-cover"
-                    sizes="56px"
-                  />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-slate-900">James Okonkwo</p>
-                  <p className="text-xs text-slate-500">{t("luxuryDetail.propertyConsultant")}</p>
-                </div>
-              </div>
-
-              <div className="mt-5 border-t border-slate-100 pt-5">
-                <InquiryForm project={project} t={t} />
+              <div className="mt-5 border-t border-slate-100 pt-5 text-center">
+                <p className="text-sm font-bold text-slate-900">{t("luxuryDetail.talkToExpert")}</p>
+                <p className="mt-1 text-xs text-slate-500">{t("luxuryDetail.talkToExpertSubtitle")}</p>
               </div>
             </div>
 

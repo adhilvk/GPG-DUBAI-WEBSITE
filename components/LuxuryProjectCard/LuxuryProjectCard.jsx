@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, BedDouble, Bath, Maximize2, Phone, Mail } from "lucide-react";
 import DeveloperIcon from "@/components/icons/DeveloperIcon";
+import { getListingAgent } from "@/lib/luxuryProjectDetail";
 
 function WhatsAppGlyph({ className }) {
   return (
@@ -33,14 +34,34 @@ function ContactIconButton({ href, label, children, compact = false }) {
 }
 
 export default function LuxuryProjectCard({ project, compact = false, href }) {
+  const agent = getListingAgent(project);
+  const agentWaNumber = agent.phone.replace(/\D/g, "");
   const priceLabel = project.priceDisplay ?? `From AED ${project.price}`;
   const inquiryText = `Hi, I'm interested in ${project.title} at ${project.location} (${priceLabel}).`;
-  const waHref = `https://wa.me/971542068414?text=${encodeURIComponent(inquiryText)}`;
-  const phoneHref = "tel:+971542068414";
-  const emailHref = `mailto:enquiries@globalpropertygroup.co?subject=${encodeURIComponent(
+  const waHref = `https://wa.me/${agentWaNumber}?text=${encodeURIComponent(inquiryText)}`;
+  const phoneHref = `tel:${agent.phone}`;
+  const emailHref = `mailto:${agent.email}?subject=${encodeURIComponent(
     `Inquiry: ${project.title}`
   )}&body=${encodeURIComponent(inquiryText)}`;
-  const hasSpecs = project.beds != null && project.baths != null && project.sqft != null;
+  const hasSpecsRow =
+    project.sqft != null && (project.beds != null || project.baths != null);
+  const specItems = [
+    project.beds != null && {
+      key: "beds",
+      icon: BedDouble,
+      label: project.beds,
+    },
+    project.baths != null && {
+      key: "baths",
+      icon: Bath,
+      label: project.baths,
+    },
+    project.sqft != null && {
+      key: "sqft",
+      icon: Maximize2,
+      label: `${project.sqft.toLocaleString()} ${project.sqftLabel ?? "sqft"}`,
+    },
+  ].filter(Boolean);
   const detailHref = href === undefined ? `/luxury-properties/${project.id}` : href;
 
   const contactIcons = (
@@ -80,7 +101,7 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
       <div
         className={`relative z-10 flex flex-1 flex-col pointer-events-none ${
           compact ? "gap-1.5 p-3" : "gap-2 p-4"
-        } ${hasSpecs ? "" : compact ? "pb-12" : "pb-16"}`}
+        } ${hasSpecsRow ? "" : compact ? "pb-12" : "pb-16"}`}
       >
         {project.propertyType ? (
           <p className="text-xs text-slate-500">{project.propertyType}</p>
@@ -93,7 +114,7 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
           </p>
         ) : null}
 
-        {hasSpecs ? (
+        {hasSpecsRow ? (
           <p
             className={`font-bold text-[#E31E24] ${compact ? "text-base" : "text-xl md:text-2xl"}`}
           >
@@ -101,24 +122,28 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
           </p>
         ) : null}
 
-        <h3
-          className={`font-bold leading-snug text-slate-900 ${
-            compact ? "line-clamp-2 text-sm" : "text-base"
-          }`}
-        >
-          {project.title}
-        </h3>
+        {project.monthlyPayment != null && (
+          <p className={`text-slate-600 ${compact ? "text-xs" : "text-sm"}`}>
+            Own from AED {project.monthlyPayment.toLocaleString("en-AE")}/month
+          </p>
+        )}
 
-        {project.subtitle ? (
-          <p className="text-sm leading-relaxed text-slate-500">{project.subtitle}</p>
-        ) : null}
+        <div className={compact ? "min-h-[2.5rem]" : "min-h-[3rem]"}>
+          <h3
+            className={`font-bold leading-snug text-slate-900 ${
+              compact ? "line-clamp-2 text-sm" : "line-clamp-2 text-base"
+            }`}
+          >
+            {project.title}
+          </h3>
+        </div>
 
         <p className="flex items-start gap-1.5 text-sm text-slate-500">
           <MapPin size={14} className="mt-0.5 shrink-0 text-slate-400" />
           <span className={compact ? "line-clamp-2" : undefined}>{project.location}</span>
         </p>
 
-        {hasSpecs ? (
+        {hasSpecsRow ? (
           <div
             className={`pointer-events-auto mt-auto border-t border-slate-100 ${
               compact ? "flex flex-col gap-2 pt-2" : "flex items-center justify-between gap-2 pt-3"
@@ -131,20 +156,20 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
                   : "min-w-0 flex-nowrap items-center gap-x-2"
               }`}
             >
-              <span className="inline-flex shrink-0 items-center gap-1">
-                <BedDouble size={14} className="text-slate-400" />
-                {project.beds}
-              </span>
-              <span className="h-4 w-px shrink-0 bg-slate-200" aria-hidden />
-              <span className="inline-flex shrink-0 items-center gap-1">
-                <Bath size={14} className="text-slate-400" />
-                {project.baths}
-              </span>
-              <span className="h-4 w-px shrink-0 bg-slate-200" aria-hidden />
-              <span className="inline-flex shrink-0 items-center gap-1">
-                <Maximize2 size={14} className="text-slate-400" />
-                {project.sqft.toLocaleString()} {project.sqftLabel ?? "sqft"}
-              </span>
+              {specItems.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <span key={item.key} className="contents">
+                    {index > 0 ? (
+                      <span className="h-4 w-px shrink-0 bg-slate-200" aria-hidden />
+                    ) : null}
+                    <span className="inline-flex shrink-0 items-center gap-1">
+                      <Icon size={14} className="text-slate-400" />
+                      {item.label}
+                    </span>
+                  </span>
+                );
+              })}
             </div>
             <div className={compact ? "flex justify-end" : undefined}>{contactIcons}</div>
           </div>
