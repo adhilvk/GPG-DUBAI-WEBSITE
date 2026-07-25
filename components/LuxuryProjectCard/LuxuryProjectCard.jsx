@@ -49,7 +49,7 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
     project.beds != null && {
       key: "beds",
       icon: BedDouble,
-      label: project.beds,
+      label: project.bedsLabel ?? project.beds,
     },
     project.baths != null && {
       key: "baths",

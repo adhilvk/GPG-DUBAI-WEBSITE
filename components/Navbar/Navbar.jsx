@@ -354,27 +354,23 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                 />
               </button>
 
-              {/* Main Dropdown Container */}
-              <div className="absolute top-[110%] left-0 w-72 overflow-hidden rounded-2xl border border-slate-200/80 bg-white opacity-0 invisible shadow-[0_24px_60px_rgba(15,23,42,0.16)] ring-1 ring-black/5 transition-all duration-300 translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-1">
-                <div className="border-b border-slate-100 bg-linear-to-r from-[#E31E24]/5 to-transparent px-5 py-3">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#E31E24]">
-                    {t("nav.more")}
-                  </p>
-                </div>
-                <div className="flex flex-col gap-1 p-2">
-                  {moreLinks.map((item) => (
-                    <Link
-                      key={item.key}
-                      href={item.link}
-                      className="group/item flex items-center justify-between rounded-xl px-4 py-3.5 text-[12px] font-semibold uppercase tracking-wider text-slate-700 transition-all hover:bg-[#E31E24]/8 hover:text-[#E31E24]"
-                    >
-                      {t(`nav.${item.key}`)}
-                      <ChevronRight
-                        size={14}
-                        className="text-[#E31E24] opacity-0 transition-all group-hover/item:translate-x-1 group-hover/item:opacity-100"
-                      />
-                    </Link>
-                  ))}
+              <div className="absolute top-[110%] left-0 w-60 bg-white rounded-3xl border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-1 flex p-6 gap-8">
+                <div className="flex-1 space-y-4">
+                  <div className="flex flex-col gap-1">
+                    {moreLinks.map((item) => (
+                      <Link
+                        key={item.key}
+                        href={item.link}
+                        className="px-4 py-3 hover:bg-[#002147]/5 rounded-2xl text-[12px] uppercase tracking-wider text-slate-700 hover:text-[#002147] transition-all flex items-center justify-between group/item"
+                      >
+                        {t(`nav.${item.key}`)}
+                        <ChevronRight
+                          size={14}
+                          className="opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-1 transition-all text-[#002147]"
+                        />
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

@@ -69,7 +69,7 @@ const CEOMessage = () => {
               
               <div className="relative z-10 overflow-hidden shadow-2xl   transition-all duration-700">
                 <img 
-                  src="/images/chiragpic.jpeg" 
+                  src="https://res.cloudinary.com/dsldkspov/image/upload/v1784877069/chirag_new_hj8foh.jpg" 
                   alt="Chirag Goyal - CEO" 
                   className="w-full object-cover aspect-4/5"
                 />

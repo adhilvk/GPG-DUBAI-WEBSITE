@@ -318,7 +318,7 @@ export default function LuxuryProjectDetail({ project }) {
   const propertyDetails = [
     project.beds != null && {
       label: t("luxuryDetail.bedrooms"),
-      value: `${project.beds} ${t("luxuryDetail.bedsUnit")}`,
+      value: project.bedsLabel ?? `${project.beds} ${t("luxuryDetail.bedsUnit")}`,
       icon: BedDouble,
     },
     project.baths != null && {
