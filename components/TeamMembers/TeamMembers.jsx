@@ -63,6 +63,11 @@ function TeamMemberCard({ member, className = "" }) {
         <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400 md:text-[11px]">
           {member.languages}
         </p>
+        {member.brn && (
+          <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400 md:text-[11px]">
+            BRN#{member.brn}
+          </p>
+        )}
       </div>
     </article>
   );

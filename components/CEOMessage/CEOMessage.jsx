@@ -2,6 +2,9 @@
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
+import { TEAM_MEMBERS } from "@/data/teamMembers";
+
+const chirag = TEAM_MEMBERS.find((member) => member.id === "0") ?? TEAM_MEMBERS[0];
 
 const CEOMessage = () => {
   return (
@@ -67,11 +70,11 @@ const CEOMessage = () => {
               {/* Subtle accent background instead of heavy frames */}
               <div className="absolute inset-0 bg-slate-200 translate-x-4 translate-y-4 rounded-sm -z-10"></div>
               
-              <div className="relative z-10 overflow-hidden shadow-2xl   transition-all duration-700">
-                <img 
-                  src="https://res.cloudinary.com/dsldkspov/image/upload/v1784877069/chirag_new_hj8foh.jpg" 
-                  alt="Chirag Goyal - CEO" 
-                  className="w-full object-cover aspect-4/5"
+              <div className={`relative z-10 aspect-[3/4] overflow-hidden shadow-2xl transition-all duration-700 ${chirag.imageContainerClassName ?? "bg-neutral-100"}`}>
+                <img
+                  src={chirag.image}
+                  alt="Chirag Goyal - CEO"
+                  className={`absolute inset-0 h-full w-full ${chirag.imageClassName ?? "object-cover object-top"}`}
                 />
               </div>
             </div>
