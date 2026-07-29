@@ -4,23 +4,39 @@ import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import {
-  AWARD_GALLERY,
   AWARD_GALLERY_FEATURED,
-  AWARD_GALLERY_PAGE_SIZE,
+  AWARD_GALLERY_REST,
 } from "@/data/awardGallery";
+import AwardsRecognition from "@/components/AwardsRecognition/AwardsRecognition";
+import AwardsCoverFlow from "@/components/AwardsCoverFlow/AwardsCoverFlow";
 import "./AwardsGalleryGrid.css";
 
 function GalleryMedia({ item, index }) {
+  const imageFitClass =
+    item.objectFit === "contain" ? "awards-gallery__media--contain" : "";
+  const imageFocusClass = item.imageScale ? "awards-gallery__media--face-focus" : "";
+
+  const itemStyle = {
+    ...(item.aspectRatio ? { aspectRatio: item.aspectRatio } : {}),
+    ...(item.imageScale ? { "--face-focus-scale": item.imageScale } : {}),
+    ...(item.imageOffsetY ? { "--face-focus-offset-y": item.imageOffsetY } : {}),
+    ...(item.objectPosition ? { "--face-focus-origin": item.objectPosition } : {}),
+  };
+
+  const imageStyle = item.objectPosition ? { objectPosition: item.objectPosition } : undefined;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: (index % AWARD_GALLERY_PAGE_SIZE) * 0.04, duration: 0.5 }}
+      transition={{ delay: index * 0.04, duration: 0.5 }}
       viewport={{ once: true }}
-      className="awards-gallery__item group"
+      className={`awards-gallery__item group ${
+        item.objectFit === "contain" ? "awards-gallery__item--contain" : ""
+      }`}
+      style={Object.keys(itemStyle).length ? itemStyle : undefined}
     >
       {item.type === "video" ? (
         <video
@@ -37,7 +53,8 @@ function GalleryMedia({ item, index }) {
           src={item.src}
           alt={item.alt}
           fill
-          className="awards-gallery__media awards-gallery__media--image"
+          className={`awards-gallery__media awards-gallery__media--image ${imageFitClass} ${imageFocusClass}`}
+          style={imageStyle}
           sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
         />
       )}
@@ -55,104 +72,53 @@ function ShowMoreLink({ href, label }) {
   );
 }
 
-function AwardsPagination({ currentPage, totalPages, t }) {
-  const buildPageHref = (page) => {
-    if (page <= 1) return "/awards?all=1";
-    return `/awards?all=1&page=${page}`;
-  };
-
-  if (totalPages <= 1) return null;
-
+function GalleryGrid({ items }) {
   return (
-    <nav
-      className="awards-gallery__pagination"
-      aria-label={t("ourAwards.pagination")}
-    >
-      <Link
-        href={buildPageHref(currentPage - 1)}
-        aria-disabled={currentPage <= 1}
-        className={`awards-gallery__pagination-btn ${
-          currentPage <= 1 ? "awards-gallery__pagination-btn--disabled" : ""
-        }`}
-      >
-        <ChevronLeft size={16} />
-        {t("luxuryListingsPage.previous")}
-      </Link>
-
-      {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-        <Link
-          key={page}
-          href={buildPageHref(page)}
-          aria-current={page === currentPage ? "page" : undefined}
-          className={`awards-gallery__pagination-page ${
-            page === currentPage ? "awards-gallery__pagination-page--active" : ""
-          }`}
-        >
-          {page}
-        </Link>
+    <div className="awards-gallery__grid">
+      {items.map((item, index) => (
+        <GalleryMedia key={item.id} item={item} index={index} />
       ))}
-
-      <Link
-        href={buildPageHref(currentPage + 1)}
-        aria-disabled={currentPage >= totalPages}
-        className={`awards-gallery__pagination-btn ${
-          currentPage >= totalPages ? "awards-gallery__pagination-btn--disabled" : ""
-        }`}
-      >
-        {t("luxuryListingsPage.next")}
-        <ChevronRight size={16} />
-      </Link>
-    </nav>
+    </div>
   );
 }
 
-function AwardsGalleryPreview({ showMoreHref }) {
+function AwardsGalleryPreview({ showMoreHref, showRecognition = false }) {
   const { t } = useLanguage();
 
   return (
     <div className="awards-gallery">
-      <div className="awards-gallery__grid">
-        {AWARD_GALLERY_FEATURED.map((item, index) => (
-          <GalleryMedia key={item.id} item={item} index={index} />
-        ))}
+      <div className="awards-gallery__block">
+        <GalleryGrid items={AWARD_GALLERY_FEATURED} />
       </div>
+      {showRecognition && (
+        <div className="awards-gallery__block">
+          <AwardsRecognition />
+        </div>
+      )}
       <ShowMoreLink href={showMoreHref} label={t("ourAwards.showMore")} />
     </div>
   );
 }
 
 function AwardsGalleryPage() {
-  const { t } = useLanguage();
   const searchParams = useSearchParams();
   const showAll = searchParams.get("all") === "1";
-  const currentPage = Math.max(1, Number(searchParams.get("page")) || 1);
 
   if (!showAll) {
-    return <AwardsGalleryPreview showMoreHref="/awards?all=1" />;
+    return <AwardsGalleryPreview showMoreHref="/awards?all=1" showRecognition />;
   }
-
-  const totalPages = Math.max(1, Math.ceil(AWARD_GALLERY.length / AWARD_GALLERY_PAGE_SIZE));
-  const safePage = Math.min(currentPage, totalPages);
-  const start = (safePage - 1) * AWARD_GALLERY_PAGE_SIZE;
-  const paginatedItems = AWARD_GALLERY.slice(start, start + AWARD_GALLERY_PAGE_SIZE);
 
   return (
     <div className="awards-gallery">
-      <div className="awards-gallery__grid">
-        {paginatedItems.map((item, index) => (
-          <GalleryMedia key={item.id} item={item} index={index} />
-        ))}
+      <div className="awards-gallery__block">
+        <GalleryGrid items={AWARD_GALLERY_FEATURED} />
       </div>
-
-      {totalPages > 1 && (
-        <p className="awards-gallery__count">
-          {AWARD_GALLERY.length} {t("ourAwards.itemsFound")}
-          {" · "}
-          {t("luxuryListingsPage.page")} {safePage} {t("luxuryListingsPage.of")} {totalPages}
-        </p>
-      )}
-
-      <AwardsPagination currentPage={safePage} totalPages={totalPages} t={t} />
+      <div className="awards-gallery__block">
+        <AwardsRecognition />
+      </div>
+      <div className="awards-gallery__block">
+        <AwardsCoverFlow items={AWARD_GALLERY_REST} />
+      </div>
     </div>
   );
 }

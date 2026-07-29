@@ -1,0 +1,80 @@
+.awards-cta {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  min-height: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .awards-cta {
+    min-height: 16rem;
+    padding: 3.5rem 2rem;
+  }
+}
+
+.awards-cta__media {
+  position: absolute;
+  inset: 0;
+}
+
+.awards-cta__image {
+  object-fit: cover;
+  object-position: center center;
+}
+
+.awards-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.62);
+}
+
+.awards-cta__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.awards-cta__title {
+  margin: 0;
+  max-width: 36rem;
+  font-family: var(--font-geist-sans), ui-serif, Georgia, "Times New Roman", serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.awards-cta__title-accent {
+  color: #ffffff;
+}
+
+.awards-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 11rem;
+  padding: 0.8rem 1.75rem;
+  border-radius: 0.375rem;
+  background: #e31e24;
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.awards-cta__button:hover {
+  background: #c81b20;
+  transform: translateY(-1px);
+}

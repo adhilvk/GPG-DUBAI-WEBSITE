@@ -12,7 +12,7 @@ export default function AwardsPageHeader() {
       title={t("ourAwards.pageTitle")}
       accent={t("ourAwards.pageAccent")}
       subtitle={t("ourAwards.heroSubtitle")}
-      className="!mb-10 md:!mb-12"
+      className="!mb-0"
     />
   );
 }

@@ -1,0 +1,12 @@
+.awards-page {
+  --awards-section-gap: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--awards-section-gap);
+}
+
+@media (min-width: 768px) {
+  .awards-page {
+    --awards-section-gap: 5rem;
+  }
+}

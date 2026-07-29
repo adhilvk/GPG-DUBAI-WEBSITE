@@ -1,0 +1,144 @@
+.awards-coverflow-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.awards-coverflow__intro {
+  max-width: 42rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.awards-coverflow__title {
+  margin: 0 0 1rem;
+  font-family: var(--font-geist-sans), ui-serif, Georgia, "Times New Roman", serif;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.awards-coverflow__title-accent {
+  color: #e31e24;
+}
+
+.awards-coverflow__description {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: #64748b;
+}
+
+@media (min-width: 768px) {
+  .awards-coverflow__description {
+    font-size: 1rem;
+  }
+}
+
+.awards-coverflow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0 0 1rem;
+}
+
+.awards-coverflow__slider {
+  width: 100%;
+  max-width: 72rem;
+  overflow: hidden;
+}
+
+.awards-coverflow__swiper {
+  width: 100%;
+  padding: 2rem 0 2.5rem;
+}
+
+.awards-coverflow__slide {
+  width: min(88vw, 360px);
+}
+
+@media (min-width: 640px) {
+  .awards-coverflow__slide {
+    width: 420px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .awards-coverflow__slide {
+    width: 480px;
+  }
+}
+
+.awards-coverflow__card {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  background: #f1f5f9;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.14);
+}
+
+.awards-coverflow__card--contain {
+  background: #1e293b;
+}
+
+.awards-coverflow__media {
+  object-fit: cover;
+}
+
+.awards-coverflow__media--contain {
+  object-fit: contain;
+}
+
+.awards-coverflow__media--face-focus {
+  object-fit: cover;
+  transform: scale(var(--face-focus-scale, 1.15))
+    translateY(var(--face-focus-offset-y, 0));
+  transform-origin: var(--face-focus-origin, 50% 50%);
+}
+
+.awards-coverflow__nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: none;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #64748b;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.12);
+  cursor: pointer;
+  transition: color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.awards-coverflow__nav:hover {
+  color: #e31e24;
+  box-shadow: 0 6px 20px rgba(227, 30, 36, 0.18);
+  transform: scale(1.05);
+}
+
+.awards-coverflow__nav.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+@media (max-width: 639px) {
+  .awards-coverflow {
+    gap: 0.25rem;
+    padding: 0;
+  }
+
+  .awards-coverflow__nav {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
