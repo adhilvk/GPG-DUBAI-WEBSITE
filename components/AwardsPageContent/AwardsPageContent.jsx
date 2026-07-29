@@ -1,6 +1,6 @@
 "use client";
 
-import SectionHeader from "@/components/SectionHeader/SectionHeader";
+import AwardsPageHeader from "@/components/AwardsPageHeader/AwardsPageHeader";
 import AwardsGalleryGrid from "@/components/AwardsGalleryGrid/AwardsGalleryGrid";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -10,10 +10,7 @@ export default function AwardsPageContent() {
   return (
     <main className="bg-white px-4 pb-16 pt-24 md:px-8 md:pb-20 md:pt-28">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader
-          title={t("ourAwards.pageTitle")}
-          accent={t("ourAwards.pageAccent")}
-        />
+        <AwardsPageHeader />
 
         <AwardsGalleryGrid mode="page" />
 

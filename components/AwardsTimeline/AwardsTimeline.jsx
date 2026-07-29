@@ -1,6 +1,6 @@
 "use client";
 
-import SectionHeader from "@/components/SectionHeader/SectionHeader";
+import AwardsPageHeader from "@/components/AwardsPageHeader/AwardsPageHeader";
 import AwardsGalleryGrid from "@/components/AwardsGalleryGrid/AwardsGalleryGrid";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -10,11 +10,7 @@ const AwardsTimeline = () => {
   return (
     <section className="bg-white px-6 py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader
-          title={t("ourAwards.aboutTitle")}
-          accent={t("ourAwards.aboutAccent")}
-          className="!mb-16"
-        />
+        <AwardsPageHeader />
 
         <AwardsGalleryGrid mode="home" />
 
