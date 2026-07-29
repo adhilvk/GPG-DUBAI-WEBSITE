@@ -70,9 +70,9 @@ const CEOMessage = () => {
               {/* Subtle accent background instead of heavy frames */}
               <div className="absolute inset-0 bg-slate-200 translate-x-4 translate-y-4 rounded-sm -z-10"></div>
               
-              <div className={`relative z-10 aspect-[3/4] overflow-hidden shadow-2xl transition-all duration-700 ${chirag.imageContainerClassName ?? "bg-neutral-100"}`}>
+              <div className="relative z-10 aspect-[3/4] overflow-hidden bg-stone-200 shadow-2xl transition-all duration-700">
                 <img
-                  src={chirag.image}
+                  src={chirag.aboutImage ?? chirag.teamImage ?? chirag.image}
                   alt="Chirag Goyal - CEO"
                   className={`absolute inset-0 h-full w-full ${chirag.imageClassName ?? "object-cover object-top"}`}
                 />

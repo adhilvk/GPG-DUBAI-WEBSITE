@@ -13,8 +13,14 @@ export const TEAM_MEMBERS = [
     brn: "51672",
     image:
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784882837/chirag_dp_jekput.png",
+    teamImage:
+      "https://res.cloudinary.com/dsldkspov/image/upload/e_background_removal,b_white,f_auto,q_auto/v1784882837/chirag_dp_jekput.png",
+    aboutImage:
+      "https://res.cloudinary.com/dsldkspov/image/upload/e_background_removal,b_rgb:e7e5e4,f_auto,q_auto/v1784882837/chirag_dp_jekput.png",
+    imageContainerClassName: "bg-white",
     imageClassName: "object-contain object-bottom scale-[0.96] translate-y-6",
-    imageContainerClassName: "bg-neutral-300",
+    listingImageClassName: "object-contain object-bottom scale-[0.92] translate-y-2",
+    listingImageContainerClassName: "bg-white",
   },
   {
     id: "1",

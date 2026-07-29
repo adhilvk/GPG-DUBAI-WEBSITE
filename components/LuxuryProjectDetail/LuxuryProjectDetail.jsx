@@ -71,7 +71,7 @@ function RegulatoryRow({ label, value, showInfo = false }) {
   return (
     <div className="grid grid-cols-[132px_minmax(0,1fr)] items-start gap-x-6 text-sm sm:grid-cols-[148px_minmax(0,1fr)]">
       <span className="text-slate-500">{label}</span>
-      <span className="inline-flex items-start gap-1.5 text-slate-900">
+      <span className="inline-flex min-w-0 items-start gap-1.5 break-all text-slate-900">
         <span className="leading-snug">{value}</span>
         {showInfo ? (
           <Info size={14} className="mt-0.5 shrink-0 rounded-full text-slate-400" aria-hidden />
@@ -103,7 +103,7 @@ function RegulatoryInformation({ regulatory, t }) {
   ].filter(Boolean);
 
   return (
-    <div className="mt-10 rounded-2xl border border-slate-200/70 bg-[#f8f8f8] p-6 md:p-8">
+    <div className="mt-10 min-w-0 overflow-hidden rounded-2xl border border-slate-200/70 bg-[#f8f8f8] p-6 md:p-8">
       <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
         <div className="min-w-0 flex-1">
           <h3 className="text-base font-bold text-slate-900">{t("luxuryDetail.regulatoryTitle")}</h3>
@@ -255,7 +255,9 @@ export default function LuxuryProjectDetail({ project }) {
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const [pulseGeneration, setPulseGeneration] = useState(0);
+  const [sidebarSticky, setSidebarSticky] = useState(true);
   const contactButtonsRef = useRef(null);
+  const sidebarStickyEndRef = useRef(null);
 
   const priceAed = parsePriceAed(project) ?? 5_000_000;
   const priceLabel = formatAedPrice(project);
@@ -348,9 +350,56 @@ export default function LuxuryProjectDetail({ project }) {
     setGalleryOpen(true);
   }, []);
 
+  useEffect(() => {
+    const stickyEnd = sidebarStickyEndRef.current;
+    if (!stickyEnd) return;
+
+    const stickyTop = 96;
+    const desktopQuery = window.matchMedia("(min-width: 1024px)");
+
+    const updateSidebarSticky = () => {
+      if (!desktopQuery.matches) {
+        setSidebarSticky(false);
+        return;
+      }
+      setSidebarSticky(stickyEnd.getBoundingClientRect().top > stickyTop);
+    };
+
+    updateSidebarSticky();
+    window.addEventListener("scroll", updateSidebarSticky, { passive: true });
+    window.addEventListener("resize", updateSidebarSticky);
+    desktopQuery.addEventListener("change", updateSidebarSticky);
+
+    return () => {
+      window.removeEventListener("scroll", updateSidebarSticky);
+      window.removeEventListener("resize", updateSidebarSticky);
+      desktopQuery.removeEventListener("change", updateSidebarSticky);
+    };
+  }, []);
+
   const handleFreeConsultation = useCallback(() => {
     setPulseGeneration((generation) => generation + 1);
-    contactButtonsRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    const scrollToAdvisorContact = () => {
+      const target = contactButtonsRef.current;
+      if (!target) return;
+
+      const headerOffset = 112;
+      const isMobile = window.matchMedia("(max-width: 1023px)").matches;
+
+      if (isMobile) {
+        const top =
+          target.getBoundingClientRect().top + window.scrollY - headerOffset;
+        window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+        return;
+      }
+
+      target.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    };
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(scrollToAdvisorContact);
+    });
   }, []);
 
   const extraPhotoCount = Math.max(0, allImages.length - 3);
@@ -381,8 +430,8 @@ export default function LuxuryProjectDetail({ project }) {
   return (
     <main className="bg-white pb-20 text-slate-900">
       {/* Gallery */}
-      <section className="bg-slate-50 pt-24 pb-6">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="overflow-x-hidden bg-slate-50 pt-24 pb-6">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
             <nav className="flex flex-wrap items-center gap-1 text-xs text-slate-500 md:text-sm" aria-label="Breadcrumb">
               <Link href="/" className="hover:text-[#E31E24]">
@@ -407,11 +456,11 @@ export default function LuxuryProjectDetail({ project }) {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:grid-rows-2 lg:h-[min(68vh,580px)]">
+          <div className="grid w-full min-w-0 grid-cols-1 gap-2 lg:grid-cols-3 lg:grid-rows-2 lg:h-[min(68vh,580px)]">
             <button
               type="button"
               onClick={() => openGallery(0)}
-              className="group relative min-h-[260px] overflow-hidden rounded-xl lg:col-span-2 lg:row-span-2"
+              className="group relative min-h-[260px] w-full overflow-hidden rounded-xl lg:col-span-2 lg:row-span-2"
             >
               <Image
                 src={gallery[0]}
@@ -441,7 +490,7 @@ export default function LuxuryProjectDetail({ project }) {
             <button
               type="button"
               onClick={() => openGallery(1)}
-              className="group relative min-h-[180px] overflow-hidden rounded-xl"
+              className="group relative min-h-[180px] w-full overflow-hidden rounded-xl"
             >
               <Image
                 src={gallery[1]}
@@ -454,7 +503,7 @@ export default function LuxuryProjectDetail({ project }) {
             <button
               type="button"
               onClick={() => openGallery(extraPhotoCount > 0 ? 0 : 2)}
-              className="group relative min-h-[180px] overflow-hidden rounded-xl"
+              className="group relative min-h-[180px] w-full overflow-hidden rounded-xl"
             >
               <Image
                 src={gallery[2]}
@@ -486,10 +535,10 @@ export default function LuxuryProjectDetail({ project }) {
       />
 
       {/* Content + Sidebar */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_440px]">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mt-8 grid min-w-0 items-start gap-10 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_440px]">
           {/* Main column */}
-          <div>
+          <div className="min-w-0">
             <p className="text-3xl font-bold tracking-tight text-[#E31E24] md:text-4xl">{priceLabel}</p>
             {monthlyPaymentLabel && (
               <p className="mt-2 inline-flex rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-700">
@@ -741,32 +790,47 @@ export default function LuxuryProjectDetail({ project }) {
             </div>
 
             <RegulatoryInformation regulatory={regulatory} t={t} />
+            <div ref={sidebarStickyEndRef} className="h-0 w-full" aria-hidden="true" />
           </div>
 
-          {/* Sticky sidebar */}
-          <aside className="lg:sticky lg:top-28 lg:self-start">
+          {/* Sticky sidebar — pins below navbar until Recommended approaches, then scrolls up */}
+          <aside
+            className={`min-w-0 lg:z-10 lg:self-start ${
+              sidebarSticky ? "lg:sticky lg:top-24" : ""
+            }`}
+          >
             <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
               <div className="text-center">
                 <div
                   className={`relative mx-auto h-[120px] w-[120px] overflow-hidden rounded-full border border-slate-200 shadow-sm ${
-                    agent.imageContainerClassName ?? "bg-slate-50"
+                    agent.listingImageContainerClassName ??
+                    agent.imageContainerClassName ??
+                    "bg-white"
                   }`}
                 >
                   <Image
                     src={agent.image}
                     alt={agent.name}
                     fill
-                    className="object-contain object-center scale-125 translate-y-4 p-1"
+                    className={
+                      agent.listingImageClassName ??
+                      agent.imageClassName ??
+                      "object-cover object-top"
+                    }
                     sizes="120px"
                   />
                 </div>
                 <p className="mt-3 text-sm font-semibold text-slate-900">{agent.name}</p>
                 <p className="mt-0.5 text-xs text-slate-500">{agent.title}</p>
+                {agent.brn && (
+                  <p className="mt-1 text-xs font-medium text-slate-400">BRN#{agent.brn}</p>
+                )}
               </div>
 
               <div
+                id="advisor-contact"
                 ref={contactButtonsRef}
-                className="mt-5 grid grid-cols-2 gap-3 border-t border-slate-100 pt-5"
+                className="mt-5 grid scroll-mt-28 grid-cols-2 gap-3 overflow-hidden border-t border-slate-100 pt-5"
               >
                 <motion.a
                   key={`call-${pulseGeneration}`}
@@ -824,7 +888,6 @@ export default function LuxuryProjectDetail({ project }) {
           </aside>
         </div>
 
-        {/* Recommended */}
         {related.length > 0 && (
           <div className="mt-16 border-t border-slate-100 pt-12">
             <SectionHeading>{t("luxuryDetail.recommended")}</SectionHeading>

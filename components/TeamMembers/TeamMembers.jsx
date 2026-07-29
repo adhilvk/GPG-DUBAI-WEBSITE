@@ -26,7 +26,7 @@ function TeamMemberCard({ member, className = "" }) {
         className={`relative aspect-[3/4] overflow-hidden ${member.imageContainerClassName ?? "bg-neutral-100"}`}
       >
         <Image
-          src={member.image}
+          src={member.teamImage ?? member.image}
           alt={member.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

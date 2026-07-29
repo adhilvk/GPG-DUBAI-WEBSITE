@@ -55,6 +55,11 @@ const nextConfig: NextConfig = {
         destination: "/luxury-properties/burj-binghatti-jacob-co-business-bay",
         permanent: true,
       },
+      {
+        source: "/luxury-properties/district-one-west-villa",
+        destination: "/luxury-properties/burj-binghatti-jacob-co-luxury-view",
+        permanent: true,
+      },
     ];
   },
   images: {

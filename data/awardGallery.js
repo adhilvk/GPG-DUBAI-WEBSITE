@@ -1,0 +1,90 @@
+export const AWARD_GALLERY_FEATURED_COUNT = 3;
+export const AWARD_GALLERY_PAGE_SIZE = 9;
+
+export const AWARD_GALLERY_FEATURED = [
+  {
+    id: "binghatti-annual-2025",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312324/award_1.jpg_jokfiv.jpg",
+    alt: "GPG at Binghatti Annual Broker Awards 2025",
+  },
+  {
+    id: "franck-muller-awards",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312276/franckmuller.jpg_wmurp9.jpg",
+    alt: "GPG team at Franck Muller and London Gate awards",
+  },
+  {
+    id: "binghatti-stage-award",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785307390/3.jpg_ya3yuu.jpg",
+    alt: "GPG on stage at Binghatti Broker Recognition Awards 2026",
+  },
+];
+
+export const AWARD_GALLERY_REST = [
+  {
+    id: "binghatti-recognition-group",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785307300/1.jpg_jgeft9.jpg",
+    alt: "GPG team at Binghatti Broker Recognition Awards 2026",
+  },
+  {
+    id: "binghatti-award-portrait",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785307419/2.jpg_kc2sly.jpg",
+    alt: "GPG representative holding Binghatti Broker Recognition Award 2026",
+  },
+  {
+    id: "binghatti-team-trophy",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785307452/9.jpg_xbvfwh.jpg",
+    alt: "GPG team member with Billionaires Estate award trophy",
+  },
+  {
+    id: "broker-awards-aerial",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312212/DJI_20250910215902_0608_D.JPG_dmwdck.jpg",
+    alt: "Aerial view of broker recognition awards event",
+  },
+  {
+    id: "awards-ceremony-stage",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312054/DSC02403.JPG_uo4yqv.jpg",
+    alt: "Broker recognition awards ceremony stage",
+  },
+  {
+    id: "awards-event-group",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312158/DSC02428.JPG_wcafe0.jpg",
+    alt: "GPG team at awards event",
+  },
+  {
+    id: "yachting-event",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312255/20250910_220936_0.jpg_qli3rt.jpg",
+    alt: "GPG at Franck Muller Yachting by London Gate event",
+  },
+  {
+    id: "broker-recognition-team",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312345/WhatsApp_Image_2026-07-25_at_3.09.32_PM_nlaueg.jpg",
+    alt: "GPG team celebrating broker recognition award",
+  },
+  {
+    id: "awards-celebration-video",
+    type: "video",
+    src: "https://res.cloudinary.com/dsldkspov/video/upload/v1785312433/WhatsApp_Video_2026-07-25_at_3.09.36_PM_kzjb38.mp4",
+    alt: "GPG awards celebration video",
+    poster:
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785312345/WhatsApp_Image_2026-07-25_at_3.09.32_PM_nlaueg.jpg",
+  },
+  {
+    id: "yachting-event-group",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312484/20250910_220936_0.jpg_tkjg9d.jpg",
+    alt: "GPG team at yachting awards presentation",
+  },
+];
+
+export const AWARD_GALLERY = [...AWARD_GALLERY_FEATURED, ...AWARD_GALLERY_REST];
