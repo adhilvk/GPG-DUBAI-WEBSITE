@@ -47,6 +47,8 @@
   font-size: 0.9375rem;
   line-height: 1.75;
   color: #64748b;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 @media (min-width: 768px) {

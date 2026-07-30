@@ -16,7 +16,8 @@ export const AWARD_HIGHLIGHT = {
   alt: "GPG on stage at Binghatti Broker Recognition Awards 2026",
 };
 
-export const AWARD_GALLERY_FEATURED = [  {
+export const AWARD_GALLERY_FEATURED = [
+  {
     id: "binghatti-annual-2025",
     type: "image",
     src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312324/award_1.jpg_jokfiv.jpg",
@@ -36,13 +37,7 @@ export const AWARD_GALLERY_FEATURED = [  {
   },
 ];
 
-export const AWARD_GALLERY_REST = [
-  {
-    id: "binghatti-recognition-group",
-    type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785307300/1.jpg_jgeft9.jpg",
-    alt: "GPG team at Binghatti Broker Recognition Awards 2026",
-  },
+const AWARD_GALLERY_REST_RAW = [
   {
     id: "binghatti-award-portrait",
     type: "image",
@@ -76,18 +71,38 @@ export const AWARD_GALLERY_REST = [
     src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312158/DSC02428.JPG_wcafe0.jpg",
     alt: "GPG team at awards event",
   },
-  {
-    id: "yachting-event",
-    type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312255/20250910_220936_0.jpg_qli3rt.jpg",
-    alt: "GPG at Franck Muller Yachting by London Gate event",
-  },
-  {
-    id: "broker-recognition-team",
-    type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312345/WhatsApp_Image_2026-07-25_at_3.09.32_PM_nlaueg.jpg",
-    alt: "GPG team celebrating broker recognition award",
-  },
 ];
 
-export const AWARD_GALLERY = [...AWARD_GALLERY_FEATURED, ...AWARD_GALLERY_REST];
+function getAwardImageKey(src) {
+  if (!src) return "";
+
+  const match = src.match(/\/upload\/(?:(?:c_[^/]+(?:,[^/]+)*|v\d+)\/)*(.+)$/i);
+  return match ? match[1].toLowerCase() : src.toLowerCase();
+}
+
+function dedupeAwardGalleryItems(items, reservedKeys = new Set()) {
+  const seen = new Set(reservedKeys);
+
+  return items.filter((item) => {
+    const key = getAwardImageKey(item.src);
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+const RESERVED_AWARD_IMAGE_KEYS = new Set([
+  getAwardImageKey(AWARD_HIGHLIGHT.src),
+  getAwardImageKey(AWARD_RECOGNITION_VIDEO.poster),
+  ...AWARD_GALLERY_FEATURED.map((item) => getAwardImageKey(item.src)),
+]);
+
+export const AWARD_GALLERY_REST = dedupeAwardGalleryItems(
+  AWARD_GALLERY_REST_RAW,
+  RESERVED_AWARD_IMAGE_KEYS
+);
+
+export const AWARD_GALLERY = dedupeAwardGalleryItems([
+  ...AWARD_GALLERY_FEATURED,
+  ...AWARD_GALLERY_REST,
+]);

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import {
@@ -62,16 +61,6 @@ function GalleryMedia({ item, index }) {
   );
 }
 
-function ShowMoreLink({ href, label }) {
-  return (
-    <div className="awards-gallery__actions">
-      <Link href={href} className="awards-gallery__toggle">
-        {label}
-      </Link>
-    </div>
-  );
-}
-
 function GalleryGrid({ items }) {
   return (
     <div className="awards-gallery__grid">
@@ -82,7 +71,17 @@ function GalleryGrid({ items }) {
   );
 }
 
-function AwardsGalleryPreview({ showMoreHref, showRecognition = false }) {
+function ShowMoreLink({ href, label }) {
+  return (
+    <div className="awards-gallery__actions">
+      <Link href={href} className="awards-gallery__toggle">
+        {label}
+      </Link>
+    </div>
+  );
+}
+
+function AwardsGalleryHome() {
   const { t } = useLanguage();
 
   return (
@@ -90,24 +89,12 @@ function AwardsGalleryPreview({ showMoreHref, showRecognition = false }) {
       <div className="awards-gallery__block">
         <GalleryGrid items={AWARD_GALLERY_FEATURED} />
       </div>
-      {showRecognition && (
-        <div className="awards-gallery__block">
-          <AwardsRecognition />
-        </div>
-      )}
-      <ShowMoreLink href={showMoreHref} label={t("ourAwards.showMore")} />
+      <ShowMoreLink href="/awards" label={t("ourAwards.showMore")} />
     </div>
   );
 }
 
 function AwardsGalleryPage() {
-  const searchParams = useSearchParams();
-  const showAll = searchParams.get("all") === "1";
-
-  if (!showAll) {
-    return <AwardsGalleryPreview showMoreHref="/awards?all=1" showRecognition />;
-  }
-
   return (
     <div className="awards-gallery">
       <div className="awards-gallery__block">
@@ -125,7 +112,7 @@ function AwardsGalleryPage() {
 
 export default function AwardsGalleryGrid({ mode = "page" }) {
   if (mode === "home") {
-    return <AwardsGalleryPreview showMoreHref="/awards" />;
+    return <AwardsGalleryHome />;
   }
 
   return <AwardsGalleryPage />;
