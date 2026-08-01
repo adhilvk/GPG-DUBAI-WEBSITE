@@ -46,7 +46,9 @@ const ExclusiveProjectsSlider = () => {
 
   const trendingProjects = useMemo(
     () =>
-      TRENDING_PROJECTS.filter((project) => getProjectEmirate(project) === activeEmirate).slice(
+      TRENDING_PROJECTS.filter(
+        (project) => !project.hiddenFromListing && getProjectEmirate(project) === activeEmirate
+      ).slice(
         0,
         CAROUSEL_PROJECT_LIMIT
       ),

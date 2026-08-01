@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
-import { TEAM_MEMBERS } from "@/data/teamMembers";
+import { TEAM_MEMBERS, getTeamImageUrl } from "@/data/teamMembers";
 
 function ContactButton({ href, label, children }) {
   return (
@@ -26,7 +26,7 @@ function TeamMemberCard({ member, className = "" }) {
         className={`relative aspect-[3/4] overflow-hidden ${member.imageContainerClassName ?? "bg-neutral-100"}`}
       >
         <Image
-          src={member.teamImage ?? member.image}
+          src={getTeamImageUrl(member)}
           alt={member.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -74,6 +74,13 @@ function TeamMemberCard({ member, className = "" }) {
 }
 
 export default function TeamMembers() {
+  const rowSize = 4;
+  const fullRowMembers = TEAM_MEMBERS.slice(
+    0,
+    Math.floor(TEAM_MEMBERS.length / rowSize) * rowSize,
+  );
+  const lastRowMembers = TEAM_MEMBERS.slice(fullRowMembers.length);
+
   return (
     <section
       className="bg-linear-to-b from-neutral-50 via-white to-neutral-50 py-16 md:py-24"
@@ -81,24 +88,22 @@ export default function TeamMembers() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-x-8 lg:gap-y-14">
-          {TEAM_MEMBERS.map((member, index) => {
-            const isSecondLast = index === TEAM_MEMBERS.length - 2;
-            const isLast = index === TEAM_MEMBERS.length - 1;
-
-            return (
-              <TeamMemberCard
-                key={member.id}
-                member={member}
-                className={
-                  isSecondLast
-                    ? "xl:col-start-2"
-                    : isLast
-                      ? "xl:col-start-3"
-                      : ""
-                }
-              />
-            );
-          })}
+          {fullRowMembers.map((member) => (
+            <TeamMemberCard key={member.id} member={member} />
+          ))}
+          {lastRowMembers.length > 0 && (
+            <div className="col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-4">
+              <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:flex xl:justify-center xl:gap-8">
+                {lastRowMembers.map((member) => (
+                  <TeamMemberCard
+                    key={member.id}
+                    member={member}
+                    className="xl:w-[calc((100%-6rem)/4)] xl:shrink-0"
+                  />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

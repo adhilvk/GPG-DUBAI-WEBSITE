@@ -37,6 +37,7 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
   const agent = getListingAgent(project);
   const agentWaNumber = agent.phone.replace(/\D/g, "");
   const priceLabel = project.priceDisplay ?? `From AED ${project.price}`;
+  const showPrice = !project.hidePrice;
   const inquiryText = `Hi, I'm interested in ${project.title} at ${project.location} (${priceLabel}).`;
   const waHref = `https://wa.me/${agentWaNumber}?text=${encodeURIComponent(inquiryText)}`;
   const phoneHref = `tel:${agent.phone}`;
@@ -45,6 +46,7 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
   )}&body=${encodeURIComponent(inquiryText)}`;
   const hasSpecsRow =
     project.sqft != null && (project.beds != null || project.baths != null);
+  const hasDetailCardLayout = Boolean(project.projectSummary || hasSpecsRow);
   const specItems = [
     project.beds != null && {
       key: "beds",
@@ -101,7 +103,7 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
       <div
         className={`relative z-10 flex flex-1 flex-col pointer-events-none ${
           compact ? "gap-1.5 p-3" : "gap-2 p-4"
-        } ${hasSpecsRow ? "" : compact ? "pb-12" : "pb-16"}`}
+        } ${hasDetailCardLayout ? "" : compact ? "pb-12" : "pb-16"}`}
       >
         {project.propertyType ? (
           <p className="text-xs text-slate-500">{project.propertyType}</p>
@@ -114,7 +116,7 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
           </p>
         ) : null}
 
-        {hasSpecsRow ? (
+        {hasDetailCardLayout && showPrice ? (
           <p
             className={`font-bold text-[#E31E24] ${compact ? "text-base" : "text-xl md:text-2xl"}`}
           >
@@ -143,39 +145,45 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
           <span className={compact ? "line-clamp-2" : undefined}>{project.location}</span>
         </p>
 
-        {hasSpecsRow ? (
+        {hasDetailCardLayout ? (
           <div
             className={`pointer-events-auto mt-auto border-t border-slate-100 ${
               compact ? "flex flex-col gap-2 pt-2" : "flex items-center justify-between gap-2 pt-3"
             }`}
           >
-            <div
-              className={`flex text-xs text-slate-600 ${
-                compact
-                  ? "flex-wrap items-center gap-x-2 gap-y-1"
-                  : "min-w-0 flex-nowrap items-center gap-x-2"
-              }`}
-            >
-              {specItems.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <span key={item.key} className="contents">
-                    {index > 0 ? (
-                      <span className="h-4 w-px shrink-0 bg-slate-200" aria-hidden />
-                    ) : null}
-                    <span className="inline-flex shrink-0 items-center gap-1">
-                      <Icon size={14} className="text-slate-400" />
-                      {item.label}
+            {specItems.length > 0 ? (
+              <div
+                className={`flex text-xs text-slate-600 ${
+                  compact
+                    ? "flex-wrap items-center gap-x-2 gap-y-1"
+                    : "min-w-0 flex-nowrap items-center gap-x-2"
+                }`}
+              >
+                {specItems.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <span key={item.key} className="contents">
+                      {index > 0 ? (
+                        <span className="h-4 w-px shrink-0 bg-slate-200" aria-hidden />
+                      ) : null}
+                      <span className="inline-flex shrink-0 items-center gap-1">
+                        <Icon size={14} className="text-slate-400" />
+                        {item.label}
+                      </span>
                     </span>
-                  </span>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <span />
+            )}
             <div className={compact ? "flex justify-end" : undefined}>{contactIcons}</div>
           </div>
         ) : (
           <>
-            <p className="mt-1 text-sm font-bold text-[#E31E24]">From AED {project.price}</p>
+            {showPrice ? (
+              <p className="mt-1 text-sm font-bold text-[#E31E24]">{priceLabel}</p>
+            ) : null}
             <div className="pointer-events-auto absolute bottom-4 right-4">{contactIcons}</div>
           </>
         )}

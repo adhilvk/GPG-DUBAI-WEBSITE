@@ -25,6 +25,7 @@ import {
   Banknote,
   Building2,
   Info,
+  FileDown,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import LuxuryProjectCard from "@/components/LuxuryProjectCard/LuxuryProjectCard";
@@ -45,6 +46,7 @@ import {
 
 const NAVY = "#002147";
 const RED = "#E31E24";
+const SIDEBAR_TOP = 96;
 
 function useMortgage(price, downPct, years, interestPct) {
   return useMemo(() => {
@@ -57,6 +59,41 @@ function useMortgage(price, downPct, years, interestPct) {
     const monthly = (principal * r * pow) / (pow - 1);
     return { monthly: Number.isFinite(monthly) ? monthly : 0, principal };
   }, [price, downPct, years, interestPct]);
+}
+
+function AdvisorContactButtons({ agent, mailHref, pulseGeneration, t, className = "" }) {
+  return (
+    <div className={`grid grid-cols-2 gap-3 ${className}`}>
+      <motion.a
+        key={`call-${pulseGeneration}`}
+        href={`tel:${agent.phone}`}
+        initial={{ scale: 1 }}
+        animate={
+          pulseGeneration > 0 ? { scale: [1, 1.14, 1, 1.14, 1] } : { scale: 1 }
+        }
+        transition={{ duration: 1.4, ease: "easeInOut" }}
+        className="inline-flex items-center justify-center gap-2 rounded-lg py-3 text-sm font-bold text-white transition-colors hover:opacity-90"
+        style={{ backgroundColor: RED }}
+      >
+        <Phone size={16} />
+        {t("luxuryDetail.call")}
+      </motion.a>
+      <motion.a
+        key={`mail-${pulseGeneration}`}
+        href={mailHref}
+        initial={{ scale: 1 }}
+        animate={
+          pulseGeneration > 0 ? { scale: [1, 1.14, 1, 1.14, 1] } : { scale: 1 }
+        }
+        transition={{ duration: 1.4, ease: "easeInOut" }}
+        className="inline-flex items-center justify-center gap-2 rounded-lg py-3 text-sm font-bold text-white transition-colors hover:opacity-90"
+        style={{ backgroundColor: NAVY }}
+      >
+        <Mail size={16} />
+        {t("luxuryDetail.mail")}
+      </motion.a>
+    </div>
+  );
 }
 
 function SectionHeading({ children }) {
@@ -249,15 +286,234 @@ function GalleryLightbox({ images, title, open, initialIndex, onClose, t }) {
   );
 }
 
-export default function LuxuryProjectDetail({ project }) {
+const GOLD = "#b8956b";
+
+function AmenitiesSection({ amenities }) {
+  return (
+    <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+      {amenities.map((item) => {
+        const title = typeof item === "string" ? item : item.title;
+        return (
+          <li key={title} className="flex items-center gap-2 text-sm text-slate-700">
+            <Check size={16} className="shrink-0 text-[#E31E24]" />
+            {title}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+function CommunityProjectCard({ project, projectHrefBase = "/trending-projects" }) {
+  const href = project.href ?? (project.slug ? `${projectHrefBase}/${project.slug}` : null);
+
+  const inner = (
+    <>
+      <div className="relative aspect-[16/10] bg-slate-100">
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          sizes="(max-width: 1024px) 100vw, 480px"
+          className="object-cover"
+        />
+      </div>
+      <div className="p-4">
+        <h3 className="text-base font-bold text-slate-900">{project.title}</h3>
+        <p className="mt-1.5 flex items-center gap-1.5 text-sm" style={{ color: GOLD }}>
+          <MapPin size={14} className="shrink-0" style={{ color: GOLD }} />
+          {project.location}
+        </p>
+        <div className="mt-3 space-y-1.5 text-sm text-slate-600">
+          <p className="flex items-center gap-2">
+            <BedDouble size={15} className="shrink-0 text-slate-400" />
+            {project.bedsLabel}
+          </p>
+          <p className="flex items-center gap-2">
+            <Maximize2 size={15} className="shrink-0 text-slate-400" />
+            {project.sizeLabel}
+          </p>
+        </div>
+        <div className="mt-4 border-t border-slate-100 pt-3">
+          <p className="text-base font-bold" style={{ color: GOLD }}>
+            {project.price}
+          </p>
+        </div>
+      </div>
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className="block overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md"
+      >
+        {inner}
+      </Link>
+    );
+  }
+
+  return (
+    <article className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+      {inner}
+    </article>
+  );
+}
+
+function CommunityProjectsSection({ section, projectHrefBase = "/trending-projects" }) {
+  if (!section?.projects?.length) return null;
+
+  return (
+    <div>
+      <h2 className="text-center text-xl font-bold text-slate-900 md:text-2xl">{section.title}</h2>
+      {section.description ? (
+        <p className="mx-auto mt-3 max-w-2xl text-center text-sm leading-relaxed text-slate-600 md:text-base">
+          {section.description}
+        </p>
+      ) : null}
+      <div className="mx-auto mt-8 flex max-w-md flex-col gap-6">
+        {section.projects.map((item) => (
+          <CommunityProjectCard
+            key={item.title}
+            project={item}
+            projectHrefBase={projectHrefBase}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function AboutProjectSection({ about }) {
+  if (!about) return null;
+
+  return (
+    <div className="mt-10 border-t border-slate-200 pt-10">
+      <h2 className="text-center text-xl font-bold text-slate-900 md:text-2xl">{about.title}</h2>
+      <div className="mx-auto mt-6 max-w-4xl space-y-5 text-center text-sm leading-relaxed text-slate-600 md:text-base">
+        {about.paragraphs.map((paragraph) => (
+          <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+        ))}
+      </div>
+      {about.stats?.length ? (
+        <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 divide-y divide-slate-200 overflow-hidden rounded-xl border border-slate-200 bg-white sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <div className="flex flex-col items-center justify-center px-6 py-8 text-center">
+            {about.logo ? (
+              <Image
+                src={about.logo}
+                alt={about.logoAlt ?? ""}
+                width={120}
+                height={80}
+                className="h-16 w-auto object-contain"
+              />
+            ) : about.brandName ? (
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-700">
+                {about.brandName}
+              </p>
+            ) : null}
+          </div>
+          {about.stats.map((stat) => (
+            <div key={stat.label} className="flex flex-col items-center justify-center px-6 py-8 text-center">
+              <p className="text-3xl font-bold text-slate-900">{stat.value}</p>
+              <p className="mt-1 text-sm text-slate-500">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function ProjectSummarySection({ summary, t }) {
+  if (!summary?.rows?.length) return null;
+
+  const labelClass = "text-xs font-semibold uppercase tracking-wide text-slate-500";
+  const valueClass = "mt-1 text-sm font-medium text-slate-900";
+
+  if (summary.rows.length === 1) {
+    const row = summary.rows[0];
+    const items = [
+      { label: t("luxuryDetail.propertyType"), value: row.propertyType },
+      { label: t("luxuryDetail.unitType"), value: row.unitType },
+      { label: t("luxuryDetail.size"), value: row.size },
+      { label: t("luxuryDetail.downPaymentPercent"), value: summary.downPayment },
+      { label: t("luxuryDetail.paymentPlan"), value: summary.paymentPlan },
+      { label: t("luxuryDetail.handover"), value: summary.handover },
+    ];
+
+    return (
+      <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {items.map(({ label, value }) => (
+          <div key={label} className="border-b border-slate-100 pb-3">
+            <dt className={labelClass}>{label}</dt>
+            <dd className={valueClass}>{value}</dd>
+          </div>
+        ))}
+      </dl>
+    );
+  }
+
+  const fieldClass = "border-b border-slate-100 pb-3";
+
+  return (
+    <dl className="space-y-4">
+      {summary.rows.map((row) => (
+        <div
+          key={`${row.propertyType}-${row.unitType}`}
+          className="grid grid-cols-1 gap-4 sm:grid-cols-3"
+        >
+          <div className={fieldClass}>
+            <dt className={labelClass}>{t("luxuryDetail.propertyType")}</dt>
+            <dd className={valueClass}>{row.propertyType}</dd>
+          </div>
+          <div className={fieldClass}>
+            <dt className={labelClass}>{t("luxuryDetail.unitType")}</dt>
+            <dd className={valueClass}>{row.unitType}</dd>
+          </div>
+          <div className={fieldClass}>
+            <dt className={labelClass}>{t("luxuryDetail.size")}</dt>
+            <dd className={valueClass}>{row.size}</dd>
+          </div>
+        </div>
+      ))}
+
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className={fieldClass}>
+          <dt className={labelClass}>{t("luxuryDetail.downPaymentPercent")}</dt>
+          <dd className={valueClass}>{summary.downPayment}</dd>
+        </div>
+        <div className={fieldClass}>
+          <dt className={labelClass}>{t("luxuryDetail.paymentPlan")}</dt>
+          <dd className={valueClass}>{summary.paymentPlan}</dd>
+        </div>
+        <div className={fieldClass}>
+          <dt className={labelClass}>{t("luxuryDetail.handover")}</dt>
+          <dd className={valueClass}>{summary.handover}</dd>
+        </div>
+      </div>
+    </dl>
+  );
+}
+
+export default function LuxuryProjectDetail({
+  project,
+  listHref = "/luxury-properties",
+  listLabel,
+  getRelatedProjects = getRelatedLuxuryProjects,
+  projectHrefBase = "/luxury-properties",
+}) {
   const { t } = useLanguage();
   const [readMore, setReadMore] = useState(false);
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const [pulseGeneration, setPulseGeneration] = useState(0);
-  const [sidebarSticky, setSidebarSticky] = useState(true);
+  const [sidebarStyle, setSidebarStyle] = useState(null);
   const contactButtonsRef = useRef(null);
-  const sidebarStickyEndRef = useRef(null);
+  const contentRowRef = useRef(null);
+  const sidebarWrapRef = useRef(null);
+  const sidebarRef = useRef(null);
+  const recommendedRef = useRef(null);
 
   const priceAed = parsePriceAed(project) ?? 5_000_000;
   const priceLabel = formatAedPrice(project);
@@ -268,7 +524,9 @@ export default function LuxuryProjectDetail({ project }) {
   const amenities = getProjectAmenities(project);
   const regulatory = getProjectRegulatory(project);
   const agent = useMemo(() => getListingAgent(project), [project]);
-  const related = useMemo(() => getRelatedLuxuryProjects(project.id, 3), [project.id]);
+  const related = useMemo(() => getRelatedProjects(project.id, 3), [getRelatedProjects, project.id]);
+  const breadcrumbLabel = listLabel ?? t("luxuryDetail.luxuryProperties");
+  const isCommunityLayout = Boolean(project.communityProjectsSection);
 
   const [purchasePrice, setPurchasePrice] = useState(priceAed);
   const [downPct, setDownPct] = useState(mortgageDefaults.downPct);
@@ -288,7 +546,7 @@ export default function LuxuryProjectDetail({ project }) {
       ? description
       : `${description.slice(0, descriptionPreviewLen).trim()}…`;
 
-  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(project.location)}&output=embed`;
+  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(project.mapQuery ?? project.location)}&output=embed`;
   const waText = `Hi, I'm interested in ${project.title} at ${project.location} (${priceLabel}).`;
   const mailSubject = encodeURIComponent(`Inquiry: ${project.title}`);
   const mailBody = encodeURIComponent(waText);
@@ -307,7 +565,9 @@ export default function LuxuryProjectDetail({ project }) {
     setInterestPct(mortgageDefaults.interestPct);
   }, [priceAed, mortgageDefaults]);
 
-  const propertyDetails = [
+  const propertyDetails = project.projectSummary
+    ? []
+    : [
     project.beds != null && {
       label: t("luxuryDetail.bedrooms"),
       value: project.bedsLabel ?? `${project.beds} ${t("luxuryDetail.bedsUnit")}`,
@@ -351,55 +611,77 @@ export default function LuxuryProjectDetail({ project }) {
   }, []);
 
   useEffect(() => {
-    const stickyEnd = sidebarStickyEndRef.current;
-    if (!stickyEnd) return;
+    const row = contentRowRef.current;
+    const wrap = sidebarWrapRef.current;
+    const sidebar = sidebarRef.current;
+    const recommended = recommendedRef.current;
+    if (!row || !wrap || !sidebar) return undefined;
 
-    const stickyTop = 96;
     const desktopQuery = window.matchMedia("(min-width: 1024px)");
 
-    const updateSidebarSticky = () => {
+    const updateSidebar = () => {
       if (!desktopQuery.matches) {
-        setSidebarSticky(false);
+        setSidebarStyle(null);
         return;
       }
-      setSidebarSticky(stickyEnd.getBoundingClientRect().top > stickyTop);
+
+      const wrapWidth = wrap.offsetWidth;
+      const wrapLeft = wrap.getBoundingClientRect().left;
+      const scrollY = window.scrollY;
+      const rowTop = row.getBoundingClientRect().top + scrollY;
+      const rowBottom = rowTop + row.offsetHeight;
+      const sidebarHeight = sidebar.offsetHeight;
+
+      let stopLine = rowBottom;
+      if (recommended) {
+        stopLine = Math.min(stopLine, recommended.getBoundingClientRect().top + scrollY);
+      }
+
+      const pinStart = rowTop - SIDEBAR_TOP;
+      const pinEnd = stopLine - sidebarHeight - SIDEBAR_TOP;
+
+      if (scrollY < pinStart) {
+        setSidebarStyle(null);
+      } else if (scrollY >= pinEnd) {
+        setSidebarStyle({
+          position: "absolute",
+          top: pinEnd - rowTop + SIDEBAR_TOP,
+          width: wrapWidth,
+        });
+      } else {
+        setSidebarStyle({
+          position: "fixed",
+          top: SIDEBAR_TOP,
+          left: wrapLeft,
+          width: wrapWidth,
+        });
+      }
     };
 
-    updateSidebarSticky();
-    window.addEventListener("scroll", updateSidebarSticky, { passive: true });
-    window.addEventListener("resize", updateSidebarSticky);
-    desktopQuery.addEventListener("change", updateSidebarSticky);
+    updateSidebar();
+    window.addEventListener("scroll", updateSidebar, { passive: true });
+    window.addEventListener("resize", updateSidebar);
+    desktopQuery.addEventListener("change", updateSidebar);
 
     return () => {
-      window.removeEventListener("scroll", updateSidebarSticky);
-      window.removeEventListener("resize", updateSidebarSticky);
-      desktopQuery.removeEventListener("change", updateSidebarSticky);
+      window.removeEventListener("scroll", updateSidebar);
+      window.removeEventListener("resize", updateSidebar);
+      desktopQuery.removeEventListener("change", updateSidebar);
     };
-  }, []);
+  }, [related.length]);
 
   const handleFreeConsultation = useCallback(() => {
     setPulseGeneration((generation) => generation + 1);
 
-    const scrollToAdvisorContact = () => {
-      const target = contactButtonsRef.current;
-      if (!target) return;
-
-      const headerOffset = 112;
+    window.setTimeout(() => {
       const isMobile = window.matchMedia("(max-width: 1023px)").matches;
+      const target = isMobile ? sidebarWrapRef.current : contactButtonsRef.current;
 
-      if (isMobile) {
-        const top =
-          target.getBoundingClientRect().top + window.scrollY - headerOffset;
-        window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-        return;
-      }
-
-      target.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    };
-
-    requestAnimationFrame(() => {
-      requestAnimationFrame(scrollToAdvisorContact);
-    });
+      target?.scrollIntoView({
+        behavior: "smooth",
+        block: isMobile ? "start" : "nearest",
+      });
+    }, 100);
   }, []);
 
   const extraPhotoCount = Math.max(0, allImages.length - 3);
@@ -438,8 +720,8 @@ export default function LuxuryProjectDetail({ project }) {
                 {t("luxuryDetail.home")}
               </Link>
               <span>/</span>
-              <Link href="/luxury-properties" className="hover:text-[#E31E24]">
-                {t("luxuryDetail.luxuryProperties")}
+              <Link href={listHref} className="hover:text-[#E31E24]">
+                {breadcrumbLabel}
               </Link>
               <span>/</span>
               <span className="font-medium text-slate-800 line-clamp-1">{project.title}</span>
@@ -460,7 +742,9 @@ export default function LuxuryProjectDetail({ project }) {
             <button
               type="button"
               onClick={() => openGallery(0)}
-              className="group relative min-h-[260px] w-full overflow-hidden rounded-xl lg:col-span-2 lg:row-span-2"
+              className={`group relative min-h-[260px] w-full overflow-hidden rounded-xl ${
+                gallery.length === 1 ? "lg:col-span-3 lg:row-span-2" : "lg:col-span-2 lg:row-span-2"
+              }`}
             >
               <Image
                 src={gallery[0]}
@@ -470,6 +754,7 @@ export default function LuxuryProjectDetail({ project }) {
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 sizes="(max-width:1024px) 100vw, 66vw"
               />
+              {!isCommunityLayout ? (
               <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
                 {allImages.length > 1 && (
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow">
@@ -486,7 +771,9 @@ export default function LuxuryProjectDetail({ project }) {
                   {t("luxuryDetail.location")}
                 </a>
               </div>
+              ) : null}
             </button>
+            {gallery.length > 1 ? (
             <button
               type="button"
               onClick={() => openGallery(1)}
@@ -500,6 +787,8 @@ export default function LuxuryProjectDetail({ project }) {
                 sizes="33vw"
               />
             </button>
+            ) : null}
+            {gallery.length > 2 ? (
             <button
               type="button"
               onClick={() => openGallery(extraPhotoCount > 0 ? 0 : 2)}
@@ -521,7 +810,10 @@ export default function LuxuryProjectDetail({ project }) {
                 </div>
               )}
             </button>
+            ) : null}
           </div>
+
+          <AboutProjectSection about={project.aboutSection} />
         </div>
       </section>
 
@@ -536,9 +828,19 @@ export default function LuxuryProjectDetail({ project }) {
 
       {/* Content + Sidebar */}
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mt-8 grid min-w-0 items-start gap-10 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_440px]">
+        <div
+          ref={contentRowRef}
+          className="mt-8 flex min-w-0 flex-col gap-10 lg:flex-row lg:items-stretch lg:gap-x-10"
+        >
           {/* Main column */}
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1">
+            {isCommunityLayout ? (
+              <CommunityProjectsSection
+                section={project.communityProjectsSection}
+                projectHrefBase={projectHrefBase}
+              />
+            ) : (
+            <>
             <p className="text-3xl font-bold tracking-tight text-[#E31E24] md:text-4xl">{priceLabel}</p>
             {monthlyPaymentLabel && (
               <p className="mt-2 inline-flex rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-700">
@@ -566,6 +868,30 @@ export default function LuxuryProjectDetail({ project }) {
               </a>
             </div>
 
+            {project.projectSummary ? (
+              <div className="mt-10">
+                {project.brochure ? (
+                  <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3">
+                    <h2 className="text-base font-bold text-slate-900">
+                      {t("luxuryDetail.projectSummary")}
+                    </h2>
+                    <button
+                      type="button"
+                      onClick={handleFreeConsultation}
+                      className="inline-flex shrink-0 items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:opacity-90"
+                      style={{ backgroundColor: RED }}
+                    >
+                      <FileDown size={14} />
+                      {t("luxuryDetail.requestBrochure")}
+                    </button>
+                  </div>
+                ) : (
+                  <SectionHeading>{t("luxuryDetail.projectSummary")}</SectionHeading>
+                )}
+                <ProjectSummarySection summary={project.projectSummary} t={t} />
+              </div>
+            ) : null}
+
             {propertyDetails.length > 0 && (
               <div className="mt-8">
                 <SectionHeading>{t("luxuryDetail.propertyDetails")}</SectionHeading>
@@ -583,7 +909,7 @@ export default function LuxuryProjectDetail({ project }) {
               </div>
             )}
 
-            {!propertyDetails.length && (
+            {!propertyDetails.length && !project.projectSummary && (
             <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-700">
               {project.beds != null && (
                 <span className="inline-flex items-center gap-2">
@@ -639,14 +965,7 @@ export default function LuxuryProjectDetail({ project }) {
             {/* Amenities */}
             <div className="mt-10">
               <SectionHeading>{t("luxuryDetail.amenities")}</SectionHeading>
-              <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                {amenities.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-slate-700">
-                    <Check size={16} className="shrink-0 text-[#E31E24]" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <AmenitiesSection amenities={amenities} />
             </div>
 
             {/* Mortgage Calculator */}
@@ -790,15 +1109,16 @@ export default function LuxuryProjectDetail({ project }) {
             </div>
 
             <RegulatoryInformation regulatory={regulatory} t={t} />
-            <div ref={sidebarStickyEndRef} className="h-0 w-full" aria-hidden="true" />
+            </>
+            )}
           </div>
 
-          {/* Sticky sidebar — pins below navbar until Recommended approaches, then scrolls up */}
-          <aside
-            className={`min-w-0 lg:z-10 lg:self-start ${
-              sidebarSticky ? "lg:sticky lg:top-24" : ""
-            }`}
+          {/* Fixed sidebar — stays pinned while scrolling, scrolls up with Recommended */}
+          <div
+            ref={sidebarWrapRef}
+            className="relative min-w-0 scroll-mt-24 lg:w-[400px] lg:shrink-0 lg:scroll-mt-28 xl:w-[440px]"
           >
+            <aside ref={sidebarRef} className="z-10" style={sidebarStyle ?? undefined}>
             <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
               <div className="text-center">
                 <div
@@ -830,40 +1150,14 @@ export default function LuxuryProjectDetail({ project }) {
               <div
                 id="advisor-contact"
                 ref={contactButtonsRef}
-                className="mt-5 grid scroll-mt-28 grid-cols-2 gap-3 overflow-hidden border-t border-slate-100 pt-5"
+                className="mt-5 scroll-mt-28 overflow-hidden border-t border-slate-100 pt-5"
               >
-                <motion.a
-                  key={`call-${pulseGeneration}`}
-                  href={`tel:${agent.phone}`}
-                  initial={{ scale: 1 }}
-                  animate={
-                    pulseGeneration > 0
-                      ? { scale: [1, 1.14, 1, 1.14, 1] }
-                      : { scale: 1 }
-                  }
-                  transition={{ duration: 1.4, ease: "easeInOut" }}
-                  className="inline-flex items-center justify-center gap-2 rounded-lg py-3 text-sm font-bold text-white transition-colors hover:opacity-90"
-                  style={{ backgroundColor: RED }}
-                >
-                  <Phone size={16} />
-                  {t("luxuryDetail.call")}
-                </motion.a>
-                <motion.a
-                  key={`mail-${pulseGeneration}`}
-                  href={mailHref}
-                  initial={{ scale: 1 }}
-                  animate={
-                    pulseGeneration > 0
-                      ? { scale: [1, 1.14, 1, 1.14, 1] }
-                      : { scale: 1 }
-                  }
-                  transition={{ duration: 1.4, ease: "easeInOut" }}
-                  className="inline-flex items-center justify-center gap-2 rounded-lg py-3 text-sm font-bold text-white transition-colors hover:opacity-90"
-                  style={{ backgroundColor: NAVY }}
-                >
-                  <Mail size={16} />
-                  {t("luxuryDetail.mail")}
-                </motion.a>
+                <AdvisorContactButtons
+                  agent={agent}
+                  mailHref={mailHref}
+                  pulseGeneration={pulseGeneration}
+                  t={t}
+                />
               </div>
 
               <div className="mt-5 border-t border-slate-100 pt-5 text-center">
@@ -879,21 +1173,27 @@ export default function LuxuryProjectDetail({ project }) {
               <p className="text-sm font-semibold">{t("luxuryDetail.promoTitle")}</p>
               <p className="mt-1 text-xs text-white/80">{t("luxuryDetail.promoSubtitle")}</p>
               <Link
-                href="/luxury-properties"
+                href={listHref}
                 className="mt-4 inline-block rounded-lg bg-white px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#002147] hover:bg-slate-100"
               >
                 {t("luxuryDetail.viewToday")}
               </Link>
             </div>
-          </aside>
+            </aside>
+          </div>
         </div>
 
         {related.length > 0 && (
-          <div className="mt-16 border-t border-slate-100 pt-12">
+          <div ref={recommendedRef} className="mt-16 border-t border-slate-100 pt-12">
             <SectionHeading>{t("luxuryDetail.recommended")}</SectionHeading>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((p) => (
-                <LuxuryProjectCard key={p.id} project={p} compact />
+                <LuxuryProjectCard
+                  key={p.id}
+                  project={p}
+                  compact
+                  href={`${projectHrefBase}/${p.id}`}
+                />
               ))}
             </div>
           </div>

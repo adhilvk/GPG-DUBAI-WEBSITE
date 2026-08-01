@@ -91,6 +91,7 @@ export default function TrendingProjectsGrid() {
 
   const filteredProjects = useMemo(() => {
     return TRENDING_PROJECTS.filter((project) => {
+      if (project.hiddenFromListing) return false;
       if (propertyType && project.category !== propertyType) return false;
       if (location && getEmirate(project) !== location) return false;
       if (!matchesBudget(project, budget)) return false;
