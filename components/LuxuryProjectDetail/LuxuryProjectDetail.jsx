@@ -290,13 +290,13 @@ const GOLD = "#b8956b";
 
 function AmenitiesSection({ amenities }) {
   return (
-    <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
       {amenities.map((item) => {
         const title = typeof item === "string" ? item : item.title;
         return (
-          <li key={title} className="flex items-center gap-2 text-sm text-slate-700">
-            <Check size={16} className="shrink-0 text-[#E31E24]" />
-            {title}
+          <li key={title} className="flex items-start gap-2.5 text-sm text-slate-700">
+            <Check size={16} className="mt-0.5 shrink-0 text-[#E31E24]" />
+            <span className="min-w-0 leading-snug">{title}</span>
           </li>
         );
       })}
@@ -496,6 +496,55 @@ function ProjectSummarySection({ summary, t }) {
   );
 }
 
+function FloorPlanSection({ floorPlans, t }) {
+  if (!floorPlans?.length) return null;
+
+  const headerClass =
+    "pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 last:pr-0";
+  const cellClass = "py-3 pr-4 text-sm text-slate-700 last:pr-0";
+
+  return (
+    <div className="mt-10">
+      <SectionHeading>{t("luxuryDetail.floorPlanTitle")}</SectionHeading>
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[640px] text-left">
+          <thead>
+            <tr className="border-b border-slate-200">
+              <th className={headerClass}>{t("luxuryDetail.floorPlanTitle")}</th>
+              <th className={headerClass}>{t("luxuryDetail.floorPlanCategory")}</th>
+              <th className={headerClass}>{t("luxuryDetail.unitType")}</th>
+              <th className={headerClass}>{t("luxuryDetail.floorPlanFloorDetails")}</th>
+              <th className={headerClass}>{t("luxuryDetail.size")}</th>
+              <th className={headerClass}>{t("luxuryDetail.floorPlanType")}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {floorPlans.map((plan) => (
+              <tr key={`${plan.category}-${plan.unitType}`} className="border-b border-slate-100 last:border-0">
+                <td className={cellClass}>
+                  {plan.beds != null ? (
+                    <span className="inline-flex items-center gap-1.5 text-slate-900">
+                      <BedDouble size={15} className="text-slate-400" />
+                      {plan.beds}
+                    </span>
+                  ) : (
+                    "—"
+                  )}
+                </td>
+                <td className={`${cellClass} font-medium text-slate-900`}>{plan.category}</td>
+                <td className={cellClass}>{plan.unitType}</td>
+                <td className={cellClass}>{plan.floorDetails}</td>
+                <td className={cellClass}>{plan.size}</td>
+                <td className={cellClass}>{plan.type}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
 export default function LuxuryProjectDetail({
   project,
   listHref = "/luxury-properties",
@@ -516,6 +565,7 @@ export default function LuxuryProjectDetail({
   const recommendedRef = useRef(null);
 
   const priceAed = parsePriceAed(project) ?? 5_000_000;
+  const parsedPrice = parsePriceAed(project);
   const priceLabel = formatAedPrice(project);
   const mortgageDefaults = useMemo(() => getMortgageDefaults(project), [project]);
   const allImages = useMemo(() => getProjectImages(project), [project]);
@@ -537,7 +587,9 @@ export default function LuxuryProjectDetail({
   const monthlyPaymentLabel =
     project.monthlyPayment != null
       ? project.monthlyPayment.toLocaleString("en-AE")
-      : Math.round(monthly).toLocaleString("en-AE");
+      : parsedPrice != null
+        ? Math.round(monthly).toLocaleString("en-AE")
+        : null;
 
   const descriptionPreviewLen = 380;
   const needsReadMore = description.length > descriptionPreviewLen;
@@ -968,6 +1020,8 @@ export default function LuxuryProjectDetail({
               <AmenitiesSection amenities={amenities} />
             </div>
 
+            <FloorPlanSection floorPlans={project.floorPlans} t={t} />
+
             {/* Mortgage Calculator */}
             <div className="mt-10 rounded-xl border border-slate-200 bg-slate-50 p-6 md:p-8">
               <h2 className="text-center text-base font-bold text-slate-900">
@@ -1086,6 +1140,9 @@ export default function LuxuryProjectDetail({
                   >
                     {t("luxuryDetail.freeConsultation")}
                   </button>
+                  <p className="mt-3 text-center text-xs leading-relaxed text-slate-500">
+                    {t("luxuryDetail.downPaymentDisclaimer")}
+                  </p>
                 </div>
               </div>
             </div>
