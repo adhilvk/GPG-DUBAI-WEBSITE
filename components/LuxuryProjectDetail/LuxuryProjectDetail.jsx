@@ -292,11 +292,11 @@ function AmenitiesSection({ amenities }) {
   return (
     <ul className="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
       {amenities.map((item) => {
-        const title = typeof item === "string" ? item : item.title;
+        const label = typeof item === "string" ? item : item.title;
         return (
-          <li key={title} className="flex items-start gap-2.5 text-sm text-slate-700">
+          <li key={label} className="flex items-start gap-2.5 text-sm text-slate-700">
             <Check size={16} className="mt-0.5 shrink-0 text-[#E31E24]" />
-            <span className="min-w-0 leading-snug">{title}</span>
+            <span className="min-w-0 leading-snug">{label}</span>
           </li>
         );
       })}
@@ -920,9 +920,9 @@ export default function LuxuryProjectDetail({
               </a>
             </div>
 
-            {project.projectSummary ? (
+            {project.projectSummary || project.brochure ? (
               <div className="mt-10">
-                {project.brochure ? (
+                {project.projectSummary && project.brochure ? (
                   <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3">
                     <h2 className="text-base font-bold text-slate-900">
                       {t("luxuryDetail.projectSummary")}
@@ -937,10 +937,24 @@ export default function LuxuryProjectDetail({
                       {t("luxuryDetail.requestBrochure")}
                     </button>
                   </div>
-                ) : (
+                ) : project.projectSummary ? (
                   <SectionHeading>{t("luxuryDetail.projectSummary")}</SectionHeading>
+                ) : (
+                  <div className="mb-5 flex justify-end border-b border-slate-200 pb-3">
+                    <button
+                      type="button"
+                      onClick={handleFreeConsultation}
+                      className="inline-flex shrink-0 items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:opacity-90"
+                      style={{ backgroundColor: RED }}
+                    >
+                      <FileDown size={14} />
+                      {t("luxuryDetail.requestBrochure")}
+                    </button>
+                  </div>
                 )}
-                <ProjectSummarySection summary={project.projectSummary} t={t} />
+                {project.projectSummary ? (
+                  <ProjectSummarySection summary={project.projectSummary} t={t} />
+                ) : null}
               </div>
             ) : null}
 

@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import PremiumFilterSelect from "@/components/PremiumFilterSelect/PremiumFilterSelect";
@@ -51,6 +51,20 @@ function getEmirate(project) {
   return "dubai";
 }
 
+function matchesPropertyType(project, propertyType) {
+  if (!propertyType) return true;
+  if (project.category === propertyType) return true;
+
+  const type = project.propertyType?.toLowerCase() ?? "";
+  if (propertyType === "townhouses") return type.includes("townhouse");
+  if (propertyType === "villas") return type.includes("villa");
+  if (propertyType === "apartments") {
+    return type.includes("apartment") || type.includes("penthouse") || type.includes("office");
+  }
+
+  return false;
+}
+
 function matchesBudget(project, budget) {
   if (!budget) return true;
 
@@ -75,6 +89,8 @@ function matchesBudget(project, budget) {
 
 export default function TrendingProjectsGrid() {
   const { t } = useLanguage();
+  const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const typeParam = searchParams.get("type") ?? "";
   const [propertyType, setPropertyType] = useState("");
@@ -84,15 +100,32 @@ export default function TrendingProjectsGrid() {
   const currentPage = Math.max(1, Number(searchParams.get("page")) || 1);
 
   useEffect(() => {
-    if (VALID_TYPES.has(typeParam)) {
-      setPropertyType(typeParam);
-    }
+    setPropertyType(VALID_TYPES.has(typeParam) ? typeParam : "");
   }, [typeParam]);
+
+  const updateQuery = useCallback(
+    (updates) => {
+      const nextPropertyType =
+        updates.propertyType !== undefined ? updates.propertyType : propertyType;
+      const nextLocation = updates.location !== undefined ? updates.location : location;
+      const nextBudget = updates.budget !== undefined ? updates.budget : budget;
+
+      setPropertyType(nextPropertyType);
+      setLocation(nextLocation);
+      setBudget(nextBudget);
+
+      const params = new URLSearchParams();
+      if (nextPropertyType) params.set("type", nextPropertyType);
+      const query = params.toString();
+      router.replace(query ? `${pathname}?${query}` : pathname);
+    },
+    [propertyType, location, budget, pathname, router]
+  );
 
   const filteredProjects = useMemo(() => {
     return TRENDING_PROJECTS.filter((project) => {
       if (project.hiddenFromListing) return false;
-      if (propertyType && project.category !== propertyType) return false;
+      if (!matchesPropertyType(project, propertyType)) return false;
       if (location && getEmirate(project) !== location) return false;
       if (!matchesBudget(project, budget)) return false;
       return true;
@@ -109,12 +142,12 @@ export default function TrendingProjectsGrid() {
 
   useEffect(() => {
     if (currentPage > totalPages && totalPages > 0) {
-      const base = typeParam && VALID_TYPES.has(typeParam)
-        ? `/trending-projects?type=${typeParam}`
-        : "/trending-projects";
-      window.history.replaceState(null, "", base);
+      const params = new URLSearchParams();
+      if (propertyType) params.set("type", propertyType);
+      const query = params.toString();
+      router.replace(query ? `${pathname}?${query}` : pathname);
     }
-  }, [currentPage, totalPages, typeParam]);
+  }, [currentPage, totalPages, propertyType, pathname, router]);
 
   const buildPageHref = (page) => {
     const params = new URLSearchParams();
@@ -123,6 +156,8 @@ export default function TrendingProjectsGrid() {
     const query = params.toString();
     return query ? `/trending-projects?${query}` : "/trending-projects";
   };
+
+  const showPagination = totalPages > 1;
 
   return (
     <main className="bg-white px-4 pb-16 pt-24 md:px-8 md:pb-20 md:pt-28">
@@ -141,7 +176,7 @@ export default function TrendingProjectsGrid() {
             <PremiumFilterSelect
               label={t("trendingProjectsPage.propertyType")}
               value={propertyType}
-              onChange={setPropertyType}
+              onChange={(value) => updateQuery({ propertyType: value })}
               options={PROPERTY_TYPES}
               t={t}
               prefix="trendingProjectsPage.filters"
@@ -149,7 +184,7 @@ export default function TrendingProjectsGrid() {
             <PremiumFilterSelect
               label={t("trendingProjectsPage.location")}
               value={location}
-              onChange={setLocation}
+              onChange={(value) => updateQuery({ location: value })}
               options={LOCATIONS}
               t={t}
               prefix="trendingProjectsPage.filters"
@@ -157,7 +192,7 @@ export default function TrendingProjectsGrid() {
             <PremiumFilterSelect
               label={t("trendingProjectsPage.budget")}
               value={budget}
-              onChange={setBudget}
+              onChange={(value) => updateQuery({ budget: value })}
               options={BUDGETS}
               t={t}
               prefix="trendingProjectsPage.filters"
@@ -165,7 +200,7 @@ export default function TrendingProjectsGrid() {
           </div>
           <p className="mt-4 text-sm text-slate-500">
             {filteredProjects.length} {t("trendingProjectsPage.projectsFound")}
-            {totalPages > 1 && (
+            {showPagination && (
               <span>
                 {" "}
                 · {t("trendingProjectsPage.page")} {safePage} {t("trendingProjectsPage.of")}{" "}
@@ -183,7 +218,7 @@ export default function TrendingProjectsGrid() {
               ))}
             </div>
 
-            {totalPages > 1 && (
+            {showPagination && (
               <nav
                 className="mt-10 flex items-center justify-center gap-2"
                 aria-label={t("trendingProjectsPage.pagination")}
