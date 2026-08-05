@@ -425,6 +425,27 @@ function AboutProjectSection({ about }) {
   );
 }
 
+function PaymentPlanSteps({ steps }) {
+  if (!steps?.length) return null;
+
+  return (
+    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+      {steps.map((step) => (
+        <div
+          key={`${step.title}-${step.percentage}`}
+          className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-5 text-center"
+        >
+          <p className="text-2xl font-bold text-slate-900">{step.percentage}</p>
+          <p className="mt-3 border-t border-slate-200 pt-3 text-sm font-bold text-slate-800">
+            {step.title}
+          </p>
+          <p className="mt-1 text-xs text-slate-500">{step.detail}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function ProjectSummarySection({ summary, t }) {
   if (!summary?.rows?.length) return null;
 
@@ -443,56 +464,62 @@ function ProjectSummarySection({ summary, t }) {
     ];
 
     return (
-      <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {items.map(({ label, value }) => (
-          <div key={label} className="border-b border-slate-100 pb-3">
-            <dt className={labelClass}>{label}</dt>
-            <dd className={valueClass}>{value}</dd>
-          </div>
-        ))}
-      </dl>
+      <>
+        <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {items.map(({ label, value }) => (
+            <div key={label} className="border-b border-slate-100 pb-3">
+              <dt className={labelClass}>{label}</dt>
+              <dd className={valueClass}>{value}</dd>
+            </div>
+          ))}
+        </dl>
+        <PaymentPlanSteps steps={summary.paymentPlanSteps} />
+      </>
     );
   }
 
   const fieldClass = "border-b border-slate-100 pb-3";
 
   return (
-    <dl className="space-y-4">
-      {summary.rows.map((row) => (
-        <div
-          key={`${row.propertyType}-${row.unitType}`}
-          className="grid grid-cols-1 gap-4 sm:grid-cols-3"
-        >
-          <div className={fieldClass}>
-            <dt className={labelClass}>{t("luxuryDetail.propertyType")}</dt>
-            <dd className={valueClass}>{row.propertyType}</dd>
+    <>
+      <dl className="space-y-4">
+        {summary.rows.map((row) => (
+          <div
+            key={`${row.propertyType}-${row.unitType}`}
+            className="grid grid-cols-1 gap-4 sm:grid-cols-3"
+          >
+            <div className={fieldClass}>
+              <dt className={labelClass}>{t("luxuryDetail.propertyType")}</dt>
+              <dd className={valueClass}>{row.propertyType}</dd>
+            </div>
+            <div className={fieldClass}>
+              <dt className={labelClass}>{t("luxuryDetail.unitType")}</dt>
+              <dd className={valueClass}>{row.unitType}</dd>
+            </div>
+            <div className={fieldClass}>
+              <dt className={labelClass}>{t("luxuryDetail.size")}</dt>
+              <dd className={valueClass}>{row.size}</dd>
+            </div>
           </div>
-          <div className={fieldClass}>
-            <dt className={labelClass}>{t("luxuryDetail.unitType")}</dt>
-            <dd className={valueClass}>{row.unitType}</dd>
-          </div>
-          <div className={fieldClass}>
-            <dt className={labelClass}>{t("luxuryDetail.size")}</dt>
-            <dd className={valueClass}>{row.size}</dd>
-          </div>
-        </div>
-      ))}
+        ))}
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <div className={fieldClass}>
-          <dt className={labelClass}>{t("luxuryDetail.downPaymentPercent")}</dt>
-          <dd className={valueClass}>{summary.downPayment}</dd>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className={fieldClass}>
+            <dt className={labelClass}>{t("luxuryDetail.downPaymentPercent")}</dt>
+            <dd className={valueClass}>{summary.downPayment}</dd>
+          </div>
+          <div className={fieldClass}>
+            <dt className={labelClass}>{t("luxuryDetail.paymentPlan")}</dt>
+            <dd className={valueClass}>{summary.paymentPlan}</dd>
+          </div>
+          <div className={fieldClass}>
+            <dt className={labelClass}>{t("luxuryDetail.handover")}</dt>
+            <dd className={valueClass}>{summary.handover}</dd>
+          </div>
         </div>
-        <div className={fieldClass}>
-          <dt className={labelClass}>{t("luxuryDetail.paymentPlan")}</dt>
-          <dd className={valueClass}>{summary.paymentPlan}</dd>
-        </div>
-        <div className={fieldClass}>
-          <dt className={labelClass}>{t("luxuryDetail.handover")}</dt>
-          <dd className={valueClass}>{summary.handover}</dd>
-        </div>
-      </div>
-    </dl>
+      </dl>
+      <PaymentPlanSteps steps={summary.paymentPlanSteps} />
+    </>
   );
 }
 

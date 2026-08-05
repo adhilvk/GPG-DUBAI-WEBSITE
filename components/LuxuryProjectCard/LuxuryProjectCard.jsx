@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, BedDouble, Bath, Maximize2, Phone, Mail } from "lucide-react";
 import DeveloperIcon from "@/components/icons/DeveloperIcon";
-import { getListingAgent } from "@/lib/luxuryProjectDetail";
+import { getListingAgent, formatAedPrice } from "@/lib/luxuryProjectDetail";
 
 function WhatsAppGlyph({ className }) {
   return (
@@ -36,7 +36,7 @@ function ContactIconButton({ href, label, children, compact = false }) {
 export default function LuxuryProjectCard({ project, compact = false, href }) {
   const agent = getListingAgent(project);
   const agentWaNumber = agent.phone.replace(/\D/g, "");
-  const priceLabel = project.priceDisplay ?? `From AED ${project.price}`;
+  const priceLabel = formatAedPrice(project);
   const showPrice = !project.hidePrice;
   const inquiryText = `Hi, I'm interested in ${project.title} at ${project.location} (${priceLabel}).`;
   const waHref = `https://wa.me/${agentWaNumber}?text=${encodeURIComponent(inquiryText)}`;

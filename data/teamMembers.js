@@ -101,4 +101,12 @@ export const TEAM_MEMBERS = [
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785515339/b01af31fe45f4575b59f7d87f62e26db_mrm2eq.jpg",
     imageClassName: "object-cover object-[50%_32%]",
   },
+  {
+    id: "7",
+    name: "Muhammed Ameen",
+    title: "Head of IT",
+    languages: "English",
+    image:
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785921222/operation_ameen.jpg_dqmvz7.jpg",
+  },
 ];

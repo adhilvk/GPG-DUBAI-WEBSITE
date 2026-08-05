@@ -87,6 +87,58 @@ function matchesBudget(project, budget) {
   }
 }
 
+function buildListingPages(projects, cardsPerPage) {
+  const pinned = projects.filter((project) => project.listingPage != null);
+  if (!pinned.length) {
+    const pages = [];
+    for (let i = 0; i < projects.length; i += cardsPerPage) {
+      pages.push(projects.slice(i, i + cardsPerPage));
+    }
+    return pages;
+  }
+
+  const unpinned = projects.filter((project) => project.listingPage == null);
+  const maxPage = Math.max(
+    Math.ceil(unpinned.length / cardsPerPage),
+    ...pinned.map((project) => project.listingPage)
+  );
+  const pages = [];
+
+  for (let page = 1; page <= maxPage; page += 1) {
+    const pageItems = [];
+
+    for (let slot = 0; slot < cardsPerPage; slot += 1) {
+      const pinnedHere = pinned.find(
+        (project) => project.listingPage === page && (project.listingSlot ?? 0) === slot
+      );
+
+      if (pinnedHere) {
+        pageItems.push(pinnedHere);
+      } else if (unpinned.length) {
+        pageItems.push(unpinned.shift());
+      }
+    }
+
+    if (pageItems.length) {
+      pages.push(pageItems);
+    }
+  }
+
+  if (unpinned.length) {
+    let lastPage = pages[pages.length - 1];
+
+    while (unpinned.length) {
+      if (!lastPage || lastPage.length >= cardsPerPage) {
+        lastPage = [];
+        pages.push(lastPage);
+      }
+      lastPage.push(unpinned.shift());
+    }
+  }
+
+  return pages;
+}
+
 export default function TrendingProjectsGrid() {
   const { t } = useLanguage();
   const router = useRouter();
@@ -132,13 +184,18 @@ export default function TrendingProjectsGrid() {
     });
   }, [propertyType, location, budget]);
 
-  const totalPages = Math.max(1, Math.ceil(filteredProjects.length / CARDS_PER_PAGE));
+  const listingPages = useMemo(
+    () => buildListingPages(filteredProjects, CARDS_PER_PAGE),
+    [filteredProjects]
+  );
+
+  const totalPages = Math.max(1, listingPages.length);
   const safePage = Math.min(currentPage, totalPages);
 
-  const paginatedProjects = useMemo(() => {
-    const start = (safePage - 1) * CARDS_PER_PAGE;
-    return filteredProjects.slice(start, start + CARDS_PER_PAGE);
-  }, [filteredProjects, safePage]);
+  const paginatedProjects = useMemo(
+    () => listingPages[safePage - 1] ?? [],
+    [listingPages, safePage]
+  );
 
   useEffect(() => {
     if (currentPage > totalPages && totalPages > 0) {

@@ -7,7 +7,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Villa for sale in Elysian Mansions, Tilal Al Ghaf",
     location: "Elysian Mansions, Tilal Al Ghaf, Dubai",
     price: "25,500,000",
-    priceDisplay: "25,500,000 AED",
+    priceDisplay: "25.5 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784884750/3_jgtsus.jpg",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784885219/2_wmmx60.jpg",
@@ -72,7 +72,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Villa for sale in Nad Al Sheba Gardens 10, Nad Al Sheba Gardens",
     location: "Nad Al Sheba Gardens 10, Nad Al Sheba Gardens, Dubai",
     price: "14,750,000",
-    priceDisplay: "14,750,000 AED",
+    priceDisplay: "14.8 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784893396/26421_xr6vkb.jpg",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784893396/26421_xr6vkb.jpg",
@@ -138,7 +138,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Villa for sale in District One West Phase I, District One",
     location: "District One West Phase I, District One, Mohammed Bin Rashid City, Dubai",
     price: "39,000,000",
-    priceDisplay: "39,000,000 AED",
+    priceDisplay: "39 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784957670/Asset-1q_yowzy1.jpg",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784957670/Asset-1q_yowzy1.jpg",
@@ -204,7 +204,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Villa for sale in District One West Phase I, District One",
     location: "District One West Phase I, District One, Mohammed Bin Rashid Al Maktoum City, Dubai",
     price: "18,500,000",
-    priceDisplay: "18,500,000 AED",
+    priceDisplay: "18.5 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784957670/Asset-1q_yowzy1.jpg",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784957670/Asset-1q_yowzy1.jpg",
@@ -263,7 +263,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Office Space for sale in Lumena by Omniyat, Business Bay",
     location: "Lumena by Omniyat, Business Bay, Dubai",
     price: "26,691,000",
-    priceDisplay: "26,691,000 AED",
+    priceDisplay: "26.7 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784973129/4_du7lny.jpg",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784973129/4_du7lny.jpg",
@@ -321,7 +321,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Villa for sale in Farm Grove, The Valley",
     location: "Farm Grove, The Valley, Dubai",
     price: "4,900,000",
-    priceDisplay: "4,900,000 AED",
+    priceDisplay: "4.9 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784967823/5_ixgjae.jpg",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784967823/5_ixgjae.jpg",
@@ -378,7 +378,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Office Space for sale in Lumena Alta by Omniyat, Business Bay",
     location: "Lumena Alta by Omniyat, Business Bay, Dubai",
     price: "26,000,000",
-    priceDisplay: "26,000,000 AED",
+    priceDisplay: "26 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784973176/8_suxedg.jpg",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784973176/8_suxedg.jpg",
@@ -436,7 +436,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Apartment for sale in Bugatti Residences By Binghatti, Business Bay",
     location: "Bugatti Residences By Binghatti, Business Bay, Dubai",
     price: "34,641,500",
-    priceDisplay: "34,641,500 AED",
+    priceDisplay: "34.6 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784994864/Asset_5FDG_dylrkl.png",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784994864/Asset_5FDG_dylrkl.png",
@@ -506,7 +506,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Apartment for sale in Bugatti Residences By Binghatti, Business Bay",
     location: "Bugatti Residences By Binghatti, Business Bay, Dubai",
     price: "33,447,250",
-    priceDisplay: "33,447,250 AED",
+    priceDisplay: "33.4 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784994911/Asset_7FDG_ye2a2v.png",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784994911/Asset_7FDG_ye2a2v.png",
@@ -574,7 +574,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Penthouse for sale in Beachgate by Address, Emaar Beachfront",
     location: "Beachgate by Address, Emaar Beachfront, Dubai",
     price: "14,353,964",
-    priceDisplay: "14,353,964 AED",
+    priceDisplay: "14.4 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785076446/beach-mansion-1_cdokc5.jpg",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785076446/beach-mansion-1_cdokc5.jpg",
@@ -645,7 +645,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Villa for sale in Address Villas - Tierra, The Oasis by Emaar",
     location: "Address Villas - Tierra, The Oasis by Emaar, Dubai",
     price: "13,450,000",
-    priceDisplay: "13,450,000 AED",
+    priceDisplay: "13.5 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785090222/24593_xerq4y.jpg",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785090222/24593_xerq4y.jpg",
@@ -715,7 +715,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Apartment for sale in Mercedes Benz Places by Binghatti, Downtown Dubai",
     location: "Mercedes Benz Places by Binghatti, Downtown Dubai",
     price: "11,499,999",
-    priceDisplay: "11,499,999 AED",
+    priceDisplay: "11.5 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785091454/13838_zfpcrw.png",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785091454/13838_zfpcrw.png",
@@ -789,7 +789,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Apartment for sale in Mercedes Benz Places by Binghatti, Downtown Dubai",
     location: "Mercedes Benz Places by Binghatti, Downtown Dubai",
     price: "10,299,999",
-    priceDisplay: "10,299,999 AED",
+    priceDisplay: "10.3 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785091433/13837_osvouq.png",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785091433/13837_osvouq.png",
@@ -854,7 +854,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Apartment for sale in Bay Residences Dubai Islands - A4, Bay Residences Dubai Islands",
     location: "Bay Residences Dubai Islands - A4, Bay Residences Dubai Islands",
     price: "8,418,080",
-    priceDisplay: "8,418,080 AED",
+    priceDisplay: "8.4 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785095878/Asset_8lunagX_tf3pax.png",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785095878/Asset_8lunagX_tf3pax.png",
@@ -923,7 +923,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Apartment for sale in SAAS Hills, Dubai Science Park",
     location: "SAAS Hills, Dubai Science Park",
     price: "7,500,000",
-    priceDisplay: "7,500,000 AED",
+    priceDisplay: "7.5 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785112610/IMG-20250307-WA0026_tnb4an.jpg",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785112610/IMG-20250307-WA0026_tnb4an.jpg",
@@ -993,7 +993,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Villa for sale in Golf Lane, Emaar South",
     location: "Golf Lane, Emaar South",
     price: "7,666,861",
-    priceDisplay: "7,666,861 AED",
+    priceDisplay: "7.7 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785113427/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-09_sqcglt.png",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785113427/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-09_sqcglt.png",
@@ -1059,7 +1059,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Apartment for sale in Jumeirah Residences Emirates Tower A, Jumeirah Residences Emirates Towers",
     location: "Jumeirah Residences Emirates Tower A, Jumeirah Residences Emirates Towers",
     price: "8,016,960",
-    priceDisplay: "8,016,960 AED",
+    priceDisplay: "8 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785114332/24108_d0bchf.png",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785114332/24108_d0bchf.png",
@@ -1124,7 +1124,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Apartment for sale in Burj Binghatti Jacob & Co, Business Bay",
     location: "Burj Binghatti Jacob & Co, Business Bay",
     price: "7,040,000",
-    priceDisplay: "7,040,000 AED",
+    priceDisplay: "7 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785115865/8230_akxhqh.png",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785115865/8230_akxhqh.png",
@@ -1194,7 +1194,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Apartment for sale in Burj Binghatti Jacob & Co, Business Bay",
     location: "Burj Binghatti Jacob & Co, Business Bay",
     price: "6,880,000",
-    priceDisplay: "6,880,000 AED",
+    priceDisplay: "6.9 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785115798/8228_awrf1a.png",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785115798/8228_awrf1a.png",
@@ -1265,7 +1265,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Townhouse for sale in Opal Gardens, District 11",
     location: "Opal Gardens, District 11, Mohammed Bin Rashid, Al Maktoum City, Dubai",
     price: "5,800,000",
-    priceDisplay: "5,800,000 AED",
+    priceDisplay: "5.8 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785139897/9_dhsork.jpg",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785139897/9_dhsork.jpg",
@@ -1330,7 +1330,7 @@ export const LUXURY_LISTING_PROJECTS = [
     subtitle: "Villa for sale in Alana, The Valley",
     location: "Alana, The Valley, Dubai",
     price: "5,764,604",
-    priceDisplay: "5,764,604 AED",
+    priceDisplay: "5.8 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785141126/siera_e0sd0j.jpg",
     images: [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785141126/siera_e0sd0j.jpg",
@@ -1403,7 +1403,7 @@ export const LUXURY_LISTING_PROJECTS = [
     title: "Couture Villa | Branded Living | Lagoon Access",
     location: "District 11, Mohammed Bin Rashid City (MBR City), Dubai",
     price: "26,750,000",
-    priceDisplay: "26,750,000 AED",
+    priceDisplay: "26.8 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785090222/24593_xerq4y.jpg",
     status: "Off-plan",
     beds: 6,
@@ -1426,7 +1426,7 @@ export const LUXURY_LISTING_PROJECTS = [
     title: "Iconic Residence | Fashion Heritage | Premium Finishes",
     location: "District 11, Mohammed Bin Rashid City (MBR City), Dubai",
     price: "22,890,000",
-    priceDisplay: "22,890,000 AED",
+    priceDisplay: "22.9 M AED",
     image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785091433/13837_osvouq.png",
     status: "Off-plan",
     beds: 5,

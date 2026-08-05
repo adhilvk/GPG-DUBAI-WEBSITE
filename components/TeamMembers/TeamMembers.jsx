@@ -42,9 +42,11 @@ function TeamMemberCard({ member, className = "" }) {
               <Phone size={16} strokeWidth={2} />
             </ContactButton>
           )}
-          <ContactButton href={`mailto:${member.email}`} label={`Email ${member.name}`}>
-            <Mail size={16} strokeWidth={2} />
-          </ContactButton>
+          {member.email && (
+            <ContactButton href={`mailto:${member.email}`} label={`Email ${member.name}`}>
+              <Mail size={16} strokeWidth={2} />
+            </ContactButton>
+          )}
         </div>
       </div>
 
@@ -60,9 +62,11 @@ function TeamMemberCard({ member, className = "" }) {
         <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#E31E24] md:text-[11px]">
           {member.title}
         </p>
-        <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400 md:text-[11px]">
-          {member.languages}
-        </p>
+        {member.languages && (
+          <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400 md:text-[11px]">
+            {member.languages}
+          </p>
+        )}
         {member.brn && (
           <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400 md:text-[11px]">
             BRN#{member.brn}
