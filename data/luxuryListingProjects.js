@@ -1434,7 +1434,9 @@
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "1834970224",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786030798/WhatsApp_Image_2026-08-06_at_5.43.44_PM_i7mell.jpg",
     },
   },
   {
@@ -1456,7 +1458,9 @@
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "1255398576",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786030968/WhatsApp_Image_2026-08-06_at_5.45.17_PM_mtbdss.jpg",
     },
   },
 ];
