@@ -109,4 +109,20 @@ export const TEAM_MEMBERS = [
     image:
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785921222/operation_ameen.jpg_dqmvz7.jpg",
   },
+  {
+    id: "8",
+    name: "Israa Mostafa",
+    title: "Operation",
+    languages: "English, Arabic",
+    image:
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786027823/operation_israa.jpg_uwuhmw.jpg",
+  },
+  {
+    id: "9",
+    name: "Abdullah Rahmathulla",
+    title: "Operation",
+    languages: "English, Tamil",
+    image:
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786030077/operation_abdullah.jpg_dlllx0.jpg",
+  },
 ];

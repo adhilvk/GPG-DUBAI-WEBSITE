@@ -27,7 +27,7 @@ const Navbar = () => {
   const downloadRef = useRef(null);
 
   const downloadItems = [
-    { labelKey: "nav.companyProfile", href: "/images/company-profile.pdf" },
+    { labelKey: "nav.companyProfile", href: "/company%20profile/GPG-Global-Real-Estate-Company-Profile-2026.pdf" },
   ];
 
   const useDarkChrome = !isHome || scrolled;

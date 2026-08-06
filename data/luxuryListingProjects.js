@@ -1,4 +1,4 @@
-export const LUXURY_LISTING_PROJECTS = [
+﻿export const LUXURY_LISTING_PROJECTS = [
   {
     id: "park-view-villa",
     propertyType: "Villa",
@@ -59,7 +59,6 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
       dldPermit: "65405298359",
     },
@@ -125,9 +124,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "65777017520",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786007544/WhatsApp_Image_2026-08-05_at_3.20.03_PM_g7mcah.jpg",
     },
   },
   {
@@ -191,9 +191,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "65510527287",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786007744/WhatsApp_Image_2026-08-05_at_3.21.44_PM_scvx4g.jpg",
     },
   },
   {
@@ -250,9 +251,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "65510526211",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786007887/WhatsApp_Image_2026-08-05_at_3.22.37_PM_wd4gde.jpg",
     },
   },
   {
@@ -292,7 +294,7 @@ export const LUXURY_LISTING_PROJECTS = [
       residency: "UAE resident",
     },
     description:
-      "GPG is proud to offer you the opportunity to bring luxury to your business in Lumena By Omniyat, Business Bay, Dubai.\n\nThis office space spans 4,582 sqft with handover in Q4 2029. Offered unfurnished in shell-and-core layout, it presents a unique opportunity to customize every detail to your business needs in one of Dubai's most prestigious commercial addresses.\n\nLocated at Sheikh Zayed Road, at the entrance of Business Bay, Lumena offers direct entry and exit to Sheikh Zayed Road, walking distance to Business Bay Metro Station, and quick access to Downtown Dubai (3 minutes), DIFC (5 minutes), Dubai Mall (5 minutes), City Walk (7 minutes), Dubai International Airport (15 minutes), Jumeirah Beach (10 minutes), Dubai Marina (18 minutes), and Palm Jumeirah (20 minutes).\n\nLumena by Omniyat is Dubai's next landmark for ultra-luxury commercial workspaces, located at the gateway of Business Bay on Sheikh Zayed Road. Rising approximately 260 meters, this architectural masterpiece redefines what it means to work in style and sophistication. Designed as a freehold commercial tower, Lumena offers a limited collection of premium office suites, half-floor, and full-floor units—each featuring floor-to-ceiling glass, panoramic city views, and the flexibility of shell-and-core layouts to customize every detail to your business needs.\n\nOffered at 26,691,000 AED. Contact us to schedule a viewing.",
+      "GPG is proud to offer you the opportunity to bring luxury to your business in Lumena By Omniyat, Business Bay, Dubai.\n\nThis office space spans 4,582 sqft with handover in Q4 2029. Offered unfurnished in shell-and-core layout, it presents a unique opportunity to customize every detail to your business needs in one of Dubai's most prestigious commercial addresses.\n\nLocated at Sheikh Zayed Road, at the entrance of Business Bay, Lumena offers direct entry and exit to Sheikh Zayed Road, walking distance to Business Bay Metro Station, and quick access to Downtown Dubai (3 minutes), DIFC (5 minutes), Dubai Mall (5 minutes), City Walk (7 minutes), Dubai International Airport (15 minutes), Jumeirah Beach (10 minutes), Dubai Marina (18 minutes), and Palm Jumeirah (20 minutes).\n\nLumena by Omniyat is Dubai's next landmark for ultra-luxury commercial workspaces, located at the gateway of Business Bay on Sheikh Zayed Road. Rising approximately 260 meters, this architectural masterpiece redefines what it means to work in style and sophistication. Designed as a freehold commercial tower, Lumena offers a limited collection of premium office suites, half-floor, and full-floor unitsâ€”each featuring floor-to-ceiling glass, panoramic city views, and the flexibility of shell-and-core layouts to customize every detail to your business needs.\n\nOffered at 26,691,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Shared Pool",
@@ -308,9 +310,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "71788545505",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786008133/WhatsApp_Image_2026-08-05_at_3.24.02_PM_uz5uof.jpg",
     },
   },
   {
@@ -351,23 +354,24 @@ export const LUXURY_LISTING_PROJECTS = [
       residency: "UAE resident",
     },
     description:
-      "GPG is pleased to offer you this 4 Bedroom Villa for sale in Farm Grove, The Valley.\n\nThis residence features 4 bedrooms with a maid's room, spanning 3,390.63 sqft with a total plot size of 3,741 sqft. Offered unfurnished at AED 4,900,000, it presents an exceptional opportunity in one of Dubai's most sought-after villa communities.\n\nFarm Grove is an exclusive villa community in The Valley, Dubai, offering elegant 4 & 5-bedroom villas with nature-inspired architecture, spacious layouts, and modern finishes. Designed for comfort and luxury, it blends serene green surroundings with a vibrant urban lifestyle.\n\nSituated on Dubai–Al Ain Road (E66), the community is 25 minutes from Downtown Dubai, 30 minutes from Dubai International Airport, with easy access to major highways and city hotspots.\n\nOffered at 4,900,000 AED. Contact us to schedule a viewing.",
+      "GPG is pleased to offer you this 4 Bedroom Villa for sale in Farm Grove, The Valley.\n\nThis residence features 4 bedrooms with a maid's room, spanning 3,390.63 sqft with a total plot size of 3,741 sqft. Offered unfurnished at AED 4,900,000, it presents an exceptional opportunity in one of Dubai's most sought-after villa communities.\n\nFarm Grove is an exclusive villa community in The Valley, Dubai, offering elegant 4 & 5-bedroom villas with nature-inspired architecture, spacious layouts, and modern finishes. Designed for comfort and luxury, it blends serene green surroundings with a vibrant urban lifestyle.\n\nSituated on Dubaiâ€“Al Ain Road (E66), the community is 25 minutes from Downtown Dubai, 30 minutes from Dubai International Airport, with easy access to major highways and city hotspots.\n\nOffered at 4,900,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Community Gardens & Picnic Areas",
       "Kids' Play Zones & Pet Park",
       "Fitness Centre & Yoga Platform",
       "Indoor & Outdoor Multipurpose Spaces",
       "Desert Majlis & Open Lawns",
-      "Town Centre with Retail, Dining & Cafés",
+      "Town Centre with Retail, Dining & CafÃ©s",
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "65686292671",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786008739/WhatsApp_Image_2026-08-05_at_3.25.29_PM_ppgya3.jpg",
     },
   },
   {
@@ -423,9 +427,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "71788545505",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786014286/WhatsApp_Image_2026-08-05_at_3.26.52_PM_ozafcl.jpg",
     },
   },
   {
@@ -464,7 +469,7 @@ export const LUXURY_LISTING_PROJECTS = [
       residency: "UAE resident",
     },
     description:
-      "GPG is delighted to offer this 4 Bedroom Luxury Apartment in Bugatti Residences by Binghatti, Business Bay, Dubai.\n\nThis Riviera - Monaco residence features 4 bedrooms, 5 bathrooms, a total size of 7,205 sqft, and a terrace of 1,883.25 sqft. Enjoy panoramic views of Burj Khalifa, The Residence Beach, amenities, Business Bay, and the Water Canal. Offered furnished at AED 34,641,500, it presents an exceptional opportunity in one of Dubai's most iconic branded residences.\n\nBugatti Residences at Business Bay is the latest architectural masterpiece by Binghatti Developers. This exclusive 43-storey façade is a true expert craftsmanship and heritage driven by the French luxury brand, making it an ideal destination in Dubai. Inspired by the legendary Bugatti hyper sports cars, these residences are set to offer an unparalleled fusion of cutting-edge design, automotive artistry, and world-class amenities.\n\nThis luxury-inspired oasis in Dubai is inspired by the exquisiteness of nature, where the Riviera mansions are named after the iconic destinations Cannes, St Tropez, and Monaco. Each residence will feature spacious interiors with panoramic views of the Dubai skyline, creating an immersive environment that seamlessly blends the outside world with the meticulously designed interiors. State-of-the-art amenities, including a Riviera-inspired beach, private pool, fitness center, spa, and concierge services, will cater to the residents' every need, ensuring a lifestyle of utmost luxury and convenience.\n\nOffered at 34,641,500 AED. Contact us to schedule a viewing.",
+      "GPG is delighted to offer this 4 Bedroom Luxury Apartment in Bugatti Residences by Binghatti, Business Bay, Dubai.\n\nThis Riviera - Monaco residence features 4 bedrooms, 5 bathrooms, a total size of 7,205 sqft, and a terrace of 1,883.25 sqft. Enjoy panoramic views of Burj Khalifa, The Residence Beach, amenities, Business Bay, and the Water Canal. Offered furnished at AED 34,641,500, it presents an exceptional opportunity in one of Dubai's most iconic branded residences.\n\nBugatti Residences at Business Bay is the latest architectural masterpiece by Binghatti Developers. This exclusive 43-storey faÃ§ade is a true expert craftsmanship and heritage driven by the French luxury brand, making it an ideal destination in Dubai. Inspired by the legendary Bugatti hyper sports cars, these residences are set to offer an unparalleled fusion of cutting-edge design, automotive artistry, and world-class amenities.\n\nThis luxury-inspired oasis in Dubai is inspired by the exquisiteness of nature, where the Riviera mansions are named after the iconic destinations Cannes, St Tropez, and Monaco. Each residence will feature spacious interiors with panoramic views of the Dubai skyline, creating an immersive environment that seamlessly blends the outside world with the meticulously designed interiors. State-of-the-art amenities, including a Riviera-inspired beach, private pool, fitness center, spa, and concierge services, will cater to the residents' every need, ensuring a lifestyle of utmost luxury and convenience.\n\nOffered at 34,641,500 AED. Contact us to schedule a viewing.",
     amenities: [
       "Furnished",
       "Central A/C",
@@ -493,9 +498,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "71508203559",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786014477/WhatsApp_Image_2026-08-05_at_3.28.23_PM_mfdgoj.jpg",
     },
   },
   {
@@ -533,7 +539,7 @@ export const LUXURY_LISTING_PROJECTS = [
       residency: "UAE resident",
     },
     description:
-      "GPG is delighted to offer this 4 Bedroom Luxury Apartment in Bugatti Residences by Binghatti, Business Bay, Dubai.\n\nThis Riviera - Monaco residence features 4 bedrooms, 5 bathrooms, a total size of 6,788 sqft, and a terrace of 1,696.39 sqft. Enjoy panoramic views of Burj Khalifa, The Residence Beach, amenities, Business Bay, and the Water Canal. Offered unfurnished at AED 33,447,250, it presents an exceptional opportunity in one of Dubai's most iconic branded residences.\n\nBugatti Residences at Business Bay is the latest architectural masterpiece by Binghatti Developers. This exclusive 43-storey façade is a true expert craftsmanship and heritage driven by the French luxury brand, making it an ideal destination in Dubai. Inspired by the legendary Bugatti hyper sports cars, these residences are set to offer an unparalleled fusion of cutting-edge design, automotive artistry, and world-class amenities.\n\nThis luxury-inspired oasis in Dubai is inspired by the exquisiteness of nature, where the Riviera mansions are named after the iconic destinations Cannes, St Tropez, and Monaco. Each residence will feature spacious interiors with panoramic views of the Dubai skyline, creating an immersive environment that seamlessly blends the outside world with the meticulously designed interiors. State-of-the-art amenities, including a Riviera-inspired beach, private pool, fitness center, spa, and concierge services, will cater to the residents' every need, ensuring a lifestyle of utmost luxury and convenience.\n\nOffered at 33,447,250 AED. Contact us to schedule a viewing.",
+      "GPG is delighted to offer this 4 Bedroom Luxury Apartment in Bugatti Residences by Binghatti, Business Bay, Dubai.\n\nThis Riviera - Monaco residence features 4 bedrooms, 5 bathrooms, a total size of 6,788 sqft, and a terrace of 1,696.39 sqft. Enjoy panoramic views of Burj Khalifa, The Residence Beach, amenities, Business Bay, and the Water Canal. Offered unfurnished at AED 33,447,250, it presents an exceptional opportunity in one of Dubai's most iconic branded residences.\n\nBugatti Residences at Business Bay is the latest architectural masterpiece by Binghatti Developers. This exclusive 43-storey faÃ§ade is a true expert craftsmanship and heritage driven by the French luxury brand, making it an ideal destination in Dubai. Inspired by the legendary Bugatti hyper sports cars, these residences are set to offer an unparalleled fusion of cutting-edge design, automotive artistry, and world-class amenities.\n\nThis luxury-inspired oasis in Dubai is inspired by the exquisiteness of nature, where the Riviera mansions are named after the iconic destinations Cannes, St Tropez, and Monaco. Each residence will feature spacious interiors with panoramic views of the Dubai skyline, creating an immersive environment that seamlessly blends the outside world with the meticulously designed interiors. State-of-the-art amenities, including a Riviera-inspired beach, private pool, fitness center, spa, and concierge services, will cater to the residents' every need, ensuring a lifestyle of utmost luxury and convenience.\n\nOffered at 33,447,250 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Central A/C",
@@ -560,9 +566,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "71508207579",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786014607/WhatsApp_Image_2026-08-05_at_3.29.38_PM_wzrzpj.jpg",
     },
   },
   {
@@ -606,7 +613,7 @@ export const LUXURY_LISTING_PROJECTS = [
       residency: "UAE resident",
     },
     description:
-      "GPG is presenting this 4 Bedroom Penthouse at EMAAR Beachfront - The Beachgate By Address, Dubai Harbour.\n\nThis residence features 4 bedrooms, 5 bathrooms, a total area of 3,047 sqft, full sea views, and Palm Jumeirah views. Offered unfurnished at AED 14,353,964, it presents an exceptional opportunity in one of Dubai's most prestigious waterfront communities.\n\nResidents enjoy private access to the beach, proximity to the marina and yacht club, an infinity-edge swimming pool, Miami-style pool deck, BBQ areas, children's play areas, tropical garden rooms, a multi-level podium, and a fully equipped fitness centre.\n\nBeachgate by Address is ideally located in the southeastern part of Emaar Beachfront, right beside the renowned Palace Beach Residence by Emaar. This prime location offers residents exceptional connectivity, with easy access to Sheikh Zayed Road—Dubai's longest highway—linking directly to key areas across the city. The Emaar Beachfront master plan also features a dedicated internal monorail system, connecting the community to Bluewaters Island and Palm Jumeirah. Future developments include a pedestrian bridge and water boat stations, enhancing mobility and lifestyle convenience.\n\nOffered at 14,353,964 AED. Contact us to schedule a viewing.",
+      "GPG is presenting this 4 Bedroom Penthouse at EMAAR Beachfront - The Beachgate By Address, Dubai Harbour.\n\nThis residence features 4 bedrooms, 5 bathrooms, a total area of 3,047 sqft, full sea views, and Palm Jumeirah views. Offered unfurnished at AED 14,353,964, it presents an exceptional opportunity in one of Dubai's most prestigious waterfront communities.\n\nResidents enjoy private access to the beach, proximity to the marina and yacht club, an infinity-edge swimming pool, Miami-style pool deck, BBQ areas, children's play areas, tropical garden rooms, a multi-level podium, and a fully equipped fitness centre.\n\nBeachgate by Address is ideally located in the southeastern part of Emaar Beachfront, right beside the renowned Palace Beach Residence by Emaar. This prime location offers residents exceptional connectivity, with easy access to Sheikh Zayed Roadâ€”Dubai's longest highwayâ€”linking directly to key areas across the city. The Emaar Beachfront master plan also features a dedicated internal monorail system, connecting the community to Bluewaters Island and Palm Jumeirah. Future developments include a pedestrian bridge and water boat stations, enhancing mobility and lifestyle convenience.\n\nOffered at 14,353,964 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Private Beach Access",
@@ -631,9 +638,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "71430127601",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786014730/WhatsApp_Image_2026-08-05_at_3.31.59_PM_el8lxs.jpg",
     },
   },
   {
@@ -702,9 +710,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "65724427581",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786014882/WhatsApp_Image_2026-08-05_at_3.33.16_PM_i8tuph.jpg",
     },
   },
   {
@@ -747,7 +756,7 @@ export const LUXURY_LISTING_PROJECTS = [
       residency: "UAE resident",
     },
     description:
-      "This 2-bedroom apartment for sale in Mercedes Benz Places by Binghatti in Downtown Dubai offers a well-planned layout with expansive glazing and direct views towards Burj Khalifa, Downtown skyline and the canal. The home is designed with open-plan living areas and quality finishes across the living room, bedrooms and bathrooms.\n\nThis unfurnished residence features 2 bedrooms, 3 bathrooms, an open-plan living area, floor-to-ceiling windows, Burj Khalifa and canal views, Downtown skyline views, a balcony or terrace, wood-style flooring, and access to a high-end tower lobby.\n\nResidents enjoy an infinity-edge outdoor pool, indoor swimming pool, gym and wellness facilities, barbecue area, 24-hour security and CCTV, covered parking, concierge-style reception, and high-speed lifts.\n\nLocated in Downtown Dubai, the apartment benefits from direct proximity to major landmarks, retail and dining destinations. Burj Khalifa, Dubai Mall and the Dubai Fountain are within a short drive, while Burj Park and other outdoor spaces support an active lifestyle. The area is well connected via Financial Center Road, with taxis and buses easily accessible, and public beaches are reachable in around 15–20 minutes by car.\n\nOffered at 11,499,999 AED. Contact us to schedule a viewing.",
+      "This 2-bedroom apartment for sale in Mercedes Benz Places by Binghatti in Downtown Dubai offers a well-planned layout with expansive glazing and direct views towards Burj Khalifa, Downtown skyline and the canal. The home is designed with open-plan living areas and quality finishes across the living room, bedrooms and bathrooms.\n\nThis unfurnished residence features 2 bedrooms, 3 bathrooms, an open-plan living area, floor-to-ceiling windows, Burj Khalifa and canal views, Downtown skyline views, a balcony or terrace, wood-style flooring, and access to a high-end tower lobby.\n\nResidents enjoy an infinity-edge outdoor pool, indoor swimming pool, gym and wellness facilities, barbecue area, 24-hour security and CCTV, covered parking, concierge-style reception, and high-speed lifts.\n\nLocated in Downtown Dubai, the apartment benefits from direct proximity to major landmarks, retail and dining destinations. Burj Khalifa, Dubai Mall and the Dubai Fountain are within a short drive, while Burj Park and other outdoor spaces support an active lifestyle. The area is well connected via Financial Center Road, with taxis and buses easily accessible, and public beaches are reachable in around 15â€“20 minutes by car.\n\nOffered at 11,499,999 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Central A/C",
@@ -776,9 +785,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "71561624811",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786015015/WhatsApp_Image_2026-08-05_at_3.34.33_PM_itr9wh.jpg",
     },
   },
   {
@@ -841,9 +851,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "71561622987",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786015160/WhatsApp_Image_2026-08-05_at_3.35.51_PM_p6s8lm.jpg",
     },
   },
   {
@@ -910,9 +921,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "71522435534",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786015312/WhatsApp_Image_2026-08-05_at_3.37.14_PM_plfaik.jpg",
     },
   },
   {
@@ -954,7 +966,7 @@ export const LUXURY_LISTING_PROJECTS = [
       residency: "UAE resident",
     },
     description:
-      "GPG is pleased to offer you this 4-bedroom fully furnished pool-view apartment in SAAS Hills, Dubai Science Park, Dubai.\n\nThis off-plan residence spans 3,541 sqft and includes 5 bathrooms, a spacious balcony, and 3 allocated parking spaces. Offered with a flexible 40/60 payment plan, it presents an exceptional opportunity in one of Dubai's most promising communities.\n\nExperience elevated luxury in this exclusive 4BR Sky Villa, set in the iconic twin towers of SAAS Hills. Boasting panoramic views, expansive layouts, and high-end finishes, this residence blends modern sophistication with resort-style living. Enjoy access to world-class amenities, smart-home features, and wellness-focused design — a truly rare opportunity in one of Dubai's most promising communities.\n\nResidents benefit from gym and fitness centres, indoor and outdoor swimming pools, jacuzzi and spa facilities, sauna and steam rooms, yoga and sports courts, running and cycling tracks, kids' play areas, cinema and gaming zones, workspaces and meeting rooms, shops and restaurants, BBQ and social areas, 24/7 security, smart home features, and parking with EV charging.\n\nLocated with excellent connectivity: 9 minutes to Sheikh Zayed Road, 5 minutes to Al Khail Road, 3 minutes to Dubai Hills Mall, 12 minutes to Burj Al Arab, 25 minutes to Al Maktoum International Airport, 20 minutes to Dubai International Airport, 3 minutes to Repton School, 5 minutes to King's College Hospital, and 3 minutes to the nearest park.\n\nOffered at 7,500,000 AED. Contact us to schedule a viewing.",
+      "GPG is pleased to offer you this 4-bedroom fully furnished pool-view apartment in SAAS Hills, Dubai Science Park, Dubai.\n\nThis off-plan residence spans 3,541 sqft and includes 5 bathrooms, a spacious balcony, and 3 allocated parking spaces. Offered with a flexible 40/60 payment plan, it presents an exceptional opportunity in one of Dubai's most promising communities.\n\nExperience elevated luxury in this exclusive 4BR Sky Villa, set in the iconic twin towers of SAAS Hills. Boasting panoramic views, expansive layouts, and high-end finishes, this residence blends modern sophistication with resort-style living. Enjoy access to world-class amenities, smart-home features, and wellness-focused design â€” a truly rare opportunity in one of Dubai's most promising communities.\n\nResidents benefit from gym and fitness centres, indoor and outdoor swimming pools, jacuzzi and spa facilities, sauna and steam rooms, yoga and sports courts, running and cycling tracks, kids' play areas, cinema and gaming zones, workspaces and meeting rooms, shops and restaurants, BBQ and social areas, 24/7 security, smart home features, and parking with EV charging.\n\nLocated with excellent connectivity: 9 minutes to Sheikh Zayed Road, 5 minutes to Al Khail Road, 3 minutes to Dubai Hills Mall, 12 minutes to Burj Al Arab, 25 minutes to Al Maktoum International Airport, 20 minutes to Dubai International Airport, 3 minutes to Repton School, 5 minutes to King's College Hospital, and 3 minutes to the nearest park.\n\nOffered at 7,500,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Furnished",
       "Central A/C",
@@ -980,9 +992,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "71645569395",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786015443/WhatsApp_Image_2026-08-05_at_3.38.10_PM_rep2lo.jpg",
     },
   },
   {
@@ -1045,9 +1058,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "65617354132",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786016729/WhatsApp_Image_2026-08-05_at_4.52.02_PM_qtgn6i.jpg",
     },
   },
   {
@@ -1111,9 +1125,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "71785203813",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786016954/WhatsApp_Image_2026-08-05_at_4.53.17_PM_j5ty0s.jpg",
     },
   },
   {
@@ -1181,9 +1196,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "71908741309",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786017132/WhatsApp_Image_2026-08-05_at_4.54.18_PM_girfai.jpg",
     },
   },
   {
@@ -1251,9 +1267,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "71908741309",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786017426/WhatsApp_Image_2026-08-05_at_4.55.09_PM_cb7yan.jpg",
     },
   },
   {
@@ -1293,7 +1310,7 @@ export const LUXURY_LISTING_PROJECTS = [
       residency: "UAE resident",
     },
     description:
-      "GPG is pleased to offer you this 4 bedrooms Townhouse in Opal Gardens located at District 11, Mohammed Bin Rashid, Al Maktoum City, Dubai.\n\nThis residence features 4 bedrooms, 4 bathrooms, a spacious balcony, allocated parking spaces, a plot size of 2,786.99 sqft, and a BUA of 3,507.31 sqft.\n\nDistrict 11 Opal Gardens offers an exclusive gated community with multiple secure access points, ensuring both privacy and convenience. Nestled amidst lush greenery, this meticulously designed neighborhood features elegant villas and townhouses with breathtaking views of the Dubai skyline and a pristine crystal lagoon.\n\nWith seamless connectivity to Downtown Dubai, Opal Gardens combines urban access with serene living. Residents will enjoy over 5 kilometers of dedicated cycling and walking trails, surrounded by beautifully landscaped gardens and vibrant open spaces—creating a lifestyle that's both active and tranquil.\n\nOffered at 5,800,000 AED. Contact us to schedule a viewing.",
+      "GPG is pleased to offer you this 4 bedrooms Townhouse in Opal Gardens located at District 11, Mohammed Bin Rashid, Al Maktoum City, Dubai.\n\nThis residence features 4 bedrooms, 4 bathrooms, a spacious balcony, allocated parking spaces, a plot size of 2,786.99 sqft, and a BUA of 3,507.31 sqft.\n\nDistrict 11 Opal Gardens offers an exclusive gated community with multiple secure access points, ensuring both privacy and convenience. Nestled amidst lush greenery, this meticulously designed neighborhood features elegant villas and townhouses with breathtaking views of the Dubai skyline and a pristine crystal lagoon.\n\nWith seamless connectivity to Downtown Dubai, Opal Gardens combines urban access with serene living. Residents will enjoy over 5 kilometers of dedicated cycling and walking trails, surrounded by beautifully landscaped gardens and vibrant open spacesâ€”creating a lifestyle that's both active and tranquil.\n\nOffered at 5,800,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Central A/C",
@@ -1317,9 +1334,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "93719",
-      dldPermit: "65405298359",
+      dldPermit: "69452309283",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786017586/WhatsApp_Image_2026-08-05_at_4.56.20_PM_liip1u.jpg",
     },
   },
   {
@@ -1391,9 +1409,10 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
-      dldPermit: "65405298359",
+      dldPermit: "69542870362",
+      qrImage:
+        "https://res.cloudinary.com/dsldkspov/image/upload/v1786017772/WhatsApp_Image_2026-08-05_at_5.00.59_PM_in03an.jpg",
     },
   },
   {
@@ -1414,7 +1433,6 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
       dldPermit: "65405298359",
     },
@@ -1437,7 +1455,6 @@ export const LUXURY_LISTING_PROJECTS = [
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      zoneName: "Al Hebiah Fourth",
       agentLicense: "51672",
       dldPermit: "65405298359",
     },

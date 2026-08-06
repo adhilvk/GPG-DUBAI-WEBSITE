@@ -121,7 +121,7 @@ function RegulatoryRow({ label, value, showInfo = false }) {
 function RegulatoryInformation({ regulatory, t }) {
   if (!regulatory?.dldPermit) return null;
 
-  const qrSrc = getRegulatoryQrSrc(regulatory.dldPermit);
+  const qrSrc = regulatory.qrImage ?? getRegulatoryQrSrc(regulatory.dldPermit);
   const rows = [
     regulatory.reference && { label: t("luxuryDetail.reference"), value: regulatory.reference },
     regulatory.listed && { label: t("luxuryDetail.listed"), value: regulatory.listed },
@@ -131,7 +131,6 @@ function RegulatoryInformation({ regulatory, t }) {
       showInfo: true,
     },
     regulatory.agencyName && { label: t("luxuryDetail.agencyName"), value: regulatory.agencyName },
-    regulatory.zoneName && { label: t("luxuryDetail.zoneName"), value: regulatory.zoneName },
     regulatory.agentLicense && {
       label: t("luxuryDetail.agentLicense"),
       value: regulatory.agentLicense,
