@@ -145,15 +145,19 @@ const Footer = () => {
 
             {/* RIGHT */}
             <div className="flex gap-6 justify-center md:justify-self-end">
-
-              <span className="hover:text-slate-900 cursor-pointer transition-colors">
+              <Link
+                href="/privacy-policy"
+                className="hover:text-slate-900 cursor-pointer transition-colors"
+              >
                 {t("footer.privacyPolicy")}
-              </span>
+              </Link>
 
-              <span className="hover:text-slate-900 cursor-pointer transition-colors">
+              <Link
+                href="/terms"
+                className="hover:text-slate-900 cursor-pointer transition-colors"
+              >
                 {t("footer.termsOfService")}
-              </span>
-
+              </Link>
             </div>
 
           </div>
