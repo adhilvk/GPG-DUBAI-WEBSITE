@@ -1,23 +1,58 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import { useLanguage } from "@/context/LanguageContext";
+
+const TEXT_CLAMP_LENGTH = 120;
+
+function ReviewCard({ review, readMoreLabel, readLessLabel }) {
+  const [expanded, setExpanded] = useState(false);
+  const isLong = review.text.length > TEXT_CLAMP_LENGTH;
+  const displayText =
+    expanded || !isLong ? review.text : `${review.text.slice(0, TEXT_CLAMP_LENGTH).trim()}...`;
+
+  return (
+    <div className="flex flex-col rounded-2xl border border-red-50 bg-white p-5 shadow-sm">
+      <div className="mb-2 flex items-center justify-between">
+        <h4 className="font-semibold text-slate-900">{review.name}</h4>
+        <img src="/images/icon.svg" alt="" className="w-5" />
+      </div>
+
+      <div className="mb-1 flex text-[#E31E24]">
+        {[...Array(5)].map((_, j) => (
+          <Star key={j} size={14} fill="currentColor" />
+        ))}
+      </div>
+
+      <p className="mb-2 text-xs text-slate-500">{review.time}</p>
+
+      <p className="text-sm leading-relaxed text-slate-700">{displayText}</p>
+
+      {isLong && (
+        <button
+          type="button"
+          onClick={() => setExpanded((prev) => !prev)}
+          className="mt-2 self-start text-sm font-semibold text-[#E31E24] transition hover:text-[#c4191f]"
+        >
+          {expanded ? readLessLabel : readMoreLabel}
+        </button>
+      )}
+    </div>
+  );
+}
 
 export default function Testimonials() {
   const { t } = useLanguage();
   const reviews = t("testimonials.reviewsData");
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % reviews.length);
-    }, 4000);
+  const goPrev = () => setIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+  const goNext = () => setIndex((prev) => (prev + 1) % reviews.length);
 
-    return () => clearInterval(interval);
-  }, []);
+  const visibleReviews = [reviews[index], reviews[(index + 1) % reviews.length]];
 
   return (
     <section className="relative w-full bg-[#f5f6f8] py-10 md:py-12">
@@ -26,7 +61,7 @@ export default function Testimonials() {
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader eyebrow={t("testimonials.eyebrow")} title={t("testimonials.title")} accent={t("testimonials.accent")} />
 
-        <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-3">
+        <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-3 md:gap-12">
           <div className="rounded-2xl border border-red-50 bg-white p-6 shadow-[0_8px_30px_rgba(227,30,36,0.06)]">
             <div className="mb-4 flex items-center gap-4">
               <img src="/images/logo.png" alt="GPG" className="h-16 w-16 rounded-full object-cover ring-2 ring-red-100" />
@@ -44,46 +79,62 @@ export default function Testimonials() {
               </div>
             </div>
 
-            <button className="mt-6 rounded-lg border-2 border-[#E31E24] px-6 py-3 text-sm font-bold tracking-wide text-[#E31E24] transition hover:bg-[#E31E24] hover:text-white">
+            <a
+              href={t("testimonials.googleMapsUrl")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block rounded-lg border-2 border-[#E31E24] px-6 py-3 text-sm font-bold tracking-wide text-[#E31E24] transition hover:bg-[#E31E24] hover:text-white"
+            >
               {t("testimonials.writeReview")}
-            </button>
+            </a>
           </div>
 
-          <div className="relative overflow-hidden md:col-span-2">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 80 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -80 }}
-                transition={{ duration: 0.6 }}
-                className="grid items-stretch gap-8 md:grid-cols-2 md:gap-10"
+          <div className="md:col-span-2">
+            <div className="relative overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -40 }}
+                  transition={{ duration: 0.35 }}
+                  className="grid gap-6 md:grid-cols-2 md:gap-8"
+                >
+                  {visibleReviews.map((review, i) => (
+                    <ReviewCard
+                      key={`${review.name}-${index}-${i}`}
+                      review={review}
+                      readMoreLabel={t("testimonials.readMore")}
+                      readLessLabel={t("testimonials.readLess")}
+                    />
+                  ))}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            <div className="mt-5 flex items-center justify-center gap-4">
+              <button
+                type="button"
+                onClick={goPrev}
+                aria-label={t("luxuryListingsPage.previous")}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-[#E31E24] hover:text-[#E31E24]"
               >
-                {[reviews[index], reviews[(index + 1) % reviews.length]].map((review, i) => (
-                  <div
-                    key={i}
-                    className="flex min-h-55 flex-col justify-between rounded-2xl border border-red-50 bg-white p-6 shadow-sm"
-                  >
-                    <div>
-                      <div className="mb-2 flex items-center justify-between">
-                        <h4 className="font-semibold text-slate-900">{review.name}</h4>
-                        <img src="/images/icon.svg" alt="" className="w-6" />
-                      </div>
+                <ChevronLeft size={20} />
+              </button>
 
-                      <div className="mb-2 flex text-[#E31E24]">
-                        {[...Array(5)].map((_, j) => (
-                          <Star key={j} size={16} fill="currentColor" />
-                        ))}
-                      </div>
+              <span className="min-w-12 text-center text-sm text-slate-500">
+                {index + 1} / {reviews.length}
+              </span>
 
-                      <p className="mb-3 text-sm text-slate-500">{review.time}</p>
-
-                      <p className="leading-relaxed text-slate-700">{review.text}</p>
-                    </div>
-                  </div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
+              <button
+                type="button"
+                onClick={goNext}
+                aria-label={t("luxuryListingsPage.next")}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-[#E31E24] hover:text-[#E31E24]"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
           </div>
         </div>
       </div>

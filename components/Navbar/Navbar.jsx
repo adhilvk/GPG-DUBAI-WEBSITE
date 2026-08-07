@@ -84,7 +84,6 @@ const Navbar = () => {
   ];
 
   const moreLinks = [
-    { key: "newsMedia", link: "/news" },
     { key: "contactUs", link: "/contact-us" },
   ];
 

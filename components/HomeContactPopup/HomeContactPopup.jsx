@@ -7,7 +7,7 @@ import "./HomeContactPopup.css";
 
 const POPUP_DELAY_MS = 3000;
 const WA_NUMBER = "971542068414";
-const EMAIL = "it.gpg22@gmail.com";
+const EMAIL = "enquiries@globalpropertygroup.co";
 const INSTAGRAM_URL = "https://www.instagram.com/xgpg.luxury/";
 
 function WhatsAppGlyph({ className }) {

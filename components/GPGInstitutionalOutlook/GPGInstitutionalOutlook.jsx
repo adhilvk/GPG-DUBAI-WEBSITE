@@ -1,8 +1,10 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FileDown, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import { FileDown } from 'lucide-react';
+
+const COMPANY_PROFILE_PDF =
+  "/company%20profile/GPG-Global-Real-Estate-Company-Profile-2026.pdf";
 
 const GPGInstitutionalOutlook = () => {
   return (
@@ -43,14 +45,18 @@ const GPGInstitutionalOutlook = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-start gap-6">
-              <motion.button
+              <motion.a
+                href={COMPANY_PROFILE_PDF}
+                target="_blank"
+                rel="noopener noreferrer"
+                download="GPG-Global-Real-Estate-Company-Profile-2026.pdf"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 className="bg-slate-900 text-white px-10 py-4 rounded-sm font-bold uppercase text-[9px] tracking-[0.3em] flex items-center gap-3 transition-all duration-300 shadow-2xl shadow-slate-300"
               >
                 <FileDown size={14} />
-                Download Company Brochure
-              </motion.button>
+                Download Company Profile
+              </motion.a>
             </div>
 
             <div className="pt-4 border-t border-slate-200 w-max">
