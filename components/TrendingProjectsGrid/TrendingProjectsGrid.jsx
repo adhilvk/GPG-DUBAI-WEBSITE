@@ -192,6 +192,14 @@ export default function TrendingProjectsGrid() {
   const totalPages = Math.max(1, listingPages.length);
   const safePage = Math.min(currentPage, totalPages);
 
+  const listingReturnPath = useMemo(() => {
+    const params = new URLSearchParams();
+    if (propertyType) params.set("type", propertyType);
+    if (safePage > 1) params.set("page", String(safePage));
+    const query = params.toString();
+    return query ? `${pathname}?${query}` : pathname;
+  }, [pathname, propertyType, safePage]);
+
   const paginatedProjects = useMemo(
     () => listingPages[safePage - 1] ?? [],
     [listingPages, safePage]
@@ -271,7 +279,11 @@ export default function TrendingProjectsGrid() {
           <>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {paginatedProjects.map((project) => (
-                <TrendingProjectCard key={project.id} project={project} />
+                <TrendingProjectCard
+                  key={project.id}
+                  project={project}
+                  returnTo={listingReturnPath}
+                />
               ))}
             </div>
 

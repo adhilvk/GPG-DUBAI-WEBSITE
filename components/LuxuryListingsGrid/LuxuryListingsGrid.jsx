@@ -2,13 +2,23 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import PremiumFilterSelect from "@/components/PremiumFilterSelect/PremiumFilterSelect";
 import LuxuryProjectCard from "@/components/LuxuryProjectCard/LuxuryProjectCard";
 import { useLanguage } from "@/context/LanguageContext";
 import { LUXURY_LISTING_PROJECTS } from "@/data/luxuryListingProjects";
+import { buildDetailHref } from "@/lib/navigation";
+
+const VALID_PROPERTY_TYPES = [
+  "villa",
+  "apartment",
+  "mansion",
+  "townhouse",
+  "office",
+  "retail",
+];
 
 const PROPERTY_TYPES = [
   { value: "", labelKey: "allTypes" },
@@ -16,6 +26,8 @@ const PROPERTY_TYPES = [
   { value: "apartment", labelKey: "apartment" },
   { value: "mansion", labelKey: "mansion" },
   { value: "townhouse", labelKey: "townhouse" },
+  { value: "office", labelKey: "office" },
+  { value: "retail", labelKey: "retail" },
 ];
 
 const LOCATIONS = [
@@ -47,9 +59,11 @@ function parsePriceAed(project) {
 
 function getPropertyCategory(project) {
   const type = `${project.propertyType ?? ""} ${project.title ?? ""}`.toLowerCase();
+  if (type.includes("retail")) return "retail";
+  if (type.includes("office")) return "office";
   if (type.includes("mansion")) return "mansion";
   if (type.includes("townhouse")) return "townhouse";
-  if (type.includes("apartment")) return "apartment";
+  if (type.includes("penthouse") || type.includes("apartment")) return "apartment";
   if (type.includes("villa")) return "villa";
   return "";
 }
@@ -84,12 +98,22 @@ function matchesBudget(project, budget) {
 
 export default function LuxuryListingsGrid() {
   const { t } = useLanguage();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const [propertyType, setPropertyType] = useState("");
   const [location, setLocation] = useState("");
   const [budget, setBudget] = useState("");
 
   const currentPage = Math.max(1, Number(searchParams.get("page")) || 1);
+  const typeFromUrl = searchParams.get("type") ?? "";
+
+  useEffect(() => {
+    if (VALID_PROPERTY_TYPES.includes(typeFromUrl)) {
+      setPropertyType(typeFromUrl);
+    } else if (!typeFromUrl) {
+      setPropertyType("");
+    }
+  }, [typeFromUrl]);
 
   const filteredProjects = useMemo(() => {
     return LUXURY_LISTING_PROJECTS.filter((project) => {
@@ -107,6 +131,14 @@ export default function LuxuryListingsGrid() {
   const totalPages = Math.max(1, Math.ceil(filteredProjects.length / CARDS_PER_PAGE));
   const safePage = Math.min(currentPage, totalPages);
 
+  const listingReturnPath = useMemo(() => {
+    const params = new URLSearchParams();
+    if (propertyType) params.set("type", propertyType);
+    if (safePage > 1) params.set("page", String(safePage));
+    const qs = params.toString();
+    return qs ? `${pathname}?${qs}` : pathname;
+  }, [pathname, propertyType, safePage]);
+
   const paginatedProjects = useMemo(() => {
     const start = (safePage - 1) * CARDS_PER_PAGE;
     return filteredProjects.slice(start, start + CARDS_PER_PAGE);
@@ -114,13 +146,19 @@ export default function LuxuryListingsGrid() {
 
   useEffect(() => {
     if (currentPage > totalPages && totalPages > 0) {
-      window.history.replaceState(null, "", "/luxury-properties");
+      const params = new URLSearchParams();
+      if (propertyType) params.set("type", propertyType);
+      const qs = params.toString();
+      window.history.replaceState(null, "", qs ? `/luxury-properties?${qs}` : "/luxury-properties");
     }
-  }, [currentPage, totalPages]);
+  }, [currentPage, totalPages, propertyType]);
 
   const buildPageHref = (page) => {
-    if (page <= 1) return "/luxury-properties";
-    return `/luxury-properties?page=${page}`;
+    const params = new URLSearchParams();
+    if (propertyType) params.set("type", propertyType);
+    if (page > 1) params.set("page", String(page));
+    const qs = params.toString();
+    return qs ? `/luxury-properties?${qs}` : "/luxury-properties";
   };
 
   return (
@@ -177,7 +215,11 @@ export default function LuxuryListingsGrid() {
           <>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {paginatedProjects.map((project) => (
-                <LuxuryProjectCard key={project.id} project={project} />
+                <LuxuryProjectCard
+                  key={project.id}
+                  project={project}
+                  href={buildDetailHref(`/luxury-properties/${project.id}`, listingReturnPath)}
+                />
               ))}
             </div>
 

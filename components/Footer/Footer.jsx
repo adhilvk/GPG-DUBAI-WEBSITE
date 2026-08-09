@@ -165,28 +165,40 @@ const Footer = () => {
           {/* SOCIAL ICONS */}
           <div className="flex items-center justify-center gap-3 mt-8">
             <a
-              href="#"
+              href="https://www.facebook.com/gpgluxuryrealestate/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
               className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-200 text-[#E31E24] hover:bg-[#E31E24] hover:text-white transition-all"
             >
               <Facebook size={16} />
             </a>
 
             <a
-              href="#"
+              href="https://www.instagram.com/xgpg.luxury/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
               className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-200 text-[#E31E24] hover:bg-[#E31E24] hover:text-white transition-all"
             >
               <Instagram size={16} />
             </a>
 
             <a
-              href="#"
+              href="https://www.linkedin.com/company/gpgluxuryrealestate/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
               className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-200 text-[#E31E24] hover:bg-[#E31E24] hover:text-white transition-all"
             >
               <Linkedin size={16} />
             </a>
 
             <a
-              href="#"
+              href="https://wa.me/971542068414"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp +971 54 206 8414"
               className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-200 text-[#E31E24] hover:bg-[#E31E24] hover:text-white transition-all"
             >
               <MessageCircle size={16} />

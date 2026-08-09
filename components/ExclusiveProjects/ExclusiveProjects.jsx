@@ -1,6 +1,7 @@
 "use client";
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 import "./ExclusiveProjects.css";
 
@@ -14,6 +15,7 @@ import { TRENDING_PROJECTS } from "@/data/trendingProjects";
 import LuxuryProjectCard from "@/components/LuxuryProjectCard/LuxuryProjectCard";
 import TrendingProjectCard from "@/components/TrendingProjectCard/TrendingProjectCard";
 import OurAwards from "@/components/OurAwards/OurAwards";
+import { buildDetailHref } from "@/lib/navigation";
 
 const CAROUSEL_PROJECT_LIMIT = 5;
 
@@ -42,7 +44,9 @@ const ViewAllButton = ({ href, label }) => (
 
 const ExclusiveProjectsSlider = () => {
   const { t } = useLanguage();
+  const pathname = usePathname();
   const [activeEmirate, setActiveEmirate] = useState("dubai");
+  const homepageReturnPath = pathname || "/";
 
   const trendingProjects = useMemo(
     () =>
@@ -97,7 +101,9 @@ const ExclusiveProjectsSlider = () => {
 
           <ProjectCarousel
             items={trendingProjects}
-            renderItem={(item) => <TrendingProjectCard project={item} compact />}
+            renderItem={(item) => (
+              <TrendingProjectCard project={item} compact returnTo={homepageReturnPath} />
+            )}
             getItemKey={(item) => item.id}
             resetKey={`trending-${activeEmirate}`}
             prevLabel="Previous projects"
@@ -121,7 +127,13 @@ const ExclusiveProjectsSlider = () => {
             />
             <ProjectCarousel
               items={luxuryListings}
-              renderItem={(item) => <LuxuryProjectCard project={item} compact />}
+              renderItem={(item) => (
+                <LuxuryProjectCard
+                  project={item}
+                  compact
+                  href={buildDetailHref(`/luxury-properties/${item.id}`, homepageReturnPath)}
+                />
+              )}
               getItemKey={(item) => item.id}
               resetKey="luxury"
               prevLabel="Previous luxury listings"

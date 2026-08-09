@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
@@ -35,7 +36,9 @@ export default async function TrendingProjectDetailPage({ params }: Props) {
   return (
     <>
       <Navbar />
-      <TrendingDetail project={project} />
+      <Suspense fallback={<div className="min-h-screen bg-white pt-28" />}>
+        <TrendingDetail project={project} />
+      </Suspense>
       <Footer />
     </>
   );

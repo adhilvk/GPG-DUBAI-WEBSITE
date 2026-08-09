@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import { notFound } from "next/navigation";
 
@@ -58,7 +59,9 @@ export default async function LuxuryDetailPage({ params }: Props) {
 
       <Navbar />
 
-      <LuxuryDetail project={project} />
+      <Suspense fallback={<div className="min-h-screen bg-white pt-28" />}>
+        <LuxuryDetail project={project} />
+      </Suspense>
 
       <Footer />
 

@@ -17,7 +17,9 @@ function ReviewCard({ review, readMoreLabel, readLessLabel }) {
   return (
     <div className="flex flex-col rounded-2xl border border-red-50 bg-white p-5 shadow-sm">
       <div className="mb-2 flex items-center justify-between">
-        <h4 className="font-semibold text-slate-900">{review.name}</h4>
+        <div>
+          <h4 className="font-semibold text-slate-900">{review.name}</h4>
+        </div>
         <img src="/images/icon.svg" alt="" className="w-5" />
       </div>
 

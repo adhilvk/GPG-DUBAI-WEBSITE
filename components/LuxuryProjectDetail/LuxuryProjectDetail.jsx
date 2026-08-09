@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState, useCallback, useEffect, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -43,6 +44,7 @@ import {
   getListingAgent,
   parsePriceAed,
 } from "@/lib/luxuryProjectDetail";
+import { buildDetailHref, resolveReturnHref } from "@/lib/navigation";
 
 const NAVY = "#002147";
 const RED = "#E31E24";
@@ -288,6 +290,35 @@ function GalleryLightbox({ images, title, open, initialIndex, onClose, t }) {
 const GOLD = "#b8956b";
 
 function AmenitiesSection({ amenities }) {
+  const hasDetailed = amenities.some(
+    (item) => typeof item === "object" && item.description
+  );
+
+  if (hasDetailed) {
+    return (
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {amenities.map((item) => {
+          const title = typeof item === "string" ? item : item.title;
+          const description = typeof item === "object" ? item.description : null;
+
+          return (
+            <li
+              key={title}
+              className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm"
+            >
+              <h3 className="text-sm font-bold text-slate-900">{title}</h3>
+              {description && (
+                <p className="mt-2 text-xs leading-relaxed text-slate-500">
+                  {description}
+                </p>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }
+
   return (
     <ul className="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
       {amenities.map((item) => {
@@ -579,6 +610,9 @@ export default function LuxuryProjectDetail({
   projectHrefBase = "/luxury-properties",
 }) {
   const { t } = useLanguage();
+  const searchParams = useSearchParams();
+  const fromParam = searchParams.get("from");
+  const backHref = resolveReturnHref(fromParam, listHref);
   const [readMore, setReadMore] = useState(false);
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
@@ -798,7 +832,7 @@ export default function LuxuryProjectDetail({
                 {t("luxuryDetail.home")}
               </Link>
               <span>/</span>
-              <Link href={listHref} className="hover:text-[#E31E24]">
+              <Link href={backHref} className="hover:text-[#E31E24]">
                 {breadcrumbLabel}
               </Link>
               <span>/</span>
@@ -948,36 +982,26 @@ export default function LuxuryProjectDetail({
 
             {project.projectSummary || project.brochure ? (
               <div className="mt-10">
-                {project.projectSummary && project.brochure ? (
-                  <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3">
+                <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3">
+                  {project.projectSummary ? (
                     <h2 className="text-base font-bold text-slate-900">
                       {t("luxuryDetail.projectSummary")}
                     </h2>
-                    <button
-                      type="button"
-                      onClick={handleFreeConsultation}
-                      className="inline-flex shrink-0 items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:opacity-90"
-                      style={{ backgroundColor: RED }}
-                    >
-                      <FileDown size={14} />
-                      {t("luxuryDetail.requestBrochure")}
-                    </button>
-                  </div>
-                ) : project.projectSummary ? (
-                  <SectionHeading>{t("luxuryDetail.projectSummary")}</SectionHeading>
-                ) : (
-                  <div className="mb-5 flex justify-end border-b border-slate-200 pb-3">
-                    <button
-                      type="button"
-                      onClick={handleFreeConsultation}
-                      className="inline-flex shrink-0 items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:opacity-90"
-                      style={{ backgroundColor: RED }}
-                    >
-                      <FileDown size={14} />
-                      {t("luxuryDetail.requestBrochure")}
-                    </button>
-                  </div>
-                )}
+                  ) : (
+                    <span className="sr-only">{t("luxuryDetail.requestBrochure")}</span>
+                  )}
+                  <button
+                    type="button"
+                    onClick={handleFreeConsultation}
+                    className={`inline-flex shrink-0 items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:opacity-90${
+                      project.projectSummary ? "" : " ml-auto"
+                    }`}
+                    style={{ backgroundColor: RED }}
+                  >
+                    <FileDown size={14} />
+                    {t("luxuryDetail.requestBrochure")}
+                  </button>
+                </div>
                 {project.projectSummary ? (
                   <ProjectSummarySection summary={project.projectSummary} t={t} />
                 ) : null}
@@ -1270,7 +1294,7 @@ export default function LuxuryProjectDetail({
               <p className="text-sm font-semibold">{t("luxuryDetail.promoTitle")}</p>
               <p className="mt-1 text-xs text-white/80">{t("luxuryDetail.promoSubtitle")}</p>
               <Link
-                href={listHref}
+                href={backHref}
                 className="mt-4 inline-block rounded-lg bg-white px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#002147] hover:bg-slate-100"
               >
                 {t("luxuryDetail.viewToday")}
@@ -1289,7 +1313,7 @@ export default function LuxuryProjectDetail({
                   key={p.id}
                   project={p}
                   compact
-                  href={`${projectHrefBase}/${p.id}`}
+                  href={buildDetailHref(`${projectHrefBase}/${p.id}`, fromParam ? backHref : undefined)}
                 />
               ))}
             </div>

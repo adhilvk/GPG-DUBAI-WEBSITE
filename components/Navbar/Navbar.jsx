@@ -93,11 +93,11 @@ const Navbar = () => {
   ];
 
   const propertyLinks = [
-    { key: "villas", href: "/villas", icon: Landmark },
-    { key: "townhouses", href: "/townhouses", icon: Warehouse },
-    { key: "apartments", href: "/apartments", icon: Hotel },
-    { key: "offices", href: "/offices", icon: Briefcase },
-    { key: "retails", href: "/retails", icon: Briefcase },
+    { key: "villas", href: "/luxury-properties?type=villa", icon: Landmark },
+    { key: "townhouses", href: "/luxury-properties?type=townhouse", icon: Warehouse },
+    { key: "apartments", href: "/luxury-properties?type=apartment", icon: Hotel },
+    { key: "offices", href: "/luxury-properties?type=office", icon: Briefcase },
+    { key: "retails", href: "/luxury-properties?type=retail", icon: Briefcase },
   ];
 
   const communityAreas = [
