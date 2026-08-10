@@ -45,8 +45,10 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
     `Inquiry: ${project.title}`
   )}&body=${encodeURIComponent(inquiryText)}`;
   const hasSpecsRow =
-    project.sqft != null && (project.beds != null || project.baths != null);
-  const hasDetailCardLayout = Boolean(project.projectSummary || hasSpecsRow);
+    project.sqft != null || project.beds != null || project.baths != null;
+  const hasDetailCardLayout = Boolean(
+    project.projectSummary || hasSpecsRow || project.propertyType === "Land"
+  );
   const specItems = [
     project.beds != null && {
       key: "beds",
