@@ -14,8 +14,10 @@ import { buildDetailHref } from "@/lib/navigation";
 const VALID_PROPERTY_TYPES = [
   "villa",
   "apartment",
+  "penthouse",
   "mansion",
   "townhouse",
+  "land",
   "office",
   "retail",
 ];
@@ -24,8 +26,10 @@ const PROPERTY_TYPES = [
   { value: "", labelKey: "allTypes" },
   { value: "villa", labelKey: "villa" },
   { value: "apartment", labelKey: "apartment" },
+  { value: "penthouse", labelKey: "penthouse" },
   { value: "mansion", labelKey: "mansion" },
   { value: "townhouse", labelKey: "townhouse" },
+  { value: "land", labelKey: "land" },
   { value: "office", labelKey: "office" },
   { value: "retail", labelKey: "retail" },
 ];
@@ -59,11 +63,13 @@ function parsePriceAed(project) {
 
 function getPropertyCategory(project) {
   const type = `${project.propertyType ?? ""} ${project.title ?? ""}`.toLowerCase();
+  if (type.includes("land")) return "land";
   if (type.includes("retail")) return "retail";
   if (type.includes("office")) return "office";
   if (type.includes("mansion")) return "mansion";
   if (type.includes("townhouse")) return "townhouse";
-  if (type.includes("penthouse") || type.includes("apartment")) return "apartment";
+  if (type.includes("penthouse")) return "penthouse";
+  if (type.includes("apartment")) return "apartment";
   if (type.includes("villa")) return "villa";
   return "";
 }

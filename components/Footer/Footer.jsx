@@ -20,6 +20,15 @@ const guideLinks = [
   { key: "commercialInvestment", href: "/HOWTOINVEST" },
 ];
 
+const propertyTypeLinks = [
+  { key: "apartmentsDubai", href: "/luxury-properties?type=apartment" },
+  { key: "penthousesDubai", href: "/luxury-properties?type=penthouse" },
+  { key: "townhousesDubai", href: "/luxury-properties?type=townhouse" },
+  { key: "villasDubai", href: "/luxury-properties?type=villa" },
+  { key: "landPlotsDubai", href: "/luxury-properties?type=land" },
+  { key: "buildingsDubai", href: "/luxury-properties?type=office" },
+];
+
 const Footer = () => {
   const { t } = useLanguage();
   const footerLinkStyles = `relative w-max cursor-pointer transition-all duration-300 text-[#FF0000] text-[13px] uppercase tracking-wider
@@ -70,12 +79,13 @@ const Footer = () => {
             </h3>
 
             <ul className="space-y-4 text-[11px]">
-              <li className={footerLinkStyles}>{t("footer.apartmentsDubai")}</li>
-              <li className={footerLinkStyles}>{t("footer.penthousesDubai")}</li>
-              <li className={footerLinkStyles}>{t("footer.townhousesDubai")}</li>
-              <li className={footerLinkStyles}>{t("footer.villasDubai")}</li>
-              <li className={footerLinkStyles}>{t("footer.landPlotsDubai")}</li>
-              <li className={footerLinkStyles}>{t("footer.buildingsDubai")}</li>
+              {propertyTypeLinks.map((item) => (
+                <li key={item.key}>
+                  <Link href={item.href} className={footerLinkStyles}>
+                    {t(`footer.${item.key}`)}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
