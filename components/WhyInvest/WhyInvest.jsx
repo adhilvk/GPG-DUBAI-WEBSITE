@@ -30,7 +30,7 @@ const WhyInvest = () => {
 
   return (
     <div className="invest-wrapper">
-      <section className="invest-section">
+      <section id="why-invest" className="invest-section scroll-mt-28">
         <div className="invest-container">
           <SectionHeader
             eyebrow={t("whyInvest.eyebrow")}

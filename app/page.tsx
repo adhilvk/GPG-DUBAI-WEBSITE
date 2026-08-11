@@ -3,6 +3,7 @@ import Hero from "@/components/Hero/Hero";
 import ExclusiveProjects from "@/components/ExclusiveProjects/ExclusiveProjects";
 import Slider from "@/components/Slider/Slider";
 import WhyInvest from "@/components/WhyInvest/WhyInvest";
+import HashScroll from "@/components/HashScroll/HashScroll";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import InstagramGallery from "@/components/InstagramGallery/InstagramGallery";
 import SubscriptionBanner from "@/components/SubscriptionBanner/SubscriptionBanner";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <HashScroll />
       <div className="home-page">
         <Hero />
         <Slider />
