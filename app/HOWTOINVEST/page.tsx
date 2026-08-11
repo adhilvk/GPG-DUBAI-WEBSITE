@@ -4,9 +4,9 @@ import Footer from "@/components/Footer/Footer";
 import HowToInvestGuide from "@/components/Guides/HowToInvestGuide";
 
 export const metadata: Metadata = {
-  title: "How to Invest in Dubai Real Estate | GPG Guides",
+  title: "How to Buy Commercial Property in Dubai | GPG Guides",
   description:
-    "Learn how to invest in Dubai real estate: yield vs appreciation, portfolio strategy, top corridors, risk management, and FAQs.",
+    "Learn how to buy commercial property in Dubai: property types, purchase steps, yield evaluation, top areas including JVC, costs, due diligence, and FAQs.",
 };
 
 export default function HowToInvestPage() {

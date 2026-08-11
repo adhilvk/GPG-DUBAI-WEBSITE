@@ -11,7 +11,6 @@ const COVER_IMAGE =
 
 export default function ArticleDownload() {
   const { t } = useLanguage();
-  const accent = t("exclusiveProjects.articleAccent");
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -50,18 +49,19 @@ export default function ArticleDownload() {
         </div>
 
         <div className="article-download__content">
-          <h2 className="article-download__title">
-            {t("exclusiveProjects.articleTitle")}
-            {accent ? (
-              <>
-                {" "}
-                <span className="article-download__title-accent">{accent}</span>
-              </>
-            ) : null}
-          </h2>
-          <p className="article-download__note">
-            Waiting for the content to be mentioned.
-          </p>
+          <div className="article-download__header">
+            <p className="article-download__kicker">{t("exclusiveProjects.articleTitle")}</p>
+            <h2 className="article-download__headline">{t("exclusiveProjects.articleSubtitle")}</h2>
+            <div className="article-download__title-line" aria-hidden />
+          </div>
+          <div className="article-download__copy">
+            <p className="article-download__description">
+              {t("exclusiveProjects.articleDescription")}
+            </p>
+            <p className="article-download__description article-download__description--last">
+              {t("exclusiveProjects.articleDescription2")}
+            </p>
+          </div>
 
           <div className="article-download__dropdown" ref={dropdownRef}>
             <button
