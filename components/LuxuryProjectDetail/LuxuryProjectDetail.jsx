@@ -124,6 +124,7 @@ function RegulatoryInformation({ regulatory, t }) {
   if (!regulatory?.dldPermit) return null;
 
   const qrSrc = regulatory.qrImage ?? getRegulatoryQrSrc(regulatory.dldPermit);
+  const showDldPermitNumber = regulatory.showDldPermitNumber !== false;
   const rows = [
     regulatory.reference && { label: t("luxuryDetail.reference"), value: regulatory.reference },
     regulatory.listed && { label: t("luxuryDetail.listed"), value: regulatory.listed },
@@ -163,13 +164,17 @@ function RegulatoryInformation({ regulatory, t }) {
               className="h-[132px] w-[132px]"
             />
           </div>
-          <p className="mt-4 inline-flex items-center gap-1.5 text-sm text-slate-700">
-            {t("luxuryDetail.dldPermitNumber")}
-            <Info size={14} className="text-slate-400" aria-hidden />
-          </p>
-          <span className="mt-2 rounded-full bg-[#ececec] px-5 py-2 text-sm font-medium text-slate-800">
-            {regulatory.dldPermit}
-          </span>
+          {showDldPermitNumber ? (
+            <>
+              <p className="mt-4 inline-flex items-center gap-1.5 text-sm text-slate-700">
+                {t("luxuryDetail.dldPermitNumber")}
+                <Info size={14} className="text-slate-400" aria-hidden />
+              </p>
+              <span className="mt-2 rounded-full bg-[#ececec] px-5 py-2 text-sm font-medium text-slate-800">
+                {regulatory.dldPermit}
+              </span>
+            </>
+          ) : null}
         </div>
       </div>
     </div>
@@ -980,33 +985,32 @@ export default function LuxuryProjectDetail({
               </a>
             </div>
 
-            {project.projectSummary || project.brochure ? (
-              <div className="mt-10">
-                <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3">
-                  {project.projectSummary ? (
-                    <h2 className="text-base font-bold text-slate-900">
-                      {t("luxuryDetail.projectSummary")}
-                    </h2>
-                  ) : (
-                    <span className="sr-only">{t("luxuryDetail.requestBrochure")}</span>
-                  )}
-                  <button
-                    type="button"
-                    onClick={handleFreeConsultation}
-                    className={`inline-flex shrink-0 items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:opacity-90${
-                      project.projectSummary ? "" : " ml-auto"
-                    }`}
-                    style={{ backgroundColor: RED }}
-                  >
-                    <FileDown size={14} />
-                    {t("luxuryDetail.requestBrochure")}
-                  </button>
-                </div>
+            <div className="mt-10">
+              <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3">
                 {project.projectSummary ? (
-                  <ProjectSummarySection summary={project.projectSummary} t={t} />
-                ) : null}
+                  <h2 className="text-base font-bold text-slate-900">
+                    {t("luxuryDetail.projectSummary")}
+                  </h2>
+                ) : (
+                  // Reserve the same header space as other cards when there's no project summary.
+                  <h2 className="text-base font-bold text-slate-900 invisible">
+                    {t("luxuryDetail.projectSummary")}
+                  </h2>
+                )}
+                <button
+                  type="button"
+                  onClick={handleFreeConsultation}
+                  className="inline-flex shrink-0 items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:opacity-90"
+                  style={{ backgroundColor: RED }}
+                >
+                  <FileDown size={14} />
+                  {t("luxuryDetail.requestBrochure")}
+                </button>
               </div>
-            ) : null}
+              {project.projectSummary ? (
+                <ProjectSummarySection summary={project.projectSummary} t={t} />
+              ) : null}
+            </div>
 
             {propertyDetails.length > 0 && (
               <div className="mt-8">

@@ -112,7 +112,7 @@ export const TEAM_MEMBERS = [
   {
     id: "8",
     name: "Israa Mostafa",
-    title: "Operation",
+    title: "Head of Operations",
     languages: "English, Arabic",
     image:
       "https://res.cloudinary.com/dsldkspov/image/upload/v1786027823/operation_israa.jpg_uwuhmw.jpg",
@@ -120,7 +120,7 @@ export const TEAM_MEMBERS = [
   {
     id: "9",
     name: "Abdullah Rahmathulla",
-    title: "Operation",
+    title: "Conveyancing Manager",
     languages: "English, Tamil",
     image:
       "https://res.cloudinary.com/dsldkspov/image/upload/v1786030077/operation_abdullah.jpg_dlllx0.jpg",

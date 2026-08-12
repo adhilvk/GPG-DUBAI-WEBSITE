@@ -1,4 +1,4 @@
-﻿export const LUXURY_LISTING_PROJECTS = [
+export const LUXURY_LISTING_PROJECTS = [
   {
     id: "park-view-villa",
     propertyType: "Villa",
@@ -17,7 +17,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784884794/7_nvcnxr.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784884768/5_ebv5iy.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784884750/3_jgtsus.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784884726/1_owexsz.jpg",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1784884726/1_owexsz.jpg"
     ],
     status: "Off-plan",
     furnishing: "Partly furnished",
@@ -31,10 +31,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "A private pool and water views define this 10,189 sqft villa in Tilal Al Ghaf. This off-plan residence offers five bedrooms and six bathrooms, providing a generous layout for those seeking a home with significant space. The design emphasizes a connection to the outdoors, while the partly furnished status allows for personal touches to be added to the interior finishes.\n\nThe interior layout centers on a functional flow between living areas and private quarters. Each of the five bedrooms includes built-in wardrobes, with the primary suite featuring a walk-in closet for added storage. The kitchen and living spaces are designed to accommodate daily routines, while the partly furnished nature of the home provides a foundation of essential fixtures. Large windows throughout the villa invite natural light, highlighting the scale of the rooms and the potential for customized interior styling to suit individual preferences.\n\nTilal Al Ghaf is a vibrant community in Dubai known for its lush green environment and the recreational Lagoon Al Ghaf. Residents have access to 18 km of walking trails and 11 km of cycling paths. Nearby facilities include the Royal Grammar School Guildford and HMC Medical Center, ensuring essential services remain within reach.\n\nOffered at 25,500,000 AED. Contact us to schedule a viewing.",
+    description: "A private pool and water views define this 10,189 sqft villa in Tilal Al Ghaf. This off-plan residence offers five bedrooms and six bathrooms, providing a generous layout for those seeking a home with significant space. The design emphasizes a connection to the outdoors, while the partly furnished status allows for personal touches to be added to the interior finishes.\n\nThe interior layout centers on a functional flow between living areas and private quarters. Each of the five bedrooms includes built-in wardrobes, with the primary suite featuring a walk-in closet for added storage. The kitchen and living spaces are designed to accommodate daily routines, while the partly furnished nature of the home provides a foundation of essential fixtures. Large windows throughout the villa invite natural light, highlighting the scale of the rooms and the potential for customized interior styling to suit individual preferences.\n\nTilal Al Ghaf is a vibrant community in Dubai known for its lush green environment and the recreational Lagoon Al Ghaf. Residents have access to 18 km of walking trails and 11 km of cycling paths. Nearby facilities include the Royal Grammar School Guildford and HMC Medical Center, ensuring essential services remain within reach.\n\nOffered at 25,500,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Partly furnished",
       "Barbecue Area",
@@ -52,7 +51,7 @@
       "Covered Parking",
       "View of Water",
       "Shared Gym",
-      "Lobby in Building",
+      "Lobby in Building"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -60,8 +59,8 @@
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
-      dldPermit: "65405298359",
-    },
+      dldPermit: "65405298359"
+    }
   },
   {
     id: "bugatti-branded-residence",
@@ -81,7 +80,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784893378/26422_co4pre.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784893471/26420_xvn91v.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784893512/26406_vv6xxd.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784893533/26413_t2x69h.jpg",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1784893533/26413_t2x69h.jpg"
     ],
     status: "Off-plan",
     furnishing: "Semi-furnished",
@@ -95,10 +94,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "A private pool and water views define this 6,297 sqft villa in Nad Al Sheba. This off-plan residence offers five bedrooms and six bathrooms, providing a substantial footprint for those seeking a custom living environment. The semi-furnished layout allows for personal touches while ensuring the core infrastructure is ready for immediate use upon completion.\n\nThe interior spaces are designed to accommodate a variety of needs, with generous living and dining areas that flow naturally toward the outdoor terrace. Each of the five bedrooms includes built-in wardrobes, while the primary suite features a dedicated walk-in closet for added organization. The kitchen and bathrooms are finished with quality materials, reflecting a practical approach to daily living. Large windows throughout the home invite natural light, creating a bright atmosphere that connects the interior to the surrounding landscape. The inclusion of a maid's room adds further utility to the floor plan.\n\nNad Al Sheba is a well-connected community located south of Dubai Creek, bordered by Sheikh Mohammed bin Zayed Road and Al Khail Road. The area is known for its proximity to the Meydan Racecourse and various educational institutions, offering a balanced environment for residents. Access to major transport links makes commuting straightforward.\n\nOffered at 14,750,000 AED. Contact us to schedule a viewing.",
+    description: "A private pool and water views define this 6,297 sqft villa in Nad Al Sheba. This off-plan residence offers five bedrooms and six bathrooms, providing a substantial footprint for those seeking a custom living environment. The semi-furnished layout allows for personal touches while ensuring the core infrastructure is ready for immediate use upon completion.\n\nThe interior spaces are designed to accommodate a variety of needs, with generous living and dining areas that flow naturally toward the outdoor terrace. Each of the five bedrooms includes built-in wardrobes, while the primary suite features a dedicated walk-in closet for added organization. The kitchen and bathrooms are finished with quality materials, reflecting a practical approach to daily living. Large windows throughout the home invite natural light, creating a bright atmosphere that connects the interior to the surrounding landscape. The inclusion of a maid's room adds further utility to the floor plan.\n\nNad Al Sheba is a well-connected community located south of Dubai Creek, bordered by Sheikh Mohammed bin Zayed Road and Al Khail Road. The area is known for its proximity to the Meydan Racecourse and various educational institutions, offering a balanced environment for residents. Access to major transport links makes commuting straightforward.\n\nOffered at 14,750,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Partly furnished",
       "Central A/C",
@@ -117,7 +115,7 @@
       "Shared Pool",
       "Shared Gym",
       "View of Landmark",
-      "Children's Pool",
+      "Children's Pool"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -126,9 +124,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "65777017520",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786007544/WhatsApp_Image_2026-08-05_at_3.20.03_PM_g7mcah.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786007544/WhatsApp_Image_2026-08-05_at_3.20.03_PM_g7mcah.jpg"
+    }
   },
   {
     id: "district-one-west-phase-1",
@@ -149,7 +146,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784957794/Asset-2q_fmo3hp.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784957848/Asset_13dsf_iwzgtc.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784957867/Asset_10dsf_dm67nl.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957893/Asset_11dsf_tnok75.jpg",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957893/Asset_11dsf_tnok75.jpg"
     ],
     status: "Off-plan",
     furnishing: "Semi-furnished",
@@ -163,10 +160,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "Spanning 10,549 sqft, this five-bedroom villa in Mohammed Bin Rashid City offers a substantial footprint for comfortable living. The residence includes six bathrooms and a dedicated study, providing ample space for both relaxation and productivity. As an off-plan property, it presents a unique opportunity to secure a home in a developing, well-connected community. The semi-furnished status allows for a balance of essential fixtures while leaving room for personal interior choices.\n\nThe interior layout is designed to maximize the generous square footage, with large living areas that flow naturally into the private outdoor spaces. The kitchen and living zones are planned to accommodate daily routines, while the bedrooms feature built-in wardrobes and walk-in closets for organized storage. Large windows throughout the home invite natural light, highlighting the quality of the finishes. The inclusion of a private garden and a private jacuzzi adds a layer of personal comfort to the residence, making it a practical choice for those seeking a home with significant room to grow.\n\nMohammed Bin Rashid City is a central hub in Dubai, offering proximity to major roads like Al Khail Road and Sheikh Mohammed Bin Zayed Road. Residents benefit from being near key landmarks and essential services, including schools like Clarion School and various medical centers.\n\nOffered at 39,000,000 AED. Contact us to schedule a viewing.",
+    description: "Spanning 10,549 sqft, this five-bedroom villa in Mohammed Bin Rashid City offers a substantial footprint for comfortable living. The residence includes six bathrooms and a dedicated study, providing ample space for both relaxation and productivity. As an off-plan property, it presents a unique opportunity to secure a home in a developing, well-connected community. The semi-furnished status allows for a balance of essential fixtures while leaving room for personal interior choices.\n\nThe interior layout is designed to maximize the generous square footage, with large living areas that flow naturally into the private outdoor spaces. The kitchen and living zones are planned to accommodate daily routines, while the bedrooms feature built-in wardrobes and walk-in closets for organized storage. Large windows throughout the home invite natural light, highlighting the quality of the finishes. The inclusion of a private garden and a private jacuzzi adds a layer of personal comfort to the residence, making it a practical choice for those seeking a home with significant room to grow.\n\nMohammed Bin Rashid City is a central hub in Dubai, offering proximity to major roads like Al Khail Road and Sheikh Mohammed Bin Zayed Road. Residents benefit from being near key landmarks and essential services, including schools like Clarion School and various medical centers.\n\nOffered at 39,000,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Balcony",
       "Barbecue Area",
@@ -184,7 +180,7 @@
       "View of Landmark",
       "Children's Play Area",
       "Lobby in Building",
-      "Children's Pool",
+      "Children's Pool"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -193,9 +189,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "65510527287",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786007744/WhatsApp_Image_2026-08-05_at_3.21.44_PM_scvx4g.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786007744/WhatsApp_Image_2026-08-05_at_3.21.44_PM_scvx4g.jpg"
+    }
   },
   {
     id: "district-one-west-corner-park",
@@ -216,7 +211,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784957794/Asset-2q_fmo3hp.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784957848/Asset_13dsf_iwzgtc.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784957867/Asset_10dsf_dm67nl.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957893/Asset_11dsf_tnok75.jpg",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957893/Asset_11dsf_tnok75.jpg"
     ],
     status: "Resale",
     furnishing: "Unfurnished",
@@ -231,10 +226,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "GPG is pleased to offer you a luxury 5-bedroom villa for resale in a lagoon community located at Mohammed Bin Rashid Al Maktoum City, District One West Phase 1 by Meydan.\n\nThis corner park-facing unit is just a 2-minute walk to the lagoon. The residence includes five bedrooms, six bathrooms, and a plot area of 8,461 sqft. Offered unfurnished, it presents a unique opportunity to secure a home in one of Dubai's most sought-after waterfront communities.\n\nDistrict One West is a recently launched super luxury project in the developing area of Mohammed Bin Rashid Al Maktoum City. Future residents will always feel comfortable and secure in these unique independent villas, which feature contemporary designs and thoughtful layouts. Apart from the luxury amenities appreciated by occupants of any age, District One West will also offer a school and a kindergarten.\n\nOffered at 18,500,000 AED. Contact us to schedule a viewing.",
+    description: "GPG is pleased to offer you a luxury 5-bedroom villa for resale in a lagoon community located at Mohammed Bin Rashid Al Maktoum City, District One West Phase 1 by Meydan.\n\nThis corner park-facing unit is just a 2-minute walk to the lagoon. The residence includes five bedrooms, six bathrooms, and a plot area of 8,461 sqft. Offered unfurnished, it presents a unique opportunity to secure a home in one of Dubai's most sought-after waterfront communities.\n\nDistrict One West is a recently launched super luxury project in the developing area of Mohammed Bin Rashid Al Maktoum City. Future residents will always feel comfortable and secure in these unique independent villas, which feature contemporary designs and thoughtful layouts. Apart from the luxury amenities appreciated by occupants of any age, District One West will also offer a school and a kindergarten.\n\nOffered at 18,500,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Clubhouse",
       "Lagoon Boardwalk",
@@ -244,7 +238,7 @@
       "Green Corridor (Pedestrian Paths)",
       "Swimmable Lagoon and Sandy Beaches",
       "School",
-      "Mosque",
+      "Mosque"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -253,9 +247,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "65510526211",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786007887/WhatsApp_Image_2026-08-05_at_3.22.37_PM_wd4gde.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786007887/WhatsApp_Image_2026-08-05_at_3.22.37_PM_wd4gde.jpg"
+    }
   },
   {
     id: "lumena-business-bay",
@@ -278,7 +271,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784959853/14_ncqmf5.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784959876/15_oh9sjs.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784959897/13_migcrs.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784973176/8_suxedg.jpg",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1784973176/8_suxedg.jpg"
     ],
     status: "Q4 2029",
     furnishing: "Unfurnished",
@@ -291,10 +284,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "GPG is proud to offer you the opportunity to bring luxury to your business in Lumena By Omniyat, Business Bay, Dubai.\n\nThis office space spans 4,582 sqft with handover in Q4 2029. Offered unfurnished in shell-and-core layout, it presents a unique opportunity to customize every detail to your business needs in one of Dubai's most prestigious commercial addresses.\n\nLocated at Sheikh Zayed Road, at the entrance of Business Bay, Lumena offers direct entry and exit to Sheikh Zayed Road, walking distance to Business Bay Metro Station, and quick access to Downtown Dubai (3 minutes), DIFC (5 minutes), Dubai Mall (5 minutes), City Walk (7 minutes), Dubai International Airport (15 minutes), Jumeirah Beach (10 minutes), Dubai Marina (18 minutes), and Palm Jumeirah (20 minutes).\n\nLumena by Omniyat is Dubai's next landmark for ultra-luxury commercial workspaces, located at the gateway of Business Bay on Sheikh Zayed Road. Rising approximately 260 meters, this architectural masterpiece redefines what it means to work in style and sophistication. Designed as a freehold commercial tower, Lumena offers a limited collection of premium office suites, half-floor, and full-floor unitsâ€”each featuring floor-to-ceiling glass, panoramic city views, and the flexibility of shell-and-core layouts to customize every detail to your business needs.\n\nOffered at 26,691,000 AED. Contact us to schedule a viewing.",
+    description: "GPG is proud to offer you the opportunity to bring luxury to your business in Lumena By Omniyat, Business Bay, Dubai.\n\nThis office space spans 4,582 sqft with handover in Q4 2029. Offered unfurnished in shell-and-core layout, it presents a unique opportunity to customize every detail to your business needs in one of Dubai's most prestigious commercial addresses.\n\nLocated at Sheikh Zayed Road, at the entrance of Business Bay, Lumena offers direct entry and exit to Sheikh Zayed Road, walking distance to Business Bay Metro Station, and quick access to Downtown Dubai (3 minutes), DIFC (5 minutes), Dubai Mall (5 minutes), City Walk (7 minutes), Dubai International Airport (15 minutes), Jumeirah Beach (10 minutes), Dubai Marina (18 minutes), and Palm Jumeirah (20 minutes).\n\nLumena by Omniyat is Dubai's next landmark for ultra-luxury commercial workspaces, located at the gateway of Business Bay on Sheikh Zayed Road. Rising approximately 260 meters, this architectural masterpiece redefines what it means to work in style and sophistication. Designed as a freehold commercial tower, Lumena offers a limited collection of premium office suites, half-floor, and full-floor unitsâ€”each featuring floor-to-ceiling glass, panoramic city views, and the flexibility of shell-and-core layouts to customize every detail to your business needs.\n\nOffered at 26,691,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Shared Pool",
@@ -303,7 +295,7 @@
       "Shared Gym",
       "Lobby in Building",
       "Covered Parking",
-      "Dining in building",
+      "Dining in building"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -312,9 +304,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71788545505",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786008133/WhatsApp_Image_2026-08-05_at_3.24.02_PM_uz5uof.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786008133/WhatsApp_Image_2026-08-05_at_3.24.02_PM_uz5uof.jpg"
+    }
   },
   {
     id: "farm-grove-the-valley",
@@ -336,7 +327,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784967766/7_lq1xsb.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784967785/6_dcmczi.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784967804/1.3_oslsmd.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784967841/1.2_caey7k.jpg",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1784967841/1.2_caey7k.jpg"
     ],
     status: "Resale",
     furnishing: "Unfurnished",
@@ -351,17 +342,16 @@
       downPct: 20,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "GPG is pleased to offer you this 4 Bedroom Villa for sale in Farm Grove, The Valley.\n\nThis residence features 4 bedrooms with a maid's room, spanning 3,390.63 sqft with a total plot size of 3,741 sqft. Offered unfurnished at AED 4,900,000, it presents an exceptional opportunity in one of Dubai's most sought-after villa communities.\n\nFarm Grove is an exclusive villa community in The Valley, Dubai, offering elegant 4 & 5-bedroom villas with nature-inspired architecture, spacious layouts, and modern finishes. Designed for comfort and luxury, it blends serene green surroundings with a vibrant urban lifestyle.\n\nSituated on Dubaiâ€“Al Ain Road (E66), the community is 25 minutes from Downtown Dubai, 30 minutes from Dubai International Airport, with easy access to major highways and city hotspots.\n\nOffered at 4,900,000 AED. Contact us to schedule a viewing.",
+    description: "GPG is pleased to offer you this 4 Bedroom Villa for sale in Farm Grove, The Valley.\n\nThis residence features 4 bedrooms with a maid's room, spanning 3,390.63 sqft with a total plot size of 3,741 sqft. Offered unfurnished at AED 4,900,000, it presents an exceptional opportunity in one of Dubai's most sought-after villa communities.\n\nFarm Grove is an exclusive villa community in The Valley, Dubai, offering elegant 4 & 5-bedroom villas with nature-inspired architecture, spacious layouts, and modern finishes. Designed for comfort and luxury, it blends serene green surroundings with a vibrant urban lifestyle.\n\nSituated on Dubaiâ€“Al Ain Road (E66), the community is 25 minutes from Downtown Dubai, 30 minutes from Dubai International Airport, with easy access to major highways and city hotspots.\n\nOffered at 4,900,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Community Gardens & Picnic Areas",
       "Kids' Play Zones & Pet Park",
       "Fitness Centre & Yoga Platform",
       "Indoor & Outdoor Multipurpose Spaces",
       "Desert Majlis & Open Lawns",
-      "Town Centre with Retail, Dining & CafÃ©s",
+      "Town Centre with Retail, Dining & CafÃ©s"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -370,9 +360,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "65686292671",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786008739/WhatsApp_Image_2026-08-05_at_3.25.29_PM_ppgya3.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786008739/WhatsApp_Image_2026-08-05_at_3.25.29_PM_ppgya3.jpg"
+    }
   },
   {
     id: "lumena-business-bay-4264",
@@ -395,7 +384,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784959853/14_ncqmf5.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784959876/15_oh9sjs.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784959897/13_migcrs.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784973129/4_du7lny.jpg",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1784973129/4_du7lny.jpg"
     ],
     status: "Q4 2029",
     furnishing: "Unfurnished",
@@ -408,10 +397,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "GPG is proud to offer you the opportunity to bring luxury to your business in Lumena By Omniyat, Business Bay, Dubai.\n\nThis office space spans 4,264.12 sqft with handover in Q4 2029. Offered unfurnished in shell-and-core layout, it presents a unique opportunity to customize every detail to your business needs in one of Dubai's most prestigious commercial addresses.\n\nLocated at Sheikh Zayed Road, at the entrance of Business Bay, Lumena Alta offers direct entry and exit to Sheikh Zayed Road, walking distance to Business Bay Metro Station, and quick access to Downtown Dubai (3 minutes), DIFC (5 minutes), Dubai Mall (5 minutes), City Walk (7 minutes), Dubai International Airport (15 minutes), Jumeirah Beach (10 minutes), Dubai Marina (18 minutes), and Palm Jumeirah (20 minutes).\n\nLumena by Omniyat is Dubai's next landmark for ultra-luxury commercial workspaces, located at the gateway of Business Bay on Sheikh Zayed Road. Rising approximately 260 meters, this architectural masterpiece redefines what it means to work in style and sophistication. Designed as a freehold commercial tower, Lumena offers a limited collection of premium office suites featuring floor-to-ceiling glass, panoramic city views, and the flexibility of shell-and-core layouts to customize every detail to your business needs.\n\nOffered at 26,000,000 AED. Contact us to schedule a viewing.",
+    description: "GPG is proud to offer you the opportunity to bring luxury to your business in Lumena By Omniyat, Business Bay, Dubai.\n\nThis office space spans 4,264.12 sqft with handover in Q4 2029. Offered unfurnished in shell-and-core layout, it presents a unique opportunity to customize every detail to your business needs in one of Dubai's most prestigious commercial addresses.\n\nLocated at Sheikh Zayed Road, at the entrance of Business Bay, Lumena Alta offers direct entry and exit to Sheikh Zayed Road, walking distance to Business Bay Metro Station, and quick access to Downtown Dubai (3 minutes), DIFC (5 minutes), Dubai Mall (5 minutes), City Walk (7 minutes), Dubai International Airport (15 minutes), Jumeirah Beach (10 minutes), Dubai Marina (18 minutes), and Palm Jumeirah (20 minutes).\n\nLumena by Omniyat is Dubai's next landmark for ultra-luxury commercial workspaces, located at the gateway of Business Bay on Sheikh Zayed Road. Rising approximately 260 meters, this architectural masterpiece redefines what it means to work in style and sophistication. Designed as a freehold commercial tower, Lumena offers a limited collection of premium office suites featuring floor-to-ceiling glass, panoramic city views, and the flexibility of shell-and-core layouts to customize every detail to your business needs.\n\nOffered at 26,000,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Shared Pool",
@@ -420,7 +408,7 @@
       "Shared Gym",
       "Lobby in Building",
       "Covered Parking",
-      "Dining in building",
+      "Dining in building"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -429,9 +417,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71788545505",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786014286/WhatsApp_Image_2026-08-05_at_3.26.52_PM_ozafcl.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786014286/WhatsApp_Image_2026-08-05_at_3.26.52_PM_ozafcl.jpg"
+    }
   },
   {
     id: "bugatti-residences-binghatti",
@@ -451,7 +438,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784994888/Asset_6FDG_npundh.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784994939/Asset_8FDG_ziprfo.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784995033/Asset_19FDG_q6ssrd.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784995367/Asset_13FDG_py6mxr.png",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1784995367/Asset_13FDG_py6mxr.png"
     ],
     status: "Off-plan",
     furnishing: "Furnished",
@@ -466,10 +453,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "GPG is delighted to offer this 4 Bedroom Luxury Apartment in Bugatti Residences by Binghatti, Business Bay, Dubai.\n\nThis Riviera - Monaco residence features 4 bedrooms, 5 bathrooms, a total size of 7,205 sqft, and a terrace of 1,883.25 sqft. Enjoy panoramic views of Burj Khalifa, The Residence Beach, amenities, Business Bay, and the Water Canal. Offered furnished at AED 34,641,500, it presents an exceptional opportunity in one of Dubai's most iconic branded residences.\n\nBugatti Residences at Business Bay is the latest architectural masterpiece by Binghatti Developers. This exclusive 43-storey faÃ§ade is a true expert craftsmanship and heritage driven by the French luxury brand, making it an ideal destination in Dubai. Inspired by the legendary Bugatti hyper sports cars, these residences are set to offer an unparalleled fusion of cutting-edge design, automotive artistry, and world-class amenities.\n\nThis luxury-inspired oasis in Dubai is inspired by the exquisiteness of nature, where the Riviera mansions are named after the iconic destinations Cannes, St Tropez, and Monaco. Each residence will feature spacious interiors with panoramic views of the Dubai skyline, creating an immersive environment that seamlessly blends the outside world with the meticulously designed interiors. State-of-the-art amenities, including a Riviera-inspired beach, private pool, fitness center, spa, and concierge services, will cater to the residents' every need, ensuring a lifestyle of utmost luxury and convenience.\n\nOffered at 34,641,500 AED. Contact us to schedule a viewing.",
+    description: "GPG is delighted to offer this 4 Bedroom Luxury Apartment in Bugatti Residences by Binghatti, Business Bay, Dubai.\n\nThis Riviera - Monaco residence features 4 bedrooms, 5 bathrooms, a total size of 7,205 sqft, and a terrace of 1,883.25 sqft. Enjoy panoramic views of Burj Khalifa, The Residence Beach, amenities, Business Bay, and the Water Canal. Offered furnished at AED 34,641,500, it presents an exceptional opportunity in one of Dubai's most iconic branded residences.\n\nBugatti Residences at Business Bay is the latest architectural masterpiece by Binghatti Developers. This exclusive 43-storey faÃ§ade is a true expert craftsmanship and heritage driven by the French luxury brand, making it an ideal destination in Dubai. Inspired by the legendary Bugatti hyper sports cars, these residences are set to offer an unparalleled fusion of cutting-edge design, automotive artistry, and world-class amenities.\n\nThis luxury-inspired oasis in Dubai is inspired by the exquisiteness of nature, where the Riviera mansions are named after the iconic destinations Cannes, St Tropez, and Monaco. Each residence will feature spacious interiors with panoramic views of the Dubai skyline, creating an immersive environment that seamlessly blends the outside world with the meticulously designed interiors. State-of-the-art amenities, including a Riviera-inspired beach, private pool, fitness center, spa, and concierge services, will cater to the residents' every need, ensuring a lifestyle of utmost luxury and convenience.\n\nOffered at 34,641,500 AED. Contact us to schedule a viewing.",
     amenities: [
       "Furnished",
       "Central A/C",
@@ -491,7 +477,7 @@
       "Shared Pool",
       "Shared Spa",
       "View of Landmark",
-      "Children's Pool",
+      "Children's Pool"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -500,9 +486,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71508203559",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786014477/WhatsApp_Image_2026-08-05_at_3.28.23_PM_mfdgoj.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786014477/WhatsApp_Image_2026-08-05_at_3.28.23_PM_mfdgoj.jpg"
+    }
   },
   {
     id: "bugatti-residences-binghatti-6788",
@@ -522,7 +507,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784994888/Asset_6FDG_npundh.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784994939/Asset_8FDG_ziprfo.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1784995033/Asset_19FDG_q6ssrd.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784995367/Asset_13FDG_py6mxr.png",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1784995367/Asset_13FDG_py6mxr.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -536,10 +521,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "GPG is delighted to offer this 4 Bedroom Luxury Apartment in Bugatti Residences by Binghatti, Business Bay, Dubai.\n\nThis Riviera - Monaco residence features 4 bedrooms, 5 bathrooms, a total size of 6,788 sqft, and a terrace of 1,696.39 sqft. Enjoy panoramic views of Burj Khalifa, The Residence Beach, amenities, Business Bay, and the Water Canal. Offered unfurnished at AED 33,447,250, it presents an exceptional opportunity in one of Dubai's most iconic branded residences.\n\nBugatti Residences at Business Bay is the latest architectural masterpiece by Binghatti Developers. This exclusive 43-storey faÃ§ade is a true expert craftsmanship and heritage driven by the French luxury brand, making it an ideal destination in Dubai. Inspired by the legendary Bugatti hyper sports cars, these residences are set to offer an unparalleled fusion of cutting-edge design, automotive artistry, and world-class amenities.\n\nThis luxury-inspired oasis in Dubai is inspired by the exquisiteness of nature, where the Riviera mansions are named after the iconic destinations Cannes, St Tropez, and Monaco. Each residence will feature spacious interiors with panoramic views of the Dubai skyline, creating an immersive environment that seamlessly blends the outside world with the meticulously designed interiors. State-of-the-art amenities, including a Riviera-inspired beach, private pool, fitness center, spa, and concierge services, will cater to the residents' every need, ensuring a lifestyle of utmost luxury and convenience.\n\nOffered at 33,447,250 AED. Contact us to schedule a viewing.",
+    description: "GPG is delighted to offer this 4 Bedroom Luxury Apartment in Bugatti Residences by Binghatti, Business Bay, Dubai.\n\nThis Riviera - Monaco residence features 4 bedrooms, 5 bathrooms, a total size of 6,788 sqft, and a terrace of 1,696.39 sqft. Enjoy panoramic views of Burj Khalifa, The Residence Beach, amenities, Business Bay, and the Water Canal. Offered unfurnished at AED 33,447,250, it presents an exceptional opportunity in one of Dubai's most iconic branded residences.\n\nBugatti Residences at Business Bay is the latest architectural masterpiece by Binghatti Developers. This exclusive 43-storey faÃ§ade is a true expert craftsmanship and heritage driven by the French luxury brand, making it an ideal destination in Dubai. Inspired by the legendary Bugatti hyper sports cars, these residences are set to offer an unparalleled fusion of cutting-edge design, automotive artistry, and world-class amenities.\n\nThis luxury-inspired oasis in Dubai is inspired by the exquisiteness of nature, where the Riviera mansions are named after the iconic destinations Cannes, St Tropez, and Monaco. Each residence will feature spacious interiors with panoramic views of the Dubai skyline, creating an immersive environment that seamlessly blends the outside world with the meticulously designed interiors. State-of-the-art amenities, including a Riviera-inspired beach, private pool, fitness center, spa, and concierge services, will cater to the residents' every need, ensuring a lifestyle of utmost luxury and convenience.\n\nOffered at 33,447,250 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Central A/C",
@@ -559,7 +543,7 @@
       "Private Pool",
       "Security",
       "Walk-in Closet",
-      "Lobby in Building",
+      "Lobby in Building"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -568,9 +552,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71508207579",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786014607/WhatsApp_Image_2026-08-05_at_3.29.38_PM_wzrzpj.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786014607/WhatsApp_Image_2026-08-05_at_3.29.38_PM_wzrzpj.jpg"
+    }
   },
   {
     id: "beachgate-by-address-penthouse",
@@ -596,7 +579,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785076629/1_comyhs.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785076649/2_daegae.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785076669/3_dg3zcu.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076694/33_u9mntd.jpg",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076694/33_u9mntd.jpg"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -610,10 +593,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "GPG is presenting this 4 Bedroom Penthouse at EMAAR Beachfront - The Beachgate By Address, Dubai Harbour.\n\nThis residence features 4 bedrooms, 5 bathrooms, a total area of 3,047 sqft, full sea views, and Palm Jumeirah views. Offered unfurnished at AED 14,353,964, it presents an exceptional opportunity in one of Dubai's most prestigious waterfront communities.\n\nResidents enjoy private access to the beach, proximity to the marina and yacht club, an infinity-edge swimming pool, Miami-style pool deck, BBQ areas, children's play areas, tropical garden rooms, a multi-level podium, and a fully equipped fitness centre.\n\nBeachgate by Address is ideally located in the southeastern part of Emaar Beachfront, right beside the renowned Palace Beach Residence by Emaar. This prime location offers residents exceptional connectivity, with easy access to Sheikh Zayed Roadâ€”Dubai's longest highwayâ€”linking directly to key areas across the city. The Emaar Beachfront master plan also features a dedicated internal monorail system, connecting the community to Bluewaters Island and Palm Jumeirah. Future developments include a pedestrian bridge and water boat stations, enhancing mobility and lifestyle convenience.\n\nOffered at 14,353,964 AED. Contact us to schedule a viewing.",
+    description: "GPG is presenting this 4 Bedroom Penthouse at EMAAR Beachfront - The Beachgate By Address, Dubai Harbour.\n\nThis residence features 4 bedrooms, 5 bathrooms, a total area of 3,047 sqft, full sea views, and Palm Jumeirah views. Offered unfurnished at AED 14,353,964, it presents an exceptional opportunity in one of Dubai's most prestigious waterfront communities.\n\nResidents enjoy private access to the beach, proximity to the marina and yacht club, an infinity-edge swimming pool, Miami-style pool deck, BBQ areas, children's play areas, tropical garden rooms, a multi-level podium, and a fully equipped fitness centre.\n\nBeachgate by Address is ideally located in the southeastern part of Emaar Beachfront, right beside the renowned Palace Beach Residence by Emaar. This prime location offers residents exceptional connectivity, with easy access to Sheikh Zayed Roadâ€”Dubai's longest highwayâ€”linking directly to key areas across the city. The Emaar Beachfront master plan also features a dedicated internal monorail system, connecting the community to Bluewaters Island and Palm Jumeirah. Future developments include a pedestrian bridge and water boat stations, enhancing mobility and lifestyle convenience.\n\nOffered at 14,353,964 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Private Beach Access",
@@ -631,7 +613,7 @@
       "Covered Parking",
       "Shared Gym",
       "Security",
-      "Lobby in Building",
+      "Lobby in Building"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -640,9 +622,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71430127601",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786014730/WhatsApp_Image_2026-08-05_at_3.31.59_PM_el8lxs.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786014730/WhatsApp_Image_2026-08-05_at_3.31.59_PM_el8lxs.jpg"
+    }
   },
   {
     id: "address-villas-tierra-oasis",
@@ -664,7 +645,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785090335/24603_j0qzcb.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785090358/24604_ojmfbw.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785090396/24602_jgp0q2.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785090428/24594_frgqjq.jpg",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785090428/24594_frgqjq.jpg"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -679,10 +660,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "This 4-bedroom villa spans 8,267 square feet and features a private pool with views of the water. The off-plan residence includes 5 bathrooms and provides a substantial footprint for custom interior design and personal layout preferences.\n\nThe unfurnished interior offers a flexible floor plan that allows for individual customization of the living areas. The layout incorporates a dedicated study for quiet work and a separate maid's room for additional utility. Each bedroom includes built-in wardrobes, while the primary suite features a walk-in closet for organized storage. The kitchen and living spaces remain open, providing a foundation for your own choice of finishes and furniture. Large windows throughout the home bring in natural light, highlighting the scale of the rooms and the potential for a comfortable, personalized living environment that suits your specific needs and daily routines.\n\nThis villa is situated in a development that provides access to various shared amenities and landmark views. The surrounding area is designed to accommodate residents with convenient access to communal spaces and essential services within the building complex.\n\nOffered at 13,450,000 AED. Contact us to schedule a viewing and discuss the details of this property.",
+    description: "This 4-bedroom villa spans 8,267 square feet and features a private pool with views of the water. The off-plan residence includes 5 bathrooms and provides a substantial footprint for custom interior design and personal layout preferences.\n\nThe unfurnished interior offers a flexible floor plan that allows for individual customization of the living areas. The layout incorporates a dedicated study for quiet work and a separate maid's room for additional utility. Each bedroom includes built-in wardrobes, while the primary suite features a walk-in closet for organized storage. The kitchen and living spaces remain open, providing a foundation for your own choice of finishes and furniture. Large windows throughout the home bring in natural light, highlighting the scale of the rooms and the potential for a comfortable, personalized living environment that suits your specific needs and daily routines.\n\nThis villa is situated in a development that provides access to various shared amenities and landmark views. The surrounding area is designed to accommodate residents with convenient access to communal spaces and essential services within the building complex.\n\nOffered at 13,450,000 AED. Contact us to schedule a viewing and discuss the details of this property.",
     amenities: [
       "Unfurnished",
       "Balcony",
@@ -703,7 +683,7 @@
       "View of Landmark",
       "Children's Pool",
       "Lobby in Building",
-      "Children's Play Area",
+      "Children's Play Area"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -712,9 +692,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "65724427581",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786014882/WhatsApp_Image_2026-08-05_at_3.33.16_PM_i8tuph.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786014882/WhatsApp_Image_2026-08-05_at_3.33.16_PM_i8tuph.jpg"
+    }
   },
   {
     id: "mercedes-benz-places-binghatti",
@@ -738,7 +717,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785091433/13837_osvouq.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785091478/13839_fmf0vl.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785091495/13840_vsbc9q.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091513/13841_w5c3ux.png",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091513/13841_w5c3ux.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -753,10 +732,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "This 2-bedroom apartment for sale in Mercedes Benz Places by Binghatti in Downtown Dubai offers a well-planned layout with expansive glazing and direct views towards Burj Khalifa, Downtown skyline and the canal. The home is designed with open-plan living areas and quality finishes across the living room, bedrooms and bathrooms.\n\nThis unfurnished residence features 2 bedrooms, 3 bathrooms, an open-plan living area, floor-to-ceiling windows, Burj Khalifa and canal views, Downtown skyline views, a balcony or terrace, wood-style flooring, and access to a high-end tower lobby.\n\nResidents enjoy an infinity-edge outdoor pool, indoor swimming pool, gym and wellness facilities, barbecue area, 24-hour security and CCTV, covered parking, concierge-style reception, and high-speed lifts.\n\nLocated in Downtown Dubai, the apartment benefits from direct proximity to major landmarks, retail and dining destinations. Burj Khalifa, Dubai Mall and the Dubai Fountain are within a short drive, while Burj Park and other outdoor spaces support an active lifestyle. The area is well connected via Financial Center Road, with taxis and buses easily accessible, and public beaches are reachable in around 15â€“20 minutes by car.\n\nOffered at 11,499,999 AED. Contact us to schedule a viewing.",
+    description: "This 2-bedroom apartment for sale in Mercedes Benz Places by Binghatti in Downtown Dubai offers a well-planned layout with expansive glazing and direct views towards Burj Khalifa, Downtown skyline and the canal. The home is designed with open-plan living areas and quality finishes across the living room, bedrooms and bathrooms.\n\nThis unfurnished residence features 2 bedrooms, 3 bathrooms, an open-plan living area, floor-to-ceiling windows, Burj Khalifa and canal views, Downtown skyline views, a balcony or terrace, wood-style flooring, and access to a high-end tower lobby.\n\nResidents enjoy an infinity-edge outdoor pool, indoor swimming pool, gym and wellness facilities, barbecue area, 24-hour security and CCTV, covered parking, concierge-style reception, and high-speed lifts.\n\nLocated in Downtown Dubai, the apartment benefits from direct proximity to major landmarks, retail and dining destinations. Burj Khalifa, Dubai Mall and the Dubai Fountain are within a short drive, while Burj Park and other outdoor spaces support an active lifestyle. The area is well connected via Financial Center Road, with taxis and buses easily accessible, and public beaches are reachable in around 15â€“20 minutes by car.\n\nOffered at 11,499,999 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Central A/C",
@@ -778,7 +756,7 @@
       "View of Water",
       "Shared Gym",
       "View of Landmark",
-      "Children's Pool",
+      "Children's Pool"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -787,9 +765,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71561624811",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786015015/WhatsApp_Image_2026-08-05_at_3.34.33_PM_itr9wh.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786015015/WhatsApp_Image_2026-08-05_at_3.34.33_PM_itr9wh.jpg"
+    }
   },
   {
     id: "mercedes-benz-places-binghatti-burj-khalifa-view",
@@ -813,7 +790,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785091414/13848_g0cr3b.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785091478/13839_fmf0vl.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785091495/13840_vsbc9q.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091513/13841_w5c3ux.png",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091513/13841_w5c3ux.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -827,10 +804,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "This 2-bedroom apartment for sale in Mercedes Benz Places by Binghatti in Downtown Dubai offers a furnished layout with spacious living areas and landmark city views. The home features multiple living zones, double-height spaces and contemporary finishes designed around large floor-to-ceiling windows.\n\nThis furnished residence features 2 bedrooms, 3 bathrooms, open-plan living and dining, double-height ceilings, floor-to-ceiling windows, Burj Khalifa and canal views, a balcony or terrace, wooden flooring, and access to a shared swimming pool.\n\nResidents enjoy access to rooftop and indoor pools with panoramic skyline views, landscaped garden areas and hotel-style lobby spaces with contemporary seating. The building design focuses on modern finishes, curated lighting and premium shared areas for everyday comfort.\n\nLocated in Downtown Dubai, the property offers direct access to a walkable community with malls, restaurants and cafes nearby. Burj Khalifa, Dubai Mall and Dubai Opera are all within a short drive, while public transport, taxis and bus links support convenient commuting across the city. Burj Park, fitness studios and nearby leisure facilities add further lifestyle benefits for residents.\n\nOffered at 10,299,999 AED. Contact us to schedule a viewing.",
+    description: "This 2-bedroom apartment for sale in Mercedes Benz Places by Binghatti in Downtown Dubai offers a furnished layout with spacious living areas and landmark city views. The home features multiple living zones, double-height spaces and contemporary finishes designed around large floor-to-ceiling windows.\n\nThis furnished residence features 2 bedrooms, 3 bathrooms, open-plan living and dining, double-height ceilings, floor-to-ceiling windows, Burj Khalifa and canal views, a balcony or terrace, wooden flooring, and access to a shared swimming pool.\n\nResidents enjoy access to rooftop and indoor pools with panoramic skyline views, landscaped garden areas and hotel-style lobby spaces with contemporary seating. The building design focuses on modern finishes, curated lighting and premium shared areas for everyday comfort.\n\nLocated in Downtown Dubai, the property offers direct access to a walkable community with malls, restaurants and cafes nearby. Burj Khalifa, Dubai Mall and Dubai Opera are all within a short drive, while public transport, taxis and bus links support convenient commuting across the city. Burj Park, fitness studios and nearby leisure facilities add further lifestyle benefits for residents.\n\nOffered at 10,299,999 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Built in Wardrobes",
@@ -844,7 +820,7 @@
       "Barbecue Area",
       "Covered Parking",
       "View of Water",
-      "Lobby in Building",
+      "Lobby in Building"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -853,9 +829,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71561622987",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786015160/WhatsApp_Image_2026-08-05_at_3.35.51_PM_p6s8lm.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786015160/WhatsApp_Image_2026-08-05_at_3.35.51_PM_p6s8lm.jpg"
+    }
   },
   {
     id: "bay-residences-dubai-islands-a4",
@@ -878,7 +853,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785095926/Asset_11lunagX_ofzuo1.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785095944/Asset_14lunagX_mmqs3z.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785095960/Asset_16lunagX_wdly0o.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785095974/Asset_20lunagX_tge2ox.png",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785095974/Asset_20lunagX_tge2ox.png"
     ],
     status: "Off-plan",
     furnishing: "Partly furnished",
@@ -892,10 +867,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "This 3-bedroom apartment spans 2,749 square feet and features private beach access, providing a unique outdoor space in Dubai. The off-plan residence includes 4 bathrooms and a study, offering a flexible layout for your needs.\n\nThe interior layout emphasizes comfort and utility, with semi-furnished interiors that allow for personal touches. The living area connects to a balcony, while the bedrooms are equipped with built-in wardrobes and a walk-in closet for storage. Central air conditioning maintains a consistent temperature throughout the home, ensuring a comfortable environment regardless of the season. The kitchen and living spaces are designed to maximize the floor area, providing a practical flow for daily activities. With the inclusion of a study, you have a dedicated area for work or quiet reflection, separate from the main living zones.\n\nThis residence is situated in a location that offers views of both water and landmarks. The building includes a lobby and security services, contributing to a managed living environment. Residents have access to various recreational options within the development, including pools and play areas.\n\nOffered at 8,418,080 AED. Contact us to get in touch for more details.",
+    description: "This 3-bedroom apartment spans 2,749 square feet and features private beach access, providing a unique outdoor space in Dubai. The off-plan residence includes 4 bathrooms and a study, offering a flexible layout for your needs.\n\nThe interior layout emphasizes comfort and utility, with semi-furnished interiors that allow for personal touches. The living area connects to a balcony, while the bedrooms are equipped with built-in wardrobes and a walk-in closet for storage. Central air conditioning maintains a consistent temperature throughout the home, ensuring a comfortable environment regardless of the season. The kitchen and living spaces are designed to maximize the floor area, providing a practical flow for daily activities. With the inclusion of a study, you have a dedicated area for work or quiet reflection, separate from the main living zones.\n\nThis residence is situated in a location that offers views of both water and landmarks. The building includes a lobby and security services, contributing to a managed living environment. Residents have access to various recreational options within the development, including pools and play areas.\n\nOffered at 8,418,080 AED. Contact us to get in touch for more details.",
     amenities: [
       "Partly furnished",
       "Balcony",
@@ -914,7 +888,7 @@
       "Children's Pool",
       "Private Garden",
       "Private Jacuzzi",
-      "Shared Spa",
+      "Shared Spa"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -923,9 +897,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71522435534",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786015312/WhatsApp_Image_2026-08-05_at_3.37.14_PM_plfaik.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786015312/WhatsApp_Image_2026-08-05_at_3.37.14_PM_plfaik.jpg"
+    }
   },
   {
     id: "saas-hills-dubai-science-park",
@@ -949,7 +922,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785112560/IMG-20250307-WA0015_p54x8j.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785112578/IMG-20250307-WA0017_osiuro.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785112594/IMG-20250307-WA0027_cxnczc.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112624/IMG-20250307-WA0025_fwppfx.jpg",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112624/IMG-20250307-WA0025_fwppfx.jpg"
     ],
     status: "Off-plan",
     furnishing: "Furnished",
@@ -963,10 +936,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "GPG is pleased to offer you this 4-bedroom fully furnished pool-view apartment in SAAS Hills, Dubai Science Park, Dubai.\n\nThis off-plan residence spans 3,541 sqft and includes 5 bathrooms, a spacious balcony, and 3 allocated parking spaces. Offered with a flexible 40/60 payment plan, it presents an exceptional opportunity in one of Dubai's most promising communities.\n\nExperience elevated luxury in this exclusive 4BR Sky Villa, set in the iconic twin towers of SAAS Hills. Boasting panoramic views, expansive layouts, and high-end finishes, this residence blends modern sophistication with resort-style living. Enjoy access to world-class amenities, smart-home features, and wellness-focused design â€” a truly rare opportunity in one of Dubai's most promising communities.\n\nResidents benefit from gym and fitness centres, indoor and outdoor swimming pools, jacuzzi and spa facilities, sauna and steam rooms, yoga and sports courts, running and cycling tracks, kids' play areas, cinema and gaming zones, workspaces and meeting rooms, shops and restaurants, BBQ and social areas, 24/7 security, smart home features, and parking with EV charging.\n\nLocated with excellent connectivity: 9 minutes to Sheikh Zayed Road, 5 minutes to Al Khail Road, 3 minutes to Dubai Hills Mall, 12 minutes to Burj Al Arab, 25 minutes to Al Maktoum International Airport, 20 minutes to Dubai International Airport, 3 minutes to Repton School, 5 minutes to King's College Hospital, and 3 minutes to the nearest park.\n\nOffered at 7,500,000 AED. Contact us to schedule a viewing.",
+    description: "GPG is pleased to offer you this 4-bedroom fully furnished pool-view apartment in SAAS Hills, Dubai Science Park, Dubai.\n\nThis off-plan residence spans 3,541 sqft and includes 5 bathrooms, a spacious balcony, and 3 allocated parking spaces. Offered with a flexible 40/60 payment plan, it presents an exceptional opportunity in one of Dubai's most promising communities.\n\nExperience elevated luxury in this exclusive 4BR Sky Villa, set in the iconic twin towers of SAAS Hills. Boasting panoramic views, expansive layouts, and high-end finishes, this residence blends modern sophistication with resort-style living. Enjoy access to world-class amenities, smart-home features, and wellness-focused design â€” a truly rare opportunity in one of Dubai's most promising communities.\n\nResidents benefit from gym and fitness centres, indoor and outdoor swimming pools, jacuzzi and spa facilities, sauna and steam rooms, yoga and sports courts, running and cycling tracks, kids' play areas, cinema and gaming zones, workspaces and meeting rooms, shops and restaurants, BBQ and social areas, 24/7 security, smart home features, and parking with EV charging.\n\nLocated with excellent connectivity: 9 minutes to Sheikh Zayed Road, 5 minutes to Al Khail Road, 3 minutes to Dubai Hills Mall, 12 minutes to Burj Al Arab, 25 minutes to Al Maktoum International Airport, 20 minutes to Dubai International Airport, 3 minutes to Repton School, 5 minutes to King's College Hospital, and 3 minutes to the nearest park.\n\nOffered at 7,500,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Furnished",
       "Central A/C",
@@ -985,7 +957,7 @@
       "Study",
       "Shared Spa",
       "View of Landmark",
-      "Children's Pool",
+      "Children's Pool"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -994,9 +966,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71645569395",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786015443/WhatsApp_Image_2026-08-05_at_3.38.10_PM_rep2lo.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786015443/WhatsApp_Image_2026-08-05_at_3.38.10_PM_rep2lo.jpg"
+    }
   },
   {
     id: "golf-lane-emaar-south",
@@ -1018,7 +989,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785113450/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-0121_zof2zr.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785113476/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-01657_rbli5u.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785113523/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-010_lsinlc.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785113554/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-07_mtdjvr.png",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785113554/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-07_mtdjvr.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1032,10 +1003,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "GPG is pleased to offer you this 5-bedroom villa for sale in Golf Lane, Dubai South, Dubai.\n\nThis off-plan residence includes 6 bathrooms, a plot size of 6,097 sqft, and a BUA of 4,857 sqft, offering generous space for family living with full golf course views.\n\nGolf Lane at Emaar South is a prestigious residential community nestled in the heart of Emaar South, offering convenient access to major landmarks of Dubai. Residents can enjoy breathtaking views of an 18-hole championship golf course, creating a serene and sophisticated living experience. The community boasts an array of premium amenities, including parks, playgrounds, swimming pools, fitness centers, and scenic walking trails. Perfect for families and professionals, Golf Lane combines tranquility with connectivity, located close to Al Maktoum International Airport and the Expo 2020 Dubai site.\n\nOffered at 7,666,861 AED. Contact us to schedule a viewing.",
+    description: "GPG is pleased to offer you this 5-bedroom villa for sale in Golf Lane, Dubai South, Dubai.\n\nThis off-plan residence includes 6 bathrooms, a plot size of 6,097 sqft, and a BUA of 4,857 sqft, offering generous space for family living with full golf course views.\n\nGolf Lane at Emaar South is a prestigious residential community nestled in the heart of Emaar South, offering convenient access to major landmarks of Dubai. Residents can enjoy breathtaking views of an 18-hole championship golf course, creating a serene and sophisticated living experience. The community boasts an array of premium amenities, including parks, playgrounds, swimming pools, fitness centers, and scenic walking trails. Perfect for families and professionals, Golf Lane combines tranquility with connectivity, located close to Al Maktoum International Airport and the Expo 2020 Dubai site.\n\nOffered at 7,666,861 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Built in Wardrobes",
@@ -1051,7 +1021,7 @@
       "Covered Parking",
       "Security",
       "View of Landmark",
-      "Children's Pool",
+      "Children's Pool"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -1060,9 +1030,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "65617354132",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786016729/WhatsApp_Image_2026-08-05_at_4.52.02_PM_qtgn6i.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786016729/WhatsApp_Image_2026-08-05_at_4.52.02_PM_qtgn6i.jpg"
+    }
   },
   {
     id: "jumeirah-residences-emirates-tower-a",
@@ -1086,7 +1055,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785114479/24112_kvpb0a.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785114566/24118_hxwrfx.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785114587/24116_ltwkmn.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785114605/24120_ryv3ne.png",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785114605/24120_ryv3ne.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1100,10 +1069,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "This 2-bedroom apartment for sale in Jumeirah Residences Emirates Towers on Sheikh Zayed Road offers a contemporary layout with expansive city views. Located on a higher floor, it features multiple living areas oriented towards the Dubai skyline and downtown landmarks. The unit is offered unfurnished, allowing flexibility to design the space to your preferences.\n\nThis unfurnished residence features 2 bedrooms, 3 bathrooms, open-plan living and dining, multiple living rooms, floor-to-ceiling windows, downtown city skyline views, high-end finishes, and a high-floor setting within a residential tower in a mixed-use complex.\n\nResidents enjoy infinity-style swimming pools, indoor and outdoor gyms, a fitness studio with spin bikes, yoga and wellness studio, spa and treatment rooms, jacuzzi and soaking facilities, rooftop leisure decks, padel or tennis court, landscaped terraces and lounge areas, 24-hour security and CCTV, covered parking for residents, and access to on-site restaurants and cafes.\n\nSituated within a landmark complex on Sheikh Zayed Road, the apartment benefits from direct access to a well-connected central corridor in Dubai. The location offers quick connectivity to Downtown Dubai, DIFC, Business Bay and the wider city via major roads. Nearby, residents will find retail at The Boulevard, The Dubai Mall, Zabeel Park and other popular destinations, as well as metro stations along the Red Line for convenient public transport access.\n\nOffered at 8,016,960 AED. Contact us to schedule a viewing.",
+    description: "This 2-bedroom apartment for sale in Jumeirah Residences Emirates Towers on Sheikh Zayed Road offers a contemporary layout with expansive city views. Located on a higher floor, it features multiple living areas oriented towards the Dubai skyline and downtown landmarks. The unit is offered unfurnished, allowing flexibility to design the space to your preferences.\n\nThis unfurnished residence features 2 bedrooms, 3 bathrooms, open-plan living and dining, multiple living rooms, floor-to-ceiling windows, downtown city skyline views, high-end finishes, and a high-floor setting within a residential tower in a mixed-use complex.\n\nResidents enjoy infinity-style swimming pools, indoor and outdoor gyms, a fitness studio with spin bikes, yoga and wellness studio, spa and treatment rooms, jacuzzi and soaking facilities, rooftop leisure decks, padel or tennis court, landscaped terraces and lounge areas, 24-hour security and CCTV, covered parking for residents, and access to on-site restaurants and cafes.\n\nSituated within a landmark complex on Sheikh Zayed Road, the apartment benefits from direct access to a well-connected central corridor in Dubai. The location offers quick connectivity to Downtown Dubai, DIFC, Business Bay and the wider city via major roads. Nearby, residents will find retail at The Boulevard, The Dubai Mall, Zabeel Park and other popular destinations, as well as metro stations along the Red Line for convenient public transport access.\n\nOffered at 8,016,960 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Central A/C",
@@ -1118,7 +1086,7 @@
       "Built in Wardrobes",
       "Shared Pool",
       "Shared Spa",
-      "Children's Play Area",
+      "Children's Play Area"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -1127,9 +1095,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71785203813",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786016954/WhatsApp_Image_2026-08-05_at_4.53.17_PM_j5ty0s.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786016954/WhatsApp_Image_2026-08-05_at_4.53.17_PM_j5ty0s.jpg"
+    }
   },
   {
     id: "burj-binghatti-jacob-co-business-bay",
@@ -1152,7 +1119,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785115910/8233_xf5bmn.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785115937/8234_axkd6y.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785115960/8235_ccupfj.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115979/8326_kydvmc.png",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115979/8326_kydvmc.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1166,10 +1133,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "This 2-bedroom apartment in Burj Binghatti Jacob & Co Residences in Business Bay is available for sale and offers a contemporary layout with high-end finishes. The home features a furnished interior in the living and bedroom areas, complemented by a modern kitchen and generous outdoor space with expansive skyline and marina views.\n\nThis residence features 2 bedrooms, 3 bathrooms, furnished living areas, a modern closed kitchen with an L-shaped counter layout, feature walls in bedrooms, built-in lighting details, a balcony or terrace, downtown city views, and marina and skyline views.\n\nResidents enjoy a swimming pool, infinity-style rooftop pool, poolside lounge seating, balcony or terrace, barbecue area, Dubai skyline views, Burj Khalifa and Downtown views, marina and water views, lobby and reception area, security and CCTV, nearby public transport, and a pet policy as per building.\n\nLocated in Business Bay, this apartment benefits from direct access to a central, mixed-use district close to Downtown Dubai. Residents are within easy reach of Dubai Canal, major roads such as Sheikh Zayed Road and Al Khail Road, and key city attractions including Burj Khalifa and Dubai Mall.\n\nThe surrounding area offers a range of restaurants, hotels, cafes and retail outlets that support a practical city lifestyle. Business Bay also provides convenient access to nearby destinations such as Dubai Design District and Jumeirah, with taxis and buses readily available for daily commuting across the city.\n\nOffered at 7,040,000 AED. Contact us to schedule a viewing.",
+    description: "This 2-bedroom apartment in Burj Binghatti Jacob & Co Residences in Business Bay is available for sale and offers a contemporary layout with high-end finishes. The home features a furnished interior in the living and bedroom areas, complemented by a modern kitchen and generous outdoor space with expansive skyline and marina views.\n\nThis residence features 2 bedrooms, 3 bathrooms, furnished living areas, a modern closed kitchen with an L-shaped counter layout, feature walls in bedrooms, built-in lighting details, a balcony or terrace, downtown city views, and marina and skyline views.\n\nResidents enjoy a swimming pool, infinity-style rooftop pool, poolside lounge seating, balcony or terrace, barbecue area, Dubai skyline views, Burj Khalifa and Downtown views, marina and water views, lobby and reception area, security and CCTV, nearby public transport, and a pet policy as per building.\n\nLocated in Business Bay, this apartment benefits from direct access to a central, mixed-use district close to Downtown Dubai. Residents are within easy reach of Dubai Canal, major roads such as Sheikh Zayed Road and Al Khail Road, and key city attractions including Burj Khalifa and Dubai Mall.\n\nThe surrounding area offers a range of restaurants, hotels, cafes and retail outlets that support a practical city lifestyle. Business Bay also provides convenient access to nearby destinations such as Dubai Design District and Jumeirah, with taxis and buses readily available for daily commuting across the city.\n\nOffered at 7,040,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Central A/C",
@@ -1189,7 +1155,7 @@
       "Study",
       "Shared Spa",
       "View of Landmark",
-      "Children's Pool",
+      "Children's Pool"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -1198,9 +1164,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71908741309",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786017132/WhatsApp_Image_2026-08-05_at_4.54.18_PM_girfai.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786017132/WhatsApp_Image_2026-08-05_at_4.54.18_PM_girfai.jpg"
+    }
   },
   {
     id: "burj-binghatti-jacob-co-luxury-view",
@@ -1223,7 +1188,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785115910/8233_xf5bmn.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785115937/8234_axkd6y.png",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785115960/8235_ccupfj.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115979/8326_kydvmc.png",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115979/8326_kydvmc.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1237,10 +1202,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "This 2-bedroom apartment in Burj Binghatti Jacob & Co Residences in Business Bay is available for sale and offers a contemporary layout with high-end finishes. The home features a furnished interior in the living and bedroom areas, complemented by a modern kitchen and generous outdoor space with expansive skyline and marina views.\n\nThis residence features 2 bedrooms, 3 bathrooms, furnished living areas, a modern closed kitchen with an L-shaped counter layout, feature walls in bedrooms, built-in lighting details, a balcony or terrace, downtown city views, and marina and skyline views.\n\nResidents enjoy a swimming pool, infinity-style rooftop pool, poolside lounge seating, balcony or terrace, barbecue area, Dubai skyline views, Burj Khalifa and Downtown views, marina and water views, lobby and reception area, security and CCTV, nearby public transport, and a pet policy as per building.\n\nLocated in Business Bay, this apartment benefits from direct access to a central, mixed-use district close to Downtown Dubai. Residents are within easy reach of Dubai Canal, major roads such as Sheikh Zayed Road and Al Khail Road, and key city attractions including Burj Khalifa and Dubai Mall.\n\nThe surrounding area offers a range of restaurants, hotels, cafes and retail outlets that support a practical city lifestyle. Business Bay also provides convenient access to nearby destinations such as Dubai Design District and Jumeirah, with taxis and buses readily available for daily commuting across the city.\n\nOffered at 6,880,000 AED. Contact us to schedule a viewing.",
+    description: "This 2-bedroom apartment in Burj Binghatti Jacob & Co Residences in Business Bay is available for sale and offers a contemporary layout with high-end finishes. The home features a furnished interior in the living and bedroom areas, complemented by a modern kitchen and generous outdoor space with expansive skyline and marina views.\n\nThis residence features 2 bedrooms, 3 bathrooms, furnished living areas, a modern closed kitchen with an L-shaped counter layout, feature walls in bedrooms, built-in lighting details, a balcony or terrace, downtown city views, and marina and skyline views.\n\nResidents enjoy a swimming pool, infinity-style rooftop pool, poolside lounge seating, balcony or terrace, barbecue area, Dubai skyline views, Burj Khalifa and Downtown views, marina and water views, lobby and reception area, security and CCTV, nearby public transport, and a pet policy as per building.\n\nLocated in Business Bay, this apartment benefits from direct access to a central, mixed-use district close to Downtown Dubai. Residents are within easy reach of Dubai Canal, major roads such as Sheikh Zayed Road and Al Khail Road, and key city attractions including Burj Khalifa and Dubai Mall.\n\nThe surrounding area offers a range of restaurants, hotels, cafes and retail outlets that support a practical city lifestyle. Business Bay also provides convenient access to nearby destinations such as Dubai Design District and Jumeirah, with taxis and buses readily available for daily commuting across the city.\n\nOffered at 6,880,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Central A/C",
@@ -1260,7 +1224,7 @@
       "Shared Pool",
       "Security",
       "Walk-in Closet",
-      "Lobby in Building",
+      "Lobby in Building"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -1269,9 +1233,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71908741309",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786017426/WhatsApp_Image_2026-08-05_at_4.55.09_PM_cb7yan.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786017426/WhatsApp_Image_2026-08-05_at_4.55.09_PM_cb7yan.jpg"
+    }
   },
   {
     id: "district-one-west-mansion",
@@ -1293,7 +1256,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785140074/Asset_8sac_emhql4.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785140105/Asset_6sac_wzwxbf.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785140129/Asset_5sac_xdnvxw.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785140144/Asset_4sac_meuzkp.jpg",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785140144/Asset_4sac_meuzkp.jpg"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1307,10 +1270,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "GPG is pleased to offer you this 4 bedrooms Townhouse in Opal Gardens located at District 11, Mohammed Bin Rashid, Al Maktoum City, Dubai.\n\nThis residence features 4 bedrooms, 4 bathrooms, a spacious balcony, allocated parking spaces, a plot size of 2,786.99 sqft, and a BUA of 3,507.31 sqft.\n\nDistrict 11 Opal Gardens offers an exclusive gated community with multiple secure access points, ensuring both privacy and convenience. Nestled amidst lush greenery, this meticulously designed neighborhood features elegant villas and townhouses with breathtaking views of the Dubai skyline and a pristine crystal lagoon.\n\nWith seamless connectivity to Downtown Dubai, Opal Gardens combines urban access with serene living. Residents will enjoy over 5 kilometers of dedicated cycling and walking trails, surrounded by beautifully landscaped gardens and vibrant open spacesâ€”creating a lifestyle that's both active and tranquil.\n\nOffered at 5,800,000 AED. Contact us to schedule a viewing.",
+    description: "GPG is pleased to offer you this 4 bedrooms Townhouse in Opal Gardens located at District 11, Mohammed Bin Rashid, Al Maktoum City, Dubai.\n\nThis residence features 4 bedrooms, 4 bathrooms, a spacious balcony, allocated parking spaces, a plot size of 2,786.99 sqft, and a BUA of 3,507.31 sqft.\n\nDistrict 11 Opal Gardens offers an exclusive gated community with multiple secure access points, ensuring both privacy and convenience. Nestled amidst lush greenery, this meticulously designed neighborhood features elegant villas and townhouses with breathtaking views of the Dubai skyline and a pristine crystal lagoon.\n\nWith seamless connectivity to Downtown Dubai, Opal Gardens combines urban access with serene living. Residents will enjoy over 5 kilometers of dedicated cycling and walking trails, surrounded by beautifully landscaped gardens and vibrant open spacesâ€”creating a lifestyle that's both active and tranquil.\n\nOffered at 5,800,000 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Central A/C",
@@ -1327,7 +1289,7 @@
       "Private Jacuzzi",
       "Shared Pool",
       "Walk-in Closet",
-      "Lobby in Building",
+      "Lobby in Building"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -1336,9 +1298,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "93719",
       dldPermit: "69452309283",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786017586/WhatsApp_Image_2026-08-05_at_4.56.20_PM_liip1u.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786017586/WhatsApp_Image_2026-08-05_at_4.56.20_PM_liip1u.jpg"
+    }
   },
   {
     id: "district-one-west-phase-2",
@@ -1365,7 +1326,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785141374/Asset_9safca_qvym2r.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785141397/Asset_5safca_ug0skj.jpg",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1785141454/Asset_1safca_kjcorw.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141507/Asset_2safca_ek3evq.jpg",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141507/Asset_2safca_ek3evq.jpg"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1379,10 +1340,9 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "This 5-bedroom villa in Alana, The Valley is offered for sale within a gated, waterfront-inspired community by Emaar. The twin villa layout offers spacious living areas over two levels, complemented by large windows and sliding doors capturing lagoon, garden and park views. The home is designed with open-plan interiors that connect seamlessly to outdoor terraces, pool area and landscaped surroundings.\n\nThe villa features open-plan living and dining spaces with generous glazing for natural light and an indoor-outdoor feel. Multiple seating zones overlook the garden, pool and lagoon-style waterways, while upper-floor bedrooms benefit from marina-style and park views. A practical layout supports family living with well-planned circulation, contemporary finishes and access to outdoor areas.\n\nThe wider Alana community sits within The Valley, a master development with landscaped waterways, green belts and low-rise modern villas. Residents benefit from Golden Beach, Kids' Dale, Pocket Parks and Sports Village, as well as jogging and cycling tracks across the development.\n\nOffered at 5,764,604 AED. Contact us to schedule a viewing.",
+    description: "This 5-bedroom villa in Alana, The Valley is offered for sale within a gated, waterfront-inspired community by Emaar. The twin villa layout offers spacious living areas over two levels, complemented by large windows and sliding doors capturing lagoon, garden and park views. The home is designed with open-plan interiors that connect seamlessly to outdoor terraces, pool area and landscaped surroundings.\n\nThe villa features open-plan living and dining spaces with generous glazing for natural light and an indoor-outdoor feel. Multiple seating zones overlook the garden, pool and lagoon-style waterways, while upper-floor bedrooms benefit from marina-style and park views. A practical layout supports family living with well-planned circulation, contemporary finishes and access to outdoor areas.\n\nThe wider Alana community sits within The Valley, a master development with landscaped waterways, green belts and low-rise modern villas. Residents benefit from Golden Beach, Kids' Dale, Pocket Parks and Sports Village, as well as jogging and cycling tracks across the development.\n\nOffered at 5,764,604 AED. Contact us to schedule a viewing.",
     amenities: [
       "Unfurnished",
       "Private Jacuzzi",
@@ -1402,7 +1362,7 @@
       "Walk-in Closet",
       "Lobby in Building",
       "Private Pool",
-      "Barbecue Area",
+      "Barbecue Area"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -1411,9 +1371,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "69542870362",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786017772/WhatsApp_Image_2026-08-05_at_5.00.59_PM_in03an.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786017772/WhatsApp_Image_2026-08-05_at_5.00.59_PM_in03an.jpg"
+    }
   },
   {
     id: "karl-lagerfeld-couture-villa",
@@ -1435,9 +1394,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "1834970224",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786030798/WhatsApp_Image_2026-08-06_at_5.43.44_PM_i7mell.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786030798/WhatsApp_Image_2026-08-06_at_5.43.44_PM_i7mell.jpg"
+    }
   },
   {
     id: "karl-lagerfeld-iconic-residence",
@@ -1459,9 +1417,8 @@
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "1255398576",
-      qrImage:
-        "https://res.cloudinary.com/dsldkspov/image/upload/v1786030968/WhatsApp_Image_2026-08-06_at_5.45.17_PM_mtbdss.jpg",
-    },
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786030968/WhatsApp_Image_2026-08-06_at_5.45.17_PM_mtbdss.jpg"
+    }
   },
   {
     id: "prime-land-plot-road-access",
@@ -1478,7 +1435,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1786387367/1312x894_1_ntxnfx.webp",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1786387404/1312x894_4_bjzsbg.webp",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1786387427/1312x894_2_ijs8sm.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387444/1312x894_3_i0zhlf.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387444/1312x894_3_i0zhlf.webp"
     ],
     status: "Available",
     sqft: 88550,
@@ -1490,22 +1447,21 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "Eighty-eight thousand five hundred and fifty square feet of commercial land defines this plot in the Northern Emirates. The expansive dimensions provide a significant footprint for large-scale development projects, offering the necessary scale for industrial or commercial operations. This land serves as a foundation for businesses requiring substantial ground coverage and strategic positioning within the region.\n\nThe site layout allows for flexible planning and construction, accommodating various building configurations based on specific operational requirements. Developers can utilize the full extent of the 88,550 square feet to maximize utility, whether for warehousing, logistics, or commercial facilities. The open nature of the plot ensures that site access and internal traffic flow can be optimized during the design phase to suit heavy-duty usage or high-volume commercial activity. The ground conditions and overall dimensions support a wide range of structural possibilities for long-term business growth.\n\nThe property provides the following core elements for development:\n- Extensive 88,550 square feet of total land area\n- Commercial zoning for versatile business use\n- Direct access to regional transport networks\n\nThis land sits within the Northern Emirates, a region known for its growing industrial and commercial sectors. The location provides a practical base for operations that require proximity to major transit routes and regional hubs. Businesses here benefit from the established infrastructure and the ongoing development of the surrounding area, which supports efficient logistics and supply chain management for various commercial enterprises.\n\nOffered at 15,053,500 AED for sale. Contact us to arrange a site visit.",
+    description: "Eighty-eight thousand five hundred and fifty square feet of commercial land defines this plot in the Northern Emirates. The expansive dimensions provide a significant footprint for large-scale development projects, offering the necessary scale for industrial or commercial operations. This land serves as a foundation for businesses requiring substantial ground coverage and strategic positioning within the region.\n\nThe site layout allows for flexible planning and construction, accommodating various building configurations based on specific operational requirements. Developers can utilize the full extent of the 88,550 square feet to maximize utility, whether for warehousing, logistics, or commercial facilities. The open nature of the plot ensures that site access and internal traffic flow can be optimized during the design phase to suit heavy-duty usage or high-volume commercial activity. The ground conditions and overall dimensions support a wide range of structural possibilities for long-term business growth.\n\nThe property provides the following core elements for development:\n- Extensive 88,550 square feet of total land area\n- Commercial zoning for versatile business use\n- Direct access to regional transport networks\n\nThis land sits within the Northern Emirates, a region known for its growing industrial and commercial sectors. The location provides a practical base for operations that require proximity to major transit routes and regional hubs. Businesses here benefit from the established infrastructure and the ongoing development of the surrounding area, which supports efficient logistics and supply chain management for various commercial enterprises.\n\nOffered at 15,053,500 AED for sale. Contact us to arrange a site visit.",
     amenities: [
       "Extensive 88,550 square feet of total land area",
       "Commercial zoning for versatile business use",
-      "Direct access to regional transport networks",
+      "Direct access to regional transport networks"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
       listed: "22 hours ago",
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
-      agentLicense: "79489",
-    },
+      agentLicense: "79489"
+    }
   },
   {
     id: "warehouse-plots-sharjah-al-sajaa-2",
@@ -1522,7 +1478,7 @@
       "https://res.cloudinary.com/dsldkspov/image/upload/v1786387367/1312x894_1_ntxnfx.webp",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1786387404/1312x894_4_bjzsbg.webp",
       "https://res.cloudinary.com/dsldkspov/image/upload/v1786387427/1312x894_2_ijs8sm.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387444/1312x894_3_i0zhlf.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387444/1312x894_3_i0zhlf.webp"
     ],
     status: "Available",
     sqft: 12650,
@@ -1534,14 +1490,66 @@
       downPct: 30,
       years: 25,
       interestPct: 3.75,
-      residency: "UAE resident",
+      residency: "UAE resident"
     },
-    description:
-      "This land plot spans 12,650 sqft and provides a clear, open area for development in the Northern Emirates. The site offers a direct, accessible footprint for those looking to establish a project in this region. Its size allows for various configurations, whether you are planning a commercial structure or another permitted use. The ground is level and ready for assessment, providing a straightforward foundation for your upcoming plans. You can orient your build to maximize the available space across the entire 12,650 sqft area, ensuring that every square foot is utilized effectively for your specific requirements.\n\nThe plot dimensions allow for a flexible approach to site planning and construction. You have the freedom to determine the placement of access points and internal layouts to suit your operational needs. Because the land is currently undeveloped, you can manage the installation of utilities and infrastructure according to your own timeline and technical specifications. This level of control is useful for projects that require custom site preparation or specific zoning compliance. The open nature of the site means you are not restricted by existing structures, allowing for a clean start on your development project.\n\nWhat the site provides for your project:\n- Direct road access\n- Open development potential\n- Flexible zoning options\n\nThe land is situated within the Northern Emirates, a region known for its growing commercial activity and infrastructure development. This area provides a practical base for businesses looking to establish a presence with straightforward access to regional transport routes. The surrounding environment is characterized by its ongoing development, which supports a variety of commercial and industrial ventures. Being part of this expanding landscape means your project will be positioned in a location that continues to see steady growth and increased connectivity to major hubs.\n\nThis land is available for 2,150,500 AED. Contact us to arrange a site visit and discuss the details of this property.",
+    description: "This land plot spans 12,650 sqft and provides a clear, open area for development in the Northern Emirates. The site offers a direct, accessible footprint for those looking to establish a project in this region. Its size allows for various configurations, whether you are planning a commercial structure or another permitted use. The ground is level and ready for assessment, providing a straightforward foundation for your upcoming plans. You can orient your build to maximize the available space across the entire 12,650 sqft area, ensuring that every square foot is utilized effectively for your specific requirements.\n\nThe plot dimensions allow for a flexible approach to site planning and construction. You have the freedom to determine the placement of access points and internal layouts to suit your operational needs. Because the land is currently undeveloped, you can manage the installation of utilities and infrastructure according to your own timeline and technical specifications. This level of control is useful for projects that require custom site preparation or specific zoning compliance. The open nature of the site means you are not restricted by existing structures, allowing for a clean start on your development project.\n\nWhat the site provides for your project:\n- Direct road access\n- Open development potential\n- Flexible zoning options\n\nThe land is situated within the Northern Emirates, a region known for its growing commercial activity and infrastructure development. This area provides a practical base for businesses looking to establish a presence with straightforward access to regional transport routes. The surrounding environment is characterized by its ongoing development, which supports a variety of commercial and industrial ventures. Being part of this expanding landscape means your project will be positioned in a location that continues to see steady growth and increased connectivity to major hubs.\n\nThis land is available for 2,150,500 AED. Contact us to arrange a site visit and discuss the details of this property.",
     amenities: [
       "Direct road access",
       "Open development potential",
-      "Flexible zoning options",
+      "Flexible zoning options"
+    ],
+    regulatory: {
+      reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
+      listed: "22 hours ago",
+      brokerLicense: "22839",
+      agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
+      agentLicense: "79489"
+    }
+  },
+  {
+    id: "binghatti-royale-district-18-retail",
+    propertyType: "Retail",
+    developer: "Binghatti",
+    agentId: "2",
+    title: "OWN THE CORNER SPOT | PRIME LOCATION",
+    subtitle: "Retail for sale in Binghatti Royale, District 18",
+    location: "Binghatti Royale, District 18, Dubai",
+    price: "7,552,000",
+    priceDisplay: "7.5 M AED",
+    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1786539113/1312x894_j2ez01.webp",
+    images: [
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539113/1312x894_j2ez01.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539163/1312x894_1_joatyl.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539185/1312x894_2_t4ugyd.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539230/1312x894_3_yz6tgw.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539248/1312x894_4_glx5u6.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539266/1312x894_5_a8bzxs.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539307/1312x894_6_ygsymk.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539329/1312x894_7_i2kfft.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539410/1312x894_8_akslr4.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539433/1312x894_9_y4tdpt.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539452/1312x894_10_zay67p.webp"
+    ],
+    status: "Off-plan",
+    furnishing: "Unfurnished",
+    baths: 1,
+    sqft: 1888,
+    availableFrom: "2 May 2026",
+    pricePerSqft: 4000,
+    monthlyPayment: 27179,
+    mortgage: {
+      downPct: 20,
+      years: 25,
+      interestPct: 3.75,
+      residency: "UAE resident"
+    },
+    description: "OWN THE CORNER SPOT | PRIME LOCATION\n\nRetail for sale in Binghatti Royale, District 18\n\nGPG Global Real Estate is proud to offer you the opportunity to bring luxury to your business in the Binghatti Royale.\n\nPROPERTY FEATURES:\n- Unit Type: Retail shop\n- Size: 1,888\n- Luxury Corner Unit\n- Ideal for retail businesses seeking high visibility\n\nSTRATEGICALLY LOCATED:\n- 6 minutes from Dubai Hills Mall\n- 17 Minutes from Burj Khalifa\n- 24 Minutes from Dubai International Airport\n- Easy connectivity to Al Khail Road and Hessa Street\n\nABOUT PROJECT:\nBinghatti Royale offers a modern living experience with premium amenities, including infinity pools, fully equipped fitness centers, and landscaped gardens. The development features 354 residential units and 16 retail outlets on the ground floor. Designed with a focus on both elegance and functionality, Binghatti Royale ensures a comfortable and refined lifestyle for residents.",
+    amenities: [
+      "Unfurnished",
+      "Networked",
+      "Covered Parking",
+      "Lobby in Building",
+      "Conference room"
     ],
     regulatory: {
       reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
@@ -1549,6 +1557,117 @@
       brokerLicense: "22839",
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "79489",
-    },
+      dldPermit: "65405298359",
+      showDldPermitNumber: false,
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786540350/WhatsApp_Image_2026-08-11_at_5.31.02_PM_hcidx9.jpg"
+    }
   },
+  {
+    id: "binghatti-phantom-district-17-retail",
+    propertyType: "Retail",
+    developer: "Binghatti",
+    agentId: "2",
+    title: "Secure Net 7% ROI | Grade A Tenant | 5-Year Lease",
+    subtitle: "Retail for sale in Binghatti Phantom, District 17",
+    location: "Binghatti Phantom, District 17, Dubai",
+    price: "8,500,000",
+    priceDisplay: "8.5 M AED",
+    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1786524961/1312x894_ne9s5k.webp",
+    images: [
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786524961/1312x894_ne9s5k.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786524980/1312x894_1_x1e1sa.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786525001/1312x894_2_ocymvd.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786525023/1312x894_3_eukm5l.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786525042/1312x894_4_ab0ixh.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786525060/1312x894_5_dmicz5.webp"
+    ],
+    status: "Off-plan",
+    furnishing: "Unfurnished",
+    baths: 1,
+    sqft: 1900,
+    availableFrom: "13 Jan 2026",
+    pricePerSqft: 4473,
+    monthlyPayment: 30591,
+    mortgage: {
+      downPct: 20,
+      years: 25,
+      interestPct: 3.75,
+      residency: "UAE resident"
+    },
+    description: "Secure Net 7% ROI | Grade A Tenant | 5-Year Lease\n\nRetail for sale in Binghatti Phantom, District 17\n\nGPG Global Real Estate is proud to offer you the opportunity to bring luxury to your business in Bingatti Phantom.\n\nPROPERTY FEATURES:\n- Secure 7% ROI\n- Grade A Tenant\n- 5-Year Lease Opportunity\n- Unit Type: Retail shop\n- Size: 1,899.94\n- Ideal for retail businesses seeking high visibility\n\nSTRATEGICALLY LOCATED:\n- 10 minutes from Dubai Marina\n- 7 minutes from Mall of the Emirates\n- 12 minutes from Downtown Dubai\n\nABOUT PROJECT:\nBinghatti Phantom offers a refined living experience that harmonizes vibrancy with tranquility. Designed with modern elegance, this development provides residents with a peaceful retreat amidst the city’s dynamic environment.\n\nWith thoughtfully curated amenities and meticulously designed spaces, Binghatti Phantom ensures both comfort and connectivity. Its distinctive architecture and serene ambiance create an ideal balance between urban convenience and a relaxed lifestyle.",
+    amenities: [
+      "Unfurnished",
+      "Networked",
+      "Covered Parking",
+      "Shared Pool",
+      "Shared Gym",
+      "Dining in building",
+      "Conference room",
+      "Lobby in Building"
+    ],
+    regulatory: {
+      reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
+      listed: "22 hours ago",
+      brokerLicense: "22839",
+      agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
+      agentLicense: "79489",
+      dldPermit: "65405298359",
+      showDldPermitNumber: false,
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786525708/WhatsApp_Image_2026-08-11_at_5.29.42_PM_rr7ufp.jpg"
+    }
+  },
+  {
+    id: "franck-muller-yachting-london-gate",
+    propertyType: "Retail",
+    developer: "London Gate",
+    title: "Franck Muller Yachting | Branded Retail",
+    subtitle: "Retail for sale in Franck Muller Yachting by London Gate, Maritime City",
+    location: "Franck Muller Yachting by London Gate, Maritime City, Dubai",
+    price: "2,500,000",
+    priceDisplay: "2.5 M AED",
+    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1786522818/1312x894_xzpyte.webp",
+    images: [
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522818/1312x894_xzpyte.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522876/1312x894_1_i6wvdr.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522896/1312x894_2_fw0lto.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522920/1312x894_3_honyvu.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522938/1312x894_4_zcexks.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522958/1312x894_5_b58nik.webp",
+      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522979/1312x894_6_n2arqe.webp"
+    ],
+    status: "Off-plan",
+    furnishing: "Unfurnished",
+    baths: 1,
+    sqft: 473,
+    availableFrom: "26 Mar 2026",
+    pricePerSqft: 5285,
+    monthlyPayment: 10283,
+    mortgage: {
+      downPct: 20,
+      years: 25,
+      interestPct: 3.75,
+      residency: "UAE resident"
+    },
+    description: "Multiple Premium Retail Units for Sale | Maritime\n\nRetail for sale in Franck Muller Yachting by London Gate, Maritime City\n\nGPG Global Real Estate is proud to offer you the opportunity to bring luxury to your business in Franck Muller Yachting, Maritime City, Dubai.\n\nPROPERTY FEATURES:\n- Unit Type: Shop\n- Common Area : 380.40 Sqft\n- Total Area : 472.86 Sqft\n- Parking: 1\n\nSelling Price: AED 2,500,000/-\n\nABOUT PROJECT:\nPositioned within Dubai Maritime City, Franck Muller Yachting by London Gate redefines waterfront living with exclusive class residences and a curated retail experience. Alongside its meticulously crafted apartments, the tower features a dedicated retail shop designed to complement the lifestyle of its elite residents—offering premium conveniences right at their doorstep. Much like the precision of Swiss horology reflected in every architectural line, this retail space embodies refined utility and luxury. Whether residents are stepping out for high-end essentials or indulging in boutique services, the retail shop enhances the seamless, marina-inspired living experience within this masterfully engineered tower.\n\nHIGHLIGHTS:\n- Floating Marina\n- Infinity Pools\n- Cabana Lounges\n- State-of-the-Art Fitness Centre\n- Luxury Spa Facilities\n- Franck Muller–Style Lounges\n- Designer Cinema\n- Private Gardens\n- Walking Paths & Promenades\n- Covered Parking\n- Concierge Service\n- Valet Service\n- 24/7 Security\n- Smart-Home Features\n- Retail Stores\n- Cafes\n- Dining Venues",
+    amenities: [
+      "Unfurnished",
+      "Networked",
+      "Covered Parking",
+      "Shared Pool",
+      "Shared Gym",
+      "Dining in building",
+      "Conference room",
+      "Lobby in Building"
+    ],
+    regulatory: {
+      reference: "NYNQ0SFJVEJYZAPX48YQG441Z4",
+      listed: "22 hours ago",
+      brokerLicense: "22839",
+      agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
+      agentLicense: "51672",
+      dldPermit: "65405298359",
+      showDldPermitNumber: false,
+      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786523940/WhatsApp_Image_2026-08-11_at_5.28.20_PM_mye7na.jpg"
+    }
+  }
 ];

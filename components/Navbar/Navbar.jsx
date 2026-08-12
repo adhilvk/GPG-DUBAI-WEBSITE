@@ -81,6 +81,7 @@ const Navbar = () => {
     { key: "offPlan", link: "/HOWTOBUYOFFPLAN" },
     { key: "resale", link: "/HOWTORESELL" },
     { key: "rental", link: "/HOWTORENTAL" },
+    { key: "commercialInvestment", link: "/HOWTOINVEST" },
   ];
 
   const moreLinks = [
