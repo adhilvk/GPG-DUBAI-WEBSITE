@@ -11,8 +11,8 @@ export const AWARD_GALLERY_PAGE_SIZE = 9;
 export const AWARD_GALLERY_ROW_SIZE = 3;
 
 export const AWARD_HIGHLIGHT = {
-  id: "binghatti-best-broker-2025",
-  src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785307390/3.jpg_ya3yuu.jpg",
+  id: "binghatti-best-broker-2026",
+  src: "https://res.cloudinary.com/dsldkspov/image/upload/v1786784531/WhatsApp_Image_2026-08-13_at_2.29.15_PM_eqq0db.jpg",
   alt: "GPG on stage at Binghatti Broker Recognition Awards 2026",
 };
 
@@ -46,6 +46,12 @@ const AWARD_GALLERY_REST_RAW = [
     objectPosition: "50% 50%",
     imageScale: 1.32,
     imageOffsetY: "-10%",
+  },
+  {
+    id: "binghatti-annual-2025-carousel",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312324/award_1.jpg_jokfiv.jpg",
+    alt: "GPG at Binghatti Annual Broker Awards 2025",
   },
   {
     id: "binghatti-team-trophy",
@@ -94,7 +100,9 @@ function dedupeAwardGalleryItems(items, reservedKeys = new Set()) {
 const RESERVED_AWARD_IMAGE_KEYS = new Set([
   getAwardImageKey(AWARD_HIGHLIGHT.src),
   getAwardImageKey(AWARD_RECOGNITION_VIDEO.poster),
-  ...AWARD_GALLERY_FEATURED.map((item) => getAwardImageKey(item.src)),
+  ...AWARD_GALLERY_FEATURED.filter((item) => item.id !== "binghatti-annual-2025").map((item) =>
+    getAwardImageKey(item.src)
+  ),
 ]);
 
 export const AWARD_GALLERY_REST = dedupeAwardGalleryItems(
