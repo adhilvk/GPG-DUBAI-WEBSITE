@@ -10,7 +10,7 @@ const CEOMessage = () => {
   return (
     <section className="bg-stone-200 pt-24 pb-20 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-start lg:gap-24">
           
           {/* Text Column — Left */}
           <motion.div 
@@ -21,7 +21,6 @@ const CEOMessage = () => {
             className="w-full lg:w-7/12"
           >
             <SectionHeader
-              eyebrow="CEO message"
               title="Leading with Integrity and"
               accent="Financial Excellence."
               linesAlign="left"
@@ -67,6 +66,10 @@ const CEOMessage = () => {
             className="w-full lg:w-5/12 flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-sm">
+              <p className="mb-5 text-center text-sm font-bold uppercase tracking-[0.35em] text-[#E31E24] md:mb-6 md:text-base">
+                CEO message
+              </p>
+
               {/* Subtle accent background instead of heavy frames */}
               <div className="absolute inset-0 bg-slate-200 translate-x-4 translate-y-4 rounded-sm -z-10"></div>
               

@@ -18,22 +18,27 @@ export const AWARD_HIGHLIGHT = {
 
 export const AWARD_GALLERY_FEATURED = [
   {
-    id: "binghatti-annual-2025",
+    id: "broker-awards-handshake-2026",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312324/award_1.jpg_jokfiv.jpg",
-    alt: "GPG at Binghatti Annual Broker Awards 2025",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787302661/WhatsApp_Image_2026-08-21_at_11.38.54_AM_mm42wx.jpg",
+    alt: "GPG leadership at broker recognition awards event",
+    caption: "Binghatti Broker Recognition Awards 2024",
+    objectPosition: "50% 30%",
   },
   {
-    id: "franck-muller-awards",
+    id: "broker-awards-stage-2026",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312276/franckmuller.jpg_wmurp9.jpg",
-    alt: "GPG team at Franck Muller and London Gate awards",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787302629/WhatsApp_Image_2026-08-21_at_11.38.28_AM_ux1ean.jpg",
+    alt: "GPG team on stage at Brokers Awards ceremony",
+    caption: "Binghatti Broker Recognition Awards 2024",
+    objectPosition: "28% 50%",
   },
   {
-    id: "binghatti-annual-trophy",
+    id: "ultimate-realty-awards-2025",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785326970/WhatsApp_Image_2026-07-25_at_3.09.32_PM_1_gejy44.jpg",
-    alt: "GPG team with trophy at Binghatti Annual Broker Awards",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787305699/WhatsApp_Image_2026-08-21_at_11.42.07_AM_njg5ba.jpg",
+    alt: "GPG team at The Ultimate Realty Awards",
+    caption: "The Ultimate Realty Awards from India Today Group and NKN Media 2025",
   },
 ];
 
@@ -51,7 +56,8 @@ const AWARD_GALLERY_REST_RAW = [
     id: "binghatti-annual-2025-carousel",
     type: "image",
     src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312324/award_1.jpg_jokfiv.jpg",
-    alt: "GPG at Binghatti Annual Broker Awards 2025",
+    alt: "GPG team at Binghatti Broker Recognition Awards 2026",
+    caption: "Binghatti Broker Recognition Awards 2026",
   },
   {
     id: "binghatti-team-trophy",
@@ -69,7 +75,9 @@ const AWARD_GALLERY_REST_RAW = [
     id: "awards-ceremony-stage",
     type: "image",
     src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312054/DSC02403.JPG_uo4yqv.jpg",
-    alt: "Broker recognition awards ceremony stage",
+    alt: "GPG team recognised by London Gate Developers for Yachting project sales performance",
+    caption:
+      "Recognised by London Gate Developers for achieving the 2nd highest sales performance in their exclusive Yachting project in Maritime City.",
   },
   {
     id: "awards-event-group",
@@ -100,9 +108,7 @@ function dedupeAwardGalleryItems(items, reservedKeys = new Set()) {
 const RESERVED_AWARD_IMAGE_KEYS = new Set([
   getAwardImageKey(AWARD_HIGHLIGHT.src),
   getAwardImageKey(AWARD_RECOGNITION_VIDEO.poster),
-  ...AWARD_GALLERY_FEATURED.filter((item) => item.id !== "binghatti-annual-2025").map((item) =>
-    getAwardImageKey(item.src)
-  ),
+  ...AWARD_GALLERY_FEATURED.map((item) => getAwardImageKey(item.src)),
 ]);
 
 export const AWARD_GALLERY_REST = dedupeAwardGalleryItems(

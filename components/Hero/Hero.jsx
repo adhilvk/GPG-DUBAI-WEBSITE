@@ -37,7 +37,7 @@ const Hero = () => {
         className="absolute inset-0 z-0"
       >
         <video
-          src="https://res.cloudinary.com/dsldkspov/video/upload/v1772866347/demo_pnfoy4.mp4"
+          src="https://res.cloudinary.com/dsldkspov/video/upload/v1787400268/VIDEO_1_xhbkvl.mp4"
           autoPlay
           loop
           muted

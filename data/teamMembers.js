@@ -68,7 +68,7 @@ export const TEAM_MEMBERS = [
     title: "Associate Director",
     languages: "English, Hindi",
     brn: "79489",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785514298/broker_images_maryam.jpg_fjinf9.jpg",
+    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1787475103/broker_images_maryam.jpg_icvtqh.jpg",
   },
   {
     id: "3",
@@ -126,3 +126,30 @@ export const TEAM_MEMBERS = [
       "https://res.cloudinary.com/dsldkspov/image/upload/v1786030077/operation_abdullah.jpg_dlllx0.jpg",
   },
 ];
+
+export const TEAM_GROUPS = [
+  {
+    id: "senior-management",
+    titleKey: "teamGroups.seniorTitle",
+    accentKey: "teamGroups.seniorAccent",
+    memberIds: ["0", "6", "2"],
+  },
+  {
+    id: "advisors",
+    titleKey: "teamGroups.advisorsTitle",
+    accentKey: "teamGroups.advisorsAccent",
+    memberIds: ["1", "3", "5", "4"],
+  },
+  {
+    id: "operations",
+    titleKey: "teamGroups.operationsTitle",
+    accentKey: "teamGroups.operationsAccent",
+    memberIds: ["8", "7", "9"],
+  },
+];
+
+export function getTeamGroupMembers(group) {
+  return group.memberIds
+    .map((id) => TEAM_MEMBERS.find((member) => member.id === id))
+    .filter(Boolean);
+}

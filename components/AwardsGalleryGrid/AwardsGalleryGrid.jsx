@@ -57,6 +57,9 @@ function GalleryMedia({ item, index }) {
           sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
         />
       )}
+      {item.caption ? (
+        <div className="awards-gallery__caption">{item.caption}</div>
+      ) : null}
     </motion.div>
   );
 }

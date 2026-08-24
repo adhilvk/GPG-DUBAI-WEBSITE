@@ -40,10 +40,10 @@ const InvestorCaseStudies = () => {
       <div className="max-w-7xl mx-auto">
         
         <SectionHeader
-          eyebrow="Investor Success"
-          title="Case Studies for"
-          accent="Investors"
-          subtitle="GPG has generated high returns for its investors from 30% to 350% p.a."
+          eyebrow="Case Studies"
+          title="Our investors"
+          accent="success stories"
+          subtitle="GPG has generated exceptional returns for its clients from 30% to 350% per annum"
           className="!mb-16"
         />
 

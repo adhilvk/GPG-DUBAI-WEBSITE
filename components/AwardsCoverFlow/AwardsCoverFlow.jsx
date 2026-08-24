@@ -39,6 +39,9 @@ function CoverFlowSlide({ item }) {
         style={imageStyle}
         sizes="(max-width: 639px) 88vw, (max-width: 1023px) 420px, 480px"
       />
+      {item.caption ? (
+        <div className="awards-coverflow__caption">{item.caption}</div>
+      ) : null}
     </div>
   );
 }

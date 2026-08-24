@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Instagram, Play, ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,6 +10,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import "@/components/ExclusiveProjects/ExclusiveProjects.css";
 
 const ReelCard = ({ reel, onSelect }) => (
   <motion.div
@@ -27,6 +28,19 @@ const ReelCard = ({ reel, onSelect }) => (
 const InstagramGallery = () => {
   const { t } = useLanguage();
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+  const [activeSnap, setActiveSnap] = useState(0);
+  const [snapCount, setSnapCount] = useState(1);
+  const swiperRef = useRef(null);
+
+  const updateNavState = useCallback((swiper) => {
+    swiperRef.current = swiper;
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
+    setActiveSnap(swiper.snapIndex ?? swiper.activeIndex);
+    setSnapCount(Math.max(1, swiper.snapGrid?.length ?? 1));
+  }, []);
 
   const captions = t("instagram.captions");
   const reels = [
@@ -58,6 +72,38 @@ const InstagramGallery = () => {
         "https://res.cloudinary.com/dsldkspov/video/upload/v1772865031/video4_jkda8j.mp4",
       caption: captions[3],
     },
+    {
+      id: 5,
+      thumbnail:
+        "https://res.cloudinary.com/dsldkspov/video/upload/so_0,c_fill,w_720,h_1280,q_auto,f_auto/v1787389949/CG_UK_v2_3_lwzglw.jpg",
+      videoUrl:
+        "https://res.cloudinary.com/dsldkspov/video/upload/v1787389949/CG_UK_v2_3_lwzglw.mp4",
+      caption: captions[4],
+    },
+    {
+      id: 6,
+      thumbnail:
+        "https://res.cloudinary.com/dsldkspov/video/upload/so_0,c_fill,w_720,h_1280,q_auto,f_auto/v1787391553/Success_Stories_for_our_clients_2025_LuxuryRealEstate_luxurious_dubaï_DubaiRealEstate_distri_gzqfmj.jpg",
+      videoUrl:
+        "https://res.cloudinary.com/dsldkspov/video/upload/v1787391553/Success_Stories_for_our_clients_2025_LuxuryRealEstate_luxurious_dubaï_DubaiRealEstate_distri_gzqfmj.mp4",
+      caption: captions[5],
+    },
+    {
+      id: 7,
+      thumbnail:
+        "https://res.cloudinary.com/dsldkspov/video/upload/so_0,c_fill,w_720,h_1280,q_auto,f_auto/v1787391931/PART_01Multiplier_of_Real_EstateChirag_Goyal_Founder_CEO_GPG_dubai_realestate_dxb_trendin_onup1n.jpg",
+      videoUrl:
+        "https://res.cloudinary.com/dsldkspov/video/upload/v1787391931/PART_01Multiplier_of_Real_EstateChirag_Goyal_Founder_CEO_GPG_dubai_realestate_dxb_trendin_onup1n.mp4",
+      caption: captions[6],
+    },
+    {
+      id: 8,
+      thumbnail:
+        "https://res.cloudinary.com/dsldkspov/video/upload/so_0,c_fill,w_720,h_1280,q_auto,f_auto/v1787399902/An_inspiring_evening_at_the_launch_event_of_amisdevelopment_by_jacobandco_where_luxury_artis_n6orw2.jpg",
+      videoUrl:
+        "https://res.cloudinary.com/dsldkspov/video/upload/v1787399902/An_inspiring_evening_at_the_launch_event_of_amisdevelopment_by_jacobandco_where_luxury_artis_n6orw2.mp4",
+      caption: captions[7],
+    },
   ];
 
   const handleFollow = () => {
@@ -86,19 +132,35 @@ const InstagramGallery = () => {
           </button>
         </div>
 
-        {/* Mobile: 2 wider reels + plain arrows */}
-        <div className="relative -mx-3 px-8 md:hidden">
+        <div className="relative px-10 md:px-12">
           <Swiper
             modules={[Navigation]}
             spaceBetween={12}
-            slidesPerView="auto"
+            slidesPerView={1.85}
             navigation={{
               prevEl: ".reels-prev",
               nextEl: ".reels-next",
             }}
+            onSwiper={updateNavState}
+            onSlideChange={updateNavState}
+            onResize={updateNavState}
+            breakpoints={{
+              640: {
+                spaceBetween: 14,
+                slidesPerView: 2.4,
+              },
+              768: {
+                spaceBetween: 16,
+                slidesPerView: 3,
+              },
+              1024: {
+                spaceBetween: 16,
+                slidesPerView: 4,
+              },
+            }}
           >
             {reels.map((reel) => (
-              <SwiperSlide key={reel.id} className="!w-[46vw] max-w-none shrink-0">
+              <SwiperSlide key={reel.id}>
                 <ReelCard reel={reel} onSelect={setSelectedVideo} />
               </SwiperSlide>
             ))}
@@ -107,25 +169,40 @@ const InstagramGallery = () => {
           <button
             type="button"
             aria-label="Previous reel"
-            className="reels-prev absolute left-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer text-[#E31E24] transition-transform hover:scale-110"
+            disabled={isBeginning}
+            className="reels-prev trending-slider__arrow absolute left-0 top-1/2 z-10 -translate-y-1/2"
           >
-            <ChevronLeft size={28} strokeWidth={2.5} />
+            <ChevronLeft size={28} strokeWidth={2} />
           </button>
 
           <button
             type="button"
             aria-label="Next reel"
-            className="reels-next absolute right-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer text-[#E31E24] transition-transform hover:scale-110"
+            disabled={isEnd}
+            className="reels-next trending-slider__arrow absolute right-0 top-1/2 z-10 -translate-y-1/2"
           >
-            <ChevronRight size={28} strokeWidth={2.5} />
+            <ChevronRight size={28} strokeWidth={2} />
           </button>
-        </div>
 
-        {/* Desktop: 4-column grid */}
-        <div className="hidden gap-4 md:grid md:grid-cols-4">
-          {reels.map((reel) => (
-            <ReelCard key={reel.id} reel={reel} onSelect={setSelectedVideo} />
-          ))}
+          {snapCount > 1 && (
+            <div
+              className="trending-slider__dots"
+              role="tablist"
+              aria-label="Reels pagination"
+            >
+              {Array.from({ length: snapCount }, (_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  role="tab"
+                  aria-selected={index === activeSnap}
+                  aria-label={`Go to reel page ${index + 1}`}
+                  className={`trending-slider__dot${index === activeSnap ? " trending-slider__dot--active" : ""}`}
+                  onClick={() => swiperRef.current?.slideTo(index)}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
