@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Navigation } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
 import { useLanguage } from "@/context/LanguageContext";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
+import "swiper/css/autoplay";
 import "./AwardsCoverFlow.css";
 
 function CoverFlowSlide({ item }) {
@@ -74,16 +75,29 @@ export default function AwardsCoverFlow({ items }) {
 
       <div className="awards-coverflow__slider">
         <Swiper
-          modules={[EffectCoverflow, Navigation]}
+          modules={[Autoplay, EffectCoverflow, Navigation]}
           effect="coverflow"
           grabCursor
           centeredSlides
           slidesPerView="auto"
           loop={items.length > 2}
-          slideToClickedSlide
+          loopAdditionalSlides={3}
+          allowTouchMove
+          autoplay={{
+            enabled: true,
+            delay: 1,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            stopOnLastSlide: false,
+            waitForTransition: true,
+          }}
+          speed={4200}
           navigation={{
             prevEl: ".awards-coverflow-prev",
             nextEl: ".awards-coverflow-next",
+          }}
+          onAfterInit={(swiper) => {
+            swiper.autoplay?.start();
           }}
           coverflowEffect={{
             rotate: 10,

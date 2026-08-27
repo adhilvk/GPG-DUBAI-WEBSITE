@@ -57,6 +57,10 @@
   padding: 2rem 0 2.5rem;
 }
 
+.awards-coverflow__swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
 .awards-coverflow__slide {
   width: min(88vw, 360px);
 }
