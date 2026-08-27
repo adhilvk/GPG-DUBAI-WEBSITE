@@ -151,9 +151,7 @@ const ExclusiveProjectsSlider = () => {
             </div>
           </div>
 
-          <div className="mt-8 overflow-visible md:mt-10">
-            <ArticleDownload />
-          </div>
+          <ArticleDownload />
 
           <div className="mt-14 md:mt-20">
             <OurAwards />
