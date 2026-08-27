@@ -12,7 +12,7 @@ export const AWARD_GALLERY_ROW_SIZE = 3;
 
 export const AWARD_HIGHLIGHT = {
   id: "binghatti-best-broker-2026",
-  src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787809467/WhatsApp_Image_2026-08-21_at_11.44.52_AM_t9xq69.jpg",
+  src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787823717/WhatsApp_Image_2026-08-27_at_12.48.51_PM_gsts4a.jpg",
   alt: "GPG on stage at Binghatti Broker Recognition Awards 2026",
 };
 
@@ -57,8 +57,8 @@ const AWARD_GALLERY_REST_RAW = [
     id: "binghatti-h1-2025-team",
     type: "image",
     src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787810321/WhatsApp_Image_2026-08-21_at_11.43.22_AM_wl136r.jpg",
-    alt: "GPG team celebrating Top Broker Award at Binghatti Annual Broker Awards 2025",
-    caption: "GPG team at Binghatti Annual Broker Awards 2025",
+    alt: "GPG team at Binghatti Broker Recognition Awards 2025",
+    caption: "Binghatti Broker Recognition Awards 2025",
   },
   {
     id: "ultimate-realty-awards-2025-team",
@@ -97,7 +97,7 @@ const AWARD_GALLERY_REST_RAW = [
     type: "image",
     src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785319380/9.jpg_v0kctx.jpg",
     alt: "GPG team member with Billionaires Estate award trophy",
-    caption: "Billionaires Estate Award",
+    caption: "BINGHATTI BROKER RECOGNITION AWARDS 2026",
   },
   {
     id: "broker-awards-aerial",

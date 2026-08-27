@@ -73,8 +73,8 @@ const ExclusiveProjectsSlider = () => {
   };
 
   return (
-    <section className="bg-white px-4 pb-16 pt-12 md:px-12 md:pb-20 md:pt-16">
-      <div className="max-w-360 mx-auto">
+    <section className="overflow-visible bg-white px-4 pb-16 pt-12 md:px-12 md:pb-20 md:pt-16">
+      <div className="mx-auto w-full min-w-0 max-w-360">
         <div className="px-0 sm:px-2 md:px-0">
           <SectionHeader
             title={t("trendingProjectsPage.title")}
@@ -151,7 +151,9 @@ const ExclusiveProjectsSlider = () => {
             </div>
           </div>
 
-          <ArticleDownload />
+          <div className="mt-8 overflow-visible md:mt-10">
+            <ArticleDownload />
+          </div>
 
           <div className="mt-14 md:mt-20">
             <OurAwards />

@@ -22,13 +22,18 @@ export default function ArticleDownload() {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
   }, []);
 
   const handleDownload = (file) => {
+    const url = file.startsWith("http") ? file : new URL(file, window.location.origin).toString();
     const link = document.createElement("a");
-    link.href = file;
-    link.download = "";
+    link.href = url;
+    link.setAttribute("download", "The-Wealth-Multiplier.pdf");
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     document.body.appendChild(link);

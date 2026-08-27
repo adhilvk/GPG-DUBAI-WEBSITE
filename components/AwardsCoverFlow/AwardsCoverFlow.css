@@ -156,12 +156,6 @@
   transform: scale(1.05);
 }
 
-.awards-coverflow__nav.swiper-button-disabled {
-  opacity: 0.35;
-  cursor: default;
-  pointer-events: none;
-}
-
 @media (max-width: 639px) {
   .awards-coverflow {
     gap: 0.25rem;

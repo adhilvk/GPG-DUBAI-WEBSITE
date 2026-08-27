@@ -1,16 +1,18 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
+import { Autoplay, EffectCoverflow } from "swiper/modules";
 import { useLanguage } from "@/context/LanguageContext";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import "./AwardsCoverFlow.css";
+
+const ARROW_SPEED_MS = 700;
 
 function CoverFlowSlide({ item }) {
   const imageFitClass =
@@ -49,8 +51,21 @@ function CoverFlowSlide({ item }) {
 
 export default function AwardsCoverFlow({ items }) {
   const { t } = useLanguage();
+  const swiperRef = useRef(null);
 
   if (!items.length) return null;
+
+  const moveSlide = (direction) => {
+    const swiper = swiperRef.current;
+    if (!swiper) return;
+
+    swiper.animating = false;
+    if (direction === "prev") {
+      swiper.slidePrev(ARROW_SPEED_MS);
+    } else {
+      swiper.slideNext(ARROW_SPEED_MS);
+    }
+  };
 
   return (
     <section className="awards-coverflow-section">
@@ -68,14 +83,15 @@ export default function AwardsCoverFlow({ items }) {
       <button
         type="button"
         aria-label={t("luxuryListingsPage.previous")}
-        className="awards-coverflow__nav awards-coverflow__nav--prev awards-coverflow-prev"
+        className="awards-coverflow__nav awards-coverflow__nav--prev"
+        onClick={() => moveSlide("prev")}
       >
         <ChevronLeft size={22} strokeWidth={2} />
       </button>
 
       <div className="awards-coverflow__slider">
         <Swiper
-          modules={[Autoplay, EffectCoverflow, Navigation]}
+          modules={[Autoplay, EffectCoverflow]}
           effect="coverflow"
           grabCursor
           centeredSlides
@@ -92,11 +108,8 @@ export default function AwardsCoverFlow({ items }) {
             waitForTransition: true,
           }}
           speed={4200}
-          navigation={{
-            prevEl: ".awards-coverflow-prev",
-            nextEl: ".awards-coverflow-next",
-          }}
-          onAfterInit={(swiper) => {
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
             swiper.autoplay?.start();
           }}
           coverflowEffect={{
@@ -119,7 +132,8 @@ export default function AwardsCoverFlow({ items }) {
       <button
         type="button"
         aria-label={t("luxuryListingsPage.next")}
-        className="awards-coverflow__nav awards-coverflow__nav--next awards-coverflow-next"
+        className="awards-coverflow__nav awards-coverflow__nav--next"
+        onClick={() => moveSlide("next")}
       >
         <ChevronRight size={22} strokeWidth={2} />
       </button>

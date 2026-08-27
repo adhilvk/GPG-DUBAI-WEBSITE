@@ -20,14 +20,14 @@
 }
 
 html {
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  overflow-x: clip;
+  overflow-x: hidden;
   width: 100%;
   max-width: 100%;
 }

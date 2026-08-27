@@ -1,3 +1,197 @@
+.home-contact-form-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.home-contact-form-overlay__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(15, 23, 42, 0.48);
+  cursor: pointer;
+}
+
+.home-contact-form {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 26.5rem);
+  padding: 1.75rem 1.5rem 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.22);
+  animation: home-contact-form-enter 0.35s ease;
+}
+
+@keyframes home-contact-form-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.home-contact-form__close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #64748b;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+[dir="rtl"] .home-contact-form__close {
+  right: auto;
+  left: 0.85rem;
+}
+
+.home-contact-form__close:hover {
+  background: #fee2e2;
+  color: #e31e24;
+}
+
+.home-contact-form__eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #e31e24;
+}
+
+.home-contact-form__title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+.home-contact-form__subtitle {
+  margin: 0.4rem 0 1.15rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.home-contact-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.home-contact-form__label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+.home-contact-form__input {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.6rem;
+  background: #f8fafc;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.home-contact-form__input:focus {
+  border-color: #e31e24;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(227, 30, 36, 0.12);
+}
+
+.home-contact-form__textarea {
+  resize: vertical;
+  min-height: 4.5rem;
+}
+
+.home-contact-form__error {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #e31e24;
+}
+
+.home-contact-form__buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+.home-contact-form__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.75rem;
+  border: 0;
+  border-radius: 0.65rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.home-contact-form__btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.16);
+}
+
+.home-contact-form__btn--whatsapp {
+  background: #25d366;
+}
+
+.home-contact-form__btn--whatsapp:hover {
+  background: #1ebe57;
+}
+
+.home-contact-form__btn--email {
+  background: #e31e24;
+}
+
+.home-contact-form__btn--email:hover {
+  background: #c81b20;
+}
+
+.home-contact-form__btn-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
 .home-contact-popup {
   position: fixed;
   top: 50%;
@@ -113,6 +307,10 @@
 }
 
 @media (min-width: 640px) {
+  .home-contact-form {
+    padding: 2rem 1.75rem 1.65rem;
+  }
+
   .home-contact-popup__card {
     padding: 0.65rem 0.55rem 0.55rem;
     border-right: none;

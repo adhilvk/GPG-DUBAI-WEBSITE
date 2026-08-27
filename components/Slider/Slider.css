@@ -157,6 +157,16 @@
   opacity: 1;
 }
 
+.logo-brand--emaar,
+.logo-brand--meraas,
+.logo-brand--damac,
+.logo-brand--binghatti,
+.logo-brand--omniyat,
+.logo-brand--ellington {
+  --logo-height: clamp(42px, 5vw, 56px);
+  --logo-width: clamp(150px, 15vw, 190px);
+}
+
 @keyframes scroll-left {
   0% {
     transform: translateX(0);

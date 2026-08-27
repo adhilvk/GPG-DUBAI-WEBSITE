@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Instagram, Mail, X } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import "./HomeContactPopup.css";
 
-const POPUP_DELAY_MS = 3000;
+const POPUP_DELAY_MS = 800;
 const WA_NUMBER = "971542068414";
 const EMAIL = "enquiries@globalpropertygroup.co";
 const INSTAGRAM_URL = "https://www.instagram.com/xgpg.luxury/";
@@ -21,72 +22,270 @@ function WhatsAppGlyph({ className }) {
   );
 }
 
+function buildEnquiry({ name, phone, email, message }) {
+  return [
+    "Hello GPG,",
+    "",
+    `Name: ${name}`,
+    phone ? `Phone: ${phone}` : null,
+    email ? `Email: ${email}` : null,
+    message ? `Message: ${message}` : null,
+    "",
+    "I would like to enquire about your properties.",
+  ]
+    .filter((line) => line !== null)
+    .join("\n");
+}
+
+function openUrl(url) {
+  const opened = window.open(url, "_blank");
+  if (opened) {
+    opened.opener = null;
+    return;
+  }
+
+  window.location.href = url;
+}
+
 export default function HomeContactPopup() {
   const { t } = useLanguage();
-  const [isVisible, setIsVisible] = useState(false);
+  const pathname = usePathname();
+  const [isReady, setIsReady] = useState(false);
+  const [mode, setMode] = useState("form");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, POPUP_DELAY_MS);
-
+    const timer = setTimeout(() => setIsReady(true), POPUP_DELAY_MS);
     return () => clearTimeout(timer);
   }, []);
 
-  if (!isVisible) return null;
+  useEffect(() => {
+    if (!isReady || mode !== "form") return undefined;
+
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isReady, mode]);
+
+  if (!isReady || pathname === "/contact-us") return null;
+
+  const closeForm = () => {
+    setError("");
+    setMode("dock");
+  };
+
+  const resetForm = () => {
+    setName("");
+    setPhone("");
+    setEmail("");
+    setMessage("");
+    setError("");
+  };
+
+  const handleWhatsApp = (event) => {
+    event.preventDefault();
+    if (!name.trim() || !phone.trim()) {
+      setError(t("homeContactPopup.whatsappRequired"));
+      return;
+    }
+
+    const text = buildEnquiry({
+      name: name.trim(),
+      phone: phone.trim(),
+      email: email.trim(),
+      message: message.trim(),
+    });
+    openUrl(`https://api.whatsapp.com/send?phone=${WA_NUMBER}&text=${encodeURIComponent(text)}`);
+    resetForm();
+  };
+
+  const handleEmail = (event) => {
+    event.preventDefault();
+    if (!name.trim() || !email.trim()) {
+      setError(t("homeContactPopup.emailRequired"));
+      return;
+    }
+
+    const subject = `Website enquiry from ${name.trim()}`;
+    const body = buildEnquiry({
+      name: name.trim(),
+      phone: phone.trim(),
+      email: email.trim(),
+      message: message.trim(),
+    });
+    openUrl(
+      `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    );
+    resetForm();
+  };
+
+  if (mode === "dock") {
+    return (
+      <div className="home-contact-popup" role="complementary" aria-label="Contact">
+        <div className="home-contact-popup__card">
+          <button
+            type="button"
+            className="home-contact-popup__close"
+            onClick={() => setIsReady(false)}
+            aria-label={t("homeContactPopup.close")}
+          >
+            <X size={14} />
+          </button>
+
+          <div className="home-contact-popup__actions">
+            <a
+              href={`https://wa.me/${WA_NUMBER}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home-contact-popup__icon-btn home-contact-popup__icon-btn--whatsapp"
+              aria-label="WhatsApp +971 542068414"
+              title="+971 542068414"
+            >
+              <WhatsAppGlyph className="home-contact-popup__icon" />
+            </a>
+
+            <a
+              href={`mailto:${EMAIL}`}
+              onClick={(event) => {
+                event.preventDefault();
+                window.open(
+                  `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}`,
+                  "_blank",
+                  "noopener,noreferrer"
+                );
+              }}
+              className="home-contact-popup__icon-btn home-contact-popup__icon-btn--mail"
+              aria-label={`Email ${EMAIL}`}
+              title={EMAIL}
+            >
+              <Mail className="home-contact-popup__icon" strokeWidth={2} />
+            </a>
+
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home-contact-popup__icon-btn home-contact-popup__icon-btn--instagram"
+              aria-label="Instagram @xgpg.luxury"
+              title="@xgpg.luxury"
+            >
+              <Instagram className="home-contact-popup__icon" strokeWidth={2} />
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="home-contact-popup" role="complementary" aria-label="Contact">
-      <div className="home-contact-popup__card">
+    <div
+      className="home-contact-form-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="home-contact-form-title"
+    >
+      <button
+        type="button"
+        className="home-contact-form-overlay__backdrop"
+        onClick={closeForm}
+        aria-label={t("homeContactPopup.close")}
+      />
+
+      <div className="home-contact-form">
         <button
           type="button"
-          className="home-contact-popup__close"
-          onClick={() => setIsVisible(false)}
+          className="home-contact-form__close"
+          onClick={closeForm}
           aria-label={t("homeContactPopup.close")}
         >
-          <X size={14} />
+          <X size={16} />
         </button>
 
-        <div className="home-contact-popup__actions">
-          <a
-            href={`https://wa.me/${WA_NUMBER}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="home-contact-popup__icon-btn home-contact-popup__icon-btn--whatsapp"
-            aria-label="WhatsApp +971 542068414"
-            title="+971 542068414"
-          >
-            <WhatsAppGlyph className="home-contact-popup__icon" />
-          </a>
+        <p className="home-contact-form__eyebrow">{t("homeContactPopup.eyebrow")}</p>
+        <h2 id="home-contact-form-title" className="home-contact-form__title">
+          {t("homeContactPopup.title")}
+        </h2>
+        <p className="home-contact-form__subtitle">{t("homeContactPopup.subtitle")}</p>
 
-          <a
-            href={`mailto:${EMAIL}`}
-            onClick={(event) => {
-              event.preventDefault();
-              window.open(
-                `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}`,
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }}
-            className="home-contact-popup__icon-btn home-contact-popup__icon-btn--mail"
-            aria-label={`Email ${EMAIL}`}
-            title={EMAIL}
-          >
-            <Mail className="home-contact-popup__icon" strokeWidth={2} />
-          </a>
+        <form className="home-contact-form__fields" onSubmit={handleWhatsApp} noValidate>
+          <label className="home-contact-form__label">
+            {t("homeContactPopup.name")}
+            <input
+              type="text"
+              name="name"
+              autoComplete="name"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              placeholder={t("homeContactPopup.namePlaceholder")}
+              className="home-contact-form__input"
+            />
+          </label>
 
-          <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="home-contact-popup__icon-btn home-contact-popup__icon-btn--instagram"
-            aria-label="Instagram @xgpg.luxury"
-            title="@xgpg.luxury"
-          >
-            <Instagram className="home-contact-popup__icon" strokeWidth={2} />
-          </a>
-        </div>
+          <label className="home-contact-form__label">
+            {t("homeContactPopup.phone")}
+            <input
+              type="tel"
+              name="phone"
+              autoComplete="tel"
+              value={phone}
+              onChange={(event) => setPhone(event.target.value)}
+              placeholder={t("homeContactPopup.phonePlaceholder")}
+              className="home-contact-form__input"
+            />
+          </label>
+
+          <label className="home-contact-form__label">
+            {t("homeContactPopup.email")}
+            <input
+              type="email"
+              name="email"
+              autoComplete="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              placeholder={t("homeContactPopup.emailPlaceholder")}
+              className="home-contact-form__input"
+            />
+          </label>
+
+          <label className="home-contact-form__label">
+            {t("homeContactPopup.message")}
+            <textarea
+              name="message"
+              rows={3}
+              value={message}
+              onChange={(event) => setMessage(event.target.value)}
+              placeholder={t("homeContactPopup.messagePlaceholder")}
+              className="home-contact-form__input home-contact-form__textarea"
+            />
+          </label>
+
+          {error ? <p className="home-contact-form__error">{error}</p> : null}
+
+          <div className="home-contact-form__buttons">
+            <button
+              type="button"
+              className="home-contact-form__btn home-contact-form__btn--whatsapp"
+              onClick={handleWhatsApp}
+            >
+              <WhatsAppGlyph className="home-contact-form__btn-icon" />
+              {t("homeContactPopup.whatsappButton")}
+            </button>
+            <button
+              type="button"
+              className="home-contact-form__btn home-contact-form__btn--email"
+              onClick={handleEmail}
+            >
+              <Mail size={16} strokeWidth={2} />
+              {t("homeContactPopup.emailButton")}
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
