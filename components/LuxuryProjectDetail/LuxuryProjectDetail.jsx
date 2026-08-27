@@ -43,6 +43,7 @@ import {
   getRegulatoryQrSrc,
   getListingAgent,
   parsePriceAed,
+  isRemoteImageSrc,
 } from "@/lib/luxuryProjectDetail";
 import { buildDetailHref, resolveReturnHref } from "@/lib/navigation";
 
@@ -250,6 +251,7 @@ function GalleryLightbox({ images, title, open, initialIndex, onClose, t }) {
             src={images[index]}
             alt={`${title} — ${index + 1}`}
             fill
+            unoptimized={isRemoteImageSrc(images[index])}
             className="object-contain"
             sizes="100vw"
             priority
@@ -282,7 +284,14 @@ function GalleryLightbox({ images, title, open, initialIndex, onClose, t }) {
                   imageIndex === index ? "border-[#E31E24]" : "border-transparent opacity-70 hover:opacity-100"
                 }`}
               >
-                <Image src={image} alt="" fill className="object-cover" sizes="96px" />
+                <Image
+                  src={image}
+                  alt=""
+                  fill
+                  unoptimized={isRemoteImageSrc(image)}
+                  className="object-cover"
+                  sizes="96px"
+                />
               </button>
             ))}
           </div>
@@ -349,6 +358,7 @@ function CommunityProjectCard({ project, projectHrefBase = "/trending-projects" 
           src={project.image}
           alt={project.title}
           fill
+          unoptimized={isRemoteImageSrc(project.image)}
           sizes="(max-width: 1024px) 100vw, 480px"
           className="object-cover"
         />
@@ -482,10 +492,15 @@ function PaymentPlanSteps({ steps }) {
 }
 
 function ProjectSummarySection({ summary, t }) {
+  const [showAllRows, setShowAllRows] = useState(false);
   if (!summary?.rows?.length) return null;
 
   const labelClass = "text-xs font-semibold uppercase tracking-wide text-slate-500";
   const valueClass = "mt-1 text-sm font-medium text-slate-900";
+  const collapsedRowCount = 3;
+  const canCollapse = summary.rows.length > collapsedRowCount;
+  const visibleRows =
+    !canCollapse || showAllRows ? summary.rows : summary.rows.slice(0, collapsedRowCount);
 
   if (summary.rows.length === 1) {
     const row = summary.rows[0];
@@ -496,7 +511,11 @@ function ProjectSummarySection({ summary, t }) {
       { label: t("luxuryDetail.downPaymentPercent"), value: summary.downPayment },
       { label: t("luxuryDetail.paymentPlan"), value: summary.paymentPlan },
       { label: t("luxuryDetail.handover"), value: summary.handover },
-    ];
+      summary.buildings && { label: "Number of buildings", value: summary.buildings },
+      summary.governmentFee && { label: "Government fee", value: summary.governmentFee },
+      summary.ownershipType && { label: "Ownership type", value: summary.ownershipType },
+      ...(summary.extraItems ?? []),
+    ].filter((item) => item?.value);
 
     return (
       <>
@@ -518,9 +537,9 @@ function ProjectSummarySection({ summary, t }) {
   return (
     <>
       <dl className="space-y-4">
-        {summary.rows.map((row) => (
+        {visibleRows.map((row, index) => (
           <div
-            key={`${row.propertyType}-${row.unitType}`}
+            key={`${row.propertyType}-${row.unitType}-${index}`}
             className="grid grid-cols-1 gap-4 sm:grid-cols-3"
           >
             <div className={fieldClass}>
@@ -537,20 +556,54 @@ function ProjectSummarySection({ summary, t }) {
             </div>
           </div>
         ))}
-
+      </dl>
+      {canCollapse ? (
+        <button
+          type="button"
+          onClick={() => setShowAllRows((v) => !v)}
+          className="mt-4 text-sm font-semibold text-[#E31E24] hover:underline"
+        >
+          {showAllRows ? t("luxuryDetail.showLess") : t("luxuryDetail.showMore")}
+        </button>
+      ) : null}
+      <dl className="mt-4 space-y-4">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <div className={fieldClass}>
-            <dt className={labelClass}>{t("luxuryDetail.downPaymentPercent")}</dt>
-            <dd className={valueClass}>{summary.downPayment}</dd>
-          </div>
-          <div className={fieldClass}>
-            <dt className={labelClass}>{t("luxuryDetail.paymentPlan")}</dt>
-            <dd className={valueClass}>{summary.paymentPlan}</dd>
-          </div>
-          <div className={fieldClass}>
-            <dt className={labelClass}>{t("luxuryDetail.handover")}</dt>
-            <dd className={valueClass}>{summary.handover}</dd>
-          </div>
+          {summary.downPayment ? (
+            <div className={fieldClass}>
+              <dt className={labelClass}>{t("luxuryDetail.downPaymentPercent")}</dt>
+              <dd className={valueClass}>{summary.downPayment}</dd>
+            </div>
+          ) : null}
+          {summary.paymentPlan ? (
+            <div className={fieldClass}>
+              <dt className={labelClass}>{t("luxuryDetail.paymentPlan")}</dt>
+              <dd className={valueClass}>{summary.paymentPlan}</dd>
+            </div>
+          ) : null}
+          {summary.handover ? (
+            <div className={fieldClass}>
+              <dt className={labelClass}>{t("luxuryDetail.handover")}</dt>
+              <dd className={valueClass}>{summary.handover}</dd>
+            </div>
+          ) : null}
+          {summary.buildings ? (
+            <div className={fieldClass}>
+              <dt className={labelClass}>Number of buildings</dt>
+              <dd className={valueClass}>{summary.buildings}</dd>
+            </div>
+          ) : null}
+          {summary.governmentFee ? (
+            <div className={fieldClass}>
+              <dt className={labelClass}>Government fee</dt>
+              <dd className={valueClass}>{summary.governmentFee}</dd>
+            </div>
+          ) : null}
+          {summary.ownershipType ? (
+            <div className={fieldClass}>
+              <dt className={labelClass}>Ownership type</dt>
+              <dd className={valueClass}>{summary.ownershipType}</dd>
+            </div>
+          ) : null}
         </div>
       </dl>
       <PaymentPlanSteps steps={summary.paymentPlanSteps} />
@@ -868,6 +921,7 @@ export default function LuxuryProjectDetail({
                 alt={project.title}
                 fill
                 priority
+                unoptimized={isRemoteImageSrc(gallery[0])}
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 sizes="(max-width:1024px) 100vw, 66vw"
               />
@@ -900,6 +954,7 @@ export default function LuxuryProjectDetail({
                 src={gallery[1]}
                 alt=""
                 fill
+                unoptimized={isRemoteImageSrc(gallery[1])}
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 sizes="33vw"
               />
@@ -915,6 +970,7 @@ export default function LuxuryProjectDetail({
                 src={gallery[2]}
                 alt=""
                 fill
+                unoptimized={isRemoteImageSrc(gallery[2])}
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 sizes="33vw"
               />

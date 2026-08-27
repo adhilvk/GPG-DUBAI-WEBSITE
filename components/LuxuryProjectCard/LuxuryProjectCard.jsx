@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, BedDouble, Bath, Maximize2, Phone, Mail } from "lucide-react";
 import DeveloperIcon from "@/components/icons/DeveloperIcon";
-import { getListingAgent, formatAedPrice } from "@/lib/luxuryProjectDetail";
+import { getListingAgent, formatAedPrice, isRemoteImageSrc } from "@/lib/luxuryProjectDetail";
 
 function WhatsAppGlyph({ className }) {
   return (
@@ -97,6 +97,7 @@ export default function LuxuryProjectCard({ project, compact = false, href }) {
           src={project.image}
           alt={project.title}
           fill
+          unoptimized={isRemoteImageSrc(project.image)}
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
         />

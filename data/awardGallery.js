@@ -12,19 +12,11 @@ export const AWARD_GALLERY_ROW_SIZE = 3;
 
 export const AWARD_HIGHLIGHT = {
   id: "binghatti-best-broker-2026",
-  src: "https://res.cloudinary.com/dsldkspov/image/upload/v1786784531/WhatsApp_Image_2026-08-13_at_2.29.15_PM_eqq0db.jpg",
+  src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787809467/WhatsApp_Image_2026-08-21_at_11.44.52_AM_t9xq69.jpg",
   alt: "GPG on stage at Binghatti Broker Recognition Awards 2026",
 };
 
 export const AWARD_GALLERY_FEATURED = [
-  {
-    id: "broker-awards-handshake-2026",
-    type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787302661/WhatsApp_Image_2026-08-21_at_11.38.54_AM_mm42wx.jpg",
-    alt: "GPG leadership at broker recognition awards event",
-    caption: "Binghatti Broker Recognition Awards 2024",
-    objectPosition: "50% 30%",
-  },
   {
     id: "broker-awards-stage-2026",
     type: "image",
@@ -32,6 +24,14 @@ export const AWARD_GALLERY_FEATURED = [
     alt: "GPG team on stage at Brokers Awards ceremony",
     caption: "Binghatti Broker Recognition Awards 2024",
     objectPosition: "28% 50%",
+  },
+  {
+    id: "broker-awards-handshake-2026",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787302661/WhatsApp_Image_2026-08-21_at_11.38.54_AM_mm42wx.jpg",
+    alt: "GPG leadership at broker recognition awards event",
+    caption: "Binghatti Broker Recognition Awards 2024",
+    objectPosition: "50% 30%",
   },
   {
     id: "ultimate-realty-awards-2025",
@@ -43,6 +43,21 @@ export const AWARD_GALLERY_FEATURED = [
 ];
 
 const AWARD_GALLERY_REST_RAW = [
+  {
+    id: "binghatti-h1-2025-top-broker",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787809688/WhatsApp_Image_2026-08-21_at_11.43.23_AM_vx65dz.jpg",
+    alt: "GPG representative with Top Broker Award from Binghatti for H1 2025",
+    caption: "Top Broker Award from Binghatti for H1 2025",
+    objectPosition: "50% 28%",
+  },
+  {
+    id: "binghatti-h1-2025-team",
+    type: "image",
+    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787810321/WhatsApp_Image_2026-08-21_at_11.43.22_AM_wl136r.jpg",
+    alt: "GPG team celebrating Top Broker Award at Binghatti Annual Broker Awards 2025",
+    caption: "GPG team at Binghatti Annual Broker Awards 2025",
+  },
   {
     id: "binghatti-award-portrait",
     type: "image",
@@ -78,12 +93,6 @@ const AWARD_GALLERY_REST_RAW = [
     alt: "GPG team recognised by London Gate Developers for Yachting project sales performance",
     caption:
       "Recognised by London Gate Developers for achieving the 2nd highest sales performance in their exclusive Yachting project in Maritime City.",
-  },
-  {
-    id: "awards-event-group",
-    type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312158/DSC02428.JPG_wcafe0.jpg",
-    alt: "GPG team at awards event",
   },
 ];
 
