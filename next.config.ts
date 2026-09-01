@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/projects",
+        destination: "/trending-projects",
+        permanent: true,
+      },
+      {
         source: "/luxury-properties/california-residences",
         destination: "/luxury-properties/beachgate-by-address-penthouse",
         permanent: true,

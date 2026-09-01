@@ -25,6 +25,7 @@ const CEOMessage = () => {
               accent="Financial Excellence."
               linesAlign="left"
               className="!text-left !mb-10"
+              headingAs="h1"
             />
 
             <div className="space-y-6 text-slate-600">

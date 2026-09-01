@@ -58,7 +58,7 @@ function RelatedCard({ p, basePath }) {
   return (
     <article className="border border-slate-200 rounded-lg overflow-hidden bg-white shadow-sm flex flex-col">
       <Link href={`${basePath}/${p.slug}`} className="relative aspect-[4/3] block bg-slate-100">
-        <Image src={p.images[0]} alt="" fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
+        <Image src={p.images[0]} alt={p.location} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <span className="text-white/75 text-xs font-semibold tracking-[0.25em] uppercase">GPG</span>
         </div>
@@ -143,13 +143,13 @@ export default function ResidentialDetail({ property, detailConfig }) {
             className="mb-4 flex flex-wrap items-center gap-1 text-xs text-white/85 md:text-sm"
             aria-label="Breadcrumb"
           >
-            <Link href={basePath} className="hover:text-white hover:underline">
-              Back to search
+            <Link href="/" className="hover:text-white hover:underline">
+              Home
             </Link>
             <span className="text-white/40">/</span>
-            <span>Off plan</span>
-            <span className="text-white/40">/</span>
-            <span>{searchLabel}</span>
+            <Link href={basePath} className="hover:text-white hover:underline">
+              {searchLabel}
+            </Link>
             <span className="text-white/40">/</span>
             <span className="font-medium text-white">{property.location}</span>
           </nav>
@@ -158,7 +158,7 @@ export default function ResidentialDetail({ property, detailConfig }) {
             <div className="relative min-h-[280px] lg:col-span-2 lg:row-span-2 rounded-lg overflow-hidden bg-black">
               <Image
                 src={gallery[0]}
-                alt=""
+                alt={property.location}
                 fill
                 priority
                 className="object-cover"
@@ -167,11 +167,11 @@ export default function ResidentialDetail({ property, detailConfig }) {
               <Watermark />
             </div>
             <div className="relative min-h-[200px] rounded-lg overflow-hidden bg-black">
-              <Image src={gallery[1]} alt="" fill className="object-cover" sizes="(max-width:1024px) 100vw, 33vw" />
+              <Image src={gallery[1]} alt={`${property.location} gallery image`} fill className="object-cover" sizes="(max-width:1024px) 100vw, 33vw" />
               <Watermark />
             </div>
             <div className="relative min-h-[200px] rounded-lg overflow-hidden bg-black">
-              <Image src={gallery[2]} alt="" fill className="object-cover" sizes="(max-width:1024px) 100vw, 33vw" />
+              <Image src={gallery[2]} alt={`${property.location} gallery image`} fill className="object-cover" sizes="(max-width:1024px) 100vw, 33vw" />
               <Watermark />
             </div>
           </div>

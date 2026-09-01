@@ -1,5 +1,10 @@
 import Link from "next/link";
 import Footer from "@/components/Footer/Footer";
+import { staticPageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
+
+export const metadata = staticPageMetadata("/privacy-policy");
 
 const sectionTitle = "mb-2 mt-10 text-lg font-semibold text-[#E31E24]";
 const subTitle = "mb-2 mt-6 font-semibold text-slate-900";
@@ -9,6 +14,12 @@ const listClass = "mb-6 list-inside list-disc space-y-1.5 text-slate-600 marker:
 export default function PrivacyPolicy() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Privacy Policy", path: "/privacy-policy" },
+        ])}
+      />
       <main className="relative bg-white px-6 pt-32 pb-20 text-slate-900">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#E31E24]/60 to-transparent" />
 

@@ -377,7 +377,7 @@ export default function RealEstateGuidesGuide() {
                       <div className="relative aspect-[16/10] bg-neutral-200">
                         <Image
                           src={card.image}
-                          alt=""
+                          alt={card.title}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                           sizes="(max-width: 768px) 100vw, 33vw"
@@ -421,7 +421,7 @@ export default function RealEstateGuidesGuide() {
                     className="group flex gap-4 rounded-xl border border-neutral-100 p-4 hover:border-neutral-200 hover:shadow-sm transition-all"
                   >
                     <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-lg bg-neutral-100">
-                      <Image src={g.image} alt="" fill className="object-cover" sizes="112px" />
+                      <Image src={g.image} alt={g.title} fill className="object-cover" sizes="112px" />
                     </div>
                     <span
                       className="self-center font-serif text-base text-neutral-900 group-hover:underline decoration-2 underline-offset-4"
@@ -454,7 +454,7 @@ export default function RealEstateGuidesGuide() {
                         <div className="relative h-24 w-[5.75rem] shrink-0 overflow-hidden rounded-lg bg-neutral-100 shadow-inner">
                           <Image
                             src={a.image}
-                            alt=""
+                            alt={a.title}
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                             sizes="120px"

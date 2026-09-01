@@ -8,11 +8,16 @@ import Testimonials from "@/components/Testimonials/Testimonials";
 import InstagramGallery from "@/components/InstagramGallery/InstagramGallery";
 import SubscriptionBanner from "@/components/SubscriptionBanner/SubscriptionBanner";
 import Footer from "@/components/Footer/Footer";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
+import { staticPageMetadata } from "@/lib/seo";
 
+export const metadata = staticPageMetadata("/");
 
 export default function Home() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }])} />
       <Navbar />
       <HashScroll />
       <div className="home-page">

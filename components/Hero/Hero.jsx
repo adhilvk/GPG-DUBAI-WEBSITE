@@ -42,6 +42,7 @@ const Hero = () => {
           loop
           muted
           playsInline
+          aria-label="GPG Global Real Estate property film"
           className="h-full w-full object-cover"
         />
         <div

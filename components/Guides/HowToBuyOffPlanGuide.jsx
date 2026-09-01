@@ -28,7 +28,7 @@ const tocItems = [
 
 const quickLinks = [
   { label: "Trending projects", href: "/trending-projects" },
-  { label: "New developments", href: "/projects" },
+  { label: "Luxury listings", href: "/luxury-properties" },
   { label: "All guides", href: "/guides" },
   { label: "Contact us", href: "/contact-us" },
 ];
@@ -176,7 +176,7 @@ function GuideSidebar() {
                 <div className="relative h-[5.5rem] w-[5.5rem] shrink-0 overflow-hidden bg-neutral-200">
                   <Image
                     src={a.image}
-                    alt=""
+                    alt={a.title}
                     fill
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     sizes="88px"
@@ -263,7 +263,7 @@ function GuideSidebar() {
           <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-200">
             <Image
               src="/images/heightsbyemaar.webp"
-              alt=""
+              alt="Trending off-plan projects in the UAE"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="320px"
@@ -530,7 +530,7 @@ export default function HowToBuyOffPlanGuide() {
                 </p>
                 <div className="mt-6 grid gap-3 sm:grid-cols-3">
                   {[
-                    { area: "Dubai Hills Estate", detail: "Integrated retail, wellness, golf, schools." },
+                    { area: "Dubai Hills Estate", detail: "Integrated retail, wellness, golf, schools.", href: "/areas/dubai-hills-estate" },
                     { area: "MBR City & Sobha Hartland", detail: "Central connectivity plus green corridors." },
                     { area: "Dubai Marina & Coastal", detail: "Premium lifestyle and maritime adjacency." },
                   ].map((item) => (
@@ -538,7 +538,13 @@ export default function HowToBuyOffPlanGuide() {
                       key={item.area}
                       className="border border-neutral-200/70 bg-white/50 px-5 py-4 transition-colors hover:border-neutral-300"
                     >
-                      <p className="text-base font-semibold tracking-tight text-slate-900">{item.area}</p>
+                      {item.href ? (
+                        <Link href={item.href} className="text-base font-semibold tracking-tight text-slate-900 hover:text-[#E31E24]">
+                          {item.area}
+                        </Link>
+                      ) : (
+                        <p className="text-base font-semibold tracking-tight text-slate-900">{item.area}</p>
+                      )}
                       <p className="mt-1.5 text-[14px] leading-relaxed text-slate-600">{item.detail}</p>
                     </div>
                   ))}

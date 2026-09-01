@@ -13,6 +13,7 @@ export default function AwardsPageHeader() {
       accent={t("ourAwards.pageAccent")}
       subtitle={t("ourAwards.heroSubtitle")}
       className="!mb-0"
+      headingAs="h1"
     />
   );
 }

@@ -110,7 +110,7 @@ function PropertyCard({ property, basePath }) {
               <div className="relative h-full w-full">
                 <Image
                   src={src}
-                  alt=""
+                  alt={`${property.location} photo ${i + 1}`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   className="object-cover"
@@ -239,7 +239,7 @@ export default function ResidentialListing({ config }) {
         <div className="absolute inset-0 z-0">
           <Image
             src={config.heroImage}
-            alt=""
+            alt={config.heroTitle}
             fill
             priority
             className="object-cover"
@@ -266,7 +266,13 @@ export default function ResidentialListing({ config }) {
           className="text-xs sm:text-sm text-slate-500 mb-4 flex flex-wrap items-center gap-1"
           aria-label="Breadcrumb"
         >
-          <span className="text-slate-600">Our Properties</span>
+          <Link href="/" className="text-slate-600 hover:text-[#E31E24]">
+            Home
+          </Link>
+          <ChevronRight size={14} className="text-slate-300 shrink-0" />
+          <Link href="/luxury-properties" className="text-slate-600 hover:text-[#E31E24]">
+            Our Properties
+          </Link>
           <ChevronRight size={14} className="text-slate-300 shrink-0" />
           <span className="text-slate-600">{breadcrumbGroup}</span>
           <ChevronRight size={14} className="text-slate-300 shrink-0" />

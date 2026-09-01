@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
 import {
   Phone,
   Mail,
@@ -13,7 +12,6 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-import { scrollToSectionId } from "@/lib/navigation";
 
 const guideLinks = [
   { key: "resale", href: "/HOWTORESELL" },
@@ -32,31 +30,16 @@ const propertyTypeLinks = [
 ];
 
 const serviceLinks = [
-  { key: "propertyBuying", href: "/#why-invest" },
-  { key: "propertySelling", href: "/#why-invest" },
-  { key: "investmentAdvisory", href: "/#why-invest" },
-  { key: "propertyManagement", href: "/#why-invest" },
+  { key: "propertyBuying", href: "/luxury-properties" },
+  { key: "propertySelling", href: "/contact-us" },
+  { key: "investmentAdvisory", href: "/HOWTOINVEST" },
+  { key: "propertyManagement", href: "/HOWTORENTAL" },
 ];
-
-const WHY_INVEST_SECTION_ID = "why-invest";
 
 const Footer = () => {
   const { t } = useLanguage();
-  const pathname = usePathname();
-  const router = useRouter();
   const footerLinkStyles = `relative w-max cursor-pointer transition-all duration-300 text-[#FF0000] text-[13px] uppercase tracking-wider
   after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[1.5px] after:bg-[#E31E24] after:transition-all after:duration-300 hover:after:w-full`;
-
-  const handleWhyInvestClick = (event) => {
-    event.preventDefault();
-
-    if (pathname === "/") {
-      scrollToSectionId(WHY_INVEST_SECTION_ID);
-      return;
-    }
-
-    router.push(`/#${WHY_INVEST_SECTION_ID}`);
-  };
 
   return (
     <footer className="bg-white border-t border-slate-200">
@@ -91,11 +74,7 @@ const Footer = () => {
             <ul className="space-y-4 text-[11px]">
               {serviceLinks.map((item) => (
                 <li key={item.key}>
-                  <Link
-                    href={item.href}
-                    onClick={handleWhyInvestClick}
-                    className={footerLinkStyles}
-                  >
+                  <Link href={item.href} className={footerLinkStyles}>
                     {t(`footer.${item.key}`)}
                   </Link>
                 </li>
@@ -127,6 +106,32 @@ const Footer = () => {
             </h3>
 
             <ul className="space-y-4 text-[#FF0000] text-[13px] uppercase tracking-wider">
+
+              <li>
+                <Link href="/about" className={footerLinkStyles}>
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/our-teams" className={footerLinkStyles}>
+                  Our Team
+                </Link>
+              </li>
+              <li>
+                <Link href="/awards" className={footerLinkStyles}>
+                  Awards
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact-us" className={footerLinkStyles}>
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/areas" className={footerLinkStyles}>
+                  Communities
+                </Link>
+              </li>
 
               <li className="flex items-center gap-3">
                 <Phone size={14} className="shrink-0" />

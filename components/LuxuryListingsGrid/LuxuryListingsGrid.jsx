@@ -173,6 +173,7 @@ export default function LuxuryListingsGrid() {
         <SectionHeader
           title={t("luxuryListingsPage.title")}
           accent={t("luxuryListingsPage.accent")}
+          headingAs="h1"
         />
 
         <div className="mb-8 rounded-xl border border-slate-200 bg-slate-50 p-4 md:mb-10 md:p-5">

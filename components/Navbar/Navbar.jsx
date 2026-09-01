@@ -141,11 +141,13 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
 
           {/* LOGO */}
           <div className="shrink-0 flex items-center">
-            <img
-              className="h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
-              src="/images/logo.png"
-              alt="GPG Logo"
-            />
+            <Link href="/" aria-label="GPG Global Real Estate home">
+              <img
+                className="h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                src="/images/logo.png"
+                alt="GPG Global Real Estate"
+              />
+            </Link>
           </div>
 
           {/* DESKTOP NAV */}
@@ -169,7 +171,7 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                 <div className="w-[40%] relative rounded-xl overflow-hidden group/img aspect-4/5">
                   <img
                     src="/images/Riverside.jpg"
-                    alt="Featured Project"
+                    alt="Featured off-plan property in Dubai"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6">
@@ -180,7 +182,7 @@ after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 aft
                       {t("nav.dubaiWaterCanal")}
                     </p>
                     <Link
-                      href="/projects"
+                      href="/trending-projects"
                       className="bg-[#002147] text-white text-[11px] font-bold uppercase py-2.5 px-6 rounded-xl w-max hover:bg-white hover:text-[#002147] transition-all"
                     >
                       {t("nav.viewProject")}

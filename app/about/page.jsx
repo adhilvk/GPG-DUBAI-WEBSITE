@@ -1,3 +1,6 @@
+import { staticPageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 import Navbar from "@/components/Navbar/Navbar";
 import AboutUsHero from "@/components/AboutUsHero/AboutUsHero";
 import CEOMessage from "@/components/CEOMessage/CEOMessage";
@@ -11,9 +14,17 @@ import Footer from "@/components/Footer/Footer";
 import GPGInstitutionalOutlook from "@/components/GPGInstitutionalOutlook/GPGInstitutionalOutlook";
 import BuyRentCTA from "@/components/BuyRentCTA/BuyRentCTA";
 
+export const metadata = staticPageMetadata("/about");
+
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ])}
+      />
       <Navbar />
             <CEOMessage />
 

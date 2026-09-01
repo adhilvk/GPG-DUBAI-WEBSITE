@@ -890,7 +890,7 @@ export default function LuxuryProjectDetail({
                 {t("luxuryDetail.home")}
               </Link>
               <span>/</span>
-              <Link href={backHref} className="hover:text-[#E31E24]">
+              <Link href={listHref} className="hover:text-[#E31E24]">
                 {breadcrumbLabel}
               </Link>
               <span>/</span>
@@ -952,7 +952,7 @@ export default function LuxuryProjectDetail({
             >
               <Image
                 src={gallery[1]}
-                alt=""
+                alt={`${project.title} photo 2`}
                 fill
                 unoptimized={isRemoteImageSrc(gallery[1])}
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
@@ -968,7 +968,7 @@ export default function LuxuryProjectDetail({
             >
               <Image
                 src={gallery[2]}
-                alt=""
+                alt={`${project.title} photo 3`}
                 fill
                 unoptimized={isRemoteImageSrc(gallery[2])}
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
@@ -1048,10 +1048,9 @@ export default function LuxuryProjectDetail({
                     {t("luxuryDetail.projectSummary")}
                   </h2>
                 ) : (
-                  // Reserve the same header space as other cards when there's no project summary.
-                  <h2 className="text-base font-bold text-slate-900 invisible">
+                  <div className="text-base font-bold text-slate-900 invisible" aria-hidden>
                     {t("luxuryDetail.projectSummary")}
-                  </h2>
+                  </div>
                 )}
                 <button
                   type="button"

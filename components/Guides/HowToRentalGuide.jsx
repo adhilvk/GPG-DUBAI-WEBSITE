@@ -231,7 +231,7 @@ function GuideSidebar() {
                 <div className="relative h-[5.5rem] w-[5.5rem] shrink-0 overflow-hidden bg-neutral-200">
                   <Image
                     src={a.image}
-                    alt=""
+                    alt={a.title}
                     fill
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     sizes="88px"
@@ -311,7 +311,7 @@ function GuideSidebar() {
           <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-200">
             <Image
               src="/images/Riverside.jpg"
-              alt=""
+              alt="Ready properties in Dubai"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="320px"
@@ -699,7 +699,7 @@ export default function HowToRentalGuide() {
                   <div className="relative aspect-[16/10] bg-neutral-200">
                     <Image
                       src={card.image}
-                      alt=""
+                      alt={card.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 33vw"

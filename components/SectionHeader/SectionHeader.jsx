@@ -16,6 +16,7 @@ export default function SectionHeader({
   subtitle,
   className = "",
   linesAlign = "center",
+  headingAs: HeadingTag = "h2",
 }) {
   return (
     <div className={`mb-6 md:mb-8 text-center ${className}`}>
@@ -24,7 +25,7 @@ export default function SectionHeader({
           {eyebrow}
         </p>
       )}
-      <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+      <HeadingTag className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
         {title}
         {accent && (
           <>
@@ -32,7 +33,7 @@ export default function SectionHeader({
             <span className="text-[#E31E24]">{accent}</span>
           </>
         )}
-      </h2>
+      </HeadingTag>
       <HeadingRedLines align={linesAlign} />
       {subtitle && (
         <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-500 md:text-base">{subtitle}</p>

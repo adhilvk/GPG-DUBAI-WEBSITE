@@ -18,7 +18,7 @@ const ReelCard = ({ reel, onSelect }) => (
     className="group relative h-[340px] w-full cursor-pointer overflow-hidden rounded-xl border border-red-50 shadow-sm transition-shadow hover:shadow-[0_12px_32px_rgba(227,30,36,0.12)] sm:h-[380px] md:h-[420px]"
     onClick={() => onSelect(reel)}
   >
-    <img src={reel.thumbnail} alt="Reel" className="h-full w-full object-cover" />
+    <img src={reel.thumbnail} alt="GPG Instagram video" className="h-full w-full object-cover" />
     <div className="absolute inset-0 flex items-center justify-center bg-[#E31E24]/0 opacity-0 transition-all group-hover:bg-[#E31E24]/30 group-hover:opacity-100">
       <Play className="h-10 w-10 fill-white text-white md:h-12 md:w-12" />
     </div>
@@ -241,7 +241,7 @@ const InstagramGallery = () => {
                   <div className="mb-6 flex items-center space-x-3">
                     <img
                       src="/images/instadp.jpg"
-                      alt="Instagram DP"
+                      alt="GPG Global Real Estate Instagram"
                       className="h-10 w-10 rounded-full border border-red-100 object-cover"
                     />
                     <div>
