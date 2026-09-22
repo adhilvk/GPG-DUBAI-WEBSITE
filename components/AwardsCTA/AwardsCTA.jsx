@@ -12,7 +12,7 @@ export default function AwardsCTA() {
     <section className="awards-cta">
       <div className="awards-cta__media" aria-hidden="true">
         <Image
-          src="https://res.cloudinary.com/dsldkspov/image/upload/v1785141397/Asset_5safca_ug0skj.jpg"
+          src="https://media.globalpropertygroup.co/images/Asset_5safca_ug0skj.jpg"
           alt=""
           fill
           className="awards-cta__image"

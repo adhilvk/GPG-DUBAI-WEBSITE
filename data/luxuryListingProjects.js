@@ -8,16 +8,16 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Elysian Mansions, Tilal Al Ghaf, Dubai",
     price: "25,500,000",
     priceDisplay: "25.5 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784884750/3_jgtsus.jpg",
+    image: "https://media.globalpropertygroup.co/images/3_jgtsus.jpg",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784885219/2_wmmx60.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784885170/6_b8xzzy.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784885137/4_x4pzip.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784884812/9_ua4oxg.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784884794/7_nvcnxr.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784884768/5_ebv5iy.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784884750/3_jgtsus.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784884726/1_owexsz.jpg"
+      "https://media.globalpropertygroup.co/images/2_wmmx60.jpg",
+      "https://media.globalpropertygroup.co/images/6_b8xzzy.jpg",
+      "https://media.globalpropertygroup.co/images/4_x4pzip.jpg",
+      "https://media.globalpropertygroup.co/images/9_ua4oxg.jpg",
+      "https://media.globalpropertygroup.co/images/7_nvcnxr.jpg",
+      "https://media.globalpropertygroup.co/images/5_ebv5iy.jpg",
+      "https://media.globalpropertygroup.co/images/3_jgtsus.jpg",
+      "https://media.globalpropertygroup.co/images/1_owexsz.jpg"
     ],
     status: "Off-plan",
     furnishing: "Partly furnished",
@@ -71,16 +71,16 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Nad Al Sheba Gardens 10, Nad Al Sheba Gardens, Dubai",
     price: "14,750,000",
     priceDisplay: "14.8 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784893396/26421_xr6vkb.jpg",
+    image: "https://media.globalpropertygroup.co/images/26421_xr6vkb.jpg",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784893396/26421_xr6vkb.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784893294/26426_l8onkm.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784893316/26424_qwdjog.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784893335/26423_wijteg.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784893378/26422_co4pre.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784893471/26420_xvn91v.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784893512/26406_vv6xxd.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784893533/26413_t2x69h.jpg"
+      "https://media.globalpropertygroup.co/images/26421_xr6vkb.jpg",
+      "https://media.globalpropertygroup.co/images/26426_l8onkm.jpg",
+      "https://media.globalpropertygroup.co/images/26424_qwdjog.jpg",
+      "https://media.globalpropertygroup.co/images/26423_wijteg.jpg",
+      "https://media.globalpropertygroup.co/images/26422_co4pre.jpg",
+      "https://media.globalpropertygroup.co/images/26420_xvn91v.jpg",
+      "https://media.globalpropertygroup.co/images/26406_vv6xxd.jpg",
+      "https://media.globalpropertygroup.co/images/26413_t2x69h.jpg"
     ],
     status: "Off-plan",
     furnishing: "Semi-furnished",
@@ -124,7 +124,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "65777017520",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786007544/WhatsApp_Image_2026-08-05_at_3.20.03_PM_g7mcah.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.20.03_PM_g7mcah.jpg"
     }
   },
   {
@@ -136,17 +136,17 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "District One West Phase I, District One, Mohammed Bin Rashid City, Dubai",
     price: "39,000,000",
     priceDisplay: "39 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784957670/Asset-1q_yowzy1.jpg",
+    image: "https://media.globalpropertygroup.co/images/Asset-1q_yowzy1.jpg",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957670/Asset-1q_yowzy1.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957647/Asset_2dsf_zy4n1w.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957702/Asset-6q_inwdoe.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957757/Asset-4q_ci0wqf.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957776/Asset-3q_uokc89.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957794/Asset-2q_fmo3hp.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957848/Asset_13dsf_iwzgtc.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957867/Asset_10dsf_dm67nl.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957893/Asset_11dsf_tnok75.jpg"
+      "https://media.globalpropertygroup.co/images/Asset-1q_yowzy1.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_2dsf_zy4n1w.jpg",
+      "https://media.globalpropertygroup.co/images/Asset-6q_inwdoe.jpg",
+      "https://media.globalpropertygroup.co/images/Asset-4q_ci0wqf.jpg",
+      "https://media.globalpropertygroup.co/images/Asset-3q_uokc89.jpg",
+      "https://media.globalpropertygroup.co/images/Asset-2q_fmo3hp.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_13dsf_iwzgtc.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_10dsf_dm67nl.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_11dsf_tnok75.jpg"
     ],
     status: "Off-plan",
     furnishing: "Semi-furnished",
@@ -189,7 +189,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "65510527287",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786007744/WhatsApp_Image_2026-08-05_at_3.21.44_PM_scvx4g.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.21.44_PM_scvx4g.jpg"
     }
   },
   {
@@ -201,17 +201,17 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "District One West Phase I, District One, Mohammed Bin Rashid Al Maktoum City, Dubai",
     price: "18,500,000",
     priceDisplay: "18.5 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784957670/Asset-1q_yowzy1.jpg",
+    image: "https://media.globalpropertygroup.co/images/Asset-1q_yowzy1.jpg",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957670/Asset-1q_yowzy1.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957647/Asset_2dsf_zy4n1w.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957702/Asset-6q_inwdoe.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957757/Asset-4q_ci0wqf.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957776/Asset-3q_uokc89.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957794/Asset-2q_fmo3hp.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957848/Asset_13dsf_iwzgtc.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957867/Asset_10dsf_dm67nl.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784957893/Asset_11dsf_tnok75.jpg"
+      "https://media.globalpropertygroup.co/images/Asset-1q_yowzy1.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_2dsf_zy4n1w.jpg",
+      "https://media.globalpropertygroup.co/images/Asset-6q_inwdoe.jpg",
+      "https://media.globalpropertygroup.co/images/Asset-4q_ci0wqf.jpg",
+      "https://media.globalpropertygroup.co/images/Asset-3q_uokc89.jpg",
+      "https://media.globalpropertygroup.co/images/Asset-2q_fmo3hp.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_13dsf_iwzgtc.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_10dsf_dm67nl.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_11dsf_tnok75.jpg"
     ],
     status: "Resale",
     furnishing: "Unfurnished",
@@ -247,7 +247,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "65510526211",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786007887/WhatsApp_Image_2026-08-05_at_3.22.37_PM_wd4gde.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.22.37_PM_wd4gde.jpg"
     }
   },
   {
@@ -259,19 +259,19 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Lumena by Omniyat, Business Bay, Dubai",
     price: "26,691,000",
     priceDisplay: "26.7 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784973129/4_du7lny.jpg",
+    image: "https://media.globalpropertygroup.co/images/4_du7lny.jpg",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784973129/4_du7lny.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959727/3_t91beg.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959707/1_muojgh.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959745/5_vfmint.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959766/7_mhakgj.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959786/9_rv9l38.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959835/12_z3runp.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959853/14_ncqmf5.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959876/15_oh9sjs.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959897/13_migcrs.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784973176/8_suxedg.jpg"
+      "https://media.globalpropertygroup.co/images/4_du7lny.jpg",
+      "https://media.globalpropertygroup.co/images/3_t91beg.jpg",
+      "https://media.globalpropertygroup.co/images/1_muojgh.jpg",
+      "https://media.globalpropertygroup.co/images/5_vfmint.jpg",
+      "https://media.globalpropertygroup.co/images/7_mhakgj.jpg",
+      "https://media.globalpropertygroup.co/images/9_rv9l38.jpg",
+      "https://media.globalpropertygroup.co/images/12_z3runp.jpg",
+      "https://media.globalpropertygroup.co/images/14_ncqmf5.jpg",
+      "https://media.globalpropertygroup.co/images/15_oh9sjs.jpg",
+      "https://media.globalpropertygroup.co/images/13_migcrs.jpg",
+      "https://media.globalpropertygroup.co/images/8_suxedg.jpg"
     ],
     status: "Q4 2029",
     furnishing: "Unfurnished",
@@ -304,7 +304,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71788545505",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786008133/WhatsApp_Image_2026-08-05_at_3.24.02_PM_uz5uof.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.24.02_PM_uz5uof.jpg"
     }
   },
   {
@@ -316,18 +316,18 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Farm Grove, The Valley, Dubai",
     price: "4,900,000",
     priceDisplay: "4.9 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784967823/5_ixgjae.jpg",
+    image: "https://media.globalpropertygroup.co/images/5_ixgjae.jpg",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784967823/5_ixgjae.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784967583/1_ynrvxu.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784967607/10_btixrc.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784967698/11_or51fo.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784967718/12_gxi5o0.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784967737/8_zushjn.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784967766/7_lq1xsb.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784967785/6_dcmczi.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784967804/1.3_oslsmd.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784967841/1.2_caey7k.jpg"
+      "https://media.globalpropertygroup.co/images/5_ixgjae.jpg",
+      "https://media.globalpropertygroup.co/images/1_ynrvxu.jpg",
+      "https://media.globalpropertygroup.co/images/10_btixrc.jpg",
+      "https://media.globalpropertygroup.co/images/11_or51fo.jpg",
+      "https://media.globalpropertygroup.co/images/12_gxi5o0.jpg",
+      "https://media.globalpropertygroup.co/images/8_zushjn.jpg",
+      "https://media.globalpropertygroup.co/images/7_lq1xsb.jpg",
+      "https://media.globalpropertygroup.co/images/6_dcmczi.jpg",
+      "https://media.globalpropertygroup.co/images/1.3_oslsmd.jpg",
+      "https://media.globalpropertygroup.co/images/1.2_caey7k.jpg"
     ],
     status: "Resale",
     furnishing: "Unfurnished",
@@ -360,7 +360,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "65686292671",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786008739/WhatsApp_Image_2026-08-05_at_3.25.29_PM_ppgya3.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.25.29_PM_ppgya3.jpg"
     }
   },
   {
@@ -372,19 +372,19 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Lumena Alta by Omniyat, Business Bay, Dubai",
     price: "26,000,000",
     priceDisplay: "26 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784973176/8_suxedg.jpg",
+    image: "https://media.globalpropertygroup.co/images/8_suxedg.jpg",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784973176/8_suxedg.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959727/3_t91beg.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959707/1_muojgh.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959745/5_vfmint.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959766/7_mhakgj.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959786/9_rv9l38.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959835/12_z3runp.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959853/14_ncqmf5.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959876/15_oh9sjs.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784959897/13_migcrs.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784973129/4_du7lny.jpg"
+      "https://media.globalpropertygroup.co/images/8_suxedg.jpg",
+      "https://media.globalpropertygroup.co/images/3_t91beg.jpg",
+      "https://media.globalpropertygroup.co/images/1_muojgh.jpg",
+      "https://media.globalpropertygroup.co/images/5_vfmint.jpg",
+      "https://media.globalpropertygroup.co/images/7_mhakgj.jpg",
+      "https://media.globalpropertygroup.co/images/9_rv9l38.jpg",
+      "https://media.globalpropertygroup.co/images/12_z3runp.jpg",
+      "https://media.globalpropertygroup.co/images/14_ncqmf5.jpg",
+      "https://media.globalpropertygroup.co/images/15_oh9sjs.jpg",
+      "https://media.globalpropertygroup.co/images/13_migcrs.jpg",
+      "https://media.globalpropertygroup.co/images/4_du7lny.jpg"
     ],
     status: "Q4 2029",
     furnishing: "Unfurnished",
@@ -417,7 +417,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71788545505",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786014286/WhatsApp_Image_2026-08-05_at_3.26.52_PM_ozafcl.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.26.52_PM_ozafcl.jpg"
     }
   },
   {
@@ -429,16 +429,16 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Bugatti Residences By Binghatti, Business Bay, Dubai",
     price: "34,641,500",
     priceDisplay: "34.6 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784994864/Asset_5FDG_dylrkl.png",
+    image: "https://media.globalpropertygroup.co/images/Asset_5FDG_dylrkl.png",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784994864/Asset_5FDG_dylrkl.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784994733/Layer_0_hmuydq.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784994835/Asset_4FDG_blzdli.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784994911/Asset_7FDG_ye2a2v.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784994888/Asset_6FDG_npundh.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784994939/Asset_8FDG_ziprfo.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784995033/Asset_19FDG_q6ssrd.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784995367/Asset_13FDG_py6mxr.png"
+      "https://media.globalpropertygroup.co/images/Asset_5FDG_dylrkl.png",
+      "https://media.globalpropertygroup.co/images/Layer_0_hmuydq.png",
+      "https://media.globalpropertygroup.co/images/Asset_4FDG_blzdli.png",
+      "https://media.globalpropertygroup.co/images/Asset_7FDG_ye2a2v.png",
+      "https://media.globalpropertygroup.co/images/Asset_6FDG_npundh.png",
+      "https://media.globalpropertygroup.co/images/Asset_8FDG_ziprfo.png",
+      "https://media.globalpropertygroup.co/images/Asset_19FDG_q6ssrd.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_13FDG_py6mxr.png"
     ],
     status: "Off-plan",
     furnishing: "Furnished",
@@ -486,7 +486,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71508203559",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786014477/WhatsApp_Image_2026-08-05_at_3.28.23_PM_mfdgoj.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.28.23_PM_mfdgoj.jpg"
     }
   },
   {
@@ -498,16 +498,16 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Bugatti Residences By Binghatti, Business Bay, Dubai",
     price: "33,447,250",
     priceDisplay: "33.4 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1784994911/Asset_7FDG_ye2a2v.png",
+    image: "https://media.globalpropertygroup.co/images/Asset_7FDG_ye2a2v.png",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784994911/Asset_7FDG_ye2a2v.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784994864/Asset_5FDG_dylrkl.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784994733/Layer_0_hmuydq.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784994835/Asset_4FDG_blzdli.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784994888/Asset_6FDG_npundh.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784994939/Asset_8FDG_ziprfo.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784995033/Asset_19FDG_q6ssrd.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784995367/Asset_13FDG_py6mxr.png"
+      "https://media.globalpropertygroup.co/images/Asset_7FDG_ye2a2v.png",
+      "https://media.globalpropertygroup.co/images/Asset_5FDG_dylrkl.png",
+      "https://media.globalpropertygroup.co/images/Layer_0_hmuydq.png",
+      "https://media.globalpropertygroup.co/images/Asset_4FDG_blzdli.png",
+      "https://media.globalpropertygroup.co/images/Asset_6FDG_npundh.png",
+      "https://media.globalpropertygroup.co/images/Asset_8FDG_ziprfo.png",
+      "https://media.globalpropertygroup.co/images/Asset_19FDG_q6ssrd.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_13FDG_py6mxr.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -552,7 +552,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71508207579",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786014607/WhatsApp_Image_2026-08-05_at_3.29.38_PM_wzrzpj.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.29.38_PM_wzrzpj.jpg"
     }
   },
   {
@@ -565,21 +565,21 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Beachgate by Address, Emaar Beachfront, Dubai",
     price: "14,353,964",
     priceDisplay: "14.4 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785076446/beach-mansion-1_cdokc5.jpg",
+    image: "https://media.globalpropertygroup.co/images/beach-mansion-1_cdokc5.jpg",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076446/beach-mansion-1_cdokc5.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076467/address-residences-dubai_csslld.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076488/grand-bleu-tower-3_bohrcj.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076510/beach-vista-20_qaw5xt.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076510/beach-vista-20_qaw5xt.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076541/Sunrise-Bay-1_qjxcf5.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076571/beachgate-address-dubai_fufuan.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076591/8e9a050a-3e35-4d57-b2d2-34af1ded9034_qukh6a.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076610/4_c1d09x.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076629/1_comyhs.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076649/2_daegae.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076669/3_dg3zcu.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785076694/33_u9mntd.jpg"
+      "https://media.globalpropertygroup.co/images/beach-mansion-1_cdokc5.jpg",
+      "https://media.globalpropertygroup.co/images/address-residences-dubai_csslld.jpg",
+      "https://media.globalpropertygroup.co/images/grand-bleu-tower-3_bohrcj.jpg",
+      "https://media.globalpropertygroup.co/images/beach-vista-20_qaw5xt.jpg",
+      "https://media.globalpropertygroup.co/images/beach-vista-20_qaw5xt.jpg",
+      "https://media.globalpropertygroup.co/images/Sunrise-Bay-1_qjxcf5.jpg",
+      "https://media.globalpropertygroup.co/images/beachgate-address-dubai_fufuan.jpg",
+      "https://media.globalpropertygroup.co/images/8e9a050a-3e35-4d57-b2d2-34af1ded9034_qukh6a.jpg",
+      "https://media.globalpropertygroup.co/images/4_c1d09x.jpg",
+      "https://media.globalpropertygroup.co/images/1_comyhs.jpg",
+      "https://media.globalpropertygroup.co/images/2_daegae.jpg",
+      "https://media.globalpropertygroup.co/images/3_dg3zcu.jpg",
+      "https://media.globalpropertygroup.co/images/33_u9mntd.jpg"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -622,7 +622,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71430127601",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786014730/WhatsApp_Image_2026-08-05_at_3.31.59_PM_el8lxs.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.31.59_PM_el8lxs.jpg"
     }
   },
   {
@@ -635,17 +635,17 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Address Villas - Tierra, The Oasis by Emaar, Dubai",
     price: "13,450,000",
     priceDisplay: "13.5 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785090222/24593_xerq4y.jpg",
+    image: "https://media.globalpropertygroup.co/images/24593_xerq4y.jpg",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785090222/24593_xerq4y.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785090251/24595_cmphbd.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785090268/24597_eeb7wb.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785090286/24599_tvhmxu.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785090304/24601_ihq3k1.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785090335/24603_j0qzcb.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785090358/24604_ojmfbw.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785090396/24602_jgp0q2.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785090428/24594_frgqjq.jpg"
+      "https://media.globalpropertygroup.co/images/24593_xerq4y.jpg",
+      "https://media.globalpropertygroup.co/images/24595_cmphbd.jpg",
+      "https://media.globalpropertygroup.co/images/24597_eeb7wb.jpg",
+      "https://media.globalpropertygroup.co/images/24599_tvhmxu.jpg",
+      "https://media.globalpropertygroup.co/images/24601_ihq3k1.jpg",
+      "https://media.globalpropertygroup.co/images/24603_j0qzcb.jpg",
+      "https://media.globalpropertygroup.co/images/24604_ojmfbw.jpg",
+      "https://media.globalpropertygroup.co/images/24602_jgp0q2.jpg",
+      "https://media.globalpropertygroup.co/images/24594_frgqjq.jpg"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -692,7 +692,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "65724427581",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786014882/WhatsApp_Image_2026-08-05_at_3.33.16_PM_i8tuph.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.33.16_PM_i8tuph.jpg"
     }
   },
   {
@@ -704,20 +704,20 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Mercedes Benz Places by Binghatti, Downtown Dubai",
     price: "11,499,999",
     priceDisplay: "11.5 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785091454/13838_zfpcrw.png",
+    image: "https://media.globalpropertygroup.co/images/13838_zfpcrw.png",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091454/13838_zfpcrw.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091299/13842_yoxxot.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091323/13843_g5g2k9.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091338/13844_xbxwyx.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091354/13845_pduuz1.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091376/13846_krlg2f.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091396/13847_dee7u0.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091414/13848_g0cr3b.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091433/13837_osvouq.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091478/13839_fmf0vl.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091495/13840_vsbc9q.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091513/13841_w5c3ux.png"
+      "https://media.globalpropertygroup.co/images/13838_zfpcrw.png",
+      "https://media.globalpropertygroup.co/images/13842_yoxxot.png",
+      "https://media.globalpropertygroup.co/images/13843_g5g2k9.png",
+      "https://media.globalpropertygroup.co/images/13844_xbxwyx.png",
+      "https://media.globalpropertygroup.co/images/13845_pduuz1.png",
+      "https://media.globalpropertygroup.co/images/13846_krlg2f.png",
+      "https://media.globalpropertygroup.co/images/13847_dee7u0.png",
+      "https://media.globalpropertygroup.co/images/13848_g0cr3b.png",
+      "https://media.globalpropertygroup.co/images/13837_osvouq.png",
+      "https://media.globalpropertygroup.co/images/13839_fmf0vl.png",
+      "https://media.globalpropertygroup.co/images/13840_vsbc9q.png",
+      "https://media.globalpropertygroup.co/images/13841_w5c3ux.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -765,7 +765,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71561624811",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786015015/WhatsApp_Image_2026-08-05_at_3.34.33_PM_itr9wh.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.34.33_PM_itr9wh.jpg"
     }
   },
   {
@@ -777,20 +777,20 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Mercedes Benz Places by Binghatti, Downtown Dubai",
     price: "10,299,999",
     priceDisplay: "10.3 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785091433/13837_osvouq.png",
+    image: "https://media.globalpropertygroup.co/images/13837_osvouq.png",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091433/13837_osvouq.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091454/13838_zfpcrw.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091299/13842_yoxxot.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091323/13843_g5g2k9.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091338/13844_xbxwyx.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091354/13845_pduuz1.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091376/13846_krlg2f.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091396/13847_dee7u0.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091414/13848_g0cr3b.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091478/13839_fmf0vl.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091495/13840_vsbc9q.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785091513/13841_w5c3ux.png"
+      "https://media.globalpropertygroup.co/images/13837_osvouq.png",
+      "https://media.globalpropertygroup.co/images/13838_zfpcrw.png",
+      "https://media.globalpropertygroup.co/images/13842_yoxxot.png",
+      "https://media.globalpropertygroup.co/images/13843_g5g2k9.png",
+      "https://media.globalpropertygroup.co/images/13844_xbxwyx.png",
+      "https://media.globalpropertygroup.co/images/13845_pduuz1.png",
+      "https://media.globalpropertygroup.co/images/13846_krlg2f.png",
+      "https://media.globalpropertygroup.co/images/13847_dee7u0.png",
+      "https://media.globalpropertygroup.co/images/13848_g0cr3b.png",
+      "https://media.globalpropertygroup.co/images/13839_fmf0vl.png",
+      "https://media.globalpropertygroup.co/images/13840_vsbc9q.png",
+      "https://media.globalpropertygroup.co/images/13841_w5c3ux.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -829,7 +829,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71561622987",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786015160/WhatsApp_Image_2026-08-05_at_3.35.51_PM_p6s8lm.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.35.51_PM_p6s8lm.jpg"
     }
   },
   {
@@ -841,19 +841,19 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Bay Residences Dubai Islands - A4, Bay Residences Dubai Islands",
     price: "8,418,080",
     priceDisplay: "8.4 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785095878/Asset_8lunagX_tf3pax.png",
+    image: "https://media.globalpropertygroup.co/images/Asset_8lunagX_tf3pax.png",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785095878/Asset_8lunagX_tf3pax.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785095786/Asset_2lunagX_ciftlv.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785095807/Asset_3lunagX_hk6kbs.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785095823/Asset_5lunagX_rwoex0.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785095843/Asset_6lunagX_mnwhgh.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785095891/Asset_9lunagX_itjijo.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785095909/Asset_10lunagX_rwrni6.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785095926/Asset_11lunagX_ofzuo1.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785095944/Asset_14lunagX_mmqs3z.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785095960/Asset_16lunagX_wdly0o.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785095974/Asset_20lunagX_tge2ox.png"
+      "https://media.globalpropertygroup.co/images/Asset_8lunagX_tf3pax.png",
+      "https://media.globalpropertygroup.co/images/Asset_2lunagX_ciftlv.png",
+      "https://media.globalpropertygroup.co/images/Asset_3lunagX_hk6kbs.png",
+      "https://media.globalpropertygroup.co/images/Asset_5lunagX_rwoex0.png",
+      "https://media.globalpropertygroup.co/images/Asset_6lunagX_mnwhgh.png",
+      "https://media.globalpropertygroup.co/images/Asset_9lunagX_itjijo.png",
+      "https://media.globalpropertygroup.co/images/Asset_10lunagX_rwrni6.png",
+      "https://media.globalpropertygroup.co/images/Asset_11lunagX_ofzuo1.png",
+      "https://media.globalpropertygroup.co/images/Asset_14lunagX_mmqs3z.png",
+      "https://media.globalpropertygroup.co/images/Asset_16lunagX_wdly0o.png",
+      "https://media.globalpropertygroup.co/images/Asset_20lunagX_tge2ox.png"
     ],
     status: "Off-plan",
     furnishing: "Partly furnished",
@@ -897,7 +897,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71522435534",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786015312/WhatsApp_Image_2026-08-05_at_3.37.14_PM_plfaik.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.37.14_PM_plfaik.jpg"
     }
   },
   {
@@ -909,20 +909,20 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "SAAS Hills, Dubai Science Park",
     price: "7,500,000",
     priceDisplay: "7.5 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785112610/IMG-20250307-WA0026_tnb4an.jpg",
+    image: "https://media.globalpropertygroup.co/images/IMG-20250307-WA0026_tnb4an.jpg",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112610/IMG-20250307-WA0026_tnb4an.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112439/IMG-20250307-WA0004_tzx2af.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112458/IMG-20250307-WA0006_ldjfcd.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112472/IMG-20250307-WA0008_up2py9.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112487/IMG-20250307-WA0010_kyk3it.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112501/IMG-20250307-WA0011_for2xc.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112518/IMG-20250307-WA0012_japbls.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112535/IMG-20250307-WA0013_wneivq.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112560/IMG-20250307-WA0015_p54x8j.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112578/IMG-20250307-WA0017_osiuro.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112594/IMG-20250307-WA0027_cxnczc.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785112624/IMG-20250307-WA0025_fwppfx.jpg"
+      "https://media.globalpropertygroup.co/images/IMG-20250307-WA0026_tnb4an.jpg",
+      "https://media.globalpropertygroup.co/images/IMG-20250307-WA0004_tzx2af.jpg",
+      "https://media.globalpropertygroup.co/images/IMG-20250307-WA0006_ldjfcd.jpg",
+      "https://media.globalpropertygroup.co/images/IMG-20250307-WA0008_up2py9.jpg",
+      "https://media.globalpropertygroup.co/images/IMG-20250307-WA0010_kyk3it.jpg",
+      "https://media.globalpropertygroup.co/images/IMG-20250307-WA0011_for2xc.jpg",
+      "https://media.globalpropertygroup.co/images/IMG-20250307-WA0012_japbls.jpg",
+      "https://media.globalpropertygroup.co/images/IMG-20250307-WA0013_wneivq.jpg",
+      "https://media.globalpropertygroup.co/images/IMG-20250307-WA0015_p54x8j.jpg",
+      "https://media.globalpropertygroup.co/images/IMG-20250307-WA0017_osiuro.jpg",
+      "https://media.globalpropertygroup.co/images/IMG-20250307-WA0027_cxnczc.jpg",
+      "https://media.globalpropertygroup.co/images/IMG-20250307-WA0025_fwppfx.jpg"
     ],
     status: "Off-plan",
     furnishing: "Furnished",
@@ -966,7 +966,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71645569395",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786015443/WhatsApp_Image_2026-08-05_at_3.38.10_PM_rep2lo.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_3.38.10_PM_rep2lo.jpg"
     }
   },
   {
@@ -978,18 +978,18 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Golf Lane, Emaar South",
     price: "7,666,861",
     priceDisplay: "7.7 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785113427/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-09_sqcglt.png",
+    image: "https://media.globalpropertygroup.co/images/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-09_sqcglt.png",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785113427/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-09_sqcglt.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785113328/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-03_s7qqi5.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785113347/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-015_hct3v1.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785113361/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-01544_lklpta.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785113380/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-06_drrua3.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785113401/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-08_kkggr1.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785113450/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-0121_zof2zr.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785113476/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-01657_rbli5u.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785113523/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-010_lsinlc.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785113554/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-07_mtdjvr.png"
+      "https://media.globalpropertygroup.co/images/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-09_sqcglt.png",
+      "https://media.globalpropertygroup.co/images/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-03_s7qqi5.png",
+      "https://media.globalpropertygroup.co/images/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-015_hct3v1.png",
+      "https://media.globalpropertygroup.co/images/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-01544_lklpta.png",
+      "https://media.globalpropertygroup.co/images/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-06_drrua3.png",
+      "https://media.globalpropertygroup.co/images/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-08_kkggr1.png",
+      "https://media.globalpropertygroup.co/images/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-0121_zof2zr.png",
+      "https://media.globalpropertygroup.co/images/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-01657_rbli5u.png",
+      "https://media.globalpropertygroup.co/images/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-010_lsinlc.png",
+      "https://media.globalpropertygroup.co/images/EMAAR-GOLF-LANE-EMAAR-SOUTH-investindxb-07_mtdjvr.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1030,7 +1030,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "65617354132",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786016729/WhatsApp_Image_2026-08-05_at_4.52.02_PM_qtgn6i.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_4.52.02_PM_qtgn6i.jpg"
     }
   },
   {
@@ -1043,19 +1043,19 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Jumeirah Residences Emirates Tower A, Jumeirah Residences Emirates Towers",
     price: "8,016,960",
     priceDisplay: "8 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785114332/24108_d0bchf.png",
+    image: "https://media.globalpropertygroup.co/images/24108_d0bchf.png",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785114332/24108_d0bchf.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785114294/24107_p362di.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785114311/24106_o6ks3m.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785114356/24109_itqbal.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785114382/24110_zzdykn.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785114428/24111_chqsnm.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785114452/24113_un6co3.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785114479/24112_kvpb0a.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785114566/24118_hxwrfx.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785114587/24116_ltwkmn.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785114605/24120_ryv3ne.png"
+      "https://media.globalpropertygroup.co/images/24108_d0bchf.png",
+      "https://media.globalpropertygroup.co/images/24107_p362di.png",
+      "https://media.globalpropertygroup.co/images/24106_o6ks3m.png",
+      "https://media.globalpropertygroup.co/images/24109_itqbal.png",
+      "https://media.globalpropertygroup.co/images/24110_zzdykn.png",
+      "https://media.globalpropertygroup.co/images/24111_chqsnm.png",
+      "https://media.globalpropertygroup.co/images/24113_un6co3.png",
+      "https://media.globalpropertygroup.co/images/24112_kvpb0a.png",
+      "https://media.globalpropertygroup.co/images/24118_hxwrfx.png",
+      "https://media.globalpropertygroup.co/images/24116_ltwkmn.png",
+      "https://media.globalpropertygroup.co/images/24120_ryv3ne.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1095,7 +1095,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71785203813",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786016954/WhatsApp_Image_2026-08-05_at_4.53.17_PM_j5ty0s.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_4.53.17_PM_j5ty0s.jpg"
     }
   },
   {
@@ -1107,19 +1107,19 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Burj Binghatti Jacob & Co, Business Bay",
     price: "7,040,000",
     priceDisplay: "7 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785115865/8230_akxhqh.png",
+    image: "https://media.globalpropertygroup.co/images/8230_akxhqh.png",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115865/8230_akxhqh.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115759/8231_jomrkf.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115782/8225_grx9jk.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115798/8228_awrf1a.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115818/8229_ng8wuf.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115840/8230.1_gk07jz.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115886/8232_ggvvcw.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115910/8233_xf5bmn.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115937/8234_axkd6y.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115960/8235_ccupfj.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115979/8326_kydvmc.png"
+      "https://media.globalpropertygroup.co/images/8230_akxhqh.png",
+      "https://media.globalpropertygroup.co/images/8231_jomrkf.png",
+      "https://media.globalpropertygroup.co/images/8225_grx9jk.png",
+      "https://media.globalpropertygroup.co/images/8228_awrf1a.png",
+      "https://media.globalpropertygroup.co/images/8229_ng8wuf.png",
+      "https://media.globalpropertygroup.co/images/8230.1_gk07jz.png",
+      "https://media.globalpropertygroup.co/images/8232_ggvvcw.png",
+      "https://media.globalpropertygroup.co/images/8233_xf5bmn.png",
+      "https://media.globalpropertygroup.co/images/8234_axkd6y.png",
+      "https://media.globalpropertygroup.co/images/8235_ccupfj.png",
+      "https://media.globalpropertygroup.co/images/8326_kydvmc.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1164,7 +1164,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71908741309",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786017132/WhatsApp_Image_2026-08-05_at_4.54.18_PM_girfai.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_4.54.18_PM_girfai.jpg"
     }
   },
   {
@@ -1176,19 +1176,19 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Burj Binghatti Jacob & Co, Business Bay",
     price: "6,880,000",
     priceDisplay: "6.9 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785115798/8228_awrf1a.png",
+    image: "https://media.globalpropertygroup.co/images/8228_awrf1a.png",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115798/8228_awrf1a.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115865/8230_akxhqh.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115759/8231_jomrkf.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115782/8225_grx9jk.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115818/8229_ng8wuf.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115840/8230.1_gk07jz.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115886/8232_ggvvcw.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115910/8233_xf5bmn.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115937/8234_axkd6y.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115960/8235_ccupfj.png",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785115979/8326_kydvmc.png"
+      "https://media.globalpropertygroup.co/images/8228_awrf1a.png",
+      "https://media.globalpropertygroup.co/images/8230_akxhqh.png",
+      "https://media.globalpropertygroup.co/images/8231_jomrkf.png",
+      "https://media.globalpropertygroup.co/images/8225_grx9jk.png",
+      "https://media.globalpropertygroup.co/images/8229_ng8wuf.png",
+      "https://media.globalpropertygroup.co/images/8230.1_gk07jz.png",
+      "https://media.globalpropertygroup.co/images/8232_ggvvcw.png",
+      "https://media.globalpropertygroup.co/images/8233_xf5bmn.png",
+      "https://media.globalpropertygroup.co/images/8234_axkd6y.png",
+      "https://media.globalpropertygroup.co/images/8235_ccupfj.png",
+      "https://media.globalpropertygroup.co/images/8326_kydvmc.png"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1233,7 +1233,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "71908741309",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786017426/WhatsApp_Image_2026-08-05_at_4.55.09_PM_cb7yan.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_4.55.09_PM_cb7yan.jpg"
     }
   },
   {
@@ -1246,17 +1246,17 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Opal Gardens, District 11, Mohammed Bin Rashid, Al Maktoum City, Dubai",
     price: "5,800,000",
     priceDisplay: "5.8 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785139897/9_dhsork.jpg",
+    image: "https://media.globalpropertygroup.co/images/9_dhsork.jpg",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785139897/9_dhsork.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785139949/8_xeusz3.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785140011/Asset_1sac_ftxjht.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785140031/Asset_10sac_gckhod.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785140056/Asset_9sac_lg5jju.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785140074/Asset_8sac_emhql4.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785140105/Asset_6sac_wzwxbf.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785140129/Asset_5sac_xdnvxw.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785140144/Asset_4sac_meuzkp.jpg"
+      "https://media.globalpropertygroup.co/images/9_dhsork.jpg",
+      "https://media.globalpropertygroup.co/images/8_xeusz3.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_1sac_ftxjht.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_10sac_gckhod.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_9sac_lg5jju.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_8sac_emhql4.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_6sac_wzwxbf.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_5sac_xdnvxw.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_4sac_meuzkp.jpg"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1298,7 +1298,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "93719",
       dldPermit: "69452309283",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786017586/WhatsApp_Image_2026-08-05_at_4.56.20_PM_liip1u.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_4.56.20_PM_liip1u.jpg"
     }
   },
   {
@@ -1310,23 +1310,23 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Alana, The Valley, Dubai",
     price: "5,764,604",
     priceDisplay: "5.8 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785141126/siera_e0sd0j.jpg",
+    image: "https://media.globalpropertygroup.co/images/siera_e0sd0j.jpg",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141126/siera_e0sd0j.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141143/lilac_poerzg.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141157/Asset_21safca_qkg8to.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141175/Asset_20safca_dapwi3.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141197/Asset_19safca_jnx96h.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141214/Asset_18safca_tpctsg.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141231/Asset_17safca_tvvapg.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141256/Asset_15safca_csjnfk.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141320/Asset_14safca_bjf0ap.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141337/Asset_12safca_zzfwp9.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141356/Asset_7safca_ig8w9f.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141374/Asset_9safca_qvym2r.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141397/Asset_5safca_ug0skj.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141454/Asset_1safca_kjcorw.jpg",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785141507/Asset_2safca_ek3evq.jpg"
+      "https://media.globalpropertygroup.co/images/siera_e0sd0j.jpg",
+      "https://media.globalpropertygroup.co/images/lilac_poerzg.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_21safca_qkg8to.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_20safca_dapwi3.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_19safca_jnx96h.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_18safca_tpctsg.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_17safca_tvvapg.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_15safca_csjnfk.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_14safca_bjf0ap.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_12safca_zzfwp9.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_7safca_ig8w9f.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_9safca_qvym2r.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_5safca_ug0skj.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_1safca_kjcorw.jpg",
+      "https://media.globalpropertygroup.co/images/Asset_2safca_ek3evq.jpg"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1371,7 +1371,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "69542870362",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786017772/WhatsApp_Image_2026-08-05_at_5.00.59_PM_in03an.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-05_at_5.00.59_PM_in03an.jpg"
     }
   },
   {
@@ -1382,7 +1382,7 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "District 11, Mohammed Bin Rashid City (MBR City), Dubai",
     price: "26,750,000",
     priceDisplay: "26.8 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785090222/24593_xerq4y.jpg",
+    image: "https://media.globalpropertygroup.co/images/24593_xerq4y.jpg",
     status: "Off-plan",
     beds: 6,
     baths: 7,
@@ -1394,7 +1394,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "1834970224",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786030798/WhatsApp_Image_2026-08-06_at_5.43.44_PM_i7mell.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-06_at_5.43.44_PM_i7mell.jpg"
     }
   },
   {
@@ -1405,7 +1405,7 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "District 11, Mohammed Bin Rashid City (MBR City), Dubai",
     price: "22,890,000",
     priceDisplay: "22.9 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785091433/13837_osvouq.png",
+    image: "https://media.globalpropertygroup.co/images/13837_osvouq.png",
     status: "Off-plan",
     beds: 5,
     baths: 6,
@@ -1417,7 +1417,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agencyName: "G P G GLOBAL REAL ESTATE BROKERAGE L.L.C",
       agentLicense: "51672",
       dldPermit: "1255398576",
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786030968/WhatsApp_Image_2026-08-06_at_5.45.17_PM_mtbdss.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-06_at_5.45.17_PM_mtbdss.jpg"
     }
   },
   {
@@ -1429,13 +1429,13 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Al Sajaa Industrial, Al Sajaa, Sharjah",
     price: "15,053,500",
     priceDisplay: "15.1 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1786387340/1312x894_dzoarf.webp",
+    image: "https://media.globalpropertygroup.co/images/1312x894_dzoarf.webp",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387340/1312x894_dzoarf.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387367/1312x894_1_ntxnfx.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387404/1312x894_4_bjzsbg.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387427/1312x894_2_ijs8sm.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387444/1312x894_3_i0zhlf.webp"
+      "https://media.globalpropertygroup.co/images/1312x894_dzoarf.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_1_ntxnfx.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_4_bjzsbg.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_2_ijs8sm.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_3_i0zhlf.webp"
     ],
     status: "Available",
     sqft: 88550,
@@ -1472,13 +1472,13 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Al Sajaa Industrial, Al Sajaa, Sharjah",
     price: "2,150,500",
     priceDisplay: "2.2 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1786387340/1312x894_dzoarf.webp",
+    image: "https://media.globalpropertygroup.co/images/1312x894_dzoarf.webp",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387340/1312x894_dzoarf.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387367/1312x894_1_ntxnfx.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387404/1312x894_4_bjzsbg.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387427/1312x894_2_ijs8sm.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786387444/1312x894_3_i0zhlf.webp"
+      "https://media.globalpropertygroup.co/images/1312x894_dzoarf.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_1_ntxnfx.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_4_bjzsbg.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_2_ijs8sm.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_3_i0zhlf.webp"
     ],
     status: "Available",
     sqft: 12650,
@@ -1516,19 +1516,19 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Binghatti Royale, District 18, Dubai",
     price: "7,552,000",
     priceDisplay: "7.5 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1786539113/1312x894_j2ez01.webp",
+    image: "https://media.globalpropertygroup.co/images/1312x894_j2ez01.webp",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539113/1312x894_j2ez01.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539163/1312x894_1_joatyl.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539185/1312x894_2_t4ugyd.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539230/1312x894_3_yz6tgw.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539248/1312x894_4_glx5u6.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539266/1312x894_5_a8bzxs.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539307/1312x894_6_ygsymk.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539329/1312x894_7_i2kfft.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539410/1312x894_8_akslr4.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539433/1312x894_9_y4tdpt.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786539452/1312x894_10_zay67p.webp"
+      "https://media.globalpropertygroup.co/images/1312x894_j2ez01.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_1_joatyl.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_2_t4ugyd.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_3_yz6tgw.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_4_glx5u6.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_5_a8bzxs.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_6_ygsymk.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_7_i2kfft.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_8_akslr4.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_9_y4tdpt.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_10_zay67p.webp"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1559,7 +1559,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agentLicense: "79489",
       dldPermit: "65405298359",
       showDldPermitNumber: false,
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786540350/WhatsApp_Image_2026-08-11_at_5.31.02_PM_hcidx9.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-11_at_5.31.02_PM_hcidx9.jpg"
     }
   },
   {
@@ -1572,14 +1572,14 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Binghatti Phantom, District 17, Dubai",
     price: "8,500,000",
     priceDisplay: "8.5 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1786524961/1312x894_ne9s5k.webp",
+    image: "https://media.globalpropertygroup.co/images/1312x894_ne9s5k.webp",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786524961/1312x894_ne9s5k.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786524980/1312x894_1_x1e1sa.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786525001/1312x894_2_ocymvd.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786525023/1312x894_3_eukm5l.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786525042/1312x894_4_ab0ixh.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786525060/1312x894_5_dmicz5.webp"
+      "https://media.globalpropertygroup.co/images/1312x894_ne9s5k.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_1_x1e1sa.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_2_ocymvd.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_3_eukm5l.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_4_ab0ixh.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_5_dmicz5.webp"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1613,7 +1613,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agentLicense: "79489",
       dldPermit: "65405298359",
       showDldPermitNumber: false,
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786525708/WhatsApp_Image_2026-08-11_at_5.29.42_PM_rr7ufp.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-11_at_5.29.42_PM_rr7ufp.jpg"
     }
   },
   {
@@ -1625,15 +1625,15 @@ export const LUXURY_LISTING_PROJECTS = [
     location: "Franck Muller Yachting by London Gate, Maritime City, Dubai",
     price: "2,500,000",
     priceDisplay: "2.5 M AED",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1786522818/1312x894_xzpyte.webp",
+    image: "https://media.globalpropertygroup.co/images/1312x894_xzpyte.webp",
     images: [
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522818/1312x894_xzpyte.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522876/1312x894_1_i6wvdr.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522896/1312x894_2_fw0lto.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522920/1312x894_3_honyvu.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522938/1312x894_4_zcexks.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522958/1312x894_5_b58nik.webp",
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786522979/1312x894_6_n2arqe.webp"
+      "https://media.globalpropertygroup.co/images/1312x894_xzpyte.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_1_i6wvdr.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_2_fw0lto.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_3_honyvu.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_4_zcexks.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_5_b58nik.webp",
+      "https://media.globalpropertygroup.co/images/1312x894_6_n2arqe.webp"
     ],
     status: "Off-plan",
     furnishing: "Unfurnished",
@@ -1667,7 +1667,7 @@ export const LUXURY_LISTING_PROJECTS = [
       agentLicense: "51672",
       dldPermit: "65405298359",
       showDldPermitNumber: false,
-      qrImage: "https://res.cloudinary.com/dsldkspov/image/upload/v1786523940/WhatsApp_Image_2026-08-11_at_5.28.20_PM_mye7na.jpg"
+      qrImage: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-11_at_5.28.20_PM_mye7na.jpg"
     }
   }
 ];

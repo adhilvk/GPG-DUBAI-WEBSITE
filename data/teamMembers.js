@@ -2,23 +2,20 @@
  * Team members for /our-teams page.
  */
 
-const TEAM_BG_TRANSFORM = "e_background_removal,b_rgb:f5f5f4,f_auto,q_auto";
+const TEAM_RUNTIME_IMAGES = {
+  "6": "https://media.globalpropertygroup.co/images/supria-2_w_qt3mc9--runtime-team-5.webp",
+  "1": "https://media.globalpropertygroup.co/images/broker_images_hamas.jpg_mr67f6--runtime-team-3.webp",
+  "2": "https://media.globalpropertygroup.co/images/broker_images_maryam.jpg_icvtqh--runtime-team-10.webp",
+  "3": "https://media.globalpropertygroup.co/images/broker_images_saif.jpg_mjmnxw--runtime-team-2.webp",
+  "4": "https://media.globalpropertygroup.co/images/broker_images_srinivas.jpg_wv5e4c--runtime-team-4.webp",
+  "5": "https://media.globalpropertygroup.co/images/b01af31fe45f4575b59f7d87f62e26db_mrm2eq--runtime-team-6.webp",
+  "7": "https://media.globalpropertygroup.co/images/operation_ameen.jpg_dqmvz7--runtime-team-7.webp",
+  "8": "https://media.globalpropertygroup.co/images/operation_israa.jpg_uwuhmw--runtime-team-8.webp",
+  "9": "https://media.globalpropertygroup.co/images/operation_abdullah.jpg_dlllx0--runtime-team-9.webp",
+};
 
 export function getTeamImageUrl(member) {
-  if (member.skipTeamBgTransform) {
-    return member.teamImage ?? member.image;
-  }
-
-  const src = member.teamImage ?? member.image;
-  if (!src?.includes("res.cloudinary.com/dsldkspov/image/upload/")) {
-    return src;
-  }
-
-  if (src.includes("e_background_removal,b_rgb:f5f5f4")) {
-    return src;
-  }
-
-  return src.replace("/image/upload/", `/image/upload/${TEAM_BG_TRANSFORM}/`);
+  return TEAM_RUNTIME_IMAGES[member.id] ?? member.teamImage ?? member.image;
 }
 
 export const TEAM_MEMBERS = [
@@ -31,11 +28,11 @@ export const TEAM_MEMBERS = [
     languages: "English, Hindi",
     brn: "51672",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1784882837/chirag_dp_jekput.png",
+      "https://media.globalpropertygroup.co/images/chirag_dp_jekput--504.png",
     teamImage:
-      "https://res.cloudinary.com/dsldkspov/image/upload/e_background_removal,b_rgb:f5f5f4,f_auto,q_auto/v1784882837/chirag_dp_jekput.png",
+      "https://media.globalpropertygroup.co/images/chirag_dp_jekput--503.jpg",
     aboutImage:
-      "https://res.cloudinary.com/dsldkspov/image/upload/e_background_removal,b_rgb:e7e5e4,f_auto,q_auto/v1784882837/chirag_dp_jekput.png",
+      "https://media.globalpropertygroup.co/images/chirag_dp_jekput.jpg",
     imageClassName: "object-contain object-bottom scale-[0.96] translate-y-6",
     listingImageClassName: "object-contain object-bottom scale-[0.92] translate-y-2",
     listingImageContainerClassName: "bg-white",
@@ -48,7 +45,7 @@ export const TEAM_MEMBERS = [
     title: "Senior Director",
     languages: "English, Hindi",
     brn: "73662",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785514854/supria-2_w_qt3mc9.png",
+    image: "https://media.globalpropertygroup.co/images/supria-2_w_qt3mc9.png",
   },
   {
     id: "1",
@@ -58,7 +55,7 @@ export const TEAM_MEMBERS = [
     title: "Senior Investment Advisor",
     languages: "English, Hindi",
     brn: "62915",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785514450/broker_images_hamas.jpg_mr67f6.jpg",
+    image: "https://media.globalpropertygroup.co/images/broker_images_hamas.jpg_mr67f6.jpg",
   },
   {
     id: "2",
@@ -68,7 +65,7 @@ export const TEAM_MEMBERS = [
     title: "Associate Director",
     languages: "English, Hindi",
     brn: "79489",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1787475103/broker_images_maryam.jpg_icvtqh.jpg",
+    image: "https://media.globalpropertygroup.co/images/broker_images_maryam.jpg_icvtqh.jpg",
   },
   {
     id: "3",
@@ -78,7 +75,7 @@ export const TEAM_MEMBERS = [
     title: "Investment Advisor",
     languages: "English, Hindi",
     brn: "87876",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785513511/broker_images_saif.jpg_mjmnxw.jpg",
+    image: "https://media.globalpropertygroup.co/images/broker_images_saif.jpg_mjmnxw.jpg",
   },
   {
     id: "4",
@@ -88,7 +85,7 @@ export const TEAM_MEMBERS = [
     title: "Investment Advisor",
     languages: "English, Hindi",
     brn: "29630",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785514571/broker_images_srinivas.jpg_wv5e4c.jpg",
+    image: "https://media.globalpropertygroup.co/images/broker_images_srinivas.jpg_wv5e4c.jpg",
   },
   {
     id: "5",
@@ -98,7 +95,7 @@ export const TEAM_MEMBERS = [
     title: "Investment Advisor",
     languages: "English, Hindi",
     brn: "93719",
-    image: "https://res.cloudinary.com/dsldkspov/image/upload/v1785515339/b01af31fe45f4575b59f7d87f62e26db_mrm2eq.jpg",
+    image: "https://media.globalpropertygroup.co/images/b01af31fe45f4575b59f7d87f62e26db_mrm2eq.jpg",
     imageClassName: "object-cover object-[50%_32%]",
   },
   {
@@ -107,7 +104,7 @@ export const TEAM_MEMBERS = [
     title: "Head of IT",
     languages: "English",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1785921222/operation_ameen.jpg_dqmvz7.jpg",
+      "https://media.globalpropertygroup.co/images/operation_ameen.jpg_dqmvz7.jpg",
   },
   {
     id: "8",
@@ -115,7 +112,7 @@ export const TEAM_MEMBERS = [
     title: "Head of Operations",
     languages: "English, Arabic",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786027823/operation_israa.jpg_uwuhmw.jpg",
+      "https://media.globalpropertygroup.co/images/operation_israa.jpg_uwuhmw.jpg",
   },
   {
     id: "9",
@@ -123,7 +120,7 @@ export const TEAM_MEMBERS = [
     title: "Conveyancing Manager",
     languages: "English, Tamil",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786030077/operation_abdullah.jpg_dlllx0.jpg",
+      "https://media.globalpropertygroup.co/images/operation_abdullah.jpg_dlllx0.jpg",
   },
 ];
 

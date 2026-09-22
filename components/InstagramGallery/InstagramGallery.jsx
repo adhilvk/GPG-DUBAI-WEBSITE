@@ -48,60 +48,60 @@ const InstagramGallery = () => {
       id: 1,
       thumbnail: "/reels/thumb1.jpg",
       videoUrl:
-        "https://res.cloudinary.com/dsldkspov/video/upload/v1772864903/video1_u6mv9a.mp4",
+        "https://media.globalpropertygroup.co/videos/video1_u6mv9a.mp4",
       caption: captions[0],
     },
     {
       id: 2,
       thumbnail: "/reels/thumb2.jpg",
       videoUrl:
-        "https://res.cloudinary.com/dsldkspov/video/upload/v1772864992/video2_btc1dg.mp4",
+        "https://media.globalpropertygroup.co/videos/video2_btc1dg.mp4",
       caption: captions[1],
     },
     {
       id: 3,
       thumbnail: "/reels/thumb3.jpg",
       videoUrl:
-        "https://res.cloudinary.com/dsldkspov/video/upload/v1772865013/video3_tru9f9.mp4",
+        "https://media.globalpropertygroup.co/videos/video3_tru9f9.mp4",
       caption: captions[2],
     },
     {
       id: 4,
       thumbnail: "/reels/thumb4.jpg",
       videoUrl:
-        "https://res.cloudinary.com/dsldkspov/video/upload/v1772865031/video4_jkda8j.mp4",
+        "https://media.globalpropertygroup.co/videos/video4_jkda8j.mp4",
       caption: captions[3],
     },
     {
       id: 5,
       thumbnail:
-        "https://res.cloudinary.com/dsldkspov/video/upload/so_0,c_fill,w_720,h_1280,q_auto,f_auto/v1787389949/CG_UK_v2_3_lwzglw.jpg",
+        "https://media.globalpropertygroup.co/images/CG_UK_v2_3_lwzglw.webp",
       videoUrl:
-        "https://res.cloudinary.com/dsldkspov/video/upload/v1787389949/CG_UK_v2_3_lwzglw.mp4",
+        "https://media.globalpropertygroup.co/videos/CG_UK_v2_3_lwzglw.mp4",
       caption: captions[4],
     },
     {
       id: 6,
       thumbnail:
-        "https://res.cloudinary.com/dsldkspov/video/upload/so_0,c_fill,w_720,h_1280,q_auto,f_auto/v1787391553/Success_Stories_for_our_clients_2025_LuxuryRealEstate_luxurious_dubaï_DubaiRealEstate_distri_gzqfmj.jpg",
+        "https://media.globalpropertygroup.co/images/Success_Stories_for_our_clients_2025_LuxuryRealEstate_luxurious_dubaï_DubaiRealEstate_distri_gzqfmj.webp",
       videoUrl:
-        "https://res.cloudinary.com/dsldkspov/video/upload/v1787391553/Success_Stories_for_our_clients_2025_LuxuryRealEstate_luxurious_dubaï_DubaiRealEstate_distri_gzqfmj.mp4",
+        "https://media.globalpropertygroup.co/videos/Success_Stories_for_our_clients_2025_LuxuryRealEstate_luxurious_dubaï_DubaiRealEstate_distri_gzqfmj.mp4",
       caption: captions[5],
     },
     {
       id: 7,
       thumbnail:
-        "https://res.cloudinary.com/dsldkspov/video/upload/so_0,c_fill,w_720,h_1280,q_auto,f_auto/v1787391931/PART_01Multiplier_of_Real_EstateChirag_Goyal_Founder_CEO_GPG_dubai_realestate_dxb_trendin_onup1n.jpg",
+        "https://media.globalpropertygroup.co/images/PART_01Multiplier_of_Real_EstateChirag_Goyal_Founder_CEO_GPG_dubai_realestate_dxb_trendin_onup1n.webp",
       videoUrl:
-        "https://res.cloudinary.com/dsldkspov/video/upload/v1787391931/PART_01Multiplier_of_Real_EstateChirag_Goyal_Founder_CEO_GPG_dubai_realestate_dxb_trendin_onup1n.mp4",
+        "https://media.globalpropertygroup.co/videos/PART_01Multiplier_of_Real_EstateChirag_Goyal_Founder_CEO_GPG_dubai_realestate_dxb_trendin_onup1n.mp4",
       caption: captions[6],
     },
     {
       id: 8,
       thumbnail:
-        "https://res.cloudinary.com/dsldkspov/video/upload/so_0,c_fill,w_720,h_1280,q_auto,f_auto/v1787399902/An_inspiring_evening_at_the_launch_event_of_amisdevelopment_by_jacobandco_where_luxury_artis_n6orw2.jpg",
+        "https://media.globalpropertygroup.co/images/An_inspiring_evening_at_the_launch_event_of_amisdevelopment_by_jacobandco_where_luxury_artis_n6orw2.webp",
       videoUrl:
-        "https://res.cloudinary.com/dsldkspov/video/upload/v1787399902/An_inspiring_evening_at_the_launch_event_of_amisdevelopment_by_jacobandco_where_luxury_artis_n6orw2.mp4",
+        "https://media.globalpropertygroup.co/videos/An_inspiring_evening_at_the_launch_event_of_amisdevelopment_by_jacobandco_where_luxury_artis_n6orw2.mp4",
       caption: captions[7],
     },
   ];

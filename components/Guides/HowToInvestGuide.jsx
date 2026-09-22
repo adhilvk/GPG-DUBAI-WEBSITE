@@ -560,7 +560,7 @@ export default function HowToInvestGuide() {
                 />
                 <div className="relative aspect-[2.2/1] min-h-[220px] w-full overflow-hidden bg-neutral-200 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.18)]">
                   <Image
-                    src="https://res.cloudinary.com/dsldkspov/image/upload/v1787822411/WhatsApp_Image_2026-08-27_at_2.28.50_PM_qryvhk.jpg"
+                    src="https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-27_at_2.28.50_PM_qryvhk.jpg"
                     alt="Commercial property in Dubai"
                     fill
                     className="object-cover"

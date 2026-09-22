@@ -7,7 +7,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { ARTICLE_DOWNLOAD_OPTIONS } from "@/data/articleDownloads";
 
 const COVER_IMAGE =
-  "https://res.cloudinary.com/dsldkspov/image/upload/v1784877069/chirag_new_hj8foh.jpg";
+  "https://media.globalpropertygroup.co/images/chirag_new_hj8foh.jpg";
 
 export default function ArticleDownload() {
   const { t } = useLanguage();

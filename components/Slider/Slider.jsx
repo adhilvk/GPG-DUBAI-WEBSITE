@@ -4,15 +4,15 @@ import "./Slider.css";
 import { useLanguage } from "@/context/LanguageContext";
 
 const brands = [
-  { key: "meraas", name: "Meraas", src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787823669/merass_h7z97q.png" },
+  { key: "meraas", name: "Meraas", src: "https://media.globalpropertygroup.co/images/merass_h7z97q.png" },
   { key: "dubai-properties", name: "Dubai Properties", src: "/images/brand6.webp" },
   { key: "nakheel", name: "Nakheel", src: "/images/brand7.png" },
   { key: "aldar", name: "Aldar", src: "/images/brand8.webp" },
   { key: "mag", name: "MAG", src: "/images/brand9.webp" },
-  { key: "omniyat", name: "Omniyat", src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787823634/omniyat_vcomhb.png" },
-  { key: "damac", name: "Damac", src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787823657/damac_ckabmp.png" },
-  { key: "ellington", name: "Ellington", src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787823622/Ellington-Logo_Black-2_eerqbf.png" },
-  { key: "binghatti", name: "Binghatti", src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787823646/binaghttii_ym3afy.png" },
+  { key: "omniyat", name: "Omniyat", src: "https://media.globalpropertygroup.co/images/omniyat_vcomhb.png" },
+  { key: "damac", name: "Damac", src: "https://media.globalpropertygroup.co/images/damac_ckabmp.png" },
+  { key: "ellington", name: "Ellington", src: "https://media.globalpropertygroup.co/images/Ellington-Logo_Black-2_eerqbf.png" },
+  { key: "binghatti", name: "Binghatti", src: "https://media.globalpropertygroup.co/images/binaghttii_ym3afy.png" },
   { key: "emaar", name: "Emaar", src: "/images/brand4.webp" },
 ];
 

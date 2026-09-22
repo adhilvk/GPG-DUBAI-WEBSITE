@@ -52,6 +52,7 @@ function GalleryMedia({ item, index }) {
           src={item.src}
           alt={item.alt}
           fill
+          unoptimized
           className={`awards-gallery__media awards-gallery__media--image ${imageFitClass} ${imageFocusClass}`}
           style={imageStyle}
           sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"

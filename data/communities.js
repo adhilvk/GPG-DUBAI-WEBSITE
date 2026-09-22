@@ -5,7 +5,7 @@ export const COMMUNITIES = [
     headingBlack: "The",
     headingRed: "Springs",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786018091/springs_vbv9hp.webp",
+      "https://media.globalpropertygroup.co/images/springs_vbv9hp.webp",
     paragraphs: [
       "The Springs is an established, lake-centric residential community by Emaar, forming an integral part of the master Emirates Living development. Designed specifically for young families and working professionals, it offers a peaceful, gated environment characterized by landscaped waterways and green spaces.",
       "The housing inventory consists primarily of 2- to 4-bedroom terraced townhouses and semi-detached villas spread across 15 sub-communities. Units feature functional two-story layouts, private gardens, covered carports, and classic Mediterranean architectural touches.",
@@ -18,7 +18,7 @@ export const COMMUNITIES = [
     headingBlack: "Emirates",
     headingRed: "Hills",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786018724/Emirates-Hills-dubai_m3ozn8.webp",
+      "https://media.globalpropertygroup.co/images/Emirates-Hills-dubai_m3ozn8.webp",
     paragraphs: [
       "Emirates Hills is Dubai's premier ultra-prime gated mansion community, widely recognized as the region's equivalent to Beverly Hills. Developed by Emaar, it offers unrivaled privacy, prestige, and exclusivity, catering directly to ultra-high-net-worth individuals, royal family members, and global business figures.",
       "The community exclusively features custom-built luxury mansions erected on expansive land plots surrounding the Montgomerie Golf Club. Homes are architecturally unique, built according to individual buyer preferences, and boast features such as private cinema rooms, underground multi-car garages, infinity pools, and expansive gardens facing the golf course and skyline.",
@@ -31,7 +31,7 @@ export const COMMUNITIES = [
     headingBlack: "Dubai Hills",
     headingRed: "Estate",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786018983/Dubai_Hills_Estate_murrhe.webp",
+      "https://media.globalpropertygroup.co/images/Dubai_Hills_Estate_murrhe.webp",
     paragraphs: [
       "Dubai Hills Estate, joint-venture developed by Emaar Properties and Meraas, is a centrally located 11-million-square-meter master development widely known as the \"Green Heart of Dubai.\" Situated along Al Khail Road, it offers convenient access to Downtown Dubai, Dubai Marina, and major international airports.",
       "The development features an array of residential choices, including luxury golf-facing mansions, modern family townhouses, and sleek mid-rise apartment complexes. Designed around contemporary urban standards, residences offer open-plan layouts, premium interior finishes, and views of the Dubai skyline or expansive green parklands.",
@@ -44,7 +44,7 @@ export const COMMUNITIES = [
     headingBlack: "Jumeirah Golf",
     headingRed: "Estates",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786021405/Jumeirah-Golf-Estates.jpg_hqgah0.jpg",
+      "https://media.globalpropertygroup.co/images/Jumeirah-Golf-Estates.jpg_hqgah0.jpg",
     paragraphs: [
       "Jumeirah Golf Estates (JGE) is a world-renowned residential golf destination set across 1,119 hectares of green landscapes. Home to two 18-hole championship golf courses—Earth and Fire, designed by Greg Norman—JGE hosts the annual DP World Tour Championship, establishing itself as a global sporting hub.",
       "The real estate offering consists of individually styled luxury villas, executive townhouses, and high-end apartments set within gated sub-communities. Each home is positioned to maximize views over the fairways, lakes, or nature parks, built with high-specification finishes, smart home tech, and private outdoor swimming pools.",
@@ -57,7 +57,7 @@ export const COMMUNITIES = [
     headingBlack: "The",
     headingRed: "Meadows",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786021544/The_Meadows.jpg_q75ne3.jpg",
+      "https://media.globalpropertygroup.co/images/The_Meadows.jpg_q75ne3.jpg",
     paragraphs: [
       "The Meadows is a mature, tree-lined villa community developed by Emaar as part of the prestigious Emirates Living master project. Characterized by tranquil lakes, lush green parks, and quiet residential streets, it provides a peaceful residential environment within easy commuting distance of Dubai Marina, Media City, and Knowledge Village.",
       "The community comprises two-story independent villas ranging from 3 to 7 bedrooms, arranged across nine distinct sub-communities. Architectural styles showcase traditional Mediterranean and Middle Eastern facades, offering practical floor plans, spacious living areas, maid's quarters, and private gardens suitable for family life.",
@@ -70,7 +70,7 @@ export const COMMUNITIES = [
     headingBlack: "Arabian",
     headingRed: "Ranches",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786021716/Arabian_Ranches.jpg_ni9jtg.jpg",
+      "https://media.globalpropertygroup.co/images/Arabian_Ranches.jpg_ni9jtg.jpg",
     paragraphs: [
       "Arabian Ranches is one of Dubai's most established and successful flagship villa communities developed by Emaar Properties. Inspired by desert landscape aesthetics, this gated master project offers a serene suburban environment defined by tree-lined avenues, private enclaves, and architectural charm.",
       "Residential options consist of 2- to 6-bedroom villas and townhouses spread across distinct sub-communities. Architectural influences range from Portuguese and Spanish haciendas to traditional Arabic styles, featuring functional family-oriented floor plans, covered parking, private gardens, and generous plot layouts.",
@@ -83,7 +83,7 @@ export const COMMUNITIES = [
     headingBlack: "DAMAC",
     headingRed: "Hills",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786027263/DAMAC_Hills_chx58e.webp",
+      "https://media.globalpropertygroup.co/images/DAMAC_Hills_chx58e.webp",
     paragraphs: [
       "DAMAC Hills is a vibrant 42-million-square-foot master-planned community located in the heart of Dubailand. Designed as a self-contained residential destination, it offers a dynamic suburban lifestyle anchored by world-class leisure, retail, and sports infrastructure.",
       "The community provides a diverse selection of real estate, ranging from golf-facing townhouses and luxury villas co-branded with international design houses like Cavalli, to modern low-rise condominiums and serviced apartments. Properties are designed with contemporary layouts, private gardens, and panoramic views of the surrounding green landscapes.",
@@ -96,7 +96,7 @@ export const COMMUNITIES = [
     headingBlack: "Al",
     headingRed: "Barari",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786027385/Al_Barari.jfif_lstv8a.jpg",
+      "https://media.globalpropertygroup.co/images/Al_Barari.jfif_lstv8a.jpg",
     paragraphs: [
       "Al Barari is Dubai's flagship eco-luxury residential sanctuary, renowned for its commitment to nature, wellness, and sustainable luxury living. Covering over 18 million square feet, more than 80% of the development is dedicated to lush botanical gardens, freshwater streams, and landscaped wilderness, creating a distinct microclimate removed from the city center.",
       "The properties range from custom-built luxury mansions and spacious standalone villas—such as The Nest, Bromellia, and Acacia—to contemporary green apartments in Seventh Heaven and Ashjar. Designed with an emphasis on organic architecture and privacy, residences offer private pools, internal courtyards, rooftop terraces, and floor-to-ceiling windows overlooking green canopy views.",
@@ -109,7 +109,7 @@ export const COMMUNITIES = [
     headingBlack: "District",
     headingRed: "One",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786027514/District_One.jpg_unekwf.jpg",
+      "https://media.globalpropertygroup.co/images/District_One.jpg_unekwf.jpg",
     paragraphs: [
       "District One, located within Mohammed Bin Rashid Al Maktoum City (MBR City), stands as one of Dubai's most prestigious central addresses. Positioned just minutes away from Downtown Dubai and the Burj Khalifa, this high-end master development seamlessly connects urban convenience with resort-style living.",
       "The residential portfolio includes contemporary, modern Arabic, and Mediterranean-inspired villas, mansions, and low-rise waterfront apartments. Architecturally designed to maximize natural light through floor-to-ceiling glass, these residences feature private elevators, smart home automation, expansive lawns, and private swimming pools set against immaculate streetscapes.",
@@ -122,7 +122,7 @@ export const COMMUNITIES = [
     headingBlack: "Jumeirah",
     headingRed: "Islands",
     image:
-      "https://res.cloudinary.com/dsldkspov/image/upload/v1786027619/Jumeirah_Islands_hqaecp.webp",
+      "https://media.globalpropertygroup.co/images/Jumeirah_Islands_hqaecp.webp",
     paragraphs: [
       "Jumeirah Islands is an ultra-exclusive residential enclave developed by Nakheel, comprising 50 crafted man-made islands surrounded by tranquil azure lakes. Situated between Dubai Marina and Jumeirah Lakes Towers, this gated development provides high-end privacy while maintaining immediate access to Dubai's main transportation arteries, including Sheikh Zayed Road.",
       "The community features 736 luxury standalone villas and bespoke mansions, designed across distinct architectural themes including European, Islamic, Mediterranean, and Tropical styles. Properties boast extensive plot sizes, private swimming pools, landscaped gardens, and direct waterfront views. The low-density environment ensures an undisturbed atmosphere tailored for discerning buyers and families seeking space and seclusion.",

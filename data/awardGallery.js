@@ -1,9 +1,9 @@
 export const AWARD_RECOGNITION_VIDEO = {
   id: "awards-celebration-video",
-  src: "https://res.cloudinary.com/dsldkspov/video/upload/v1785312433/WhatsApp_Video_2026-07-25_at_3.09.36_PM_kzjb38.mp4",
+  src: "https://media.globalpropertygroup.co/videos/WhatsApp_Video_2026-07-25_at_3.09.36_PM_kzjb38.mp4",
   alt: "GPG awards celebration video",
   poster:
-    "https://res.cloudinary.com/dsldkspov/image/upload/v1785328845/WhatsApp_Image_2026-07-25_at_3.06.03_PM_nvmdvf.jpg",
+    "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-07-25_at_3.06.03_PM_nvmdvf.jpg",
 };
 
 export const AWARD_GALLERY_FEATURED_COUNT = 3;
@@ -12,7 +12,7 @@ export const AWARD_GALLERY_ROW_SIZE = 3;
 
 export const AWARD_HIGHLIGHT = {
   id: "binghatti-best-broker-2026",
-  src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787823717/WhatsApp_Image_2026-08-27_at_12.48.51_PM_gsts4a.jpg",
+  src: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-27_at_12.48.51_PM_gsts4a.jpg",
   alt: "GPG on stage at Binghatti Broker Recognition Awards 2026",
 };
 
@@ -20,7 +20,7 @@ export const AWARD_GALLERY_FEATURED = [
   {
     id: "broker-awards-stage-2026",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787302629/WhatsApp_Image_2026-08-21_at_11.38.28_AM_ux1ean.jpg",
+    src: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-21_at_11.38.28_AM_ux1ean.jpg",
     alt: "GPG team on stage at Brokers Awards ceremony",
     caption: "Binghatti Broker Recognition Awards 2024",
     objectPosition: "28% 50%",
@@ -28,7 +28,7 @@ export const AWARD_GALLERY_FEATURED = [
   {
     id: "broker-awards-handshake-2026",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787302661/WhatsApp_Image_2026-08-21_at_11.38.54_AM_mm42wx.jpg",
+    src: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-21_at_11.38.54_AM_mm42wx.jpg",
     alt: "GPG leadership at broker recognition awards event",
     caption: "Binghatti Broker Recognition Awards 2024",
     objectPosition: "50% 30%",
@@ -36,7 +36,7 @@ export const AWARD_GALLERY_FEATURED = [
   {
     id: "ultimate-realty-awards-2025",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787305699/WhatsApp_Image_2026-08-21_at_11.42.07_AM_njg5ba.jpg",
+    src: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-21_at_11.42.07_AM_njg5ba.jpg",
     alt: "GPG team at The Ultimate Realty Awards",
     caption: "The Ultimate Realty Awards from India Today Group and NKN Media 2025",
   },
@@ -46,7 +46,7 @@ const AWARD_GALLERY_REST_RAW = [
   {
     id: "binghatti-h1-2025-top-broker",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787809688/WhatsApp_Image_2026-08-21_at_11.43.23_AM_vx65dz.jpg",
+    src: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-21_at_11.43.23_AM_vx65dz.jpg",
     alt: "GPG representative with Top Broker Award from Binghatti for H1 2025",
     caption: "Top Broker Award from Binghatti for H1 2025",
     objectPosition: "50% 48%",
@@ -56,21 +56,21 @@ const AWARD_GALLERY_REST_RAW = [
   {
     id: "binghatti-h1-2025-team",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787810321/WhatsApp_Image_2026-08-21_at_11.43.22_AM_wl136r.jpg",
+    src: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-21_at_11.43.22_AM_wl136r.jpg",
     alt: "GPG team at Binghatti Broker Recognition Awards 2025",
     caption: "Binghatti Broker Recognition Awards 2025",
   },
   {
     id: "ultimate-realty-awards-2025-team",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1787810583/WhatsApp_Image_2026-08-21_at_11.42.07_AM_xx5orx.jpg",
+    src: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-21_at_11.42.07_AM_xx5orx.jpg",
     alt: "GPG team at The Ultimate Realty Awards from India Today Group and NKN Media 2025",
     caption: "The Ultimate Realty Awards from India Today Group and NKN Media 2025",
   },
   {
     id: "binghatti-broker-awards-2024",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/c_fill,g_auto,ar_4:3,z_0.7,w_1600,q_auto,f_auto/v1787811020/WhatsApp_Image_2026-08-21_at_11.41.34_AM_s6txcm.jpg",
+    src: "https://media.globalpropertygroup.co/images/WhatsApp_Image_2026-08-21_at_11.41.34_AM_s6txcm.webp",
     alt: "GPG leadership at Binghatti Broker Recognition Awards 2024",
     caption: "Binghatti Broker Recognition Awards 2024",
     objectPosition: "50% 42%",
@@ -78,7 +78,7 @@ const AWARD_GALLERY_REST_RAW = [
   {
     id: "binghatti-award-portrait",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/c_fill,g_face,ar_4:3,q_auto,f_auto/v1785307419/2.jpg_kc2sly.jpg",
+    src: "https://media.globalpropertygroup.co/images/2.jpg_kc2sly.webp",
     alt: "GPG representative holding Binghatti Broker Recognition Award 2026",
     caption: "Binghatti Broker Recognition Awards 2026",
     objectPosition: "50% 50%",
@@ -88,28 +88,28 @@ const AWARD_GALLERY_REST_RAW = [
   {
     id: "binghatti-annual-2025-carousel",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312324/award_1.jpg_jokfiv.jpg",
+    src: "https://media.globalpropertygroup.co/images/award_1.jpg_jokfiv.jpg",
     alt: "GPG team at Binghatti Broker Recognition Awards 2026",
     caption: "Binghatti Broker Recognition Awards 2026",
   },
   {
     id: "binghatti-team-trophy",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785319380/9.jpg_v0kctx.jpg",
+    src: "https://media.globalpropertygroup.co/images/9.jpg_v0kctx.jpg",
     alt: "GPG team member with Billionaires Estate award trophy",
     caption: "BINGHATTI BROKER RECOGNITION AWARDS 2026",
   },
   {
     id: "broker-awards-aerial",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312212/DJI_20250910215902_0608_D.JPG_dmwdck.jpg",
+    src: "https://media.globalpropertygroup.co/images/DJI_20250910215902_0608_D.JPG_dmwdck.jpg",
     alt: "Aerial view of broker recognition awards event",
     caption: "Binghatti Broker Recognition Awards 2026",
   },
   {
     id: "awards-ceremony-stage",
     type: "image",
-    src: "https://res.cloudinary.com/dsldkspov/image/upload/v1785312054/DSC02403.JPG_uo4yqv.jpg",
+    src: "https://media.globalpropertygroup.co/images/DSC02403.JPG_uo4yqv.jpg",
     alt: "GPG team recognised by London Gate Developers for Yachting project sales performance",
     caption:
       "Recognised by London Gate Developers for achieving the 2nd highest sales performance in their exclusive Yachting project in Maritime City.",
